@@ -6,7 +6,6 @@
 
 - [**About**](#about)
 - [**Installation**](#installation)
-- [**Debug mode**](#debug-mode)
 - [**License**](#license)
 - [**Contribution**](#contribution)
 - [**Donations**](#donations)
