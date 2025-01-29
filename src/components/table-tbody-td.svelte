@@ -10,6 +10,11 @@
  td.center {
   text-align: center;
  }
+
+ a {
+  text-decoration: none;
+  color: #000;
+ }
 </style>
 
 <td class:center>
