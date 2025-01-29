@@ -3,6 +3,7 @@
  import { page } from '$app/state';
  import { goto } from '$app/navigation';
  import BaseButton from './base-button.svelte';
+ //let isMenuOpen = false;
 
  function clickLogo() {
   goto('/');
@@ -78,7 +79,7 @@
 <div class="header">
  <div class="menu-mobile">
   <BaseButton onClick={clickMenu}>
-   <img src="menu.svg" alt="Menu" />
+   <img src="img/menu.svg" alt="Menu" />
   </BaseButton>
  </div>
  <BaseButton onClick={clickLogo}>

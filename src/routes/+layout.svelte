@@ -4,7 +4,6 @@
  import { page } from '$app/state';
  import Header from '../components/header.svelte';
  let { children } = $props();
- //let isMenuOpen = false;
 </script>
 
 <style>
@@ -17,23 +16,22 @@
   width: 100%;
   height: 100vh;
   justify-content: center;
-  background-color: #eee;
+  background-color: #aaa;
+  background: url('/img/background.webp') repeat #eee;
+  background-size: 400px;
  }
 
  .page {
   width: 1200px;
   max-width: 100%;
   background-color: #fff;
+  box-shadow: var(--shadow);
  }
 
  .page .content {
   padding: 20px;
   height: calc(100% - 110px);
   overflow: auto;
- }
-
- @media (max-width: 768px) {
-  /* add menu hamburger */
  }
 </style>
 

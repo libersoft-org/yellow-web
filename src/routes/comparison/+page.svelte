@@ -42,7 +42,7 @@
       <Td><div class="bold">{key}</div></Td>
       {#each values as value}
        {#if value === 0 || value === 1}
-        <Td center={true}><img class="icon" src="{value === 0 ? 'no' : 'yes'}.svg" alt={value === 0 ? 'No' : 'Yes'} /></Td>
+        <Td center={true}><img class="icon" src="img/{value === 0 ? 'no' : 'yes'}.svg" alt={value === 0 ? 'No' : 'Yes'} /></Td>
        {:else}
         <Td center={true}>{value}</Td>
        {/if}
