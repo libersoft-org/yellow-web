@@ -30,7 +30,7 @@
 
  .page .content {
   padding: 20px;
-  height: calc(100% - 110px);
+  height: calc(100% - 112px);
   overflow: auto;
  }
 </style>

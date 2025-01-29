@@ -22,6 +22,7 @@
   padding: 10px 40px;
   height: 50px;
   background-color: #fd1;
+  border: 1px solid #aaa;
   border-radius: 0 0 20px 20px;
   box-shadow: var(--shadow);
  }
@@ -47,11 +48,16 @@
   align-items: center;
   height: 70px;
   padding: 0 10px;
+  transition: background-color 0.5s ease;
+ }
+
+ .menu .item:hover {
+  background-color: #ec0;
  }
 
  .menu .item.active {
   font-weight: bold;
-  background-color: #ec0;
+  background-color: #db0;
  }
 
  .menu-mobile {
