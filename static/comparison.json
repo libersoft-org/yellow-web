@@ -1,6 +1,6 @@
 [
  {
-  "title": "Development, transparency and security",
+  "title": "Transparency, network and security",
   "columns": ["Open source", "Distributed / decentralized", "End-to-end encryption", "Developed by"],
   "rows": {
    "Yellow": [1, 1, 1, "LiberSoft, Liberland"],
@@ -45,19 +45,19 @@
   }
  }, {
   "title": "Data storage and file transfer",
-  "columns": ["Large files", "Peer-to-peer transfer", "Cloud storage", "File sharing"],
+  "columns": ["Large files", "Peer-to-peer transfer", "File sharing"],
   "rows": {
-   "Yellow": [1, 1, 1, 1],
-   "E-mail": [0, 0, 0, 0],
-   "WhatsApp": [0, 0, 0, 0],
-   "Telegram": ["2 GB free / 4 GB premium", 0, 0, 0],
-   "SnapChat": [0, 0, 0, 0],
-   "Signal": [0, 0, 0, 0],
-   "Element": [0, 0, 0, 0],
-   "Facebook": [0, 0, 0, 0],
-   "Instagram": [0, 0, 0, 0],
-   "YouTube": [0, 0, 0, 0],
-   "TikTok": [0, 0, 0, 0]
+   "Yellow": [1, 1, 1],
+   "E-mail": [0, 0, 0],
+   "WhatsApp": [0, 0, 0],
+   "Telegram": ["2 GB free / 4 GB premium", 0, 0],
+   "SnapChat": [0, 0, 0],
+   "Signal": [0, 0, 0],
+   "Element": [0, 0, 0],
+   "Facebook": [0, 0, 0],
+   "Instagram": [0, 0, 0],
+   "YouTube": [0, 0, 0],
+   "TikTok": [0, 0, 0]
   }
  }, {
   "title": "Telephony",
@@ -74,6 +74,22 @@
    "Instagram": [1, 1, "Group calls"],
    "YouTube": [0, 0, 0],
    "TikTok": [0, 0, 0]
+  }
+ }, {
+  "title": "Social media",
+  "columns": ["News feed", "Stories", "Forum", "Events"],
+  "rows": {
+   "Yellow": [1, 1, 1, 1],
+   "E-mail": [0, 0, 0, 0],
+   "WhatsApp": [0, 1, 0, 0],
+   "Telegram": [0, 1, 0, 0],
+   "SnapChat": [0, 1, 0, 0],
+   "Signal": [0, 0, 0, 0],
+   "Element": [0, 0, 1, 0],
+   "Facebook": [1, 1, 0, 1],
+   "Instagram": ["Images only", 1, 0, 0],
+   "YouTube": ["Video only", 0, 0, 0],
+   "TikTok": [0, 0, 0, 0]
   }
  }, {
   "title": "Video",
@@ -108,22 +124,6 @@
    "TikTok": [0, 0, 0, 0, 0, 0, 0]
   }
  }, {
-  "title": "Social media",
-  "columns": ["News feed", "Stories", "Forum", "Events"],
-  "rows": {
-   "Yellow": [1, 1, 1, 1],
-   "E-mail": [0, 0, 0, 0],
-   "WhatsApp": [0, 1, 0, 0],
-   "Telegram": [0, 1, 0, 0],
-   "SnapChat": [0, 1, 0, 0],
-   "Signal": [0, 0, 0, 0],
-   "Element": [0, 0, 1, 0],
-   "Facebook": [1, 1, 0, 1],
-   "Instagram": ["Images only", 1, 0, 0],
-   "YouTube": ["Video only", 0, 0, 0],
-   "TikTok": [0, 0, 0, 0]
-  }
- }, {
   "title": "Business tools",
   "columns": ["Calendar", "Tasks"],
   "rows": {
@@ -141,19 +141,19 @@
   }
  }, {
   "title": "Other",
-  "columns": ["Blogs", "Media feed", "Maps", "Dating", "Games", "Gambling"],
+  "columns": ["Blogs", "Media feed", "Maps", "Dating", "Games"],
   "rows": {
-   "Yellow": [1, 1, 1, 1, 1, 1],
-   "E-mail": [0, 0, 0, 0, 0, 0],
-   "WhatsApp": [0, 0, 0, 0, 0, 0],
-   "Telegram": [0, 0, 0, 0, 0, 0],
-   "SnapChat": [0, 0, 0, "Quick Add feature", 1, 0],
-   "Signal": [0, 0, 0, 0, 0, 0],
-   "Element": [0, 0, 0, 0, 0, 0],
-   "Facebook": [0, 0, 0, 1, 1, 0],
-   "Instagram": [0, 0, 0, 0, 0, 0],
-   "YouTube": [0, 0, 0, 0, 0, 0],
-   "TikTok": [0, 0, 0, 0, 0, 0]
+   "Yellow": [1, 1, 1, 1, 1],
+   "E-mail": [0, 0, 0, 0, 0],
+   "WhatsApp": [0, 0, 0, 0, 0],
+   "Telegram": [0, 0, 0, 0, 0],
+   "SnapChat": [0, 0, 1, "Quick Add feature", 1],
+   "Signal": [0, 0, 0, 0, 0],
+   "Element": [0, 0, 0, 0, 0],
+   "Facebook": [0, 0, 0, 1, 1],
+   "Instagram": [0, 0, 0, 0, 0],
+   "YouTube": [0, 0, 0, 0, 0],
+   "TikTok": [0, 0, 0, 0, 0]
   }
  }
 ]
