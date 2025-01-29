@@ -27,9 +27,9 @@
  }
 
  .page .content {
-  display: flex;
   padding: 20px;
   height: calc(100% - 110px);
+  overflow: auto;
  }
 
  @media (max-width: 768px) {
