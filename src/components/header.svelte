@@ -3,14 +3,15 @@
  import { page } from '$app/state';
  import { goto } from '$app/navigation';
  import BaseButton from './base-button.svelte';
- //let isMenuOpen = false;
+ import Menu from './menu.svelte';
+ let isMenuOpen = false;
 
  function clickLogo() {
   goto('/');
  }
 
  function clickMenu() {
-  console.log('Menu clicked');
+  isMenuOpen = true;
  }
 </script>
 
@@ -28,14 +29,24 @@
  }
 
  a {
-  text-decoration: none;
   color: #000;
  }
 
  .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+ }
+
+ .logo .image img {
+  width: 40px;
+  height: 40px;
+ }
+
+ .logo .text {
   font-size: 25px;
   font-weight: bold;
-  flex: 1;
  }
 
  .menu {
@@ -83,13 +94,16 @@
 </style>
 
 <div class="header">
- <div class="menu-mobile">
-  <BaseButton onClick={clickMenu}>
+ <BaseButton onClick={clickMenu}>
+  <div class="menu-mobile">
    <img src="img/menu.svg" alt="Menu" />
-  </BaseButton>
- </div>
+  </div>
+ </BaseButton>
  <BaseButton onClick={clickLogo}>
-  <div class="logo">{product}</div>
+  <div class="logo">
+   <div class="image"><img src="img/logo.svg" alt={product} /></div>
+   <div class="text">{product}</div>
+  </div>
  </BaseButton>
  <div class="menu">
   {#each pages as p}
@@ -99,3 +113,4 @@
   {/each}
  </div>
 </div>
+<Menu bind:showMenu={isMenuOpen} />
