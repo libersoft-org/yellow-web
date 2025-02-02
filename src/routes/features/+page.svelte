@@ -687,7 +687,6 @@
   background-color: #ffe;
  }
 
- h1,
  h2,
  h3 {
   padding: 10px;

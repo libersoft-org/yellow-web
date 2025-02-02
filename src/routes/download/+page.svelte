@@ -142,6 +142,7 @@
  ];
 </script>
 
+<h1>Download</h1>
 <Table>
  <Thead>
   <TheadTr>
@@ -152,7 +153,7 @@
  <Tbody>
   {#each download as d}
    <TbodyTr>
-    <Td>{d.name}</Td>
+    <Td><span class="bold">{d.name}</span></Td>
     <Td>
      {#each d.links as l}
       <BaseButton onClick={() => window.open(l.url, '_blank')}><div class="link">{l.name}</div></BaseButton>

@@ -1,5 +1,6 @@
 <script>
  import { product } from '../../app.js';
+ import { goto } from '$app/navigation';
  import BaseButton from '../../components/base-button.svelte';
  import Table from '../../components/table.svelte';
  import Thead from '../../components/table-thead.svelte';
@@ -36,3 +37,5 @@
   {/each}
  </Tbody>
 </Table>
+<br />
+If you'd like to add your free account server to this table, please <BaseButton onClick={() => goto('/contact', '_blank')}><span class="link">contact us</span></BaseButton>.
