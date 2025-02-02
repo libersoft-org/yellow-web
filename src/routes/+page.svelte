@@ -4,12 +4,6 @@
  import BaseButton from '../components/base-button.svelte';
 </script>
 
-<style>
- a {
-  font-weight: bold;
- }
-</style>
-
 <h1>About {product}</h1>
 <span class="bold">{product}</span> is a <span class="bold">decentralized</span>, <span class="bold">multifunctional communication application</span> designed to put you in control of your digital interactions. By combining <span class="bold">messaging</span>, <span class="bold">content creation</span> and <span class="bold">decentralized e-commerce</span> in one platform, it opens up a world of possibilities without forcing you to juggle multiple apps or services.
 <h2>Key Features</h2>
