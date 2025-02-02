@@ -142,18 +142,6 @@
  ];
 </script>
 
-<style>
- .link {
-  color: #06ff;
-  font-weight: bold;
-  padding: 3px;
- }
-
- .link:hover {
-  text-decoration: underline;
- }
-</style>
-
 <Table>
  <Thead>
   <TheadTr>

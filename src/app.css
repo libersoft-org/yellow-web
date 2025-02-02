@@ -11,3 +11,12 @@ body {
 .bold {
  font-weight: bold;
 }
+
+.link {
+ color: #06ff;
+ font-weight: bold;
+}
+
+.link:hover {
+ text-decoration: underline;
+}
