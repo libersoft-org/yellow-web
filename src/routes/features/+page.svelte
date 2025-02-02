@@ -8,15 +8,15 @@
  import Td from '../../components/table-tbody-td.svelte';
  const state = [
   {
-   name: 'No',
+   name: 'Not implemented',
    icon: 'no.svg',
   },
   {
-   name: 'Yes',
+   name: 'Fully implemented',
    icon: 'yes.svg',
   },
   {
-   name: 'Partially',
+   name: 'Partially implemented',
    icon: 'part.svg',
   },
  ];
@@ -701,9 +701,39 @@
   width: 20px;
   height: 20px;
  }
+
+ .symbols {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #888;
+  background-color: #ddd;
+ }
+
+ .symbols .item {
+  display: flex;
+  gap: 5px;
+ }
+
+ .symbols .item .image img {
+  width: 20px;
+  height: 20px;
+ }
 </style>
 
 <h1>Software features</h1>
+
+<h2>Symbol description</h2>
+<div class="symbols">
+ {#each state as s}
+  <div class="item">
+   <div class="image"><img src="img/{s.icon}" alt={s.name} /></div>
+   <div class="description">{s.name}</div>
+  </div>
+ {/each}
+</div>
 
 <h2>Core</h2>
 <Table>
