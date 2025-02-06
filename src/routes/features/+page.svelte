@@ -42,16 +42,20 @@
    implemented: 1,
   },
   {
-   name: 'Client - end-to-end encryption',
+   name: 'Client - encryption, signature and login keys management',
    implemented: 0,
   },
   {
-   name: 'Content signing',
+   name: 'Client - end-to-end encryption',
    implemented: 0,
   },
   {
    name: 'Multilanguage support',
    implemented: 0,
+  },
+  {
+   name: 'Web admin',
+   implemented: 1,
   },
  ];
  const modules = [
