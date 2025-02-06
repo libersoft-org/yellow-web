@@ -50,7 +50,7 @@
    implemented: 0,
   },
   {
-   name: 'Multilanguage support',
+   name: 'Client - multilanguage support',
    implemented: 0,
   },
   {
