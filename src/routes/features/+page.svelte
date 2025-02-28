@@ -35,7 +35,7 @@
   },
   {
    name: 'Client - modularity',
-   implemented: 0,
+   implemented: 2,
   },
   {
    name: 'Encrypted connection',
@@ -56,6 +56,18 @@
   {
    name: 'Web admin',
    implemented: 1,
+  },
+  {
+   name: 'Public account registration',
+   implemented: 0,
+  },
+  {
+   name: 'Desktop app',
+   implemented: 0,
+  },
+  {
+   name: 'Mobile app',
+   implemented: 0,
   },
  ];
  const modules = [

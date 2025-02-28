@@ -18,7 +18,7 @@
 <h3>Interconnectivity</h3>
 <div>Every module seamlessly integrates with the others, making it easy to switch between features and keep your digital life organized.</div>
 <h3>Data Security & Encryption</h3>
-<div>Protect your privacy with<span class="bold">end-to-end encryption</span>, <span class="bold">secure data transfer</span>, and <span class="bold">content signing</span>. Your information stays safe from prying eyes.</div>
+<div>Protect your privacy with <span class="bold">end-to-end encryption</span>, <span class="bold">secure data transfer</span>, and <span class="bold">content signing</span>. Your information stays safe from prying eyes.</div>
 <h3>Censorship resistance</h3>
 <ul>
  <li><span class="bold">AMTP</span> (Advanced Mail Transfer Protocol) - A next-generation, partially censorship-resistant protocol where data is stored on end-user devices and distributed servers.</li>
