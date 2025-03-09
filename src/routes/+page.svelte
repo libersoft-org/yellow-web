@@ -34,20 +34,6 @@
   display: flex;
   gap: 10px;
  }
-
- .panel .left,
- .panel .right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
- }
-
- .panel img {
-  border-radius: 10px;
-  max-width: 100%;
- }
 </style>
 
 <div class="home">

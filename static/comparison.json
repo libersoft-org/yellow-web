@@ -18,7 +18,6 @@
    "Viber": [0, 0, 1, "Rakuten, Japan"],
    "imo": [0, 0, "optional", "PageBites Inc., USA"],
    "LINE": [0, 0, 1, "Line Corporation, Japan"],
-   "Hike": [0, 0, 1, "Hike Private Limited, India"],
    "Zalo": [0, 0, 0, "Zalo Group, Vietnam"],
    "KakaoTalk": [0, 0, "optional", "Kakao Corp., South Korea"],
    "Signal": [1, 0, 1, "Signal Foundation, USA"],
