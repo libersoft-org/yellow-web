@@ -1,8 +1,12 @@
 <script>
  import BaseButton from './base-button.svelte';
  export let img;
- export let name;
+ export let label;
  export let link = '';
+ export let width = '100px';
+ export let background = '#fff';
+ export let color = '#000';
+ export let hover = false;
 
  function openLink(link) {
   window.open(link, '_blank');
@@ -16,7 +20,7 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  width: 100px;
+  text-align: center;
   padding: 10px;
   border: 1px solid #888;
   border-radius: 10px;
@@ -24,8 +28,8 @@
   transition: transform 0.3s ease;
  }
 
- .button:hover {
-  transform: scale(1.1);
+ .hover:hover {
+  transform: scale(1.15);
  }
 
  img {
@@ -34,12 +38,12 @@
 </style>
 
 <BaseButton onClick={() => openLink(link)}>
- <div class="button">
+ <div class="button {hover ? 'hover' : ''}" style:width style:background-color={background}>
   {#if img}
-   <img src={img} alt={name} />
+   <img src={img} alt={label} />
   {/if}
-  {#if name}
-   <div class="bold">{name}</div>
+  {#if label}
+   <div class="bold" style:color>{label}</div>
   {/if}
  </div>
 </BaseButton>
