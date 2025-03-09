@@ -14,7 +14,6 @@
    "iMessage": [0, 0, 1, "Apple Inc., USA"],
    "SnapChat": [0, 0, "snaps only", "Snap Inc., USA"],
    "Kik": [0, 0, 0, "MediaLab AI Inc., France"],
-   "Skype": [0, 0, 1, "Microsoft Corporation, USA"],
    "Discord": [0, 0, 0,"Discord Inc., USA"],
    "Viber": [0, 0, 1, "Rakuten, Japan"],
    "imo": [0, 0, "optional", "PageBites Inc., USA"],
@@ -25,7 +24,6 @@
    "Signal": [1, 0, 1, "Signal Foundation, USA"],
    "Threema": ["client apps only", 0, 1, "Threema GmbH, Switzerland"],
    "Element (Matrix protocol)": [1, 1, 1, "The Matrix.org Foundation CIC, UK"],
-   "ICQ": [0, 0, "A/V files only", "Mail.ru Group, Russia"]
   }
  }, {
   "title": "Instant messaging",
@@ -109,7 +107,7 @@
   }
  }, {
   "title": "E-commerce",
-  "columns": ["Marketplace", "Auctions", "E-shops", "Food Delivery", "Donations", "Crowdfunding", "Payments"],
+  "columns": ["Marketplace", "Auctions", "E-shops", "Food Delivery", "Donations", "Crowdfunding", "Crypto payments"],
   "rows": {
    "Yellow": [1, 1, 1, 1, 1, 1, 1],
    "E-mail": [0, 0, 0, 0, 0, 0, 0],
@@ -141,19 +139,19 @@
   }
  }, {
   "title": "Other",
-  "columns": ["Blogs", "Media feed", "Maps", "Dating", "Games"],
+  "columns": ["Media feed", "Maps", "Dating", "Games"],
   "rows": {
-   "Yellow": [1, 1, 1, 1, 1],
-   "E-mail": [0, 0, 0, 0, 0],
-   "WhatsApp": [0, 0, 0, 0, 0],
-   "Telegram": [0, 0, 0, 0, 0],
-   "SnapChat": [0, 0, 1, "Quick Add feature", 1],
-   "Signal": [0, 0, 0, 0, 0],
-   "Element": [0, 0, 0, 0, 0],
-   "Facebook": [0, 0, 0, 1, 1],
-   "Instagram": [0, 0, 0, 0, 0],
-   "YouTube": [0, 0, 0, 0, 0],
-   "TikTok": [0, 0, 0, 0, 0]
+   "Yellow": [1, 1, 1, 1],
+   "E-mail": [0, 0, 0, 0],
+   "WhatsApp": [0, 0, 0, 0],
+   "Telegram": [0, 0, 0, 0],
+   "SnapChat": [0, 1, "Quick Add feature", 1],
+   "Signal": [0, 0, 0, 0],
+   "Element": [0, 0, 0, 0],
+   "Facebook": [0, 0, 1, 1],
+   "Instagram": [0, 0, 0, 0],
+   "YouTube": [0, 0, 0, 0],
+   "TikTok": [0, 0, 0, 0]
   }
  }
 ]
