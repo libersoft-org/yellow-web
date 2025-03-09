@@ -23,7 +23,7 @@
    "KakaoTalk": [0, 0, "optional", "Kakao Corp., South Korea"],
    "Signal": [1, 0, 1, "Signal Foundation, USA"],
    "Threema": ["client apps only", 0, 1, "Threema GmbH, Switzerland"],
-   "Element (Matrix protocol)": [1, 1, 1, "The Matrix.org Foundation CIC, UK"],
+   "Element (Matrix protocol)": [1, 1, 1, "The Matrix.org Foundation CIC, UK"]
   }
  }, {
   "title": "Instant messaging",
