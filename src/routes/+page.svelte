@@ -1,7 +1,4 @@
 <script>
- import { goto } from '$app/navigation';
- import { product } from '../app.js';
- import BaseButton from '../components/base-button.svelte';
  import Item from '../components/item.svelte';
 </script>
 
