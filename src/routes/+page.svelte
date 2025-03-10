@@ -12,11 +12,6 @@
   gap: 20px;
  }
 
- .panel {
-  display: flex;
-  gap: 20px;
- }
-
  .center {
   display: flex;
   flex-direction: column;
