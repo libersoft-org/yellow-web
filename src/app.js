@@ -21,15 +21,15 @@ export const pages = [
   title: 'Comparison',
  },
  {
-  route: '/documentation',
+  route: 'https://github.com/libersoft-org/yellow-documentation',
   title: 'Documentation',
  },
  {
-  route: '/faq',
+  route: 'https://github.com/libersoft-org/yellow-documentation/blob/main/FAQ.md',
   title: 'FAQ',
  },
  {
-  route: '/contact',
+  route: 'https://libersoft.org/contacts',
   title: 'Contact',
  },
 ];

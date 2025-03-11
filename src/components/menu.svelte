@@ -1,6 +1,5 @@
 <script>
  import { page } from '$app/state';
- import { goto } from '$app/navigation';
  import { pages, product } from '../app.js';
  import BaseButton from './base-button.svelte';
  import Item from './menu-item.svelte';
@@ -8,11 +7,6 @@
 
  function clickMenuClose() {
   showMenu = false;
- }
-
- function clickItem(route) {
-  goto(route);
-  clickMenuClose();
  }
 </script>
 
@@ -116,8 +110,14 @@
    </BaseButton>
   </div>
   {#each pages as p}
-   <a href={p.route}>
-    <Item title={p.title} active={p.route === page.url.pathname ? true : false} onClick={() => clickItem(p.route)} />
+   <a href={p.route} target={p.route.startsWith('http://') || p.route.startsWith('https://') ? '_blank' : ''}>
+    <Item
+     title={p.title}
+     active={p.route === page.url.pathname ? true : false}
+     onClick={() => {
+      clickMenuClose();
+     }}
+    />
    </a>
   {/each}
  </div>

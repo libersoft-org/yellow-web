@@ -107,7 +107,7 @@
  </BaseButton>
  <div class="menu">
   {#each pages as p}
-   <a href={p.route}>
+   <a href={p.route} target={p.route.startsWith('http://') || p.route.startsWith('https://') ? '_blank' : ''}>
     <div class="item {p.route === page.url.pathname && 'active'}">{p.title}</div>
    </a>
   {/each}
