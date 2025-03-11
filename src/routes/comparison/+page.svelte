@@ -11,7 +11,6 @@
 
  onMount(async () => {
   comparison = JSON.parse(await (await fetch('comparison.json', { headers: { 'cache-control': 'no-cache' } })).text());
-  console.log(comparison);
  });
 </script>
 

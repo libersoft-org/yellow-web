@@ -33,11 +33,14 @@
   <h2>Welcome to Yellow</h2>
   <h3>One app, one account, for everything you need!</h3>
   <div class="buttons">
-   <Item background="#fd1" img="img/platforms/linux.svg" label="Instant messaging" />
-   <Item background="#222" color="#fff" img="img/platforms/linux.svg" label="Social media" />
-   <Item background="#fd1" img="img/platforms/linux.svg" label="E-commerce" />
-   <Item background="#222" color="#fff" img="img/platforms/linux.svg" label="Entertainment" />
+   <Item width="300px" background="#fd1" img="img/platforms/linux.svg" label="Messages - Highly innovative instant messaging. Includes unique features such as sending unlimited file sizes, widgets in messages, multipart messages, multiple topics within a conversation, message templates and much more." />
+   <Item width="300px" background="#222" color="#fff" img="img/platforms/linux.svg" label="Social media - the platform offers advanced social media features such as video channels, forum, newsfeed, stories, events, virtual world, maps and more." />
   </div>
+  <div class="buttons">
+   <Item width="300px" background="#fd1" img="img/platforms/linux.svg" label="E-commerce - thanks to the integration of a crypto wallet that supports smart contracts, the platform offers advanced e-commerce features that are linked to the wallet. These include features such as: sending payments between users, making purchases in e-shops, marketplace and virtual chat, sending donations to specific purposes, supporting crowdfunding campaigns, selling video content within video channels, sending payments during live streams, topping up your own content, buying premium memberships, in-game payments and much more." />
+   <Item width="300px" background="#222" color="#fff" img="img/platforms/linux.svg" label="Business tools - modules such as Calendar and Tasks, provide business users with an easy way to organise, share and support productivity in the work environment." />
+  </div>
+  <Item width="300px" background="#fd1" img="img/platforms/linux.svg" label="Entertainment - Last but not least, the platform also provides fun features such as dating and video games." />
  </div>
 
  <div class="center">
