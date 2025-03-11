@@ -30,7 +30,8 @@
 
 <div class="home">
  <div class="center">
-  <h2>Welcome to Yellow</h2>
+  <h1>Welcome to Yellow</h1>
+  <h2>Experience the freedom of decentralized world</h2>
   <h3>One app, one account, for everything you need!</h3>
   <div class="buttons">
    <Item width="300px" background="#fd1" img="img/platforms/linux.svg" label="Messages - Highly innovative instant messaging. Includes unique features such as sending unlimited file sizes, widgets in messages, multipart messages, multiple topics within a conversation, message templates and much more." />
