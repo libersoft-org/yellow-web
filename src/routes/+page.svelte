@@ -60,55 +60,13 @@
   <h2>Key characteristics</h2>
   <h3>Cutting edge technology!</h3>
   <div class="buttons">
-   <Item background="#fd1" img="img/platforms/linux.svg" label="Distributed and decentralized network" />
-   <Item background="#222" color="#fff" img="img/platforms/linux.svg" label="Privacy and security" />
-   <Item background="#fd1" img="img/platforms/linux.svg" label="Open source" />
-   <Item background="#222" color="#fff" img="img/platforms/linux.svg" label="Modularity" />
+   <Item width="300px" background="#fd1" img="img/platforms/linux.svg" label="Distributed and decentralized network - platform offers innovative network protocols AMTP and DMTP. AMTP (Advanced Mail Transfer Protocol) - A next-generation, partially censorship-resistant protocol where data is stored on end-user devices and distributed servers. DMTP (Decentralized Mail Transfer Protocol) - An upcoming fully censorship-resistant protocol, eliminating central servers entirely and relying on decentralized storage." />
+   <Item width="300px" background="#222" color="#fff" img="img/platforms/linux.svg" label="Privacy and security - Protect your privacy and communicate safely! The platform emphasizes a high level of security, primarily through secure data transfer, end-to-end encryption and content digital signing, as well as providing simple and secure transfer of user's private keys across devices." />
   </div>
- </div>
-
- <div class="center">
-  <h2>Unique features</h2>
-  <h3>Something extra!</h3>
   <div class="buttons">
-   <Item background="#fd1" img="img/platforms/linux.svg" label="Peer-to-peer file transfer with no size limit" />
-   <Item background="#222" color="#fff" img="img/platforms/linux.svg" label="3D virtual world" />
-   <Item background="#fd1" img="img/platforms/linux.svg" label="Unique dating" />
+   <Item width="300px" background="#fd1" img="img/platforms/linux.svg" label="Open source - The client and server applications, as well as the entire set of modules, are released as open source. This ensures transparency and credibility of our project. Developers worldwide can create or integrate new modules, ensuring that the platform continually evolves." />
+   <Item width="300px" background="#222" color="#fff" img="img/platforms/linux.svg" label="Modularity - Whether you want only the messenger or a full suite of social, and e-commerce tools, the platform's modular design puts you in charge of your user experience. Choose just the features you really use." />
   </div>
-  <div>... and much more</div>
- </div>
-
- <div class="center">
-  <h2>Modularity</h2>
-  <h3>Pick just the features you really use!</h3>
-  <div>Whether you want only the messenger or a full suite of social, and e-commerce tools, Yellow's modular design puts you in charge of your user experience.</div>
- </div>
-
- <div class="center">
-  <h2>Data Security & Encryption</h2>
-  <h3>Protect your privacy and communicate safely!</h3>
-  <div class="buttons">
-   <Item background="#fd1" img="img/platforms/linux.svg" label="Secure data transfer" />
-   <Item background="#222" color="#fff" img="img/platforms/linux.svg" label="End-to-end encryption" />
-   <Item background="#fd1" img="img/platforms/linux.svg" label="Content signing" />
-  </div>
- </div>
-
- <div class="center">
-  <h2>Censorship resistance</h2>
-  <h3>Cutting edge communication protocols!</h3>
-  <div class="buttons">
-   <Item width="250px" background="#fd1" img="img/platforms/linux.svg" label="AMTP (Advanced Mail Transfer Protocol) - A next-generation, partially censorship-resistant protocol where data is stored on end-user devices and distributed servers." />
-   <Item width="250px" background="#222" color="#fff" img="img/platforms/linux.svg" label="DMTP (Decentralized Mail Transfer Protocol) - An upcoming fully censorship-resistant protocol, eliminating central servers entirely and relying on decentralized storage." />
-  </div>
- </div>
-
- <div class="center">
-  <h2>And much more</h2>
-  <h3>Something extra!</h3>
-  <div class="buttons">
-   <Item width="250px" background="#fd1" img="img/platforms/linux.svg" label="Open platform with ongoing development - Developers worldwide can create or integrate new modules, ensuring that Yellow continually evolves. You can add or remove features from both client and server sides to match your needs - perfect for personal use, community platforms, or enterprise solutions." />
-   <Item width="250px" background="#222" color="#fff" img="img/platforms/linux.svg" label="Smart home integration - Seamlessly connect your IoT devices to Yellow, creating a secure and convenient way to manage your smart home within the same trusted environment." />
-  </div>
+  <Item width="300px" background="#fd1" img="img/platforms/linux.svg" label="Smart home integration - Seamlessly connect your IoT devices to Yellow, creating a secure and convenient way to manage your smart home within the same trusted environment." />
  </div>
 </div>
