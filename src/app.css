@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@layer base {
+    body {
+        font-family: 'Ubuntu', sans-serif;
+    }
+}
+
+@theme {
+    --color-mint-500: oklch(0.72 0.11 178);
+    --color-primary: #ffdd11;
+    --color-secondary: #262626;
+
+    --color-themeYellow-600: #FFE346;
+    --color-themeYellow-800: #FFC934;
+
+    --color-themeGray-50: #fcfcfd;
+    --color-themeGray-100: #F4F5F9;
+    --color-themeGray-150: #E8E9F0;
+    --color-themeGray-200: #C4C4C4;
+    --color-themeGray-400: #808080;
+    --color-themeGray-600: #4C4C4C;
+    --color-themeGray-800: #262626;
+}
+
+/**
+ * Theme specifics
+ */
+@utility theme-gradient-yellow {
+    @apply from-themeYellow-800 to-themeYellow-600;
+}
+
+@utility theme-gradient-white {
+    @apply from-[#EEF0FA]  to-[#FFFFFF];
+}
+
+@utility theme-text-h1 {
+    @apply text-6xl font-bold;
+}
+
+@utility theme-text-h2 {
+    @apply text-5xl font-bold;
+}
+
+@utility theme-text-h3 {
+    @apply text-3xl font-bold;
+}
+
+@utility theme-text-h4 {
+    @apply text-2xl font-bold;
+}
+
+@utility theme-text-h5 {
+    @apply text-xl font-bold;
+}
+
+@utility theme-text-h6 {
+    @apply text-base font-bold;
+}
+
+@utility theme-text-body1 {
+    @apply text-base;
+}
+
+@utility theme-text-body2 {
+    @apply text-sm;
+}
+
+@utility theme-button--primary {
+    @apply py-2 px-4 rounded-xl rounded-tr-none;
+    @apply bg-gradient-to-t theme-gradient-yellow;
+    @apply border-b-2 border-[#979FBE8A];
+}
+
+@utility theme-floating {
+    position: absolute;
+    width: max-content;
+    top: 0;
+    left: 0;
+}
+
+@layer components {
+    .theme-title-underline {
+        position: relative;
+    }
+
+    .theme-title-underline:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0em; /* adjust to move underline closer/farther */
+        height: 0.35em; /* thickness */
+        @apply bg-gradient-to-r theme-gradient-yellow;
+        z-index: -1;
+        border-radius: 2px;
+    }
+}
+
+.theme-container {
+    max-width: 1440px;
+    width: 100%;
+}
+
+/**
+ * Button
+ */
+.button-reset {
+    text-align: inherit;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
