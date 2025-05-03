@@ -52,7 +52,7 @@
 		{@render children?.()}
 	</div>
 	{#if footerSlot}
-		<div class="box__footer mt-2">
+		<div class="box__footer mt-4">
 			{@render footerSlot?.()}
 		</div>
 	{/if}
