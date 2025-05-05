@@ -2,16 +2,64 @@
 import Button from '@/theme/Button/Button.svelte';
 import Box from '@/theme/Box/Box.svelte';
 
-</script>
+type Feature = {
+	title: string;
+	description: string;
+	icon: string;
+	link: string;
+	theme: 'primary' | 'secondary';
+	highlight?: boolean;
+	buttonText?: string;
+};
 
-{#snippet characteristic()}
-	<div class="feature">
-		<Box title="Test" icon="download" theme="secondary">
-			fsdfsd sdff sdf sdf sdf <br />
-			fsdfsd sdff sdf sdf sdf <br />
-		</Box>
-	</div>
-{/snippet}
+const features: Feature[] = [
+	{
+	title: "Distributed and decentralized network",
+	description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm.",
+	icon: "network",
+	link: "/",
+	theme: "secondary"
+	},
+	{
+	title: "Privacy and security",
+	description: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi.",
+	icon: "shield",
+	link: "/",
+	theme: "secondary"
+	},
+	{
+	title: "Open source",
+	description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm.",
+	icon: "open-source",
+	link: "/",
+	theme: "secondary"
+	},
+	{
+	title: "Modularity",
+	description: "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi.",
+	icon: "cube",
+	link: "/",
+	theme: "secondary"
+	},
+	{
+	title: "Smart home integration",
+	description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm.",
+	icon: "wifi",
+	link: "/",
+	theme: "secondary"
+	},
+	{
+	title: "Take your experience to the next level",
+	description: "with our all-in-one app",
+	icon: "",
+	link: "/",
+	theme: "primary",
+	highlight: true,
+	buttonText: "Explore more"
+	}
+];
+
+</script>
 
 <div class="app-features flex flex-col items-center justify-center">
 	<div class="text-center mb-8">
@@ -23,21 +71,30 @@ import Box from '@/theme/Box/Box.svelte';
 		</div>
 	</div>
 	<div class="theme-container relative flex flex-col items-center">
-		<div class="app-features-gríd gap-6 w-full">
-			{@render characteristic()}
-			{@render characteristic()}
-			{@render characteristic()}
-			{@render characteristic()}
-			{@render characteristic()}
-			{@render characteristic()}
+		<div class="app-features-grid gap-6 w-full">
+			{#each features as feature}
+				<div class="feature h-full flex">
+					<Box 
+						title={feature.title} 
+						icon={feature.icon} 
+						theme={feature.theme}
+						footerType={feature.theme === "secondary" ? "link" : "button"}
+						footerLink={feature.link}
+						footerText={feature.buttonText}
+					>
+						{feature.description}
+					</Box>
+				</div>
+			{/each}
 		</div>
 	</div>
 </div>
 
 <style>
-	.app-features-gríd {
-			display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-template-rows: repeat(2, minmax(0, 1fr));
+	.app-features-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-rows: repeat(2, minmax(0, 1fr));
 	}
 </style>
+	

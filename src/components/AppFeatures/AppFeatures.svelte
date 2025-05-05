@@ -37,7 +37,7 @@ const features = [
 ];
 </script>
 
-<div class="app-features flex flex-col items-center justify-center">
+<div class="app-features flex flex-col items-center justify-center mb-26">
 	<div class="text-center mb-8">
 		<h2 class="theme-text-h2">
 			One app, <span class="theme-title-underline">one account,</span><br />
@@ -46,7 +46,6 @@ const features = [
 	</div>
 	<div class="theme-container relative flex flex-col items-center">
 		<div class="svg-bg absolute margin-auto w-full top-5 max-h-[642px]" style:z-index="-1">
-			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 			{@html svgBackground}
 		</div>
 		<div class="app-features-gríd gap-x-6">
@@ -54,7 +53,6 @@ const features = [
 				<img src="/assets/images/app-features-mobile.png" />
 			  </div>
 		
-			  <!-- Feature cards positioned around the phone -->
 			  {#each features as feature}
 				<div style:grid-column="{feature.position.column}" style:grid-row="{feature.position.row}">
 				  <div class="feature max-w-[350px]">
