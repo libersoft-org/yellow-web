@@ -17,12 +17,20 @@
     --color-themeYellow-800: #FFC934;
 
     --color-themeGray-50: #fcfcfd;
+    --color-themeGray-75: #F4F5F94D;
     --color-themeGray-100: #F4F5F9;
     --color-themeGray-150: #E8E9F0;
     --color-themeGray-200: #C4C4C4;
     --color-themeGray-400: #808080;
     --color-themeGray-600: #4C4C4C;
     --color-themeGray-800: #262626;
+    
+    --color-themeGreen-100: #E0FFE3;
+    --color-themeGreen-500: #40B54A;
+    --color-themeRed-100: #FFDEDE;
+    --color-themeRed-500: #DF3636;
+    --color-themeOrange-100: #FFEBCF;
+    --color-themeOrange-500: #F39108;
 }
 
 /**

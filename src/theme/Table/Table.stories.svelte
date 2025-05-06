@@ -1,13 +1,16 @@
 <script module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Table from '@/theme/Table/Table.svelte';
+	import Icon from '@/theme/Icon/Icon.svelte';
 
 	// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 	const { Story } = defineMeta({
 		title: 'Theme/Table',
 		component: Table,
 		tags: ['autodocs'],
-		args: {}
+		args: {
+			rounded: true
+		}
 	});
 </script>
 
@@ -16,48 +19,193 @@
 	{#snippet children (args)}
 		<Table {...args}>
 			<thead>
-			<tr>
-				<th>Header 1</th>
-				<th>Header 2</th>
-				<th>Header 3</th>
-			</tr>
+				<tr>
+					<th>Lorem ipsum</th>
+					<th>Dolor</th>
+					<th>Sit amet</th>
+					<th>Rutrum</th>
+				</tr>
 			</thead>
 			<tbody>
-			<tr>
-				<th>Row 1, Cell 1</th>
-				<td>Row 1, Cell 2</td>
-				<td>Row 1, Cell 3</td>
-			</tr>
-			<tr>
-				<th>Row 2, Cell 1</th>
-				<td>Row 2, Cell 2</td>
-				<td>Row 2, Cell 3</td>
-			</tr>
-			<tr>
-				<th>Row 3, Cell 1</th>
-				<td>Row 3, Cell 2</td>
-				<td>Row 3, Cell 3</td>
-			</tr>
-			<tr>
-				<th>Row 4, Cell 1</th>
-				<td>Row 4, Cell 2</td>
-				<td>Row 4, Cell 3</td>
-			</tr>
-			<tr>
-				<th>Row 5, Cell 1</th>
-				<td>Row 5, Cell 2</td>
-				<td>Row 5, Cell 3</td>
-			</tr>
-			<tr>
-				<th>Row 6, Cell 1</th>
-				<td>Row 6, Cell 2</td>
-				<td>Row 6, Cell 3</td>
-			</tr>
-			<tr>
-				<th>Row 7, Cell 1</th>
-				<td>Row 7, Cell 2</td>
-				<td>Row 7, Cell 3</td>
-			</tr>
+				<tr>
+					<th>Lorem ipsum</th>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+					<td>Sit amet</td>
+					<td>3 500</td>
+				</tr>
+				<tr>
+					<th>Lorem ipsum</th>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td>Sit amet</td>
+					<td>2 100</td>
+				</tr>
+				<tr>
+					<th>Lorem ipsum</th>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+					<td>Sit amet</td>
+					<td>5 000</td>
+				</tr>
+				<tr>
+					<th>Lorem ipsum</th>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+					<td>Sit amet</td>
+					<td>3 500</td>
+				</tr>
+				<tr>
+					<th>Lorem ipsum</th>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+					<td>Sit amet</td>
+					<td>2 100</td>
+				</tr>
+			</tbody>
+		</Table>
+	{/snippet}
+</Story>
+
+<Story name="Feature Table">
+	{#snippet children (args)}
+		<Table {...args}>
+			<thead>
+				<tr>
+					<th>Feature</th>
+					<th>Implemented</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>AMTP protocol</th>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+				</tr>
+				<tr>
+					<th>DMTP protocol</th>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+				</tr>
+				<tr>
+					<th>Server - modularity</th>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+				</tr>
+				<tr>
+					<th>Client - modularity</th>
+					<td class="text-center">
+						<span class="status-check status-warning">✓</span>
+					</td>
+				</tr>
+				<tr>
+					<th>Encrypted connection</th>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+				</tr>
+				<tr>
+					<th class="text-themeGray-400">Client - encryption, signature<br>and login keys management</th>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+				</tr>
+			</tbody>
+		</Table>
+	{/snippet}
+</Story>
+
+<Story name="Comparison Table">
+	{#snippet children (args)}
+		<Table {...args}>
+			<thead>
+				<tr>
+					<th>Software</th>
+					<th>Open source</th>
+					<th>Distributed/<br>decentralized</th>
+					<th>End-to-end<br>encryption</th>
+					<th>Developed by</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Yellow</th>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+					<td>LiberSoft, Liberland</td>
+				</tr>
+				<tr>
+					<th>E-mail</th>
+					<td>some software</td>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+					<td>some software</td>
+					<td>Jon Postel and Suzanne Sluizer, USA</td>
+				</tr>
+				<tr>
+					<th>WhatsApp</th>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td class="text-center">
+						<span class="status-check status-success">✓</span>
+					</td>
+					<td>Meta Platforms Inc., USA</td>
+				</tr>
+				<tr>
+					<th>Messages<br>(RCS protocol)</th>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td>mobile operators</td>
+					<td>in development</td>
+					<td>Google LLC, USA / GSM Association, UK</td>
+				</tr>
+				<tr>
+					<th>WeChat</th>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td>Tencent Holdings Ltd., China</td>
+				</tr>
+				<tr>
+					<th>Facebook Messenger</th>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td class="text-center">
+						<span class="status-check status-error">✕</span>
+					</td>
+					<td>Meta Platforms Inc., USA</td>
+				</tr>
 			</tbody>
 		</Table>
 	{/snippet}
