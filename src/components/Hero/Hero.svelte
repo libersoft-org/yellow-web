@@ -1,5 +1,4 @@
 <script lang="ts">
-import Header from '@/components/Header/Header.svelte';
 import Button from '@/theme/Button/Button.svelte';
 
 interface Props {

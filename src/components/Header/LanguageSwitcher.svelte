@@ -34,20 +34,7 @@ let currentLanguageData = $derived(
 );
 </script>
 
-<div 
-  class="language-switcher relative group" 
-  bind:this={languageSwitcher}
->
-  <button 
-    class="flex items-center cursor-pointer"
-  >
-    <img 
-      src={currentLanguageData.flagSrc} 
-      alt={currentLanguage}
-      class="w-6 h-6 rounded-full"
-    />
-  </button>
-
+{#snippet dropdownContent()}
   <div class="absolute hidden group-hover:block top-full left-1/2 -translate-x-1/2 pt-4 z-50">
     <div class="relative bg-gradient-to-t theme-gradient-white rounded-xl shadow-md min-w-[110px] whitespace-nowrap">
       <!-- Chevron  -->
@@ -71,6 +58,23 @@ let currentLanguageData = $derived(
       </div>
     </div>
   </div>
+{/snippet}
+
+<div 
+  class="language-switcher relative group" 
+  bind:this={languageSwitcher}
+>
+  <button 
+    class="flex items-center cursor-pointer"
+  >
+    <img 
+      src={currentLanguageData.flagSrc} 
+      alt={currentLanguage}
+      class="w-6 h-6 rounded-full"
+    />
+  </button>
+
+  {@render dropdownContent()}
 </div>
 
 <style>

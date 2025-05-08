@@ -33,7 +33,5 @@
 </div>
 
 <style>
-	.text-image-wrapper {
-		/* If you have a theme utility for the gradient, use it here instead */
-	}
+
 </style> 
