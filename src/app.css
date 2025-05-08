@@ -21,6 +21,7 @@
     --color-themeGray-100: #F4F5F9;
     --color-themeGray-150: #E8E9F0;
     --color-themeGray-200: #C4C4C4;
+    --color-themeGray-300: #BCC4E0;
     --color-themeGray-400: #808080;
     --color-themeGray-600: #4C4C4C;
     --color-themeGray-800: #262626;
@@ -43,6 +44,11 @@
 @utility theme-gradient-white {
     @apply from-[#EEF0FA]  to-[#FFFFFF];
 }
+
+@utility theme-gradient-gray {
+    background: radial-gradient(ellipse at center, #EEF0FA 0%, #F8F9FF 100%);
+}
+
 
 @utility theme-text-h1 {
     @apply text-6xl font-bold;
