@@ -1,34 +1,68 @@
 <script lang="ts">
-  import type { HTMLAttributes } from 'svelte/elements';
   import Icon from '@/theme/Icon/Icon.svelte';
   import { slide } from 'svelte/transition';
+  import { getContext } from 'svelte';
 
-  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+  interface Props {
     class?: string;
     title: string;
     open?: boolean;
     children?: any;
+    id: string;
   }
 
-  let { class: className = '', title, open = false, children, ...rest } = $props();
-  let isOpen = $state(open);
+  interface AccordionStore {
+    activeId: string | null;
+    toggle: (id: string) => void;
+  }
+
+  let { class: className = '', title, open = false, children, id }: Props = $props();
+  
+  const store = getContext<AccordionStore>('accordion-store');
+  
+  let isOpen = $state(false);
+  
+  $effect(() => {
+    isOpen = store.activeId === id;
+  });
+  
+  $effect(() => {
+    if (open && !store.activeId) {
+      store.toggle(id);
+    }
+  });
+  
+  function handleToggle() {
+    store.toggle(id);
+  }
 </script>
 
-<div class={`bg-themeGray-200 mb-4 rounded-lg p-4 ${className}`} {...rest}>
-  <button
-    class="flex w-full items-center justify-between py-4 text-left text-lg font-medium"
-    on:click={() => (isOpen = !isOpen)}
-    aria-expanded={isOpen}
-  >
-    <span>{title}</span>
-    <Icon 
-      name="plus" 
-      class={`h-5 w-5 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-    />
-  </button>
-  {#if isOpen}
-    <div class="pb-4 text-themeGray-300" transition:slide>
-      {@render children?.()}
-    </div>
-  {/if}
-</div> 
+<div class={`transition-background duration-400 ${isOpen ? 'bg-gradient-to-t theme-gradient-yellow' : 'theme-gradient-gray'} mb-4 rounded-lg flex justify-between items-center p-4 shadow-md ${className}`}>
+  <div class="flex-1 pr-4">
+    <button
+      type="button"
+      class="w-full text-left text-lg font-medium cursor-pointer" 
+      onclick={handleToggle}
+      aria-expanded={isOpen}
+    >
+      <span>{title}</span>
+    </button>
+    {#if isOpen}
+      <div class="pb-4 mt-2" transition:slide>
+        {@render children?.()}
+      </div>
+    {/if}
+  </div>
+  <div class="flex-shrink-0">
+    <button
+      type="button"
+      onclick={handleToggle}
+      class={`transition-background-color duration-300 h-9 w-9 p-2 rounded-full ${isOpen ? 'bg-themeGray-800' : 'bg-themeGray-300'} text-white flex items-center justify-center`}
+    >
+      <Icon 
+        name={isOpen ? "cross" : "plus"}
+        class={`${isOpen ? "" : "rotate-0"}`}
+      />
+    </button>
+  </div>
+</div>
