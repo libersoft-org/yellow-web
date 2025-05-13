@@ -29,7 +29,7 @@
 <script lang="ts">
 	let {
 		name,
-		basePath = '../../assets/icons',
+		basePath = '/src/assets/icons',
 		size = 'md',
 		...restProps
 	}: Props = $props();
@@ -37,9 +37,21 @@
 	let svgContent = $state('')
 
 	$effect(() => {
-		import(/* @vite-ignore */`${basePath}/${name}.svg?raw`)
-			.then(module => {
-				svgContent = module.default;
+		// Determine if this is a public path or a source path
+		const path = basePath.startsWith('/') 
+			? basePath.replace(/^\//, '') // Remove leading slash for fetch
+			: basePath;
+		
+		// Use fetch to get raw SVG content
+		fetch(`/${path}/${name}.svg`)
+			.then(response => {
+				if (!response.ok) {
+					throw new Error(`HTTP error! Status: ${response.status}`);
+				}
+				return response.text();
+			})
+			.then(text => {
+				svgContent = text;
 			})
 			.catch(error => {
 				console.error(`Icon "${name}" not found:`, error);
