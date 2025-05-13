@@ -9,6 +9,7 @@ import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/
 import TextImage from '@/components/TextImage/TextImage.svelte';
 import Text from '@/components/Text/Text.svelte';
 import FAQ from '@/components/FAQ/FAQ.svelte';
+import Form from '@/components/Form/Form.svelte';
 </script>
 
 <div>
@@ -19,7 +20,16 @@ import FAQ from '@/components/FAQ/FAQ.svelte';
 	<AppFeaturesTable />
 	<AppFeaturesComparisonTable />
 	<TextImage />
-	<Text />
+	<div class="theme-container mx-auto py-12">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+			<div>
+				<Form />
+			</div>
+			<div>
+				
+			</div>
+		</div>
+	</div>
 	<FAQ />
 	<Footer />
 </div>
