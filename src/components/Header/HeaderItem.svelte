@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { autoPlacement, autoUpdate, computePosition, offset, shift } from '@floating-ui/dom';
 	import Icon from '@/theme/Icon/Icon.svelte';
+	import { createDropdownHandlers } from '@/utils/dropdown';
 
 	interface Props {
 		label: string;
@@ -12,28 +13,61 @@
 	let { label, href, active, children }: Props = $props();
 
 	const hasChildren = $derived(Boolean(children))
+	let isMobile = $state(false);
 
 	let headerItemRef: HTMLElement;
 	let buttonRef: HTMLElement;
-	let floatingRef = $state<HTMLElement>();
+	let floatingRef = $state<HTMLElement | null>(null);
 	let show = $state(false);
 
 	let autoPlacementCleanup: ReturnType<typeof handleFloatingUI>;
 
-	const onClick = () => {
-		console.log('click');
-		show = !show;
+	// Check if mobile view on mount and on resize
+	const checkMobile = () => {
+		// Use viewport width instead of inner width for more reliable measurement
+		isMobile = document.documentElement.clientWidth < 1024;
 	};
 
-	const handleOutsideClick = (e: MouseEvent) => {
-		if (floatingRef && !floatingRef.contains(e.target as Node) && !buttonRef.contains(e.target as Node)) {
-			show = false;
-			document.removeEventListener('click', handleOutsideClick);
+	// Initialize dropdown handlers
+	let handlers: ReturnType<typeof createDropdownHandlers>;
+	let onEnter: () => void;
+	let onLeave: (e: PointerEvent) => void;
+	let bindFloatingRef: ReturnType<typeof createDropdownHandlers>['bindFloatingRef'];
+
+	$effect(() => {
+		if (!headerItemRef) return;
+		
+		// Initialize dropdown handlers with our utility
+		handlers = createDropdownHandlers({
+			isOpen: show,
+			setIsOpen: (value) => {
+				show = value;
+			},
+			isMobile,
+			containerRef: headerItemRef
+		});
+		
+		// Make direct references for template usage
+		({ onEnter, onLeave, bindFloatingRef } = handlers);
+	});
+
+	$effect(() => {
+		if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+			checkMobile();
+			window.addEventListener('resize', checkMobile);
+			return () => window.removeEventListener('resize', checkMobile);
+		}
+	});
+
+	const onClick = (e: MouseEvent) => {
+		if (hasChildren && isMobile) {
+			e.preventDefault();
+			show = !show;
 		}
 	};
 
 	const handleFloatingUI = () => {
-		if (!buttonRef || !floatingRef) {
+		if (!buttonRef || !floatingRef || isMobile) {
 			return;
 		}
 		const autoUpdateCleanUp = autoUpdate(buttonRef, floatingRef, () => {
@@ -54,7 +88,7 @@
 				});
 			});
 		});
-		document.addEventListener('click', handleOutsideClick);
+		
 		return () => {
 			if (autoUpdateCleanUp) {
 				autoUpdateCleanUp();
@@ -72,54 +106,73 @@
 			}
 		}
 	});
-
-	let leaveInterval: NodeJS.Timeout;
-
-	const onEnter = (/* e: PointerEvent */) => {
-		if (leaveInterval) {
-			clearTimeout(leaveInterval);
-		}
-
-		show = true;
-	}
-
-	const onLeave = (e: PointerEvent) => {
-		if (e?.pointerType === 'touch') {
-			return
-		}
-
-		if (leaveInterval) {
-			clearTimeout(leaveInterval);
-		}
-
-		leaveInterval = setTimeout(() => {
-			show = false;
-		}, 200);
-	}
 </script>
 
-<li bind:this={headerItemRef} class="header-item relative" onpointerenter={onEnter} onpointerleave={onLeave}>
+<style>
+	/* Remove border-radius on mobile but keep it on larger screens */
+	:global(.header-item .theme-button--primary) {
+		border-radius: 0;
+	}
+	
+	@media (min-width: 1024px) {
+		:global(.header-item .theme-button--primary) {
+			border-radius: 0.75rem;
+			border-top-right-radius: 0;
+		}
+	}
+
+	/* Ensure text color stays gray on hover */
+	:global(.header-item a:hover) {
+		color: #4B5563; /* text-gray-700 equivalent */
+	}
+
+	@media (min-width: 1024px) {
+		:global(.header-item :where(a:hover, a:focus, a:active)) {
+			color: #4B5563; /* text-gray-700 equivalent */
+		}
+	}
+
+	/* Mobile dropdown styling */
+	:global(.header-item .mobile-dropdown) {
+		position: relative !important;
+		width: 100% !important;
+		left: auto !important;
+		top: auto !important;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease-in-out, opacity 0.2s;
+	}
+
+	:global(.header-item .mobile-dropdown.open) {
+		max-height: 500px; /* Adjust as needed */
+	}
+</style>
+
+<li bind:this={headerItemRef} class="header-item relative w-full lg:w-auto border-b border-themeGray-500 lg:border-b-0" onpointerenter={onEnter} onpointerleave={onLeave}>
 	<a
 		bind:this={buttonRef}
-		class="font-bold text-gray-700 py-2 px-4 hover:theme-button--primary flex items-center gap-1"
+		class="text-white font-medium lg:font-bold lg:text-gray-700 py-3.5 lg:py-2 px-8 lg:px-4 hover:theme-button--primary flex items-center gap-1 text-lg lg:text-base"
 		class:theme-button--primary={active || show}
 		href={href}
 		onclick={onClick}
 	>
 		<div>{label}</div>
 		{#if hasChildren}
-			<Icon name="chevron" size="sm" class="rotate-90" />
+			<Icon name="chevron" size="sm" class={show && isMobile ? "rotate-180" : "rotate-90"} />
 		{/if}
 	</a>
 	{#if hasChildren && children}
 		<div
-			bind:this={floatingRef}
 			class={[
-				"transition-opacity duration-200 header-item__dropdown theme-floating bg-gradient-to-t theme-gradient-white p-4 rounded-lg shadow-lg z-1",
-				show ? 'opacity-100' : 'opacity-0 pointer-events-none',
+				"transition-opacity duration-200 header-item__dropdown bg-gradient-to-t theme-gradient-white lg:rounded-lg lg:shadow-lg z-1",
+				isMobile ? "mobile-dropdown" : "theme-floating",
+				show ? 'opacity-100 open' : 'opacity-0 pointer-events-none',
 			]}
+			use:bindFloatingRef
 		>
-			{@render children?.()}
+			<div class="dropdown-content p-4">
+				{@render children?.()}
+			</div>
 		</div>
 	{/if}
 </li>
