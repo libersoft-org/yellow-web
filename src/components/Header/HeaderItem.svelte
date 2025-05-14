@@ -2,6 +2,7 @@
 	import { autoPlacement, autoUpdate, computePosition, offset, shift } from '@floating-ui/dom';
 	import Icon from '@/theme/Icon/Icon.svelte';
 	import { createDropdownHandlers } from '@/utils/dropdown';
+	import type { Action } from 'svelte/action';
 
 	interface Props {
 		label: string;
@@ -30,9 +31,9 @@
 
 	// Initialize dropdown handlers
 	let handlers: ReturnType<typeof createDropdownHandlers>;
-	let onEnter: () => void;
-	let onLeave: (e: PointerEvent) => void;
-	let bindFloatingRef: ReturnType<typeof createDropdownHandlers>['bindFloatingRef'];
+	let onEnter = $state<() => void>(() => {});
+	let onLeave = $state<(e: PointerEvent) => void>((e: PointerEvent) => {});
+	let bindFloatingRef = $state<Action<HTMLElement>>(() => ({}));
 
 	$effect(() => {
 		if (!headerItemRef) return;
@@ -48,7 +49,9 @@
 		});
 		
 		// Make direct references for template usage
-		({ onEnter, onLeave, bindFloatingRef } = handlers);
+		onEnter = handlers.onEnter;
+		onLeave = handlers.onLeave;
+		bindFloatingRef = handlers.bindFloatingRef;
 	});
 
 	$effect(() => {
@@ -151,7 +154,7 @@
 <li bind:this={headerItemRef} class="header-item relative w-full lg:w-auto border-b border-themeGray-500 lg:border-b-0" onpointerenter={onEnter} onpointerleave={onLeave}>
 	<a
 		bind:this={buttonRef}
-		class="text-white font-medium lg:font-bold lg:text-gray-700 py-3.5 lg:py-2 px-8 lg:px-4 hover:theme-button--primary flex items-center gap-1 text-lg lg:text-base"
+		class="text-white font-medium border-b-2 border-transparent lg:font-bold lg:text-gray-700 py-3.5 lg:py-2 px-8 lg:px-4 hover:theme-button--primary flex items-center gap-1 text-lg lg:text-base"
 		class:theme-button--primary={active || show}
 		href={href}
 		onclick={onClick}
@@ -164,8 +167,8 @@
 	{#if hasChildren && children}
 		<div
 			class={[
-				"transition-opacity duration-200 header-item__dropdown bg-gradient-to-t theme-gradient-white lg:rounded-lg lg:shadow-lg z-1",
-				isMobile ? "mobile-dropdown" : "theme-floating",
+				"transition-opacity duration-200 header-item__dropdown bg-gradient-to-t theme-gradient-white lg:rounded-lg lg:shadow-lg",
+				isMobile ? "mobile-dropdown" : "theme-floating-dropdown",
 				show ? 'opacity-100 open' : 'opacity-0 pointer-events-none',
 			]}
 			use:bindFloatingRef

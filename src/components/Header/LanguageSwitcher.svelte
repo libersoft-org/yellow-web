@@ -221,15 +221,6 @@ $effect(() => {
     pointer-events: auto !important; /* Ensure panel can receive clicks */
   }
   
-  /* Styling for floating dropdown */
-  .theme-floating {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 50;
-    transform-origin: top;
-    transition: opacity 200ms ease, transform 200ms ease;
-  }
 </style>
 
 <div 
@@ -255,13 +246,13 @@ $effect(() => {
     <div 
       bind:this={dropdownRef}
       class={[
-        "lang-dropdown pt-2 z-50 theme-floating absolute",
+        "lang-dropdown pt-2 theme-floating-dropdown",
         isOpen 
           ? 'opacity-100 transform translate-y-0' 
           : 'opacity-0 pointer-events-none transform translate-y-5'
       ]}
     >
-      <div class="relative bg-gradient-to-t theme-gradient-white rounded-xl shadow-md min-w-[110px] whitespace-nowrap">
+      <div class="relative bg-gradient-to-t theme-gradient-white rounded-xl shadow-md min-w-27.5 whitespace-nowrap">
         <!-- Dropdown content -->
         <div class="relative z-10 overflow-hidden rounded-xl bg-white">
           {#each languages.filter(lang => lang.code !== currentLanguage) as language}

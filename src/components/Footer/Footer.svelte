@@ -57,11 +57,13 @@
 </script>
 
 {#snippet contactSection()}
-	<div class="footer-contact font-bold text-white flex flex-col items-center justify-center pb-8">
-		<div class="flex items-center gap-4 mb-8">
-			<h2 class="text-3xl">Get in touch</h2>
-			<a href="mailto:{contactEmail}" class="hover:text-themeYellow-400 transition-colors underline duration-200 flex items-center gap-2">
-				<Icon name="envelope" size="md" class="text-themeYellow-400" />
+	<div class="footer-contact font-bold text-white flex flex-col items-center justify-center mb-7.5">
+		<div class="flex items-center gap-6.5">
+			<h2 class="text-[45px]">Get in touch</h2>
+			<a href="mailto:{contactEmail}" class="hover:text-themeYellow-400 text-[20px] transition-colors underline duration-200 flex items-center gap-2">
+				<span class="text-themeYellow-600">
+					<Icon name="envelope" size="xl" />
+				</span>
 				<span>{contactEmail}</span>
 			</a>
 		</div>
@@ -75,10 +77,10 @@
 				href={social.href}
 				label={social.label}
 				icon={social.icon}
-				iconWrapper={true}
+				iconWrapperClass="text-themeYellow-600 flex items-center justify-center rounded-full p-2 border-1 border-themeYellow-600 h-9 w-9"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="text-white hover:text-themeYellow-400 {i !== 0 ? 'border-l border-themeGray-600 pl-8' : ''}"
+				class="text-white gap-3 text-[17px] hover:text-themeYellow-400 {i !== 0 ? 'border-l border-themeGray-600 pl-8' : ''}"
 			/>
 		{/each}
 	</div>
@@ -94,7 +96,8 @@
 						label={link.label}
 						icon="chevron"
 						iconSize="sm"
-						class="text-white hover:text-themeYellow-400"
+						iconWrapperClass="text-themeYellow-600"
+						class="text-white"
 					/>
 				</li>
 			{/each}
@@ -111,8 +114,8 @@
 {/snippet}
 
 <footer 
-	class="footer w-full bg-themeGray-800 pt-12 border-t border-themeGray-200 font-normal">
-	<div class="footer-content theme-container mx-auto px-8">
+	class="footer w-full bg-themeGray-800 pt-8 border-t border-themeGray-200 font-normal">
+	<div class="footer-content theme-container mx-auto px-7.5">
 		<!-- Contact Section -->
 		{@render contactSection()}
 		

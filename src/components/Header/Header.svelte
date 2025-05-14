@@ -4,19 +4,12 @@ import LanguageSwitcher from '@/components/Header/LanguageSwitcher.svelte';
 import { browser } from '$app/environment';
 import { onMount } from 'svelte';
 
-type PositionType = 'static' | 'sticky' | 'fixed';
-type WidthType = 'theme-container' | 'full-width';
-
 interface Props {
-	position?: PositionType;
 	zIndex?: number;
-	width?: WidthType;
 }
 
 let {
-	position = 'static',
 	zIndex = 50,
-	width = 'theme-container'
 }: Props = $props();
 
 let isMobileMenuOpen = $state(false);
@@ -32,11 +25,11 @@ const navItems = [
     href: '/', 
     hasChildren: true, 
     children: () => `
-      <ul class="dropdown-menu min-w-[200px]">
-        <li><a href="/about/company" class="block px-1 py-1 hover:bg-themeGray-100">Our Company</a></li>
-        <li><a href="/about/team" class="block px-1 py-1 hover:bg-themeGray-100">Our Team</a></li>
-        <li><a href="/about/mission" class="block px-1 py-1 hover:bg-themeGray-100">Our Mission</a></li>
-        <li><a href="/about/history" class="block px-1 py-1 hover:bg-themeGray-100">Our History</a></li>
+      <ul class="dropdown-menu min-w-[100px]">
+        <li><a href="/about/company" class="block px-1 py-1 hover:text-underline">Our Company</a></li>
+        <li><a href="/about/team" class="block px-1 py-1 hover:text-underline">Our Team</a></li>
+        <li><a href="/about/mission" class="block px-1 py-1 hover:text-underline">Our Mission</a></li>
+        <li><a href="/about/history" class="block px-1 py-1 hover:text-underlie">Our History</a></li>
       </ul>
     `
   },
@@ -48,19 +41,6 @@ const navItems = [
   { label: 'Contact', href: '/' },
   { label: 'Create', href: '/', highlighted: true }
 ];
-
-// Generate position classes
-const positionClasses = $derived({
-	'sticky top-0': position === 'sticky',
-	'fixed top-0 left-0 right-0': position === 'fixed',
-	'static': position === 'static'
-});
-
-// Generate width classes
-const widthClasses = $derived({
-	'theme-container mx-auto': width === 'theme-container',
-	'w-full': width === 'full-width'
-});
 
 function toggleMobileMenu(e: MouseEvent) {
   e.stopPropagation(); // Prevent event from bubbling up
@@ -174,22 +154,14 @@ onMount(() => {
 {/snippet}
 
 <div 
-	class="header flex flex-col lg:border-t-4 border-themeYellow-600 bg-gradient-to-t theme-gradient-yellow lg:theme-gradient-white lg:rounded-bl-2xl lg:rounded-br-2xl shadow-md"
-	class:sticky={position === 'sticky'} 
-	class:top-0={position === 'sticky' || position === 'fixed'}
-	class:fixed={position === 'fixed'} 
-	class:left-0={position === 'fixed'} 
-	class:right-0={position === 'fixed'}
-	class:theme-container={width === 'theme-container'}
-	class:mx-auto={width === 'theme-container'}
-	class:w-full={width === 'full-width'}
+	class="header flex flex-col max-w-[1440px] mx-auto fixed top-0 left-0 right-0 lg:min-h-23 lg:border-t-4 border-themeYellow-600 bg-gradient-to-t theme-gradient-yellow lg:theme-gradient-white lg:rounded-bl-2xl lg:rounded-br-2xl shadow-md"
 	style="z-index: {zIndex};"
 >
 	<!-- Header Top Row -->
-	<div class="flex justify-between">
+	<div class="flex justify-between h-full">
 		
 		<div class="header__logo bg-gradient-to-t theme-gradient-yellow px-4 lg:px-8 py-2 lg:py-4 lg:rounded-bl-2xl w-full max-w-[179px] lg:max-w-[326px]">
-			<img src="/assets/images/yellow-logo.svg" alt="Yellow Logo" />
+			<img width="208" height="58" src="/assets/images/yellow-logo.svg" alt="Yellow Logo" />
 		</div>
 
 		{@render navigationMenu()}

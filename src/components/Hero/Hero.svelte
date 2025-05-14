@@ -4,24 +4,27 @@ import Button from '@/theme/Button/Button.svelte';
 interface Props {
   imageSrc?: string;
   backgroundImage?: string;
+  heroText?: string;
 }
 
 let { 
-  imageSrc = '/assets/images/hero-devices.png',
-  backgroundImage = 'src/assets/images/hero-bg.png'
+  imageSrc = 'src/assets/images/desktop.png',
+  backgroundImage = 'src/assets/images/hero-bg.png',
+  heroText = 'Experience the freedom of decentralized world. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.'
 }: Props = $props();
 </script>
 
 {#snippet leftSide()}
 	<div class="flex flex-col justify-center items-center">
-		<div class="theme-text-h1 mb-10">
-			Welcome <br /> to <span class="theme-title-underline">Yellow</span>
+		<h1 class="theme-text-h1 mb-8">
+			Welcome to <span class="theme-title-underline">Yellow</span>
+		</h1>
+		<div class="theme-text-body1 text-center mb-13">
+			{heroText}
 		</div>
-		<div class="theme-text-body1 text-center mb-10">
-			Experience the freedom of decentralized world. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.		</div>
 		<div class="flex">
-			<Button icon="download" label="Download Yellow" theme="secondary" class="mr-4" />
-			<Button icon="download" label="Create free account" theme="primary" class="mr-4" />
+			<Button iconSize="md" icon="download" label="Download Yellow" theme="secondary" class="mr-5" />
+			<Button iconSize="md" icon="account" label="Create free account" theme="primary" />
 		</div>
 	</div>
 {/snippet}
@@ -32,13 +35,13 @@ let {
 	</div>
 {/snippet}
 
-<div class="relative mb-20 pt-40 pb-16 bg-cover bg-center isolate" style="background-image: url('{backgroundImage}')">
+<div class="relative mb-20 pt-20 pb-8 md:pt-25 md:pb-8 lg:pt-46 lg:pb-13 bg-cover bg-center isolate" style="background-image: url('{backgroundImage}')">
 	<div class="theme-container mx-auto relative">
 		<div class="flex flex-wrap">
-			<div class="w-full lg:w-2/5">
+			<div class="w-full lg:w-2/5 order-2 lg:order-1">
 				{@render leftSide()}
 			</div>
-			<div class="w-full lg:w-3/5">
+			<div class="w-full lg:w-3/5 order-1 lg:order-2">
 				{@render rightSide()}
 			</div>
 		</div>
