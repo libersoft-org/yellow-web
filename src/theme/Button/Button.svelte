@@ -7,6 +7,7 @@
 		theme?: 'primary' | 'secondary';
 		icon?: string | IconProps;
 		rightIcon?: string | IconProps;
+		iconSize?: IconProps['size'];
 	}
 
 	let {
@@ -14,15 +15,16 @@
 		theme = 'primary',
 		icon,
 		rightIcon,
+		iconSize = 'sm',
 		...restProps
 	}: Props = $props();
 </script>
 
-{#snippet makeIcon(icon)}
+{#snippet makeIcon(icon: string | IconProps)}
 	<div class="button__icon">
 		{#if typeof icon === 'string'}
 			<Icon
-				size="sm"
+				size={iconSize}
 				name={icon}
 				class={[
 					theme === 'secondary' ? 'text-themeYellow-600' : '',
@@ -38,17 +40,17 @@
 	{...restProps}
 	class={[
 		'button',
-		'font-bold py-3 px-5 rounded-2xl rounded-tr-none cursor-pointer drop-shadow-md',
+		'font-bold py-3.5 px-7.5 rounded-2xl rounded-tr-none cursor-pointer drop-shadow-md',
 		theme === 'primary' ? 'text-secondary bg-gradient-to-b from-themeYellow-600 to-themeYellow-800' : '',
 		theme === 'secondary' ? 'text-white bg-gradient-to-b from-themeGray-600 to-themeGray-800' : '',
 		restProps.class
 	]}
 >
-	<div class="button__inner flex gap-3 items-center justify-center">
+	<div class="button__inner flex gap-1 items-center justify-center">
 		{#if icon}
 			{@render makeIcon(icon)}
 		{/if}
-		<div class="button__label">
+		<div class="button__label text-lg">
 			{label}
 		</div>
 		{#if rightIcon}

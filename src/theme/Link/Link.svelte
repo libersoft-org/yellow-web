@@ -6,7 +6,6 @@
 		label: string;
 		icon?: string;
 		iconSize?: 'sm' | 'md' | 'lg';
-		iconWrapper?: boolean;
 		iconWrapperClass?: string;
 		iconClass?: string;
 		class?: string;
@@ -19,7 +18,6 @@
 		label,
 		icon,
 		iconSize = 'md',
-		iconWrapper = false,
 		iconWrapperClass = 'bg-themeGray-700 rounded-full p-2',
 		iconClass = 'text-themeYellow-500',
 		class: className = 'text-themeGray-200 hover:text-themeYellow-400 transition-colors duration-200 font-normal',
@@ -36,13 +34,9 @@
 	aria-label={label}
 >
 	{#if icon}
-		{#if iconWrapper}
-			<div class={iconWrapperClass}>
-				<Icon name={icon} size={iconSize} class={iconClass} />
-			</div>
-		{:else}
+		<span class={iconWrapperClass}>
 			<Icon name={icon} size={iconSize} class={iconClass} />
-		{/if}
+		</span>
 	{/if}
 	<span>{label}</span>
 </a> 
