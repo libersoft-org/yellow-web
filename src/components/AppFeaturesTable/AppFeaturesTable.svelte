@@ -97,7 +97,7 @@
 {#snippet leftSide()}
 	<div class="table-container relative">
 		<div class="mb-8">
-			<h2 class="theme-text-h2 text-center"><span class="theme-title-underline">{title}</span></h2>
+			<h2 class="theme-text-h1 text-center"><span class="theme-title-underline">{title}</span></h2>
 		</div>
 
 		<div class={getTableContainerClass(rows)}>
@@ -133,8 +133,8 @@
 	</div>
 {/snippet}
 
-<div class="app-features-table flex flex-col items-center justify-center">
-	<div class="theme-container relative">
+<div class="app-features-table theme-container flex flex-col items-center justify-center">
+	<div class=" relative">
 		<div class="svg-bg absolute margin-auto w-full top-5 max-h-[758px]" style:z-index="-1">
 			{@html svgBackground}
 		</div>

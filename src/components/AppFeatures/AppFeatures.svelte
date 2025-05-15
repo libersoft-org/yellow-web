@@ -8,11 +8,11 @@
 	
 	// Grid positions for LG screens - in same order as features
 	const featurePositions: Position[] = [
-		{ column: 1, row: 3 },  // Messages
-		{ column: 1, row: 9 },  // E-commerce
-		{ column: 2, row: 12 }, // Social media
-		{ column: 3, row: 3 },  // Business tools
-		{ column: 3, row: 9 }   // Entertainment
+		{ column: 1, row: 4 },  // Messages
+		{ column: 1, row: 15 },  // E-commerce
+		{ column: 2, row: 20 }, // Social media
+		{ column: 3, row: 4 },  // Business tools
+		{ column: 3, row: 15 }   // Entertainment
 	];
 	
 	const features = [
@@ -46,7 +46,7 @@
 
 <div class="app-features flex flex-col items-center justify-center mb-16 md:mb-26">
 	<div class="text-center mb-8">
-		<h2 class="theme-text-h2">
+		<h2 class="theme-text-h1">
 			One app, <span class="theme-title-underline">one account,</span><br />
 			for everything you need!
 		</h2>
@@ -59,13 +59,13 @@
 		<div class="app-features-layout w-full
 					flex flex-col items-center space-y-8
 					md:grid md:grid-cols-2 md:gap-6 md:space-y-0 md:items-start
-					lg:grid-cols-3 lg:grid-rows-[repeat(16,32px)] lg:gap-x-6 lg:gap-y-0
+					lg:grid-cols-3 lg:grid-rows-[repeat(28,22px)] lg:gap-x-6 lg:gap-y-0
 					max-w-md
 					md:max-w-3xl
-					lg:max-w-[calc(350px*3+2*1.5rem)]">
+					lg:max-w-[calc(380px*3+2*1.5rem)]">
 
 			<!-- Image -->
-			<div class="w-full flex justify-center
+			<div class="max-w-[380px] w-full flex justify-center
 						md:col-span-2 md:row-start-1 md:justify-center 
 						lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:justify-start">
 				<img src="/assets/images/app-features-mobile.png" alt="App Features Mobile" class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full" />
@@ -87,7 +87,7 @@
 			{/each}
 		</div>
 
-		<div class="flex justify-center mt-12 md:mt-16">
+		<div class="flex justify-center mt-16 md:mt-2 lg:mt-1">
 			<Button label="See all features" theme="secondary" rightIcon="chevron" />
 		</div>
 	</div>

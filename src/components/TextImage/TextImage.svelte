@@ -21,7 +21,7 @@
 {/snippet}
 
 <div class="theme-container m-auto mb-12">
-    <div class="text-image-wrapper flex flex-col md:flex-row items-center justify-between rounded-3xl py-10 px-20" style="background: radial-gradient(ellipse at 50% 50%, #F8F9FF 0%, #EAECF7 100%);">
+    <div class="text-image-wrapper flex flex-col md:flex-row items-center justify-between rounded-3xl  py-5 px-7.5 md:py-7 md:px-15 lg:py-10 lg:px-20" style="background: radial-gradient(ellipse at 50% 50%, #F8F9FF 0%, #EAECF7 100%);">
         {#if !imageRight}
             {@render textContentSnippet()}
             {@render imageContentSnippet()}

@@ -46,7 +46,7 @@
   </AccordionItem>
 {/snippet}
 
-<div class="container mx-auto">
+<div class="theme-container mx-auto">
   <h2 class="text-3xl font-bold text-center mb-8">{heading}</h2>
   <Accordion defaultActive={defaultActiveId}>
     {#each faqItems as item}

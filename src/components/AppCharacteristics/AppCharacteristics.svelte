@@ -1,5 +1,4 @@
 <script lang="ts">
-import Button from '@/theme/Button/Button.svelte';
 import Box from '@/theme/Box/Box.svelte';
 
 type Feature = {
@@ -42,8 +41,8 @@ const features: Feature[] = [
 	theme: "secondary"
 	},
 	{
-	title: "Smart home integration",
-	description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm.",
+	title: "Smart home <br> integration",
+	description: "Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong> semper dalarect lacus vel facilisis volutpat est velitcm.",
 	icon: "wifi",
 	link: "/",
 	theme: "secondary"
@@ -62,16 +61,16 @@ const features: Feature[] = [
 </script>
 
 <div class="app-features flex flex-col items-center justify-center">
-	<div class="text-center mb-8">
-		<h2 class="theme-text-h2 mb-4">
+	<div class="text-center mb-10">
+		<h2 class="mb-3 theme-text-h1">
 			Key <span class="theme-title-underline">characteristics</span>
 		</h2>
-		<div class="theme-text-h4">
+		<div class="text-xl text-themeGray-400">
 			Cutting edge technology!
 		</div>
 	</div>
 	<div class="theme-container relative flex flex-col items-center">
-		<div class="app-features-grid gap-6 w-full">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 md:gap-6 w-full">
 			{#each features as feature}
 				<div class="feature h-full flex">
 					<Box 
@@ -81,8 +80,8 @@ const features: Feature[] = [
 						footerType={feature.theme === "secondary" ? "link" : "button"}
 						footerLink={feature.link}
 						footerText={feature.buttonText}
+						description={feature.description}
 					>
-						{feature.description}
 					</Box>
 				</div>
 			{/each}
@@ -91,10 +90,6 @@ const features: Feature[] = [
 </div>
 
 <style>
-	.app-features-grid {
-		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-		grid-template-rows: repeat(2, minmax(0, 1fr));
-	}
+	/* Styles can be removed since we're using Tailwind classes now */
 </style>
 	

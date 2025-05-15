@@ -5,6 +5,7 @@ import Hero from '@/components/Hero/Hero.svelte';
 import AppFeatures from '@/components/AppFeatures/AppFeatures.svelte';
 import AppCharacteristics from '@/components/AppCharacteristics/AppCharacteristics.svelte';
 import AppFeaturesTable from '@/components/AppFeaturesTable/AppFeaturesTable.svelte';
+import AppFeaturesTable2 from '@/components/AppFeaturesTable/AppFeaturesTable2.svelte';
 import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
 import TextImage from '@/components/TextImage/TextImage.svelte';
 import Text from '@/components/Text/Text.svelte';
@@ -13,12 +14,13 @@ import Form from '@/components/Form/Form.svelte';
 </script>
 
 <div>
-	<Header position="fixed" width="theme-container" />
+	<Header zIndex={100} />
 	<Hero />
 	<AppFeatures />
 	<AppCharacteristics />
-	<AppFeaturesTable />
-	<AppFeaturesComparisonTable />
+	
+	<AppFeaturesTable2 />
+	
 	<TextImage />
 	<div class="theme-container mx-auto py-12">
 		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
