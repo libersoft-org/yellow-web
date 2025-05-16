@@ -46,7 +46,7 @@
 
 <div class="app-features flex flex-col items-center justify-center mb-16 md:mb-26">
 	<div class="text-center mb-8">
-		<h2 class="theme-text-h1">
+		<h2 class="theme-text-h2">
 			One app, <span class="theme-title-underline">one account,</span><br />
 			for everything you need!
 		</h2>

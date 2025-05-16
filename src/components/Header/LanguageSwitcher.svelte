@@ -6,7 +6,7 @@ import { createEventDispatcher } from 'svelte';
 import SelectBox from '@/theme/SelectBox/SelectBox.svelte';
 import Button from '@/theme/Button/Button.svelte';
 import Icon from '@/theme/Icon/Icon.svelte';
-import { autoPlacement, autoUpdate, computePosition, offset, shift } from '@floating-ui/dom';
+import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
 
 interface Props {
   defaultLanguage?: 'en' | 'cz';
@@ -28,9 +28,7 @@ let isMobile = $state(false);
 let languageSwitcherRef: HTMLDivElement;
 let buttonRef: HTMLElement;
 let languagePanelRef: HTMLDivElement;
-let dropdownRef: HTMLElement | null = null;
 let selectedLanguage = $state<'en' | 'cz'>('en');
-let autoPlacementCleanup: ReturnType<typeof handleFloatingUI>;
 
 // Initialize dropdown handlers reference - we'll set this up after DOM elements are available
 let handlers: ReturnType<typeof createDropdownHandlers>;
@@ -161,50 +159,6 @@ onMount(() => {
     };
   }
 });
-
-// Handle floating UI positioning for the dropdown
-const handleFloatingUI = () => {
-  if (!buttonRef || !dropdownRef || isMobile) {
-    return;
-  }
-  
-  const autoUpdateCleanUp = autoUpdate(buttonRef, dropdownRef!, () => {
-    computePosition(buttonRef, dropdownRef!, {
-      middleware: [
-        autoPlacement({
-          alignment: 'end',
-          allowedPlacements: ['bottom-end', 'top-end'],
-          padding: 4,
-        }),
-        shift(),
-        offset(8),
-      ],
-    }).then(({ x, y }) => {
-      Object.assign(dropdownRef!.style, {
-        left: `${x}px`,
-        top: `${y}px`,
-      });
-    });
-  });
-  
-  return () => {
-    if (autoUpdateCleanUp) {
-      autoUpdateCleanUp();
-    }
-  };
-};
-
-// Effect to handle floating UI when dropdown is open
-$effect(() => {
-  if (isOpen && !isMobile) {
-    autoPlacementCleanup = handleFloatingUI();
-  }
-  else {
-    if (autoPlacementCleanup) {
-      autoPlacementCleanup();
-    }
-  }
-});
 </script>
 
 <style>
@@ -236,41 +190,32 @@ $effect(() => {
   >
     <Icon 
       name={currentLanguage} 
-      size="md"
+      size="4xl"
       class="rounded-full"
     />
   </button>
 
   <!-- Desktop dropdown menu -->
   {#if !isMobile}
-    <div 
-      bind:this={dropdownRef}
-      class={[
-        "lang-dropdown pt-2 theme-floating-dropdown",
-        isOpen 
-          ? 'opacity-100 transform translate-y-0' 
-          : 'opacity-0 pointer-events-none transform translate-y-5'
-      ]}
-    >
-      <div class="relative bg-gradient-to-t theme-gradient-white rounded-xl shadow-md min-w-27.5 whitespace-nowrap">
-        <!-- Dropdown content -->
-        <div class="relative z-10 overflow-hidden rounded-xl bg-white">
+    <Dropdown show={isOpen} {isMobile} referenceElement={buttonRef}>
+      {#snippet children()}
+        <div class="relative overflow-hidden whitespace-nowrap">
           {#each languages.filter(lang => lang.code !== currentLanguage) as language}
             <button
-              class="flex items-center w-full px-4 py-2 text-sm cursor-pointer hover:bg-themeGray-100"
+              class="flex items-center w-full  text-sm cursor-pointer hover:underline"
               onclick={() => selectLanguage(language.code as 'en' | 'cz')}
             >
               <Icon 
                 name={language.code} 
-                size="md"
+                size="2xl"
                 class="rounded-full mr-3"
               />
               <span class="whitespace-nowrap">{language.name}</span>
             </button>
           {/each}
         </div>
-      </div>
-    </div>
+      {/snippet}
+    </Dropdown>
   {/if}
 </div>
 

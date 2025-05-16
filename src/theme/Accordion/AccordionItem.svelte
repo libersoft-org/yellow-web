@@ -41,14 +41,14 @@
   <div class="flex-1 pr-4">
     <button
       type="button"
-      class="w-full text-left text-lg font-medium cursor-pointer" 
+      class="w-full text-left text-lg md:text-xl lg:text-2xl font-bold cursor-pointer" 
       onclick={handleToggle}
       aria-expanded={isOpen}
     >
       <span>{title}</span>
     </button>
     {#if isOpen}
-      <div class="pb-4 mt-2" transition:slide>
+      <div class="pb-4 mt-2 theme-text-body3" transition:slide>
         {@render children?.()}
       </div>
     {/if}

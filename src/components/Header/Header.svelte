@@ -24,22 +24,19 @@ const navItems = [
     label: 'About', 
     href: '/', 
     hasChildren: true, 
-    children: () => `
-      <ul class="dropdown-menu min-w-[100px]">
-        <li><a href="/about/company" class="block px-1 py-1 hover:text-underline">Our Company</a></li>
-        <li><a href="/about/team" class="block px-1 py-1 hover:text-underline">Our Team</a></li>
-        <li><a href="/about/mission" class="block px-1 py-1 hover:text-underline">Our Mission</a></li>
-        <li><a href="/about/history" class="block px-1 py-1 hover:text-underlie">Our History</a></li>
-      </ul>
-    `
+    subItems: [
+      { label: 'Our Company', href: '/about/company' },
+      { label: 'Our Team', href: '/about/team' },
+      { label: 'Our Mission', href: '/about/mission' },
+      { label: 'Our History', href: '/about/history' }
+    ]
   },
-  { label: 'Features', href: '/' },
   { label: 'Download', href: '/' },
   { label: 'Comparsion', href: '/' },
   { label: 'Documentation', href: '/' },
   { label: 'FAQ', href: '/' },
   { label: 'Contact', href: '/' },
-  { label: 'Create', href: '/', highlighted: true }
+  { label: 'Create free account', href: '/', highlighted: true }
 ];
 
 function toggleMobileMenu(e: MouseEvent) {
@@ -125,9 +122,7 @@ onMount(() => {
 			<ul class="flex flex-col lg:flex-row lg:gap-4 w-full">
 				{#each navItems as item}
 					{#if item.hasChildren}
-						<HeaderItem label={item.label} href={item.href}>
-							{@html item.children()}
-						</HeaderItem>
+						<HeaderItem label={item.label} href={item.href} subItems={item.subItems} />
 					{:else}
 						<HeaderItem label={item.label} href={item.href} />
 					{/if}
@@ -154,7 +149,7 @@ onMount(() => {
 {/snippet}
 
 <div 
-	class="header flex flex-col max-w-[1440px] mx-auto fixed top-0 left-0 right-0 lg:min-h-23 lg:border-t-4 border-themeYellow-600 bg-gradient-to-t theme-gradient-yellow lg:theme-gradient-white lg:rounded-bl-2xl lg:rounded-br-2xl shadow-md"
+	class="header flex flex-col max-w-[1440px] mx-auto fixed top-0 left-0 right-0 lg:min-h-22s lg:border-t-4 border-themeYellow-600 bg-gradient-to-t theme-gradient-yellow lg:theme-gradient-white lg:rounded-bl-2xl lg:rounded-br-2xl shadow-md"
 	style="z-index: {zIndex};"
 >
 	<!-- Header Top Row -->

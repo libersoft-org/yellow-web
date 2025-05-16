@@ -35,16 +35,22 @@
     --color-themeOrange-500: #F39108;
 
     /* Custom font sizes for Tailwind 4 */
+    --text-xs: 14px;
+    --text-sm: 15px;
+    --text-md: 17px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 23px;
     --text-3xl: 24px;
-    --text-3xl--line-height: 1.2;
-    --text-4xl: 28px;
-    --text-4xl--line-height: 1.2;
-    --text-5xl: 29px;
-    --text-5xl--line-height: 1.2;
-    --text-6xl: 35px;
-    --text-6xl--line-height: 1.2;
-    --text-7xl: 45px;
-    --text-7xl--line-height: 1.2;
+    --text-4xl: 25px;
+    --text-5xl: 28px;
+    --text-6xl: 29px;
+    --text-7xl: 30px;
+    --text-8xl: 35px;
+    --text-9xl: 38px;
+    --text-10xl: 45px;
+    --text-11xl: 76px;
+    
 }
 
 /**
@@ -63,41 +69,45 @@
 }
 
 @utility theme-text-h1 {
-    @apply text-4xl md:text-5xl lg:text-7xl font-bold;
+    @apply text-9xl md:text-10xl lg:text-11xl font-bold;
 }
 
 @utility theme-text-h2 {
-    @apply text-3xl md:text-4xl lg:text-6xl font-bold;
+    @apply text-4xl md:text-8xl lg:text-10xl font-bold;
 }
 
 @utility theme-text-h3 {
-    @apply text-2xl md:text-3xl lg:text-5xl font-bold;
+    @apply text-4xl md:text-5xl lg:text-9xl font-bold;
 }
 
 @utility theme-text-h4 {
-    @apply text-2xl font-bold;
+    @apply text-4xl md:text-5xl lg:text-7xl font-bold;
 }
 
 @utility theme-text-h5 {
-    @apply text-xl font-bold;
+    @apply text-3xl md:text-5xl lg:text-5xl font-bold;
 }
 
 @utility theme-text-h6 {
-    @apply text-base font-bold;
+    @apply text-2xl font-bold;
 }
 
 @utility theme-text-body1 {
-    @apply text-lg;
+    @apply text-xs md:text-md lg:text-lg;
 }
 
 @utility theme-text-body2 {
-    @apply text-sm;
+    @apply text-xs md:text-md;
+}
+
+@utility theme-text-body3 {
+    @apply text-xs md:text-base;
 }
 
 @utility theme-button--primary {
     @apply py-2 px-4 rounded-xl rounded-tr-none;
     @apply bg-gradient-to-t theme-gradient-yellow;
-    @apply border-b-2 border-[#979FBE8A];
+    @apply border-b-3 border-[#E9B834];
 }
 
 @utility theme-floating {
@@ -112,6 +122,7 @@
     width: max-content;
     transform: translateX(50%);
     right: 50%;
+    top: 60px;
     left: auto;
     z-index: 50;
 }

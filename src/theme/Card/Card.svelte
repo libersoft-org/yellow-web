@@ -24,17 +24,17 @@
 	{#if showHeader}
 		<div class="card-header flex gap-4 items-center mb-2">
 			{#if icon}
-				<div class="card-header__icon bg-themeGray-800 text-themeYellow-600 rounded-full p-2">
-					<Icon name={icon} />
+				<div class="card-header__icon bg-themeGray-800 flex items-center justify-center text-themeYellow-600 h-12 w-12 rounded-full p-1">
+					<Icon name={icon} size="xl" class="" />
 				</div>
 			{/if}
 			{#if title}
-				<div class="card-header__title text-3xl font-bold">{title}</div>
+				<div class="card-header__title theme-text-h4">{title}</div>
 			{/if}
 			{@render headerSlot?.()}
 		</div>
 	{/if}
-	<div class="card__body text-base text-themeGray-400">
+	<div class="card__body theme-text-body3 text-themeGray-400">
 		{@render children?.()}
 	</div>
 	{#if footerSlot}

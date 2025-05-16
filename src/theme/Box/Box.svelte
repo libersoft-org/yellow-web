@@ -41,13 +41,13 @@
 	{#if showHeader}
 		<div class="box-header flex gap-4 justify-between mb-2">
 			{#if title}
-				<div class="box-header__title text-4xl font-bold mt-4">{@html title}</div>
+				<div class="box-header__title theme-text-h5 mt-4">{@html title}</div>
 			{/if}
 		</div>
 	{/if}
 	<div
 		class={[
-			'box__body text-sm mb-3 md:mb-8.5',
+			'box__body theme-text-body2 mb-3 md:mb-8.5',
 			theme === 'primary' ? 'text-themeGray-800' : '',
 			theme === 'secondary' ? 'text-themeGray-200' : '',
 		]}
@@ -63,7 +63,7 @@
 				{@render footerSlot()}
 			{:else if footerType === 'link'}
 				<a href={footerLink} class="flex items-center text-yellow-400">
-					<Icon name="arrow" size="md" />
+					<Icon name="arrow" size="2xl" />
 				</a>
 			{:else if footerType === 'button'}
 				<a href={footerLink}>
@@ -77,7 +77,7 @@
 
 			{#if icon}
 				<div class="box-footer__icon text-themeYellow-600 md:absolute md:top-6.5 md:right-6.5">
-					<Icon name={icon} size="xl" />
+					<Icon name={icon} size="6xl" />
 				</div>
 			{/if}
 		</div>

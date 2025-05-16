@@ -9,8 +9,8 @@
 
 {#snippet textContentSnippet()}
 	<div class="flex-1 mb-8 md:mb-0 md:mr-8">
-		<h2 class="font-bold text-2xl md:text-3xl mb-4">{title}</h2>
-		<p class="text-base md:text-lg text-themeGray-800">{textContent}</p>
+		<h2 class="font-bold theme-text-h3 mb-4">{title}</h2>
+		<p class="theme-text-body1 text-themeGray-800">{textContent}</p>
 	</div>
 {/snippet}
 

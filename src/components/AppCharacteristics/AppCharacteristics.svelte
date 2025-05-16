@@ -62,7 +62,7 @@ const features: Feature[] = [
 
 <div class="app-features flex flex-col items-center justify-center">
 	<div class="text-center mb-10">
-		<h2 class="mb-3 theme-text-h1">
+		<h2 class="mb-3 theme-text-h2">
 			Key <span class="theme-title-underline">characteristics</span>
 		</h2>
 		<div class="text-xl text-themeGray-400">

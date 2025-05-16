@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { autoPlacement, autoUpdate, computePosition, offset, shift } from '@floating-ui/dom';
 	import Icon from '@/theme/Icon/Icon.svelte';
+	import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
 	import { createDropdownHandlers } from '@/utils/dropdown';
 	import type { Action } from 'svelte/action';
 
@@ -8,20 +8,17 @@
 		label: string;
 		href: string;
 		active?: boolean;
-		children?: any;
+		subItems?: Array<{label: string, href: string}>;
 	}
 
-	let { label, href, active, children }: Props = $props();
+	let { label, href, active, subItems = [] }: Props = $props();
 
-	const hasChildren = $derived(Boolean(children))
+	const hasChildren = $derived(subItems.length > 0)
 	let isMobile = $state(false);
 
 	let headerItemRef: HTMLElement;
 	let buttonRef: HTMLElement;
-	let floatingRef = $state<HTMLElement | null>(null);
 	let show = $state(false);
-
-	let autoPlacementCleanup: ReturnType<typeof handleFloatingUI>;
 
 	// Check if mobile view on mount and on resize
 	const checkMobile = () => {
@@ -68,47 +65,6 @@
 			show = !show;
 		}
 	};
-
-	const handleFloatingUI = () => {
-		if (!buttonRef || !floatingRef || isMobile) {
-			return;
-		}
-		const autoUpdateCleanUp = autoUpdate(buttonRef, floatingRef, () => {
-			computePosition(buttonRef, floatingRef!, {
-				middleware: [
-					autoPlacement({
-						alignment: 'start',
-						allowedPlacements: ['bottom-start', 'bottom-end'],
-						padding: 4,
-					}),
-					shift(),
-					offset(8),
-				],
-			}).then(({ x, y }) => {
-				Object.assign(floatingRef!.style, {
-					left: `${x}px`,
-					top: `${y}px`,
-				});
-			});
-		});
-		
-		return () => {
-			if (autoUpdateCleanUp) {
-				autoUpdateCleanUp();
-			}
-		};
-	};
-
-	$effect(() => {
-		if (show) {
-			autoPlacementCleanup = handleFloatingUI();
-		}
-		else {
-			if (autoPlacementCleanup) {
-				autoPlacementCleanup();
-			}
-		}
-	});
 </script>
 
 <style>
@@ -149,33 +105,38 @@
 	:global(.header-item .mobile-dropdown.open) {
 		max-height: 500px; /* Adjust as needed */
 	}
+	
+	
 </style>
 
 <li bind:this={headerItemRef} class="header-item relative w-full lg:w-auto border-b border-themeGray-500 lg:border-b-0" onpointerenter={onEnter} onpointerleave={onLeave}>
 	<a
 		bind:this={buttonRef}
-		class="text-white font-medium border-b-2 border-transparent lg:font-bold lg:text-gray-700 py-3.5 lg:py-2 px-8 lg:px-4 hover:theme-button--primary flex items-center gap-1 text-lg lg:text-base"
+		class="text-white font-medium border-b-2 border-transparent lg:font-bold lg:text-gray-700 py-3.5 lg:py-2 px-8 lg:px-4 hover:theme-button--primary flex items-center gap-1 text-base lg:text-md"
 		class:theme-button--primary={active || show}
 		href={href}
 		onclick={onClick}
 	>
 		<div>{label}</div>
 		{#if hasChildren}
-			<Icon name="chevron" size="sm" class={show && isMobile ? "rotate-180" : "rotate-90"} />
+			<span class="pl-1">
+				<Icon name="chevron" size="xs" class={show && isMobile ? "rotate-180" : "rotate-90"} />
+			</span>
 		{/if}
 	</a>
-	{#if hasChildren && children}
-		<div
-			class={[
-				"transition-opacity duration-200 header-item__dropdown bg-gradient-to-t theme-gradient-white lg:rounded-lg lg:shadow-lg",
-				isMobile ? "mobile-dropdown" : "theme-floating-dropdown",
-				show ? 'opacity-100 open' : 'opacity-0 pointer-events-none',
-			]}
-			use:bindFloatingRef
-		>
-			<div class="dropdown-content p-4">
-				{@render children?.()}
-			</div>
-		</div>
+	{#if hasChildren && subItems.length > 0}
+		<Dropdown {show} {isMobile} referenceElement={buttonRef}>
+			{#snippet children()}
+				<ul class="dropdown-menu min-w-[100px] space-y-2">
+					{#each subItems as item}
+						<li class="mb-0">
+							<a href={item.href} class="block px-1 py-1 hover:underline font-xs">
+								{item.label}
+							</a>
+						</li>
+					{/each}
+				</ul>
+			{/snippet}
+		</Dropdown>
 	{/if}
 </li>
