@@ -74,7 +74,7 @@
 				]
 			}
 		],
-		imagePath = 'src/assets/images/fluid.png',
+		imagePath = 'assets/images/fluid.png',
 		buttonLabel = 'See all features',
 		buttonLink = '/features',
 		legendItems = [
@@ -87,7 +87,7 @@
 	function shouldShowOverlay(rows: Row[]) {
 		return rows.length > 5;
 	}
-	
+
 	function getTableContainerClass(rows: Row[]) {
 		const baseClasses = 'bg-white rounded-2xl relative';
 		return `${baseClasses}`;
@@ -101,10 +101,10 @@
 		</div>
 
 		<div class={getTableContainerClass(rows)}>
-			<Table 
+			<Table
 				rows={rows}
 				headers={headers}
-				showOverlay={shouldShowOverlay(rows)} 
+				showOverlay={shouldShowOverlay(rows)}
 				overlayType="gray"
 				buttonLabel={buttonLabel}
 				buttonLink={buttonLink}
@@ -119,7 +119,7 @@
 		<div class="relative">
 			<img src={imagePath} alt="Yellow app features" class="max-w-full" />
 		</div>
-		
+
 		<div class="legend flex flex-col sm:flex-row gap-4 justify-center mt-6">
 			{#each legendItems as item}
 				<div class="flex items-center gap-2">
@@ -138,7 +138,7 @@
 		<div class="svg-bg absolute margin-auto w-full top-5 max-h-[758px]" style:z-index="-1">
 			{@html svgBackground}
 		</div>
-		
+
 		<div class="px-10 py-21 px-25">
 			<div class="flex flex-wrap">
 				<div class="w-full lg:w-2/5 px-4">
@@ -160,8 +160,8 @@
 		top: 0;
 		left: 0;
 	}
-	
+
 	.table-container {
 		@apply flex flex-col;
 	}
-</style> 
+</style>

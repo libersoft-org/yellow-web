@@ -7,9 +7,9 @@ interface Props {
   heroText?: string;
 }
 
-let { 
-  imageSrc = 'src/assets/images/desktop.png',
-  backgroundImage = 'src/assets/images/hero-bg.png',
+let {
+  imageSrc = 'assets/images/desktop.png',
+  backgroundImage = 'assets/images/hero-bg.png',
   heroText = 'Experience the freedom of decentralized world. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.'
 }: Props = $props();
 </script>

@@ -128,7 +128,7 @@
 			<Button
 				label="Odeslat zprávu"
 				type="submit"
-				rightIcon="arrow-right"
+				rightIcon="chevron"
 			/>
 		</div>
 	</form>

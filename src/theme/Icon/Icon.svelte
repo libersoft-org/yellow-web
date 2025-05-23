@@ -29,7 +29,7 @@
 <script lang="ts">
 	let {
 		name,
-		basePath = '/src/assets/icons',
+		basePath = '/assets/icons',
 		size = 'md',
 		...restProps
 	}: Props = $props();
@@ -38,10 +38,10 @@
 
 	$effect(() => {
 		// Determine if this is a public path or a source path
-		const path = basePath.startsWith('/') 
+		const path = basePath.startsWith('/')
 			? basePath.replace(/^\//, '') // Remove leading slash for fetch
 			: basePath;
-		
+
 		// Use fetch to get raw SVG content
 		fetch(`/${path}/${name}.svg`)
 			.then(response => {
