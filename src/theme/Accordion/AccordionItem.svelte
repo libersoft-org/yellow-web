@@ -1,40 +1,40 @@
 <script lang="ts">
-	import Icon from '@/theme/Icon/Icon.svelte';
-	import { slide } from 'svelte/transition';
-	import { getContext } from 'svelte';
+  import Icon from '@/theme/Icon/Icon.svelte';
+  import { slide } from 'svelte/transition';
+  import { getContext } from 'svelte';
 
-	interface Props {
-		class?: string;
-		title: string;
-		open?: boolean;
-		children?: any;
-		id: string;
-	}
+  interface Props {
+    class?: string;
+    title: string;
+    open?: boolean;
+    children?: any;
+    id: string;
+  }
 
-	interface AccordionStore {
-		activeId: string | null;
-		toggle: (id: string) => void;
-	}
+  interface AccordionStore {
+    activeId: string | null;
+    toggle: (id: string) => void;
+  }
 
-	let { class: className = '', title, open = false, children, id }: Props = $props();
+  let { class: className = '', title, open = false, children, id }: Props = $props();
 
-	const store = getContext<AccordionStore>('accordion-store');
+  const store = getContext<AccordionStore>('accordion-store');
 
-	let isOpen = $state(false);
+  let isOpen = $state(false);
 
-	$effect(() => {
-		isOpen = store.activeId === id;
-	});
+  $effect(() => {
+    isOpen = store.activeId === id;
+  });
 
-	$effect(() => {
-		if (open && !store.activeId) {
-			store.toggle(id);
-		}
-	});
+  $effect(() => {
+    if (open && !store.activeId) {
+      store.toggle(id);
+    }
+  });
 
-	function handleToggle() {
-		store.toggle(id);
-	}
+  function handleToggle() {
+    store.toggle(id);
+  }
 </script>
 
 <div

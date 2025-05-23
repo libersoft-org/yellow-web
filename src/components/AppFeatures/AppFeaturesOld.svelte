@@ -1,47 +1,47 @@
 <script lang="ts">
-	import Card from '@/theme/Card/Card.svelte';
-	import svgBackground from './bg.svg?raw';
-	import Button from '@/theme/Button/Button.svelte';
+  import Card from '@/theme/Card/Card.svelte';
+  import svgBackground from './bg.svg?raw';
+  import Button from '@/theme/Button/Button.svelte';
 
-	// Define position type
-	type Position = { column: number; row: number };
+  // Define position type
+  type Position = { column: number; row: number };
 
-	// Grid positions for LG screens - in same order as features
-	const featurePositions: Position[] = [
-		{ column: 1, row: 4 },  // Messages
-		{ column: 1, row: 15 },  // E-commerce
-		{ column: 2, row: 23 }, // Social media
-		{ column: 3, row: 4 },  // Business tools
-		{ column: 3, row: 15 }   // Entertainment
-	];
+  // Grid positions for LG screens - in same order as features
+  const featurePositions: Position[] = [
+    { column: 1, row: 4 },  // Messages
+    { column: 1, row: 15 },  // E-commerce
+    { column: 2, row: 23 }, // Social media
+    { column: 3, row: 4 },  // Business tools
+    { column: 3, row: 15 }   // Entertainment
+  ];
 
-	const features = [
-		{
-			title: 'Messages',
-			icon: 'message',
-			description: 'Innovative messaging with unlimited files, widgets, multipart messages, and more.'
-		},
-		{
-			title: 'E-commerce',
-			icon: 'cart',
-			description: 'Smart-contract wallet enables payments, purchases, donations, crowdfunding, and more.'
-		},
-		{
-			title: 'Social media',
-			icon: 'phone',
-			description: 'Advanced social features: video channels, forum, newsfeed, stories, events, and more.'
-		},
-		{
-			title: 'Business tools',
-			icon: 'calendar',
-			description: 'Calendar and Tasks help businesses organize, share, and boost productivity.'
-		},
-		{
-			title: 'Entertainment',
-			icon: 'dice',
-			description: 'Last but not least, the platform also provides fun features such as dating and video games.'
-		}
-	];
+  const features = [
+    {
+      title: 'Messages',
+      icon: 'message',
+      description: 'Innovative messaging with unlimited files, widgets, multipart messages, and more.'
+    },
+    {
+      title: 'E-commerce',
+      icon: 'cart',
+      description: 'Smart-contract wallet enables payments, purchases, donations, crowdfunding, and more.'
+    },
+    {
+      title: 'Social media',
+      icon: 'phone',
+      description: 'Advanced social features: video channels, forum, newsfeed, stories, events, and more.'
+    },
+    {
+      title: 'Business tools',
+      icon: 'calendar',
+      description: 'Calendar and Tasks help businesses organize, share, and boost productivity.'
+    },
+    {
+      title: 'Entertainment',
+      icon: 'dice',
+      description: 'Last but not least, the platform also provides fun features such as dating and video games.'
+    }
+  ];
 </script>
 
 <div class="app-features flex flex-col items-center justify-center mb-16 md:mb-26">

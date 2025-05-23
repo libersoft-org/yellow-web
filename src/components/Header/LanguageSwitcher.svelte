@@ -1,163 +1,163 @@
 <script lang="ts">
-	import { createEventDispatcher, onMount } from 'svelte';
-	import { browser } from '$app/environment';
-	import { createDropdownHandlers } from '@/utils/dropdown';
-	import SelectBox from '@/theme/SelectBox/SelectBox.svelte';
-	import Button from '@/theme/Button/Button.svelte';
-	import Icon from '@/theme/Icon/Icon.svelte';
-	import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
+  import { createEventDispatcher, onMount } from 'svelte';
+  import { browser } from '$app/environment';
+  import { createDropdownHandlers } from '@/utils/dropdown';
+  import SelectBox from '@/theme/SelectBox/SelectBox.svelte';
+  import Button from '@/theme/Button/Button.svelte';
+  import Icon from '@/theme/Icon/Icon.svelte';
+  import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
 
-	interface Props {
-		defaultLanguage?: 'en' | 'cz';
-	}
+  interface Props {
+    defaultLanguage?: 'en' | 'cz';
+  }
 
-	let {
-		defaultLanguage = 'en'
-	}: Props = $props();
+  let {
+    defaultLanguage = 'en'
+  }: Props = $props();
 
-	// Create event dispatcher to notify parent component
-	const dispatch = createEventDispatcher<{
-		openModal: boolean;
-	}>();
+  // Create event dispatcher to notify parent component
+  const dispatch = createEventDispatcher<{
+    openModal: boolean;
+  }>();
 
-	let currentLanguage = $state(defaultLanguage);
-	let isOpen = $state(false);
-	let isMobileMenuOpen = $state(false);
-	let isMobile = $state(false);
-	let languageSwitcherRef: HTMLDivElement;
-	let buttonRef: HTMLElement;
-	let languagePanelRef: HTMLDivElement;
-	let selectedLanguage = $state<'en' | 'cz'>('en');
+  let currentLanguage = $state(defaultLanguage);
+  let isOpen = $state(false);
+  let isMobileMenuOpen = $state(false);
+  let isMobile = $state(false);
+  let languageSwitcherRef: HTMLDivElement;
+  let buttonRef: HTMLElement;
+  let languagePanelRef: HTMLDivElement;
+  let selectedLanguage = $state<'en' | 'cz'>('en');
 
-	// Initialize dropdown handlers reference - we'll set this up after DOM elements are available
-	let handlers: ReturnType<typeof createDropdownHandlers>;
-	let toggleDropdown: (e: MouseEvent) => void;
-	let closeDropdown: () => void;
-	let onEnter: () => void;
-	let onLeave: (e: PointerEvent) => void;
+  // Initialize dropdown handlers reference - we'll set this up after DOM elements are available
+  let handlers: ReturnType<typeof createDropdownHandlers>;
+  let toggleDropdown: (e: MouseEvent) => void;
+  let closeDropdown: () => void;
+  let onEnter: () => void;
+  let onLeave: (e: PointerEvent) => void;
 
-	// Initialize selectedLanguage and keep it in sync with currentLanguage
-	$effect(() => {
-		selectedLanguage = currentLanguage;
-	});
+  // Initialize selectedLanguage and keep it in sync with currentLanguage
+  $effect(() => {
+    selectedLanguage = currentLanguage;
+  });
 
-	const languages = [
-		{ code: 'en', name: 'English' },
-		{ code: 'cz', name: 'Czech' }
-	];
+  const languages = [
+    { code: 'en', name: 'English' },
+    { code: 'cz', name: 'Czech' }
+  ];
 
-	// Format languages for SelectBox - show all languages and ensure we have at least one option
-	const getSelectOptions = () => {
-		// Always include all languages to ensure we have at least one option
-		return languages.map(lang => ({
-			value: lang.code,
-			label: lang.name,
-			icon: lang.code
-		}));
-	};
+  // Format languages for SelectBox - show all languages and ensure we have at least one option
+  const getSelectOptions = () => {
+    // Always include all languages to ensure we have at least one option
+    return languages.map(lang => ({
+      value: lang.code,
+      label: lang.name,
+      icon: lang.code
+    }));
+  };
 
-	let selectOptions = $state(getSelectOptions());
+  let selectOptions = $state(getSelectOptions());
 
-	// Check if mobile view on mount and on resize
-	const checkMobile = () => {
-		// Use viewport width for more reliable measurement
-		isMobile = document.documentElement.clientWidth < 1024;
-	};
+  // Check if mobile view on mount and on resize
+  const checkMobile = () => {
+    // Use viewport width for more reliable measurement
+    isMobile = document.documentElement.clientWidth < 1024;
+  };
 
-	function selectLanguage(langCode: 'en' | 'cz') {
-		currentLanguage = langCode;
-		closeDropdown();
-	}
+  function selectLanguage(langCode: 'en' | 'cz') {
+    currentLanguage = langCode;
+    closeDropdown();
+  }
 
-	// Handle overflow and dispatch events when mobile menu state changes
-	const handleMobileMenuToggle = (isOpen: boolean) => {
-		// Notify parent component to show/hide overlay
-		dispatch('openModal', isOpen);
+  // Handle overflow and dispatch events when mobile menu state changes
+  const handleMobileMenuToggle = (isOpen: boolean) => {
+    // Notify parent component to show/hide overlay
+    dispatch('openModal', isOpen);
 
-		// Prevent scrolling when mobile menu is open
-		if (browser) {
-			document.body.style.overflow = isOpen ? 'hidden' : '';
+    // Prevent scrolling when mobile menu is open
+    if (browser) {
+      document.body.style.overflow = isOpen ? 'hidden' : '';
 
-			// Add/remove class for language panel
-			if (isOpen) {
-				document.body.classList.add('language-panel-open');
-			} else {
-				document.body.classList.remove('language-panel-open');
-			}
-		}
-	};
+      // Add/remove class for language panel
+      if (isOpen) {
+        document.body.classList.add('language-panel-open');
+      } else {
+        document.body.classList.remove('language-panel-open');
+      }
+    }
+  };
 
-	function closeMobileMenu() {
-		isMobileMenuOpen = false;
-		handleMobileMenuToggle(false);
-	}
+  function closeMobileMenu() {
+    isMobileMenuOpen = false;
+    handleMobileMenuToggle(false);
+  }
 
-	// Make sure currentLanguageData updates reactively
-	$effect(() => {
-		currentLanguageData = languages.find(lang => lang.code === currentLanguage) || languages[0];
-	});
+  // Make sure currentLanguageData updates reactively
+  $effect(() => {
+    currentLanguageData = languages.find(lang => lang.code === currentLanguage) || languages[0];
+  });
 
-	let currentLanguageData = $state(
-		languages.find(lang => lang.code === currentLanguage) || languages[0]
-	);
+  let currentLanguageData = $state(
+    languages.find(lang => lang.code === currentLanguage) || languages[0]
+  );
 
-	// Handle language change when saving
-	function saveLanguageSelection() {
-		// Update the current language from the select dropdown
-		currentLanguage = selectedLanguage;
+  // Handle language change when saving
+  function saveLanguageSelection() {
+    // Update the current language from the select dropdown
+    currentLanguage = selectedLanguage;
 
-		// Force refresh of language data
-		currentLanguageData = languages.find(lang => lang.code === currentLanguage) || languages[0];
+    // Force refresh of language data
+    currentLanguageData = languages.find(lang => lang.code === currentLanguage) || languages[0];
 
-		// Close the mobile menu
-		closeMobileMenu();
-	}
+    // Close the mobile menu
+    closeMobileMenu();
+  }
 
-	// Initialize handlers once we have DOM reference
-	$effect(() => {
-		if (!languageSwitcherRef) return;
+  // Initialize handlers once we have DOM reference
+  $effect(() => {
+    if (!languageSwitcherRef) return;
 
-		// Initialize dropdown handlers with our utility
-		handlers = createDropdownHandlers({
-			isOpen,
-			setIsOpen: (value) => {
-				isOpen = value;
-			},
-			isMobile,
-			containerRef: languageSwitcherRef,
-			toggleCallback: (newIsOpen) => {
-				if (isMobile) {
-					isMobileMenuOpen = !isMobileMenuOpen;
-					handleMobileMenuToggle(isMobileMenuOpen);
-				}
-			},
-			closeCallback: () => {
-				if (isMobile && isMobileMenuOpen) {
-					isMobileMenuOpen = false;
-					handleMobileMenuToggle(false);
-				}
-			}
-		});
+    // Initialize dropdown handlers with our utility
+    handlers = createDropdownHandlers({
+      isOpen,
+      setIsOpen: (value) => {
+        isOpen = value;
+      },
+      isMobile,
+      containerRef: languageSwitcherRef,
+      toggleCallback: (newIsOpen) => {
+        if (isMobile) {
+          isMobileMenuOpen = !isMobileMenuOpen;
+          handleMobileMenuToggle(isMobileMenuOpen);
+        }
+      },
+      closeCallback: () => {
+        if (isMobile && isMobileMenuOpen) {
+          isMobileMenuOpen = false;
+          handleMobileMenuToggle(false);
+        }
+      }
+    });
 
-		// Make direct references for template usage
-		({ toggleDropdown, closeDropdown, onEnter, onLeave } = handlers);
-	});
+    // Make direct references for template usage
+    ({ toggleDropdown, closeDropdown, onEnter, onLeave } = handlers);
+  });
 
-	// Handle initial check and resize events
-	onMount(() => {
-		if (browser && typeof document !== 'undefined') {
-			checkMobile();
-			window.addEventListener('resize', checkMobile);
+  // Handle initial check and resize events
+  onMount(() => {
+    if (browser && typeof document !== 'undefined') {
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
 
-			return () => {
-				window.removeEventListener('resize', checkMobile);
-				// Clean up overflow
-				document.body.style.overflow = '';
-				// Remove language panel class
-				document.body.classList.remove('language-panel-open');
-			};
-		}
-	});
+      return () => {
+        window.removeEventListener('resize', checkMobile);
+        // Clean up overflow
+        document.body.style.overflow = '';
+        // Remove language panel class
+        document.body.classList.remove('language-panel-open');
+      };
+    }
+  });
 </script>
 
 <style>

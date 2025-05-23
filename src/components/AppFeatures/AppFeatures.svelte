@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Card from '@/theme/Card/Card.svelte';
-	import svgBackground from './bg.svg?raw';
-	import Button from '@/theme/Button/Button.svelte';
+  import Card from '@/theme/Card/Card.svelte';
+  import svgBackground from './bg.svg?raw';
+  import Button from '@/theme/Button/Button.svelte';
 
-	interface Feature {
-		title: string;
-		icon: string; // or a component/function if it's not a string
-		description: string;
-	}
+  interface Feature {
+    title: string;
+    icon: string; // or a component/function if it's not a string
+    description: string;
+  }
 </script>
 
 {#snippet feature ({ title, icon, description }: Feature)}

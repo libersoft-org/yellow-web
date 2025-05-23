@@ -1,111 +1,111 @@
 <script lang="ts">
-	import HeaderItem from '@/components/Header/HeaderItem.svelte';
-	import LanguageSwitcher from '@/components/Header/LanguageSwitcher.svelte';
-	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
+  import HeaderItem from '@/components/Header/HeaderItem.svelte';
+  import LanguageSwitcher from '@/components/Header/LanguageSwitcher.svelte';
+  import { browser } from '$app/environment';
+  import { onMount } from 'svelte';
 
-	interface Props {
-		zIndex?: number;
-	}
+  interface Props {
+    zIndex?: number;
+  }
 
-	let {
-		zIndex = 50
-	}: Props = $props();
+  let {
+    zIndex = 50
+  }: Props = $props();
 
-	let isMobileMenuOpen = $state(false);
-	let languageModalOpen = $state(false);
-	let navRef: HTMLElement;
-	let menuToggleRef: HTMLElement;
-	let outsideClickHandler: ((e: MouseEvent) => void) | null = null;
+  let isMobileMenuOpen = $state(false);
+  let languageModalOpen = $state(false);
+  let navRef: HTMLElement;
+  let menuToggleRef: HTMLElement;
+  let outsideClickHandler: ((e: MouseEvent) => void) | null = null;
 
-	// Navigation items array
-	const navItems = [
-		{
-			label: 'About',
-			href: '/',
-			hasChildren: true,
-			subItems: [
-				{ label: 'Our Company', href: '/about/company' },
-				{ label: 'Our Team', href: '/about/team' },
-				{ label: 'Our Mission', href: '/about/mission' },
-				{ label: 'Our History', href: '/about/history' }
-			]
-		},
-		{ label: 'Download', href: '/' },
-		{ label: 'Comparsion', href: '/' },
-		{ label: 'Documentation', href: '/' },
-		{ label: 'FAQ', href: '/' },
-		{ label: 'Contact', href: '/' },
-		{ label: 'Create free account', href: '/', highlighted: true }
-	];
+  // Navigation items array
+  const navItems = [
+    {
+      label: 'About',
+      href: '/',
+      hasChildren: true,
+      subItems: [
+        { label: 'Our Company', href: '/about/company' },
+        { label: 'Our Team', href: '/about/team' },
+        { label: 'Our Mission', href: '/about/mission' },
+        { label: 'Our History', href: '/about/history' }
+      ]
+    },
+    { label: 'Download', href: '/' },
+    { label: 'Comparsion', href: '/' },
+    { label: 'Documentation', href: '/' },
+    { label: 'FAQ', href: '/' },
+    { label: 'Contact', href: '/' },
+    { label: 'Create free account', href: '/', highlighted: true }
+  ];
 
-	function toggleMobileMenu(e: MouseEvent) {
-		e.stopPropagation(); // Prevent event from bubbling up
+  function toggleMobileMenu(e: MouseEvent) {
+    e.stopPropagation(); // Prevent event from bubbling up
 
-		// Toggle the state
-		isMobileMenuOpen = !isMobileMenuOpen;
+    // Toggle the state
+    isMobileMenuOpen = !isMobileMenuOpen;
 
-		// Prevent scrolling when mobile menu is open
-		if (browser) {
-			document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    // Prevent scrolling when mobile menu is open
+    if (browser) {
+      document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
 
-			// Set up or remove outside click handler based on menu state
-			if (isMobileMenuOpen) {
-				// Remove any existing handler
-				if (outsideClickHandler) {
-					document.removeEventListener('click', outsideClickHandler);
-				}
+      // Set up or remove outside click handler based on menu state
+      if (isMobileMenuOpen) {
+        // Remove any existing handler
+        if (outsideClickHandler) {
+          document.removeEventListener('click', outsideClickHandler);
+        }
 
-				// Create new handler with a delay to avoid the current click
-				setTimeout(() => {
-					outsideClickHandler = (event: MouseEvent) => {
-						// Only handle clicks when menu is open
-						if (!isMobileMenuOpen) return;
+        // Create new handler with a delay to avoid the current click
+        setTimeout(() => {
+          outsideClickHandler = (event: MouseEvent) => {
+            // Only handle clicks when menu is open
+            if (!isMobileMenuOpen) return;
 
-						// Skip if clicking the menu toggle button itself
-						if (menuToggleRef && menuToggleRef.contains(event.target as Node)) return;
+            // Skip if clicking the menu toggle button itself
+            if (menuToggleRef && menuToggleRef.contains(event.target as Node)) return;
 
-						// Close menu if clicking outside the navigation
-						if (navRef && !navRef.contains(event.target as Node)) {
-							closeMobileMenu();
-						}
-					};
+            // Close menu if clicking outside the navigation
+            if (navRef && !navRef.contains(event.target as Node)) {
+              closeMobileMenu();
+            }
+          };
 
-					document.addEventListener('click', outsideClickHandler);
-				}, 10);
-			} else if (outsideClickHandler) {
-				document.removeEventListener('click', outsideClickHandler);
-				outsideClickHandler = null;
-			}
-		}
-	}
+          document.addEventListener('click', outsideClickHandler);
+        }, 10);
+      } else if (outsideClickHandler) {
+        document.removeEventListener('click', outsideClickHandler);
+        outsideClickHandler = null;
+      }
+    }
+  }
 
-	function closeMobileMenu() {
-		if (!isMobileMenuOpen) return;
+  function closeMobileMenu() {
+    if (!isMobileMenuOpen) return;
 
-		isMobileMenuOpen = false;
-		if (browser) {
-			document.body.style.overflow = '';
-			if (outsideClickHandler) {
-				document.removeEventListener('click', outsideClickHandler);
-				outsideClickHandler = null;
-			}
-		}
-	}
+    isMobileMenuOpen = false;
+    if (browser) {
+      document.body.style.overflow = '';
+      if (outsideClickHandler) {
+        document.removeEventListener('click', outsideClickHandler);
+        outsideClickHandler = null;
+      }
+    }
+  }
 
-	// Clean up on component destroy
-	onMount(() => {
-		return () => {
-			if (browser) {
-				// Clean up all event listeners and state
-				if (outsideClickHandler) {
-					document.removeEventListener('click', outsideClickHandler);
-					outsideClickHandler = null;
-				}
-				document.body.style.overflow = '';
-			}
-		};
-	});
+  // Clean up on component destroy
+  onMount(() => {
+    return () => {
+      if (browser) {
+        // Clean up all event listeners and state
+        if (outsideClickHandler) {
+          document.removeEventListener('click', outsideClickHandler);
+          outsideClickHandler = null;
+        }
+        document.body.style.overflow = '';
+      }
+    };
+  });
 </script>
 
 {#snippet navigationMenu ()}

@@ -1,17 +1,17 @@
 <script lang="ts">
-	import type { HTMLInputAttributes } from 'svelte/elements';
+  import type { HTMLInputAttributes } from 'svelte/elements';
 
-	interface Props extends Omit<HTMLInputAttributes, 'type'> {
-		label?: string;
-		error?: string;
-	}
+  interface Props extends Omit<HTMLInputAttributes, 'type'> {
+    label?: string;
+    error?: string;
+  }
 
-	let {
-		label,
-		error,
-		checked = $bindable(false),
-		...restProps
-	}: Props = $props();
+  let {
+    label,
+    error,
+    checked = $bindable(false),
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div class="mb-2 flex items-center">

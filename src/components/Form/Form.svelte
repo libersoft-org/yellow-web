@@ -1,44 +1,44 @@
 <script lang="ts">
-	import Button from '@/theme/Button/Button.svelte';
+  import Button from '@/theme/Button/Button.svelte';
 
-	let { title = 'Formulář' } = $props();
+  let { title = 'Formulář' } = $props();
 
-	let inputValue = $state('');
-	let textareaValue = $state('');
-	let selectValue = $state('');
-	let radioValue = $state('option1');
-	let consentValue = $state(false);
+  let inputValue = $state('');
+  let textareaValue = $state('');
+  let selectValue = $state('');
+  let radioValue = $state('option1');
+  let consentValue = $state(false);
 
-	function handleSubmit(e: SubmitEvent) {
-		e.preventDefault();
-		console.log('Form submitted', {
-			input: inputValue,
-			textarea: textareaValue,
-			select: selectValue,
-			radioOption: radioValue,
-			consent: consentValue
-		});
-	}
+  function handleSubmit(e: SubmitEvent) {
+    e.preventDefault();
+    console.log('Form submitted', {
+      input: inputValue,
+      textarea: textareaValue,
+      select: selectValue,
+      radioOption: radioValue,
+      consent: consentValue
+    });
+  }
 
-	function handleInputChange(e: Event) {
-		const target = e.target as HTMLInputElement;
-		inputValue = target.value;
-	}
+  function handleInputChange(e: Event) {
+    const target = e.target as HTMLInputElement;
+    inputValue = target.value;
+  }
 
-	function handleTextareaChange(e: Event) {
-		const target = e.target as HTMLTextAreaElement;
-		textareaValue = target.value;
-	}
+  function handleTextareaChange(e: Event) {
+    const target = e.target as HTMLTextAreaElement;
+    textareaValue = target.value;
+  }
 
-	function handleSelectChange(e: Event) {
-		const target = e.target as HTMLSelectElement;
-		selectValue = target.value;
-	}
+  function handleSelectChange(e: Event) {
+    const target = e.target as HTMLSelectElement;
+    selectValue = target.value;
+  }
 
-	function handleCheckboxChange(e: Event) {
-		const target = e.target as HTMLInputElement;
-		consentValue = target.checked;
-	}
+  function handleCheckboxChange(e: Event) {
+    const target = e.target as HTMLInputElement;
+    consentValue = target.checked;
+  }
 </script>
 
 <div class="bg-themeYellow-400 rounded-xl p-6 max-w-md mx-auto">

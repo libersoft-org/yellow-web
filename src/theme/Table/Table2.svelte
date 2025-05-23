@@ -1,90 +1,90 @@
 <script lang="ts">
-	import Button from '@/theme/Button/Button.svelte';
-	import Icon from '@/theme/Icon/Icon.svelte';
+  import Button from '@/theme/Button/Button.svelte';
+  import Icon from '@/theme/Icon/Icon.svelte';
 
-	interface Cell {
-		text: string;
-		alignment?: 'left' | 'center' | 'right';
-		isHeader?: boolean;
-		className?: string;
-		icon?: string;
-		iconStatus?: 'success' | 'error' | 'warning';
-	}
+  interface Cell {
+    text: string;
+    alignment?: 'left' | 'center' | 'right';
+    isHeader?: boolean;
+    className?: string;
+    icon?: string;
+    iconStatus?: 'success' | 'error' | 'warning';
+  }
 
-	interface Row {
-		cells: Cell[];
-	}
+  interface Row {
+    cells: Cell[];
+  }
 
-	interface Props {
-		children?: any;
-		rows?: Row[];
-		headers?: string[];
-		formatHeaders?: boolean;
-		formatNewlines?: boolean;
-		rounded?: boolean;
-		showOverlay?: boolean;
-		overlayType?: 'gray' | 'white';
-		customShadow?: 'standard' | 'multi-side' | 'none';
-		// showButton?: boolean; // This prop seems unused based on shouldShowButton, but was in original
-		buttonLabel?: string;
-		buttonLink?: string;
-		buttonTheme?: 'primary' | 'secondary';
-		buttonRightIcon?: string;
-	}
+  interface Props {
+    children?: any;
+    rows?: Row[];
+    headers?: string[];
+    formatHeaders?: boolean;
+    formatNewlines?: boolean;
+    rounded?: boolean;
+    showOverlay?: boolean;
+    overlayType?: 'gray' | 'white';
+    customShadow?: 'standard' | 'multi-side' | 'none';
+    // showButton?: boolean; // This prop seems unused based on shouldShowButton, but was in original
+    buttonLabel?: string;
+    buttonLink?: string;
+    buttonTheme?: 'primary' | 'secondary';
+    buttonRightIcon?: string;
+  }
 
-	let {
-		children,
-		rows = [],
-		headers = [],
-		formatHeaders = false,
-		formatNewlines = false,
-		rounded = true,
-		showOverlay = false,
-		overlayType = 'gray',
-		customShadow = 'standard',
-		buttonLabel = 'See all',
-		buttonLink = '#',
-		buttonTheme = 'secondary',
-		buttonRightIcon = 'chevron'
-	}: Props = $props();
+  let {
+    children,
+    rows = [],
+    headers = [],
+    formatHeaders = false,
+    formatNewlines = false,
+    rounded = true,
+    showOverlay = false,
+    overlayType = 'gray',
+    customShadow = 'standard',
+    buttonLabel = 'See all',
+    buttonLink = '#',
+    buttonTheme = 'secondary',
+    buttonRightIcon = 'chevron'
+  }: Props = $props();
 
 
-	const shouldShowButton = $derived(buttonLabel && buttonLink && buttonLink !== '#');
+  const shouldShowButton = $derived(buttonLabel && buttonLink && buttonLink !== '#');
 
-	function getShadowClass(customShadow: string) {
-		if (customShadow === 'multi-side') return 'shadow-top-left-right';
-		if (customShadow === 'none') return '';
-		return 'drop-shadow-md';
-	}
+  function getShadowClass(customShadow: string) {
+    if (customShadow === 'multi-side') return 'shadow-top-left-right';
+    if (customShadow === 'none') return '';
+    return 'drop-shadow-md';
+  }
 
-	function getJustifyClass(alignment: 'left' | 'center' | 'right' = 'left') {
-		if (alignment === 'center') return 'justify-center text-center';
-		if (alignment === 'right') return 'justify-end text-right';
-		return 'justify-start text-left';
-	}
+  function getJustifyClass(alignment: 'left' | 'center' | 'right' = 'left') {
+    if (alignment === 'center') return 'justify-center text-center';
+    if (alignment === 'right') return 'justify-end text-right';
+    return 'justify-start text-left';
+  }
 
-	function formatText(text: string) {
-		if (!text) return '';
-		if (formatNewlines) {
-			text = text.replace(/\n/g, '<br>');
-		}
-		return text;
-	}
+  function formatText(text: string) {
+    if (!text) return '';
+    if (formatNewlines) {
+      text = text.replace(/\n/g, '<br>');
+    }
+    return text;
+  }
 
-	function formatHeaderText(text: string) {
-		if (!text) return '';
-		if (formatHeaders) {
-			text = text.replace(/\//g, '/<br>');
-		}
-		return text;
-	}
+  function formatHeaderText(text: string) {
+    if (!text) return '';
+    if (formatHeaders) {
+      text = text.replace(/\//g, '/<br>');
+    }
+    return text;
+  }
 
-	// State for accordion
-	let activeAccordionItem = $state<number | null>(null);
+  // State for accordion
+  let activeAccordionItem = $state<number | null>(null);
 
-	function toggleAccordion(index: number) {
-		activeAccordionItem = activeAccordionItem === index ? null : index;
-	}
+  function toggleAccordion(index: number) {
+    activeAccordionItem = activeAccordionItem === index ? null : index;
+  }
 </script>
 
 <div class={['table-container relative rounded-3xl', getShadowClass(customShadow)]}>

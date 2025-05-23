@@ -1,19 +1,19 @@
 <script lang="ts">
-	import type { HTMLTextareaAttributes } from 'svelte/elements';
+  import type { HTMLTextareaAttributes } from 'svelte/elements';
 
-	interface Props extends HTMLTextareaAttributes {
-		label?: string;
-		error?: string;
-	}
+  interface Props extends HTMLTextareaAttributes {
+    label?: string;
+    error?: string;
+  }
 
-	let {
-		label,
-		error,
-		placeholder,
-		rows = 4,
-		value = $bindable(''),
-		...restProps
-	}: Props = $props();
+  let {
+    label,
+    error,
+    placeholder,
+    rows = 4,
+    value = $bindable(''),
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div class="mb-4">

@@ -1,96 +1,96 @@
 <script lang="ts">
-	import Table from '@/theme/Table/Table.svelte';
+  import Table from '@/theme/Table/Table.svelte';
 
-	interface Cell {
-		text: string;
-		alignment?: 'left' | 'center' | 'right';
-		isHeader?: boolean;
-		className?: string;
-		icon?: string;
-		iconStatus?: 'success' | 'error' | 'warning';
-	}
+  interface Cell {
+    text: string;
+    alignment?: 'left' | 'center' | 'right';
+    isHeader?: boolean;
+    className?: string;
+    icon?: string;
+    iconStatus?: 'success' | 'error' | 'warning';
+  }
 
-	interface Row {
-		cells: Cell[];
-	}
+  interface Row {
+    cells: Cell[];
+  }
 
-	interface LegendItem {
-		icon: string;
-		text: string;
-		colorClass: string;
-	}
+  interface LegendItem {
+    icon: string;
+    text: string;
+    colorClass: string;
+  }
 
-	interface Props {
-		title?: string;
-		subtitle?: string;
-		headers?: string[];
-		rows?: Row[];
-		buttonLabel?: string;
-		buttonLink?: string;
-	}
+  interface Props {
+    title?: string;
+    subtitle?: string;
+    headers?: string[];
+    rows?: Row[];
+    buttonLabel?: string;
+    buttonLink?: string;
+  }
 
-	let {
-		title = 'with other software',
-		headers = ['Software', 'Open source', 'Distributed/decentralized', 'End-to-end encryption', 'Developed by'],
-		rows = [
-			{
-				cells: [
-					{ text: 'Yellow', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-					{ text: 'LiberSoft, Liberland', alignment: 'left' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'E-mail', alignment: 'left', isHeader: true },
-					{ text: 'some software', alignment: 'center' },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-					{ text: 'some software', alignment: 'center' },
-					{ text: 'Jon Postel and Suzanne Sluizer, USA', alignment: 'left' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'WhatsApp', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-					{ text: 'Meta Platforms Inc., USA', alignment: 'left' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'Messages\n(RCS protocol)', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-					{ text: 'mobile operators', alignment: 'center' },
-					{ text: 'in development', alignment: 'center' },
-					{ text: 'Google LLC, USA / GSM Association, UK', alignment: 'left' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'WeChat', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-					{ text: 'Tencent Holdings Ltd., China', alignment: 'left' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'Facebook Messenger', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-					{ text: 'Meta Platforms Inc., USA', alignment: 'left' }
-				]
-			}
-		],
-		buttonLabel = 'See all comparsions',
-		buttonLink = '/comparisons'
-	}: Props = $props();
+  let {
+    title = 'with other software',
+    headers = ['Software', 'Open source', 'Distributed/decentralized', 'End-to-end encryption', 'Developed by'],
+    rows = [
+      {
+        cells: [
+          { text: 'Yellow', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
+          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
+          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
+          { text: 'LiberSoft, Liberland', alignment: 'left' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'E-mail', alignment: 'left', isHeader: true },
+          { text: 'some software', alignment: 'center' },
+          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
+          { text: 'some software', alignment: 'center' },
+          { text: 'Jon Postel and Suzanne Sluizer, USA', alignment: 'left' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'WhatsApp', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
+          { text: 'Meta Platforms Inc., USA', alignment: 'left' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'Messages\n(RCS protocol)', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+          { text: 'mobile operators', alignment: 'center' },
+          { text: 'in development', alignment: 'center' },
+          { text: 'Google LLC, USA / GSM Association, UK', alignment: 'left' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'WeChat', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+          { text: 'Tencent Holdings Ltd., China', alignment: 'left' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'Facebook Messenger', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+          { text: 'Meta Platforms Inc., USA', alignment: 'left' }
+        ]
+      }
+    ],
+    buttonLabel = 'See all comparsions',
+    buttonLink = '/comparisons'
+  }: Props = $props();
 </script>
 
 <div class="app-features-comparison-table flex flex-col items-center justify-center">

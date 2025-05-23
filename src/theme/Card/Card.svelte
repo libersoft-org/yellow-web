@@ -1,23 +1,23 @@
 <script lang="ts">
-	import Icon from '@/theme/Icon/Icon.svelte';
+  import Icon from '@/theme/Icon/Icon.svelte';
 
-	interface Props {
-		title?: string;
-		icon?: string;
-		children?: any;
-		headerSlot?: any;
-		footerSlot?: any;
-	}
+  interface Props {
+    title?: string;
+    icon?: string;
+    children?: any;
+    headerSlot?: any;
+    footerSlot?: any;
+  }
 
-	let {
-		title,
-		icon,
-		headerSlot,
-		footerSlot,
-		children
-	}: Props = $props();
+  let {
+    title,
+    icon,
+    headerSlot,
+    footerSlot,
+    children
+  }: Props = $props();
 
-	const showHeader = $derived(title || icon || headerSlot);
+  const showHeader = $derived(title || icon || headerSlot);
 </script>
 
 <div

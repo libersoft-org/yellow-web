@@ -1,63 +1,63 @@
 <script lang="ts">
-	import Icon from '@/theme/Icon/Icon.svelte';
-	import Link from '@/theme/Link/Link.svelte';
+  import Icon from '@/theme/Icon/Icon.svelte';
+  import Link from '@/theme/Link/Link.svelte';
 
-	type PositionType = 'static' | 'sticky' | 'fixed';
+  type PositionType = 'static' | 'sticky' | 'fixed';
 
-	interface LinkItem {
-		label: string;
-		href: string;
-		icon?: string;
-		iconSize?: 'sm' | 'md' | 'lg';
-	}
+  interface LinkItem {
+    label: string;
+    href: string;
+    icon?: string;
+    iconSize?: 'sm' | 'md' | 'lg';
+  }
 
-	interface LinkSection {
-		title: string;
-		links: LinkItem[];
-	}
+  interface LinkSection {
+    title: string;
+    links: LinkItem[];
+  }
 
-	interface SocialLink {
-		icon: string;
-		href: string;
-		label: string;
-	}
+  interface SocialLink {
+    icon: string;
+    href: string;
+    label: string;
+  }
 
-	interface Props {
-		position?: PositionType;
-		zIndex?: number;
-		contactEmail?: string;
-		socialLinks?: SocialLink[];
-		mainLinks?: LinkItem[];
-		copyright?: string;
-	}
+  interface Props {
+    position?: PositionType;
+    zIndex?: number;
+    contactEmail?: string;
+    socialLinks?: SocialLink[];
+    mainLinks?: LinkItem[];
+    copyright?: string;
+  }
 
-	const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
-	let {
-		contactEmail = 'info@libersoft.org',
-		socialLinks = [
-			{ icon: 'open-source', href: 'https://github.com/yellow', label: 'GitHub Page' },
-			{ icon: 'message', href: 'https://t.me/yellow', label: 'Telegram <br class="hidden md:block"> Chat Group' },
-			{
-				icon: 'message',
-				href: 'https://t.me/yellow-announcements',
-				label: 'Telegram <br class="hidden md:block"> Announcements'
-			},
-			{ icon: 'message', href: 'https://facebook.com/yellow', label: 'Facebook Group' },
-			{ icon: 'open-source', href: 'https://linkedin.com/company/yellow', label: 'LinkedIn' }
-		],
-		mainLinks = [
-			{ label: 'About', href: '/about' },
-			{ label: 'Features', href: '/features' },
-			{ label: 'Download', href: '/download' },
-			{ label: 'Comparsion', href: '/comparsion' },
-			{ label: 'Documentation', href: '/documentation' },
-			{ label: 'FAQ', href: '/faq' },
-			{ label: 'Contact', href: '/contact' },
-			{ label: 'Create free account', href: '/signup' }
-		],
-		copyright = `Copyright © ${currentYear} Yellow | All Rights Reserved`
-	}: Props = $props();
+  let {
+    contactEmail = 'info@libersoft.org',
+    socialLinks = [
+      { icon: 'open-source', href: 'https://github.com/yellow', label: 'GitHub Page' },
+      { icon: 'message', href: 'https://t.me/yellow', label: 'Telegram <br class="hidden md:block"> Chat Group' },
+      {
+        icon: 'message',
+        href: 'https://t.me/yellow-announcements',
+        label: 'Telegram <br class="hidden md:block"> Announcements'
+      },
+      { icon: 'message', href: 'https://facebook.com/yellow', label: 'Facebook Group' },
+      { icon: 'open-source', href: 'https://linkedin.com/company/yellow', label: 'LinkedIn' }
+    ],
+    mainLinks = [
+      { label: 'About', href: '/about' },
+      { label: 'Features', href: '/features' },
+      { label: 'Download', href: '/download' },
+      { label: 'Comparsion', href: '/comparsion' },
+      { label: 'Documentation', href: '/documentation' },
+      { label: 'FAQ', href: '/faq' },
+      { label: 'Contact', href: '/contact' },
+      { label: 'Create free account', href: '/signup' }
+    ],
+    copyright = `Copyright © ${currentYear} Yellow | All Rights Reserved`
+  }: Props = $props();
 </script>
 
 {#snippet contactSection ()}

@@ -1,97 +1,97 @@
 <script lang="ts">
-	import Table from '@/theme/Table/Table.svelte';
-	import svgBackground from './bg.svg?raw';
-	import Icon from '@/theme/Icon/Icon.svelte';
+  import Table from '@/theme/Table/Table.svelte';
+  import svgBackground from './bg.svg?raw';
+  import Icon from '@/theme/Icon/Icon.svelte';
 
-	interface Cell {
-		text: string;
-		alignment?: 'left' | 'center' | 'right';
-		isHeader?: boolean;
-		className?: string;
-		icon?: string;
-		iconStatus?: 'success' | 'error' | 'warning';
-	}
+  interface Cell {
+    text: string;
+    alignment?: 'left' | 'center' | 'right';
+    isHeader?: boolean;
+    className?: string;
+    icon?: string;
+    iconStatus?: 'success' | 'error' | 'warning';
+  }
 
-	interface Row {
-		cells: Cell[];
-	}
+  interface Row {
+    cells: Cell[];
+  }
 
-	interface LegendItem {
-		icon: string;
-		text: string;
-		colorClass: string;
-	}
+  interface LegendItem {
+    icon: string;
+    text: string;
+    colorClass: string;
+  }
 
-	interface Props {
-		title?: string;
-		headers?: string[];
-		rows?: Row[];
-		imagePath?: string;
-		showButton?: boolean;
-		buttonLabel?: string;
-		buttonLink?: string;
-		legendItems?: LegendItem[];
-	}
+  interface Props {
+    title?: string;
+    headers?: string[];
+    rows?: Row[];
+    imagePath?: string;
+    showButton?: boolean;
+    buttonLabel?: string;
+    buttonLink?: string;
+    legendItems?: LegendItem[];
+  }
 
-	let {
-		title = 'Features',
-		headers = ['Feature', 'Implemented'],
-		rows = [
-			{
-				cells: [
-					{ text: 'AMTP protocol', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'DMTP protocol', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'Server - modularity', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'Client - modularity', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'warning', icon: 'check' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'Encrypted connection', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' }
-				]
-			},
-			{
-				cells: [
-					{ text: 'Client - encryption, signature and login keys management', alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' }
-				]
-			}
-		],
-		imagePath = 'assets/images/fluid.png',
-		buttonLabel = 'See all features',
-		buttonLink = '/features',
-		legendItems = [
-			{ icon: 'cross', text: 'Not implemented', colorClass: 'text-red-400' },
-			{ icon: 'check', text: 'Fully implemented', colorClass: 'text-green-500' },
-			{ icon: 'check', text: 'Partially implemented', colorClass: 'text-yellow-500' }
-		]
-	}: Props = $props();
+  let {
+    title = 'Features',
+    headers = ['Feature', 'Implemented'],
+    rows = [
+      {
+        cells: [
+          { text: 'AMTP protocol', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'DMTP protocol', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'Server - modularity', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'Client - modularity', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'warning', icon: 'check' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'Encrypted connection', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' }
+        ]
+      },
+      {
+        cells: [
+          { text: 'Client - encryption, signature and login keys management', alignment: 'left', isHeader: true },
+          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' }
+        ]
+      }
+    ],
+    imagePath = 'assets/images/fluid.png',
+    buttonLabel = 'See all features',
+    buttonLink = '/features',
+    legendItems = [
+      { icon: 'cross', text: 'Not implemented', colorClass: 'text-red-400' },
+      { icon: 'check', text: 'Fully implemented', colorClass: 'text-green-500' },
+      { icon: 'check', text: 'Partially implemented', colorClass: 'text-yellow-500' }
+    ]
+  }: Props = $props();
 
-	function shouldShowOverlay(rows: Row[]) {
-		return rows.length > 5;
-	}
+  function shouldShowOverlay(rows: Row[]) {
+    return rows.length > 5;
+  }
 
-	function getTableContainerClass(rows: Row[]) {
-		const baseClasses = 'bg-white rounded-2xl relative';
-		return `${baseClasses}`;
-	}
+  function getTableContainerClass(rows: Row[]) {
+    const baseClasses = 'bg-white rounded-2xl relative';
+    return `${baseClasses}`;
+  }
 </script>
 
 {#snippet leftSide ()}

@@ -1,18 +1,18 @@
 <script lang="ts">
-	import type { HTMLInputAttributes } from 'svelte/elements';
+  import type { HTMLInputAttributes } from 'svelte/elements';
 
-	interface Props extends HTMLInputAttributes {
-		label?: string;
-		error?: string;
-	}
+  interface Props extends HTMLInputAttributes {
+    label?: string;
+    error?: string;
+  }
 
-	let {
-		label,
-		error,
-		placeholder,
-		value = $bindable(''),
-		...restProps
-	}: Props = $props();
+  let {
+    label,
+    error,
+    placeholder,
+    value = $bindable(''),
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div class="mb-4">

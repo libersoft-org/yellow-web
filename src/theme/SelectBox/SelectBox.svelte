@@ -1,62 +1,62 @@
 <script lang="ts">
-	import type { HTMLSelectAttributes } from 'svelte/elements';
-	import Icon from '@/theme/Icon/Icon.svelte';
-	import { onMount } from 'svelte';
+  import type { HTMLSelectAttributes } from 'svelte/elements';
+  import Icon from '@/theme/Icon/Icon.svelte';
+  import { onMount } from 'svelte';
 
-	export interface SelectOption {
-		value: string;
-		label: string;
-		icon?: string;
-	}
+  export interface SelectOption {
+    value: string;
+    label: string;
+    icon?: string;
+  }
 
-	interface Props extends HTMLSelectAttributes {
-		label?: string;
-		options: SelectOption[];
-		error?: string;
-		showIcons?: boolean;
-	}
+  interface Props extends HTMLSelectAttributes {
+    label?: string;
+    options: SelectOption[];
+    error?: string;
+    showIcons?: boolean;
+  }
 
-	let {
-		label,
-		options = [],
-		error,
-		value = $bindable(''),
-		showIcons = true,
-		...restProps
-	}: Props = $props();
+  let {
+    label,
+    options = [],
+    error,
+    value = $bindable(''),
+    showIcons = true,
+    ...restProps
+  }: Props = $props();
 
-	// Find the currently selected option for displaying selected icon
-	$effect(() => {
-		selectedOption = options.find(option => option.value === value) || null;
-	});
+  // Find the currently selected option for displaying selected icon
+  $effect(() => {
+    selectedOption = options.find(option => option.value === value) || null;
+  });
 
-	let selectedOption: SelectOption | null = $state(null);
-	let isOpen = $state(false);
-	let selectContainer: HTMLDivElement;
+  let selectedOption: SelectOption | null = $state(null);
+  let isOpen = $state(false);
+  let selectContainer: HTMLDivElement;
 
-	function toggleDropdown() {
-		isOpen = !isOpen;
-	}
+  function toggleDropdown() {
+    isOpen = !isOpen;
+  }
 
-	function selectOption(option: SelectOption) {
-		value = option.value;
-		isOpen = false;
-	}
+  function selectOption(option: SelectOption) {
+    value = option.value;
+    isOpen = false;
+  }
 
-	// Close dropdown when clicking outside
-	onMount(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			if (selectContainer && !selectContainer.contains(event.target as Node) && isOpen) {
-				isOpen = false;
-			}
-		};
+  // Close dropdown when clicking outside
+  onMount(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (selectContainer && !selectContainer.contains(event.target as Node) && isOpen) {
+        isOpen = false;
+      }
+    };
 
-		document.addEventListener('click', handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
 
-		return () => {
-			document.removeEventListener('click', handleClickOutside);
-		};
-	});
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  });
 </script>
 
 <div class="mb-4">

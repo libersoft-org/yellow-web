@@ -1,72 +1,72 @@
 <script lang="ts">
-	import Icon from '@/theme/Icon/Icon.svelte';
-	import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
-	import { createDropdownHandlers } from '@/utils/dropdown';
-	import type { Action } from 'svelte/action';
+  import Icon from '@/theme/Icon/Icon.svelte';
+  import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
+  import { createDropdownHandlers } from '@/utils/dropdown';
+  import type { Action } from 'svelte/action';
 
-	interface Props {
-		label: string;
-		href: string;
-		active?: boolean;
-		subItems?: Array<{ label: string, href: string }>;
-	}
+  interface Props {
+    label: string;
+    href: string;
+    active?: boolean;
+    subItems?: Array<{ label: string, href: string }>;
+  }
 
-	let { label, href, active, subItems = [] }: Props = $props();
+  let { label, href, active, subItems = [] }: Props = $props();
 
-	const hasChildren = $derived(subItems.length > 0);
-	let isMobile = $state(false);
+  const hasChildren = $derived(subItems.length > 0);
+  let isMobile = $state(false);
 
-	let headerItemRef: HTMLElement;
-	let buttonRef: HTMLElement;
-	let show = $state(false);
+  let headerItemRef: HTMLElement;
+  let buttonRef: HTMLElement;
+  let show = $state(false);
 
-	// Check if mobile view on mount and on resize
-	const checkMobile = () => {
-		// Use viewport width instead of inner width for more reliable measurement
-		isMobile = document.documentElement.clientWidth < 1024;
-	};
+  // Check if mobile view on mount and on resize
+  const checkMobile = () => {
+    // Use viewport width instead of inner width for more reliable measurement
+    isMobile = document.documentElement.clientWidth < 1024;
+  };
 
-	// Initialize dropdown handlers
-	let handlers: ReturnType<typeof createDropdownHandlers>;
-	let onEnter = $state<() => void>(() => {
-	});
-	let onLeave = $state<(e: PointerEvent) => void>((e: PointerEvent) => {
-	});
-	let bindFloatingRef = $state<Action<HTMLElement>>(() => ({}));
+  // Initialize dropdown handlers
+  let handlers: ReturnType<typeof createDropdownHandlers>;
+  let onEnter = $state<() => void>(() => {
+  });
+  let onLeave = $state<(e: PointerEvent) => void>((e: PointerEvent) => {
+  });
+  let bindFloatingRef = $state<Action<HTMLElement>>(() => ({}));
 
-	$effect(() => {
-		if (!headerItemRef) return;
+  $effect(() => {
+    if (!headerItemRef) return;
 
-		// Initialize dropdown handlers with our utility
-		handlers = createDropdownHandlers({
-			isOpen: show,
-			setIsOpen: (value) => {
-				show = value;
-			},
-			isMobile,
-			containerRef: headerItemRef
-		});
+    // Initialize dropdown handlers with our utility
+    handlers = createDropdownHandlers({
+      isOpen: show,
+      setIsOpen: (value) => {
+        show = value;
+      },
+      isMobile,
+      containerRef: headerItemRef
+    });
 
-		// Make direct references for template usage
-		onEnter = handlers.onEnter;
-		onLeave = handlers.onLeave;
-		bindFloatingRef = handlers.bindFloatingRef;
-	});
+    // Make direct references for template usage
+    onEnter = handlers.onEnter;
+    onLeave = handlers.onLeave;
+    bindFloatingRef = handlers.bindFloatingRef;
+  });
 
-	$effect(() => {
-		if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-			checkMobile();
-			window.addEventListener('resize', checkMobile);
-			return () => window.removeEventListener('resize', checkMobile);
-		}
-	});
+  $effect(() => {
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }
+  });
 
-	const onClick = (e: MouseEvent) => {
-		if (hasChildren && isMobile) {
-			e.preventDefault();
-			show = !show;
-		}
-	};
+  const onClick = (e: MouseEvent) => {
+    if (hasChildren && isMobile) {
+      e.preventDefault();
+      show = !show;
+    }
+  };
 </script>
 
 <style>

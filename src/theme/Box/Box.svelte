@@ -1,33 +1,33 @@
 <script lang="ts">
-	import Icon from '@/theme/Icon/Icon.svelte';
-	import Button from '@/theme/Button/Button.svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+  import Icon from '@/theme/Icon/Icon.svelte';
+  import Button from '@/theme/Button/Button.svelte';
+  import type { HTMLAttributes } from 'svelte/elements';
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
-		title?: string;
-		description?: string;
-		icon?: string;
-		theme?: 'primary' | 'secondary';
-		footerSlot?: any;
-		footerType?: 'link' | 'button';
-		footerLink?: string;
-		footerText?: string;
-	}
+  interface Props extends HTMLAttributes<HTMLDivElement> {
+    title?: string;
+    description?: string;
+    icon?: string;
+    theme?: 'primary' | 'secondary';
+    footerSlot?: any;
+    footerType?: 'link' | 'button';
+    footerLink?: string;
+    footerText?: string;
+  }
 
-	let {
-		title,
-		description,
-		icon,
-		theme = 'primary',
-		footerSlot,
-		footerType,
-		footerLink = '#',
-		footerText = 'Learn more',
-		...restProps
-	}: Props = $props();
+  let {
+    title,
+    description,
+    icon,
+    theme = 'primary',
+    footerSlot,
+    footerType,
+    footerLink = '#',
+    footerText = 'Learn more',
+    ...restProps
+  }: Props = $props();
 
-	const showHeader = $derived(title || icon);
-	const showFooter = $derived(footerType || footerSlot);
+  const showHeader = $derived(title || icon);
+  const showFooter = $derived(footerType || footerSlot);
 </script>
 
 <div

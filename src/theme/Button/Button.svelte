@@ -1,23 +1,23 @@
 <script lang="ts">
-	import type { HTMLButtonAttributes } from 'svelte/elements';
-	import Icon, { type Props as IconProps } from '@/theme/Icon/Icon.svelte';
+  import type { HTMLButtonAttributes } from 'svelte/elements';
+  import Icon, { type Props as IconProps } from '@/theme/Icon/Icon.svelte';
 
-	interface Props extends HTMLButtonAttributes {
-		label: string;
-		theme?: 'primary' | 'secondary';
-		icon?: string | IconProps;
-		rightIcon?: string | IconProps;
-		iconSize?: IconProps['size'];
-	}
+  interface Props extends HTMLButtonAttributes {
+    label: string;
+    theme?: 'primary' | 'secondary';
+    icon?: string | IconProps;
+    rightIcon?: string | IconProps;
+    iconSize?: IconProps['size'];
+  }
 
-	let {
-		label,
-		theme = 'primary',
-		icon,
-		rightIcon,
-		iconSize = 'sm',
-		...restProps
-	}: Props = $props();
+  let {
+    label,
+    theme = 'primary',
+    icon,
+    rightIcon,
+    iconSize = 'sm',
+    ...restProps
+  }: Props = $props();
 </script>
 
 <style>

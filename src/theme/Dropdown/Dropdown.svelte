@@ -1,56 +1,56 @@
 <script lang="ts">
-	import { autoUpdate, computePosition, offset, shift } from '@floating-ui/dom';
+  import { autoUpdate, computePosition, offset, shift } from '@floating-ui/dom';
 
-	interface Props {
-		show: boolean;
-		isMobile: boolean;
-		referenceElement?: HTMLElement | null; // The element to position relative to
-		children?: any;
-	}
+  interface Props {
+    show: boolean;
+    isMobile: boolean;
+    referenceElement?: HTMLElement | null; // The element to position relative to
+    children?: any;
+  }
 
-	let {
-		show = false,
-		isMobile = false,
-		referenceElement = null,
-		children
-	}: Props = $props();
+  let {
+    show = false,
+    isMobile = false,
+    referenceElement = null,
+    children
+  }: Props = $props();
 
-	let dropdownRef: HTMLElement;
-	let cleanupAutoUpdate: (() => void) | undefined;
+  let dropdownRef: HTMLElement;
+  let cleanupAutoUpdate: (() => void) | undefined;
 
-	// Setup floating UI when shown and reference element exists
-	$effect(() => {
-		// Clean up previous instance if exists
-		if (cleanupAutoUpdate) {
-			cleanupAutoUpdate();
-			cleanupAutoUpdate = undefined;
-		}
+  // Setup floating UI when shown and reference element exists
+  $effect(() => {
+    // Clean up previous instance if exists
+    if (cleanupAutoUpdate) {
+      cleanupAutoUpdate();
+      cleanupAutoUpdate = undefined;
+    }
 
-		// Only setup positioning if we have both elements and dropdown is visible
-		if (show && referenceElement && dropdownRef && !isMobile) {
-			// Setup auto-update to reposition on scroll/resize
-			cleanupAutoUpdate = autoUpdate(referenceElement!, dropdownRef, () => {
-				computePosition(referenceElement!, dropdownRef, {
-					middleware: [
-						shift(),
-						offset(8)
-					]
-				}).then(({ x, y }) => {
-					Object.assign(dropdownRef.style, {
-						left: `${x}px`,
-						top: `${y}px`
-					});
-				});
-			});
-		}
+    // Only setup positioning if we have both elements and dropdown is visible
+    if (show && referenceElement && dropdownRef && !isMobile) {
+      // Setup auto-update to reposition on scroll/resize
+      cleanupAutoUpdate = autoUpdate(referenceElement!, dropdownRef, () => {
+        computePosition(referenceElement!, dropdownRef, {
+          middleware: [
+            shift(),
+            offset(8)
+          ]
+        }).then(({ x, y }) => {
+          Object.assign(dropdownRef.style, {
+            left: `${x}px`,
+            top: `${y}px`
+          });
+        });
+      });
+    }
 
-		// Clean up on component unmount
-		return () => {
-			if (cleanupAutoUpdate) {
-				cleanupAutoUpdate();
-			}
-		};
-	});
+    // Clean up on component unmount
+    return () => {
+      if (cleanupAutoUpdate) {
+        cleanupAutoUpdate();
+      }
+    };
+  });
 </script>
 
 <div

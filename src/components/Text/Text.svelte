@@ -1,25 +1,25 @@
 <script lang="ts">
-	import Link from '@/theme/Link/Link.svelte';
+  import Link from '@/theme/Link/Link.svelte';
 
-	const title = 'Liberland Software Foundation';
+  const title = 'Liberland Software Foundation';
 
-	const address = [
-		'Liberty Street 1',
-		'Liberty City',
-		'LL-00001 Liberland',
-		'Organization ID: LLC230002'
-	];
+  const address = [
+    'Liberty Street 1',
+    'Liberty City',
+    'LL-00001 Liberland',
+    'Organization ID: LLC230002'
+  ];
 
-	const contactTitle = 'Get in touch';
-	const contactEmail = 'info@libersoft.org';
+  const contactTitle = 'Get in touch';
+  const contactEmail = 'info@libersoft.org';
 
-	const links = [
-		{ label: 'Github Page', icon: 'github', href: 'https://github.com/yellow' },
-		{ label: 'Telegram Chat Group', icon: 'telegram', href: 'https://t.me/yellow' },
-		{ label: 'Telegram Announcements', icon: 'telegram', href: 'https://t.me/yellow-announcements' },
-		{ label: 'LinkedIn', icon: 'linkedin', href: 'https://linkedin.com/company/yellow' },
-		{ label: 'Facebook Group', icon: 'facebook', href: 'https://facebook.com/yellow' }
-	];
+  const links = [
+    { label: 'Github Page', icon: 'github', href: 'https://github.com/yellow' },
+    { label: 'Telegram Chat Group', icon: 'telegram', href: 'https://t.me/yellow' },
+    { label: 'Telegram Announcements', icon: 'telegram', href: 'https://t.me/yellow-announcements' },
+    { label: 'LinkedIn', icon: 'linkedin', href: 'https://linkedin.com/company/yellow' },
+    { label: 'Facebook Group', icon: 'facebook', href: 'https://facebook.com/yellow' }
+  ];
 </script>
 
 {#snippet headerSnippet ()}

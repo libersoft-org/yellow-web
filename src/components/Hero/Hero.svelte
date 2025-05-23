@@ -1,17 +1,17 @@
 <script lang="ts">
-	import Button from '@/theme/Button/Button.svelte';
+  import Button from '@/theme/Button/Button.svelte';
 
-	interface Props {
-		imageSrc?: string;
-		backgroundImage?: string;
-		heroText?: string;
-	}
+  interface Props {
+    imageSrc?: string;
+    backgroundImage?: string;
+    heroText?: string;
+  }
 
-	let {
-		imageSrc = 'assets/images/desktop.png',
-		backgroundImage = 'assets/images/hero-bg.png',
-		heroText = 'Experience the freedom of decentralized world. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.'
-	}: Props = $props();
+  let {
+    imageSrc = 'assets/images/desktop.png',
+    backgroundImage = 'assets/images/hero-bg.png',
+    heroText = 'Experience the freedom of decentralized world. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.'
+  }: Props = $props();
 </script>
 
 {#snippet leftSide ()}
