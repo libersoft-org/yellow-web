@@ -34,7 +34,7 @@
 
 	$effect(() => {
 		if (!headerItemRef) return;
-		
+
 		// Initialize dropdown handlers with our utility
 		handlers = createDropdownHandlers({
 			isOpen: show,
@@ -44,7 +44,7 @@
 			isMobile,
 			containerRef: headerItemRef
 		});
-		
+
 		// Make direct references for template usage
 		onEnter = handlers.onEnter;
 		onLeave = handlers.onLeave;
@@ -72,7 +72,7 @@
 	:global(.header-item .theme-button--primary) {
 		border-radius: 0;
 	}
-	
+
 	@media (min-width: 1024px) {
 		:global(.header-item .theme-button--primary) {
 			border-radius: 0.75rem;
@@ -105,11 +105,11 @@
 	:global(.header-item .mobile-dropdown.open) {
 		max-height: 500px; /* Adjust as needed */
 	}
-	
-	
+
+
 </style>
 
-<li bind:this={headerItemRef} class="header-item relative w-full lg:w-auto border-b border-themeGray-500 lg:border-b-0" onpointerenter={onEnter} onpointerleave={onLeave}>
+<li bind:this={headerItemRef} class="header-item flex items-center relative w-full lg:w-auto border-b border-themeGray-500 lg:border-b-0" onpointerenter={onEnter} onpointerleave={onLeave}>
 	<a
 		bind:this={buttonRef}
 		class="text-white font-medium border-b-2 border-transparent lg:font-bold lg:text-gray-700 py-3.5 lg:py-2 px-8 lg:px-4 hover:theme-button--primary flex items-center gap-1 text-base lg:text-md"
