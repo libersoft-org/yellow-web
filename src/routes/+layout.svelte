@@ -1,9 +1,10 @@
-<script module lang="ts">
+<script lang="ts" module>
 	export const prerender = true;
 </script>
 
 <script lang="ts">
 	import '../app.css';
+
 	let { children } = $props();
 </script>
 

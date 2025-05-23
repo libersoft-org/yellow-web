@@ -13,16 +13,16 @@
 		'5xl': 'max-w-10 max-h-10 w-10 h-10',
 		'6xl': 'max-w-12 max-h-12 w-12 h-12',
 		'7xl': 'max-w-32 max-h-32 w-32 h-32',
-		'8xl': 'max-w-36 max-h-36 w-36 h-36',
-	}
+		'8xl': 'max-w-36 max-h-36 w-36 h-36'
+	};
 
 	export type IconSizeMapType = keyof typeof sizeMap;
 
 	export interface Props extends HTMLAttributes<HTMLDivElement> {
 		name: string;
-		basePath?: string
+		basePath?: string;
 		imgProps?: HTMLImgAttributes;
-		size?: IconSizeMapType | number
+		size?: IconSizeMapType | number;
 	}
 </script>
 
@@ -34,7 +34,7 @@
 		...restProps
 	}: Props = $props();
 
-	let svgContent = $state('')
+	let svgContent = $state('');
 
 	$effect(() => {
 		// Determine if this is a public path or a source path
@@ -55,11 +55,11 @@
 			})
 			.catch(error => {
 				console.error(`Icon "${name}" not found:`, error);
-				svgContent = "";
+				svgContent = '';
 			});
-	})
+	});
 
-	const sizeClass = $derived(typeof size === 'string' ? sizeMap[size] : undefined)
+	const sizeClass = $derived(typeof size === 'string' ? sizeMap[size] : undefined);
 </script>
 
 <div
@@ -71,8 +71,8 @@
 </div>
 
 <style>
-.icon :global(svg) {
-	width: 100%;
-	height: 100%;
-}
+    .icon :global(svg) {
+        width: 100%;
+        height: 100%;
+    }
 </style>

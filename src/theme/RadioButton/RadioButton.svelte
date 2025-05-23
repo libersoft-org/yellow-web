@@ -20,16 +20,16 @@
 
 <div class="mb-2 flex items-center">
 	<input
-		type="radio"
-		{name}
-		{value}
+		{...restProps}
 		{checked}
 		class={[
 			'h-4 w-4 border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500',
 			error ? 'border-red-500' : '',
 			restProps.class
 		]}
-		{...restProps}
+		{name}
+		type="radio"
+		{value}
 	/>
 	{#if label}
 		<label class="ml-2 text-sm text-themeGray-700">{label}</label>
@@ -37,4 +37,4 @@
 </div>
 {#if error}
 	<p class="mt-1 text-sm text-red-500">{error}</p>
-{/if} 
+{/if}

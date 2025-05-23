@@ -33,12 +33,12 @@
 				computePosition(referenceElement!, dropdownRef, {
 					middleware: [
 						shift(),
-						offset(8),
-					],
+						offset(8)
+					]
 				}).then(({ x, y }) => {
 					Object.assign(dropdownRef.style, {
 						left: `${x}px`,
-						top: `${y}px`,
+						top: `${y}px`
 					});
 				});
 			});
@@ -59,7 +59,7 @@
 		"transition-opacity duration-200 dropdown bg-gradient-to-t theme-gradient-white lg:rounded-lg lg:shadow-lg",
 		isMobile ? "mobile-dropdown" : "theme-floating-dropdown",
 		show ? 'opacity-100 open' : 'opacity-0 pointer-events-none',
-		
+
 	]}
 >
 	<div class="dropdown-content relative py-2.5 px-4">

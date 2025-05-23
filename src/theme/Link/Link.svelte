@@ -27,11 +27,11 @@
 </script>
 
 <a
-	{href}
-	class="flex items-center {className} gap-1.5 group"
-	{target}
-	{rel}
 	aria-label={label}
+	class="flex items-center {className} gap-1.5 group"
+	{href}
+	{rel}
+	{target}
 >
 	{#if icon}
 		<span class={iconWrapperClass}>
@@ -40,6 +40,7 @@
 	{/if}
 	<span class="inline-block relative">
 		<span class="text-white">{@html label}</span>
-		<span class="absolute left-0 bottom-[-5px] w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
+		<span
+			class="absolute left-0 bottom-[-5px] w-0 h-[1px] bg-current transition-all duration-300 group-hover:w-full"></span>
 	</span>
-</a> 
+</a>

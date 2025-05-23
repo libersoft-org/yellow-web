@@ -11,7 +11,7 @@
 	});
 </script>
 
-{#snippet badge(infos)}
+{#snippet badge (infos)}
 	<div class="flex gap-2 mb-2">
 		{#each infos as info (info)}
 			<div class="border-1 py-0.5 px-1.5 rounded-md bg-gray-100 first:text-blue-800 text-xs font-semibold">
@@ -49,11 +49,15 @@
 	</div>
 	{@render badge(['theme-text-body1'])}
 	<div class="mb-8">
-		<h6 class="theme-text-body1">Body 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</h6>
+		<h6 class="theme-text-body1">Body 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+			tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos
+			laborum fugiat deleniti? Eum quasi quidem quibusdam.</h6>
 	</div>
 	{@render badge(['theme-text-body2'])}
 	<div class="mb-8">
-		<h6 class="theme-text-body2">Body 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.</h6>
+		<h6 class="theme-text-body2">Body 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis
+			tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos
+			laborum fugiat deleniti? Eum quasi quidem quibusdam.</h6>
 	</div>
 </Story>
 

@@ -68,8 +68,8 @@
 			<div class="max-w-[380px] w-full flex justify-center
 						md:col-span-2 md:row-start-1 md:justify-center
 						lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:justify-start">
-				<img src="/assets/images/app-features-mobile.png" alt="App Features Mobile"
-						 class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full" />
+				<img alt="App Features Mobile" class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full"
+						 src="/assets/images/app-features-mobile.png" />
 			</div>
 
 			{#each features as feature, index}
@@ -89,7 +89,7 @@
 		</div>
 
 		<div class="flex justify-center mt-16 md:mt-2 lg:mt-1">
-			<Button label="See all features" theme="secondary" rightIcon="chevron" />
+			<Button label="See all features" rightIcon="chevron" theme="secondary" />
 		</div>
 	</div>
 </div>

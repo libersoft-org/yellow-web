@@ -38,7 +38,11 @@
 		socialLinks = [
 			{ icon: 'open-source', href: 'https://github.com/yellow', label: 'GitHub Page' },
 			{ icon: 'message', href: 'https://t.me/yellow', label: 'Telegram <br class="hidden md:block"> Chat Group' },
-			{ icon: 'message', href: 'https://t.me/yellow-announcements', label: 'Telegram <br class="hidden md:block"> Announcements' },
+			{
+				icon: 'message',
+				href: 'https://t.me/yellow-announcements',
+				label: 'Telegram <br class="hidden md:block"> Announcements'
+			},
 			{ icon: 'message', href: 'https://facebook.com/yellow', label: 'Facebook Group' },
 			{ icon: 'open-source', href: 'https://linkedin.com/company/yellow', label: 'LinkedIn' }
 		],
@@ -56,11 +60,12 @@
 	}: Props = $props();
 </script>
 
-{#snippet contactSection()}
+{#snippet contactSection ()}
 	<div class="footer-contact font-bold text-white flex flex-col items-center justify-center mb-10">
 		<div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-2 md:gap-6.5">
 			<h2 class="theme-text-h2">Get in touch</h2>
-			<a href="mailto:{contactEmail}" class="text-xl transition-colors hover:no-underline underline inline-flex duration-200 flex items-center gap-2">
+			<a href="mailto:{contactEmail}"
+				 class="text-xl transition-colors hover:no-underline underline inline-flex duration-200 flex items-center gap-2">
 				<div class="text-themeYellow-600">
 					<Icon name="envelope" size="xl" />
 				</div>
@@ -70,8 +75,9 @@
 	</div>
 {/snippet}
 
-{#snippet socialLinksSection()}
-	<div class="footer-social order-last md:order-first flex flex-wrap lg:grid lg:grid-cols-5 md:justify-items-center mb-12.5 md:py-6 md:border-b md:border-t md:border-themeGray-600">
+{#snippet socialLinksSection ()}
+	<div
+		class="footer-social order-last md:order-first flex flex-wrap lg:grid lg:grid-cols-5 md:justify-items-center mb-12.5 md:py-6 md:border-b md:border-t md:border-themeGray-600">
 		{#each socialLinks as social, i}
 			<Link
 				href={social.href}
@@ -86,7 +92,7 @@
 	</div>
 {/snippet}
 
-{#snippet navigationLinksSection()}
+{#snippet navigationLinksSection ()}
 	<div class="footer-nav flex justify-center mb-5 pb-8">
 		<ul class="flex flex-wrap gap-x-6 gap-y-2">
 			{#each mainLinks as link, i}
@@ -105,30 +111,31 @@
 	</div>
 {/snippet}
 
-{#snippet copyrightSection()}
+{#snippet copyrightSection ()}
 	<div class="footer-copyright flex justify-center">
-		<div class="bg-white md:rounded-tl-2xl md:rounded-tr-2xl text-center px-7.5 md:px-10 lg:px-14 py-4.5 md:py-6 w-full  md:w-fit">
+		<div
+			class="bg-white md:rounded-tl-2xl md:rounded-tr-2xl text-center px-7.5 md:px-10 lg:px-14 py-4.5 md:py-6 w-full  md:w-fit">
 			<span class="text-themeGray-800 text-xs md:text-sm font-normal">{copyright}</span>
 		</div>
 	</div>
 {/snippet}
 
-<footer 
+<footer
 	class="footer w-full bg-themeGray-800 pt-10 border-t border-themeGray-200 font-normal">
 	<div class="footer-content theme-container mx-aut px-7.5">
 		<!-- Contact Section -->
 		{@render contactSection()}
-		
+
 		<!-- Social Links -->
-		 <div class="flex justify-between md:flex-row md:block">
+		<div class="flex justify-between md:flex-row md:block">
 			{@render socialLinksSection()}
 			{@render navigationLinksSection()}
-		 </div>
-		
+		</div>
+
 	</div>
 	<!-- Copyright -->
 	{@render copyrightSection()}
 </footer>
 
 <style>
-</style> 
+</style>

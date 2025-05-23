@@ -1,28 +1,27 @@
 <script module>
-  import { defineMeta } from '@storybook/addon-svelte-csf';
-  import { fn } from '@storybook/test';
+	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Button from '@/theme/Button/Button.svelte';
 
-  // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-  const { Story } = defineMeta({
-    title: 'Theme/Button',
-    component: Button,
-    tags: ['autodocs'],
-    args: {
-			label: 'Button',
-    }
-  });
+	// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
+	const { Story } = defineMeta({
+		title: 'Theme/Button',
+		component: Button,
+		tags: ['autodocs'],
+		args: {
+			label: 'Button'
+		}
+	});
 </script>
 
 <!-- More on writing stories with args: https://storybook.js.org/docs/writing-stories/args -->
-<Story name="Primary" args={{ theme: 'primary', }} />
+<Story args={{ theme: 'primary', }} name="Primary" />
 
-<Story name="Primary with Icon" args={{ theme: 'primary', icon: 'download' }} />
+<Story args={{ theme: 'primary', icon: 'download' }} name="Primary with Icon" />
 
-<Story name="Primary larger" args={{ theme: 'primary', icon: 'download', class: 'text-2xl' }} />
+<Story args={{ theme: 'primary', icon: 'download', class: 'text-2xl' }} name="Primary larger" />
 
-<Story name="Secondary" args={{ theme: 'secondary', }} />
+<Story args={{ theme: 'secondary', }} name="Secondary" />
 
-<Story name="Secondary with Icon" args={{ theme: 'secondary', icon: 'download' }} />
+<Story args={{ theme: 'secondary', icon: 'download' }} name="Secondary with Icon" />
 
-<Story name="Secondary with right Icon" args={{ theme: 'secondary', rightIcon: 'download' }} />
+<Story args={{ theme: 'secondary', rightIcon: 'download' }} name="Secondary with right Icon" />

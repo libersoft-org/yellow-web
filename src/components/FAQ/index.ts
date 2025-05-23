@@ -1,1 +1,1 @@
-export { default as FAQ } from './FAQ.svelte'; 
+export { default as FAQ } from './FAQ.svelte';

@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
@@ -62,7 +63,6 @@
     --text-10xl: 45px;
     --text-11xl: 76px;
     */
-
     --text-xs: 0.82rem;    /* 14px */
     --text-sm: 0.88rem;    /* 15px */
     --text-md: 1rem;       /* 17px */

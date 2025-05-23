@@ -8,12 +8,12 @@
 		label: string;
 		href: string;
 		active?: boolean;
-		subItems?: Array<{label: string, href: string}>;
+		subItems?: Array<{ label: string, href: string }>;
 	}
 
 	let { label, href, active, subItems = [] }: Props = $props();
 
-	const hasChildren = $derived(subItems.length > 0)
+	const hasChildren = $derived(subItems.length > 0);
 	let isMobile = $state(false);
 
 	let headerItemRef: HTMLElement;
@@ -28,8 +28,10 @@
 
 	// Initialize dropdown handlers
 	let handlers: ReturnType<typeof createDropdownHandlers>;
-	let onEnter = $state<() => void>(() => {});
-	let onLeave = $state<(e: PointerEvent) => void>((e: PointerEvent) => {});
+	let onEnter = $state<() => void>(() => {
+	});
+	let onLeave = $state<(e: PointerEvent) => void>((e: PointerEvent) => {
+	});
 	let bindFloatingRef = $state<Action<HTMLElement>>(() => ({}));
 
 	$effect(() => {
@@ -68,48 +70,50 @@
 </script>
 
 <style>
-	/* Remove border-radius on mobile but keep it on larger screens */
-	:global(.header-item .theme-button--primary) {
-		border-radius: 0;
-	}
+    /* Remove border-radius on mobile but keep it on larger screens */
+    :global(.header-item .theme-button--primary) {
+        border-radius: 0;
+    }
 
-	@media (min-width: 1024px) {
-		:global(.header-item .theme-button--primary) {
-			border-radius: 0.75rem;
-			border-top-right-radius: 0;
-		}
-	}
+    @media (min-width: 1024px) {
+        :global(.header-item .theme-button--primary) {
+            border-radius: 0.75rem;
+            border-top-right-radius: 0;
+        }
+    }
 
-	/* Ensure text color stays gray on hover */
-	:global(.header-item a:hover) {
-		color: #4B5563; /* text-gray-700 equivalent */
-	}
+    /* Ensure text color stays gray on hover */
+    :global(.header-item a:hover) {
+        color: #4B5563; /* text-gray-700 equivalent */
+    }
 
-	@media (min-width: 1024px) {
-		:global(.header-item :where(a:hover, a:focus, a:active)) {
-			color: #4B5563; /* text-gray-700 equivalent */
-		}
-	}
+    @media (min-width: 1024px) {
+        :global(.header-item :where(a:hover, a:focus, a:active)) {
+            color: #4B5563; /* text-gray-700 equivalent */
+        }
+    }
 
-	/* Mobile dropdown styling */
-	:global(.header-item .mobile-dropdown) {
-		position: relative !important;
-		width: 100% !important;
-		left: auto !important;
-		top: auto !important;
-		max-height: 0;
-		overflow: hidden;
-		transition: max-height 0.3s ease-in-out, opacity 0.2s;
-	}
+    /* Mobile dropdown styling */
+    :global(.header-item .mobile-dropdown) {
+        position: relative !important;
+        width: 100% !important;
+        left: auto !important;
+        top: auto !important;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, opacity 0.2s;
+    }
 
-	:global(.header-item .mobile-dropdown.open) {
-		max-height: 500px; /* Adjust as needed */
-	}
+    :global(.header-item .mobile-dropdown.open) {
+        max-height: 500px; /* Adjust as needed */
+    }
 
 
 </style>
 
-<li bind:this={headerItemRef} class="header-item flex items-center relative w-full lg:w-auto border-b border-themeGray-500 lg:border-b-0" onpointerenter={onEnter} onpointerleave={onLeave}>
+<li bind:this={headerItemRef}
+		class="header-item flex items-center relative w-full lg:w-auto border-b border-themeGray-500 lg:border-b-0"
+		onpointerenter={onEnter} onpointerleave={onLeave}>
 	<a
 		bind:this={buttonRef}
 		class="text-white font-medium border-b-2 border-transparent lg:font-bold lg:text-gray-700 py-3.5 lg:py-2 px-8 lg:px-4 hover:theme-button--primary flex items-center gap-1 text-base lg:text-md"
@@ -126,7 +130,7 @@
 	</a>
 	{#if hasChildren && subItems.length > 0}
 		<Dropdown {show} {isMobile} referenceElement={buttonRef}>
-			{#snippet children()}
+			{#snippet children ()}
 				<ul class="dropdown-menu min-w-[100px] space-y-2">
 					{#each subItems as item}
 						<li class="mb-0">

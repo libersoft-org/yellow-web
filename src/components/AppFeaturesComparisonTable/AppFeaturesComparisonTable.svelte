@@ -1,7 +1,5 @@
 <script lang="ts">
 	import Table from '@/theme/Table/Table.svelte';
-	import svgBackground from '../AppFeaturesTable/bg.svg?raw';
-	import Icon from '@/theme/Icon/Icon.svelte';
 
 	interface Cell {
 		text: string;
@@ -97,23 +95,23 @@
 
 <div class="app-features-comparison-table flex flex-col items-center justify-center">
 	<div class="theme-container relative">
-		
+
 		<div class="px-10 py-21 px-25">
 			<div class="text-center mb-8">
-				<h2 class="theme-text-h2"><span class="theme-title-underline">Comparison<br/></span>{title}</h2>
+				<h2 class="theme-text-h2"><span class="theme-title-underline">Comparison<br /></span>{title}</h2>
 			</div>
-			
+
 			<div class="table-container-wrapper bg-white rounded-2xl relative">
-				<Table 
-					rows={rows}
-					headers={headers}
-					formatHeaders={true}
-					formatNewlines={true}
-					showOverlay={rows.length > 5}
-					overlayType="white"
+				<Table
 					buttonLabel={buttonLabel}
 					buttonLink={buttonLink}
 					customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
+					formatHeaders={true}
+					formatNewlines={true}
+					headers={headers}
+					overlayType="white"
+					rows={rows}
+					showOverlay={rows.length > 5}
 				/>
 			</div>
 		</div>
@@ -121,15 +119,15 @@
 </div>
 
 <style>
-	.svg-bg :global(svg) {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		top: 0;
-		left: 0;
-	}
-	
-	.table-container-wrapper {
-		@apply flex flex-col;
-	}
-</style> 
+    .svg-bg :global(svg) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+    }
+
+    .table-container-wrapper {
+        @apply flex flex-col;
+    }
+</style>

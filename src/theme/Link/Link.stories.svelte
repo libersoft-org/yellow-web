@@ -9,7 +9,7 @@
 		tags: ['autodocs'],
 		args: {
 			href: '#',
-			label: 'Link',
+			label: 'Link'
 		}
 	});
 </script>
@@ -18,46 +18,46 @@
 <Story name="Default" />
 
 <!-- Link with icon -->
-<Story name="With Icon" args={{ icon: 'download' }} />
+<Story args={{ icon: 'download' }} name="With Icon" />
 
 <!-- Link with icon wrapper -->
-<Story name="With Icon Wrapper" args={{ 
+<Story args={{
 	icon: 'download',
 	iconWrapper: true,
 	iconWrapperClass: 'bg-themeGray-700 rounded-full p-2'
-}} />
+}} name="With Icon Wrapper" />
 
 <!-- Link with custom icon class -->
-<Story name="With Custom Icon Class" args={{ 
+<Story args={{
 	icon: 'download',
 	iconWrapper: true,
 	iconClass: 'text-themeYellow-500'
-}} />
+}} name="With Custom Icon Class" />
 
 <!-- Link with different icon sizes -->
 <Story name="Icon Sizes">
 	<div class="flex flex-col gap-4">
-		<Link href="#" label="Small Icon" icon="download" iconSize="sm" />
-		<Link href="#" label="Medium Icon" icon="download" iconSize="md" />
-		<Link href="#" label="Large Icon" icon="download" iconSize="lg" />
+		<Link href="#" icon="download" iconSize="sm" label="Small Icon" />
+		<Link href="#" icon="download" iconSize="md" label="Medium Icon" />
+		<Link href="#" icon="download" iconSize="lg" label="Large Icon" />
 	</div>
 </Story>
 
 <!-- Link with external target -->
-<Story name="External Link" args={{ 
+<Story args={{
 	href: 'https://example.com',
 	label: 'External Link',
 	icon: 'open-source',
 	iconWrapper: true,
 	target: '_blank',
 	rel: 'noopener noreferrer'
-}} />
+}} name="External Link" />
 
 <!-- Link with custom styling -->
-<Story name="Custom Styling" args={{ 
+<Story args={{
 	class: 'text-themeYellow-500 hover:text-themeYellow-600 font-bold',
 	icon: 'download',
 	iconWrapper: true,
 	iconWrapperClass: 'bg-themeYellow-100 rounded-full p-2',
 	iconClass: 'text-themeYellow-600'
-}} /> 
+}} name="Custom Styling" />

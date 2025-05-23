@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { HTMLButtonAttributes } from 'svelte/elements';
-	import Icon, {type Props as IconProps} from '@/theme/Icon/Icon.svelte';
+	import Icon, { type Props as IconProps } from '@/theme/Icon/Icon.svelte';
 
 	interface Props extends HTMLButtonAttributes {
 		label: string;
@@ -24,7 +24,7 @@
 
 </style>
 
-{#snippet makeIcon(icon: string | IconProps)}
+{#snippet makeIcon (icon: string | IconProps)}
 	<div class="button__icon">
 		{#if typeof icon === 'string'}
 			<Icon

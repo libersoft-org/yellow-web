@@ -94,7 +94,7 @@
 	}
 </script>
 
-{#snippet leftSide()}
+{#snippet leftSide ()}
 	<div class="table-container relative">
 		<div class="mb-8">
 			<h2 class="theme-text-h1 text-center"><span class="theme-title-underline">{title}</span></h2>
@@ -114,7 +114,7 @@
 	</div>
 {/snippet}
 
-{#snippet rightSide()}
+{#snippet rightSide ()}
 	<div class="image-container flex flex-col items-center justify-center">
 		<div class="relative">
 			<img src={imagePath} alt="Yellow app features" class="max-w-full" />
@@ -153,15 +153,15 @@
 </div>
 
 <style>
-	.svg-bg :global(svg) {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		top: 0;
-		left: 0;
-	}
+    .svg-bg :global(svg) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+    }
 
-	.table-container {
-		@apply flex flex-col;
-	}
+    .table-container {
+        @apply flex flex-col;
+    }
 </style>

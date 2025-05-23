@@ -1,7 +1,5 @@
 <script lang="ts">
 	import Table2 from '@/theme/Table/Table2.svelte';
-	import svgBackground from '../AppFeaturesTable/bg.svg?raw';
-	import Icon from '@/theme/Icon/Icon.svelte';
 
 	interface Cell {
 		text: string;
@@ -99,20 +97,21 @@
 	<div class="theme-container relative">
 		<div class="px-4 md:px-10 py-8 md:py-21 md:px-25">
 			<div class="text-center mb-8">
-				<h2 class="theme-text-h2 md:text-center text-left"><span class="theme-title-underline">Comparison<br/></span><span class="text-lg md:text-2xl">{title}</span></h2>
+				<h2 class="theme-text-h2 md:text-center text-left"><span
+					class="theme-title-underline">Comparison<br /></span><span class="text-lg md:text-2xl">{title}</span></h2>
 			</div>
-			
+
 			<div class="table-container-wrapper relative">
-				<Table2 
-					rows={rows}
-					headers={headers}
-					formatHeaders={true}
-					formatNewlines={true}
-					showOverlay={rows.length > 5}
-					overlayType="white"
+				<Table2
 					buttonLabel={buttonLabel}
 					buttonLink={buttonLink}
 					customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
+					formatHeaders={true}
+					formatNewlines={true}
+					headers={headers}
+					overlayType="white"
+					rows={rows}
+					showOverlay={rows.length > 5}
 				/>
 			</div>
 		</div>
@@ -120,15 +119,15 @@
 </div>
 
 <style>
-	.svg-bg :global(svg) {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		top: 0;
-		left: 0;
-	}
-	
-	.table-container-wrapper {
-		@apply flex flex-col;
-	}
-</style> 
+    .svg-bg :global(svg) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+    }
+
+    .table-container-wrapper {
+        @apply flex flex-col;
+    }
+</style>

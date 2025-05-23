@@ -20,6 +20,7 @@
 		<label class="block text-sm font-medium mb-1.5 text-themeGray-800">{label}</label>
 	{/if}
 	<input
+		{...restProps}
 		class={[
 			'w-full py-3 px-4 border rounded-lg bg-white',
 			error ? 'border-red-500' : 'border-themeGray-300',
@@ -28,9 +29,8 @@
 		]}
 		{placeholder}
 		{value}
-		{...restProps}
 	/>
 	{#if error}
 		<p class="mt-1 text-sm text-red-500">{error}</p>
 	{/if}
-</div> 
+</div>
