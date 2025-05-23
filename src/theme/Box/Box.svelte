@@ -32,7 +32,7 @@
 
 <div
 	class={[
-		'box flex lg:min-h-[321px] relative flex-col px-8.5 pb-9 pt-4 pb-3 md:px-12 md:pb-9 md:pt-10 md:pb-3 lg:px-15 lg:pb-11 lg:pt-12.5 lg:pb-4 rounded-xl rounded-br-none drop-shadow-md h-full',
+		'box flex relative flex-col px-8.5 pb-9 pt-4 pb-3 md:px-12 md:pb-9 md:pt-10 md:pb-3 lg:px-15 lg:pb-11 lg:pt-12.5 lg:pb-4 rounded-xl rounded-br-none drop-shadow-md h-full',
 		theme === 'primary' ? 'text-themeGray-800 bg-gradient-to-t theme-gradient-yellow' : '',
 		theme === 'secondary' ? 'text-white bg-themeGray-800' : '',
 		restProps.class
@@ -56,7 +56,7 @@
 			{@html description}
 		{/if}
 	</div>
-	
+
 	{#if showFooter}
 		<div class="box__footer mt-auto flex items-center justify-between">
 			{#if footerSlot}
@@ -67,8 +67,8 @@
 				</a>
 			{:else if footerType === 'button'}
 				<a href={footerLink}>
-					<Button 
-						label={footerText || 'Learn more'} 
+					<Button
+						label={footerText || 'Learn more'}
 						theme="secondary"
 						rightIcon="chevron"
 					/>

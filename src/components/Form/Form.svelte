@@ -1,15 +1,16 @@
 <script lang="ts">
 	import Button from '@/theme/Button/Button.svelte';
-	
+
 	let { title = 'Formulář' } = $props();
-	
+
 	let inputValue = $state('');
 	let textareaValue = $state('');
 	let selectValue = $state('');
 	let radioValue = $state('option1');
 	let consentValue = $state(false);
-	
-	function handleSubmit() {
+
+	function handleSubmit(e: SubmitEvent) {
+		e.preventDefault();
 		console.log('Form submitted', {
 			input: inputValue,
 			textarea: textareaValue,
@@ -42,8 +43,8 @@
 
 <div class="bg-themeYellow-400 rounded-xl p-6 max-w-md mx-auto">
 	<h2 class="text-2xl font-bold mb-6">{title}</h2>
-	
-	<form on:submit|preventDefault={handleSubmit}>
+
+	<form onsubmit={handleSubmit}>
 		<!-- Input -->
 		<div class="mb-4">
 			<label class="block text-sm font-medium mb-1.5 text-themeGray-800">Input</label>
@@ -51,10 +52,10 @@
 				class="w-full py-3 px-4 border rounded-lg bg-white border-themeGray-300 focus:outline-none focus:ring-2 focus:ring-themeYellow-600 focus:border-transparent"
 				placeholder="Enter your text here"
 				value={inputValue}
-				on:input={handleInputChange}
+				oninput={handleInputChange}
 			/>
 		</div>
-		
+
 		<!-- Textarea -->
 		<div class="mb-4">
 			<label class="block text-sm font-medium mb-1.5 text-themeGray-800">Textarea</label>
@@ -63,10 +64,10 @@
 				placeholder="Enter your message here"
 				rows={5}
 				value={textareaValue}
-				on:input={handleTextareaChange}
+				oninput={handleTextareaChange}
 			></textarea>
 		</div>
-		
+
 		<!-- SelectBox -->
 		<div class="mb-4">
 			<label class="block text-sm font-medium mb-1.5 text-themeGray-800">Selectbox</label>
@@ -74,7 +75,7 @@
 				<select
 					class="w-full appearance-none py-3 px-4 border rounded-lg bg-white border-themeGray-300 focus:outline-none focus:ring-2 focus:ring-themeYellow-600 focus:border-transparent pr-10"
 					value={selectValue}
-					on:change={handleSelectChange}
+					onchange={handleSelectChange}
 				>
 					<option value="">Lorem ipsum</option>
 				</select>
@@ -85,7 +86,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- Radio Buttons -->
 		<div class="my-4">
 			<div class="flex gap-4 mb-2">
@@ -95,7 +96,7 @@
 						name="radioOptions"
 						value="option1"
 						checked={radioValue === 'option1'}
-						on:change={() => radioValue = 'option1'}
+						onchange={() => radioValue = 'option1'}
 						class="h-4 w-4 border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500"
 					/>
 				</div>
@@ -105,30 +106,30 @@
 						name="radioOptions"
 						value="option2"
 						checked={radioValue === 'option2'}
-						on:change={() => radioValue = 'option2'}
+						onchange={() => radioValue = 'option2'}
 						class="h-4 w-4 border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500"
 					/>
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- Checkbox -->
 		<div class="mb-2 flex items-center">
 			<input
 				type="checkbox"
 				checked={consentValue}
-				on:change={handleCheckboxChange}
+				onchange={handleCheckboxChange}
 				class="h-4 w-4 rounded border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500"
 			/>
 			<label class="ml-2 text-sm text-themeGray-700">Souhlasím se zpracováním osobních údajů</label>
 		</div>
-		
+
 		<div class="mt-6">
-			<Button 
-				label="Odeslat zprávu" 
-				type="submit" 
-				rightIcon="arrow-right" 
+			<Button
+				label="Odeslat zprávu"
+				type="submit"
+				rightIcon="arrow-right"
 			/>
 		</div>
 	</form>
-</div> 
+</div>

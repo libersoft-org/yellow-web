@@ -6,6 +6,16 @@
     body {
         font-family: 'Ubuntu', sans-serif;
     }
+
+    :root {
+        font-size: 17px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1480px) {
+        :root {
+            font-size: calc(100vw / 1480 * 17);
+        }
+    }
 }
 
 @theme {
@@ -26,7 +36,7 @@
     --color-themeGray-500: #484848;
     --color-themeGray-600: #4C4C4C;
     --color-themeGray-800: #262626;
-    
+
     --color-themeGreen-100: #E0FFE3;
     --color-themeGreen-500: #40B54A;
     --color-themeRed-100: #FFDEDE;
@@ -35,6 +45,7 @@
     --color-themeOrange-500: #F39108;
 
     /* Custom font sizes for Tailwind 4 */
+    /*
     --text-xs: 14px;
     --text-sm: 15px;
     --text-md: 17px;
@@ -50,7 +61,23 @@
     --text-9xl: 38px;
     --text-10xl: 45px;
     --text-11xl: 76px;
-    
+    */
+
+    --text-xs: 0.82rem;    /* 14px */
+    --text-sm: 0.88rem;    /* 15px */
+    --text-md: 1rem;       /* 17px */
+    --text-lg: 1.06rem;    /* 18px */
+    --text-xl: 1.18rem;    /* 20px */
+    --text-2xl: 1.35rem;   /* 23px */
+    --text-3xl: 1.41rem;   /* 24px */
+    --text-4xl: 1.47rem;   /* 25px */
+    --text-5xl: 1.65rem;   /* 28px */
+    --text-6xl: 1.71rem;   /* 29px */
+    --text-7xl: 1.76rem;   /* 30px */
+    --text-8xl: 2.06rem;   /* 35px */
+    --text-9xl: 2.24rem;   /* 38px */
+    --text-10xl: 2.65rem;  /* 45px */
+    --text-11xl: 4.47rem;  /* 76px */
 }
 
 /**
