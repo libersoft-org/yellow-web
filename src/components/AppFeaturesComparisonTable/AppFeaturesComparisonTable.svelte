@@ -31,7 +31,13 @@
 
   let {
     title = 'with other software',
-    headers = ['Software', 'Open source', 'Distributed/decentralized', 'End-to-end encryption', 'Developed by'],
+    headers = [
+      'Software',
+      'Open source',
+      'Distributed/decentralized',
+      'End-to-end encryption',
+      'Developed by'
+    ],
     rows = [
       {
         cells: [
@@ -94,40 +100,41 @@
 </script>
 
 <div class="app-features-comparison-table flex flex-col items-center justify-center">
-	<div class="theme-container relative">
+  <div class="theme-container relative">
+    <div class="px-10 px-25 py-21">
+      <div class="mb-8 text-center">
+        <h2 class="theme-text-h2">
+          <span class="theme-title-underline">Comparison<br /></span>{title}
+        </h2>
+      </div>
 
-		<div class="px-10 py-21 px-25">
-			<div class="text-center mb-8">
-				<h2 class="theme-text-h2"><span class="theme-title-underline">Comparison<br /></span>{title}</h2>
-			</div>
-
-			<div class="table-container-wrapper bg-white rounded-2xl relative">
-				<Table
-					buttonLabel={buttonLabel}
-					buttonLink={buttonLink}
-					customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
-					formatHeaders={true}
-					formatNewlines={true}
-					headers={headers}
-					overlayType="white"
-					rows={rows}
-					showOverlay={rows.length > 5}
-				/>
-			</div>
-		</div>
-	</div>
+      <div class="table-container-wrapper relative rounded-2xl bg-white">
+        <Table
+          {buttonLabel}
+          {buttonLink}
+          customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
+          formatHeaders={true}
+          formatNewlines={true}
+          {headers}
+          overlayType="white"
+          {rows}
+          showOverlay={rows.length > 5}
+        />
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
-    .svg-bg :global(svg) {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0;
-        left: 0;
-    }
+  .svg-bg :global(svg) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
 
-    .table-container-wrapper {
-        @apply flex flex-col;
-    }
+  .table-container-wrapper {
+    @apply flex flex-col;
+  }
 </style>

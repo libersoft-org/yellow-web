@@ -69,7 +69,11 @@
       },
       {
         cells: [
-          { text: 'Client - encryption, signature and login keys management', alignment: 'left', isHeader: true },
+          {
+            text: 'Client - encryption, signature and login keys management',
+            alignment: 'left',
+            isHeader: true
+          },
           { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' }
         ]
       }
@@ -94,74 +98,74 @@
   }
 </script>
 
-{#snippet leftSide ()}
-	<div class="table-container relative">
-		<div class="mb-8">
-			<h2 class="theme-text-h1 text-center"><span class="theme-title-underline">{title}</span></h2>
-		</div>
+{#snippet leftSide()}
+  <div class="table-container relative">
+    <div class="mb-8">
+      <h2 class="theme-text-h1 text-center"><span class="theme-title-underline">{title}</span></h2>
+    </div>
 
-		<div class={getTableContainerClass(rows)}>
-			<Table
-				rows={rows}
-				headers={headers}
-				showOverlay={shouldShowOverlay(rows)}
-				overlayType="gray"
-				buttonLabel={buttonLabel}
-				buttonLink={buttonLink}
-				customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
-			/>
-		</div>
-	</div>
+    <div class={getTableContainerClass(rows)}>
+      <Table
+        {rows}
+        {headers}
+        showOverlay={shouldShowOverlay(rows)}
+        overlayType="gray"
+        {buttonLabel}
+        {buttonLink}
+        customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
+      />
+    </div>
+  </div>
 {/snippet}
 
-{#snippet rightSide ()}
-	<div class="image-container flex flex-col items-center justify-center">
-		<div class="relative">
-			<img src={imagePath} alt="Yellow app features" class="max-w-full" />
-		</div>
+{#snippet rightSide()}
+  <div class="image-container flex flex-col items-center justify-center">
+    <div class="relative">
+      <img src={imagePath} alt="Yellow app features" class="max-w-full" />
+    </div>
 
-		<div class="legend flex flex-col sm:flex-row gap-4 justify-center mt-6">
-			{#each legendItems as item}
-				<div class="flex items-center gap-2">
-					<span class={item.colorClass}>
-						<Icon name={item.icon} size="md" />
-					</span>
-					<span class="text-themeGray-600">{item.text}</span>
-				</div>
-			{/each}
-		</div>
-	</div>
+    <div class="legend mt-6 flex flex-col justify-center gap-4 sm:flex-row">
+      {#each legendItems as item}
+        <div class="flex items-center gap-2">
+          <span class={item.colorClass}>
+            <Icon name={item.icon} size="md" />
+          </span>
+          <span class="text-themeGray-600">{item.text}</span>
+        </div>
+      {/each}
+    </div>
+  </div>
 {/snippet}
 
 <div class="app-features-table theme-container flex flex-col items-center justify-center">
-	<div class=" relative">
-		<div class="svg-bg absolute margin-auto w-full top-5 max-h-[758px]" style:z-index="-1">
-			{@html svgBackground}
-		</div>
+  <div class=" relative">
+    <div class="svg-bg margin-auto absolute top-5 max-h-[758px] w-full" style:z-index="-1">
+      {@html svgBackground}
+    </div>
 
-		<div class="px-10 py-21 px-25">
-			<div class="flex flex-wrap">
-				<div class="w-full lg:w-2/5 px-4">
-					{@render leftSide()}
-				</div>
-				<div class="w-full lg:w-3/5 px-4">
-					{@render rightSide()}
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="px-10 px-25 py-21">
+      <div class="flex flex-wrap">
+        <div class="w-full px-4 lg:w-2/5">
+          {@render leftSide()}
+        </div>
+        <div class="w-full px-4 lg:w-3/5">
+          {@render rightSide()}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
-    .svg-bg :global(svg) {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0;
-        left: 0;
-    }
+  .svg-bg :global(svg) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
 
-    .table-container {
-        @apply flex flex-col;
-    }
+  .table-container {
+    @apply flex flex-col;
+  }
 </style>

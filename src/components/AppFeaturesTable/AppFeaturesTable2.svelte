@@ -31,7 +31,13 @@
 
   let {
     title = 'with other software',
-    headers = ['Software', 'Open source', 'Distributed/decentralized', 'End-to-end encryption', 'Developed by'],
+    headers = [
+      'Software',
+      'Open source',
+      'Distributed/decentralized',
+      'End-to-end encryption',
+      'Developed by'
+    ],
     rows = [
       {
         cells: [
@@ -94,40 +100,43 @@
 </script>
 
 <div class="app-features-comparison-table flex flex-col items-center justify-center">
-	<div class="theme-container relative">
-		<div class="px-4 md:px-10 py-8 md:py-21 md:px-25">
-			<div class="text-center mb-8">
-				<h2 class="theme-text-h2 md:text-center text-left"><span
-					class="theme-title-underline">Comparison<br /></span><span class="text-lg md:text-2xl">{title}</span></h2>
-			</div>
+  <div class="theme-container relative">
+    <div class="px-4 py-8 md:px-10 md:px-25 md:py-21">
+      <div class="mb-8 text-center">
+        <h2 class="theme-text-h2 text-left md:text-center">
+          <span class="theme-title-underline">Comparison<br /></span><span
+            class="text-lg md:text-2xl">{title}</span
+          >
+        </h2>
+      </div>
 
-			<div class="table-container-wrapper relative">
-				<Table2
-					buttonLabel={buttonLabel}
-					buttonLink={buttonLink}
-					customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
-					formatHeaders={true}
-					formatNewlines={true}
-					headers={headers}
-					overlayType="white"
-					rows={rows}
-					showOverlay={rows.length > 5}
-				/>
-			</div>
-		</div>
-	</div>
+      <div class="table-container-wrapper relative">
+        <Table2
+          {buttonLabel}
+          {buttonLink}
+          customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
+          formatHeaders={true}
+          formatNewlines={true}
+          {headers}
+          overlayType="white"
+          {rows}
+          showOverlay={rows.length > 5}
+        />
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
-    .svg-bg :global(svg) {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        top: 0;
-        left: 0;
-    }
+  .svg-bg :global(svg) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+  }
 
-    .table-container-wrapper {
-        @apply flex flex-col;
-    }
+  .table-container-wrapper {
+    @apply flex flex-col;
+  }
 </style>

@@ -9,6 +9,7 @@
 - [Bun](https://bun.sh) – a fast all-in-one JavaScript runtime
 
 > To install Bun:
+
 ```sh
 curl -fsSL https://bun.sh/install | bash
 ```

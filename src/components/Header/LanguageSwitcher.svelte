@@ -11,9 +11,7 @@
     defaultLanguage?: 'en' | 'cz';
   }
 
-  let {
-    defaultLanguage = 'en'
-  }: Props = $props();
+  let { defaultLanguage = 'en' }: Props = $props();
 
   // Create event dispatcher to notify parent component
   const dispatch = createEventDispatcher<{
@@ -49,7 +47,7 @@
   // Format languages for SelectBox - show all languages and ensure we have at least one option
   const getSelectOptions = () => {
     // Always include all languages to ensure we have at least one option
-    return languages.map(lang => ({
+    return languages.map((lang) => ({
       value: lang.code,
       label: lang.name,
       icon: lang.code
@@ -94,11 +92,11 @@
 
   // Make sure currentLanguageData updates reactively
   $effect(() => {
-    currentLanguageData = languages.find(lang => lang.code === currentLanguage) || languages[0];
+    currentLanguageData = languages.find((lang) => lang.code === currentLanguage) || languages[0];
   });
 
   let currentLanguageData = $state(
-    languages.find(lang => lang.code === currentLanguage) || languages[0]
+    languages.find((lang) => lang.code === currentLanguage) || languages[0]
   );
 
   // Handle language change when saving
@@ -107,7 +105,7 @@
     currentLanguage = selectedLanguage;
 
     // Force refresh of language data
-    currentLanguageData = languages.find(lang => lang.code === currentLanguage) || languages[0];
+    currentLanguageData = languages.find((lang) => lang.code === currentLanguage) || languages[0];
 
     // Close the mobile menu
     closeMobileMenu();
@@ -160,98 +158,85 @@
   });
 </script>
 
-<style>
-    /*
-		 * Desktop dropdown styling
-		 */
-
-    .language-switcher {
-        user-select: none;
-    }
-
-    .language-panel {
-        transition: bottom 0.3s ease-in-out;
-        pointer-events: auto !important; /* Ensure panel can receive clicks */
-    }
-
-</style>
-
 <div
-	bind:this={languageSwitcherRef}
-	class="language-switcher relative"
-	onpointerenter={onEnter}
-	onpointerleave={onLeave}
+  bind:this={languageSwitcherRef}
+  class="language-switcher relative"
+  onpointerenter={onEnter}
+  onpointerleave={onLeave}
 >
-	<button
-		bind:this={buttonRef}
-		class="flex items-center cursor-pointer"
-		onclick={toggleDropdown}
-	>
-		<Icon
-			class="rounded-full"
-			name={currentLanguage}
-			size="4xl"
-		/>
-	</button>
+  <button bind:this={buttonRef} class="flex cursor-pointer items-center" onclick={toggleDropdown}>
+    <Icon class="rounded-full" name={currentLanguage} size="4xl" />
+  </button>
 
-	<!-- Desktop dropdown menu -->
-	{#if !isMobile}
-		<Dropdown show={isOpen} {isMobile} referenceElement={buttonRef}>
-			{#snippet children ()}
-				<div class="relative overflow-hidden whitespace-nowrap">
-					{#each languages.filter(lang => lang.code !== currentLanguage) as language}
-						<button
-							class="flex items-center w-full  text-sm cursor-pointer hover:underline"
-							onclick={() => selectLanguage(language.code as 'en' | 'cz')}
-						>
-							<Icon
-								name={language.code}
-								size="2xl"
-								class="rounded-full mr-3"
-							/>
-							<span class="whitespace-nowrap">{language.name}</span>
-						</button>
-					{/each}
-				</div>
-			{/snippet}
-		</Dropdown>
-	{/if}
+  <!-- Desktop dropdown menu -->
+  {#if !isMobile}
+    <Dropdown show={isOpen} {isMobile} referenceElement={buttonRef}>
+      {#snippet children()}
+        <div class="relative overflow-hidden whitespace-nowrap">
+          {#each languages.filter((lang) => lang.code !== currentLanguage) as language}
+            <button
+              class="flex w-full cursor-pointer items-center text-sm hover:underline"
+              onclick={() => selectLanguage(language.code as 'en' | 'cz')}
+            >
+              <Icon name={language.code} size="2xl" class="mr-3 rounded-full" />
+              <span class="whitespace-nowrap">{language.name}</span>
+            </button>
+          {/each}
+        </div>
+      {/snippet}
+    </Dropdown>
+  {/if}
 </div>
 
 <!-- Mobile Language Switcher Panel -->
 <div
-	bind:this={languagePanelRef}
-	class="fixed left-0 right-0 bg-themeYellow-600 rounded-t-2xl p-5 z-50 language-panel"
-	style="bottom: {isMobileMenuOpen ? '0' : '-100%'}"
+  bind:this={languagePanelRef}
+  class="bg-themeYellow-600 language-panel fixed right-0 left-0 z-50 rounded-t-2xl p-5"
+  style="bottom: {isMobileMenuOpen ? '0' : '-100%'}"
 >
-	<div onclick={(e) => e.stopPropagation()} role="none">
-		<div class="flex justify-between items-center mb-4">
-			<h3 class="text-xl font-bold text-themeGray-800">Choose your language</h3>
-			<button
-				aria-label="Close language selector"
-				class="text-themeGray-800 p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors"
-				onclick={closeMobileMenu}
-			>
-				<Icon class="rotate-180 w-4 h-4" name="cross" size="sm" />
-			</button>
-		</div>
+  <div onclick={(e) => e.stopPropagation()} role="none">
+    <div class="mb-4 flex items-center justify-between">
+      <h3 class="text-themeGray-800 text-xl font-bold">Choose your language</h3>
+      <button
+        aria-label="Close language selector"
+        class="text-themeGray-800 hover:bg-opacity-20 rounded-full p-2 transition-colors hover:bg-white"
+        onclick={closeMobileMenu}
+      >
+        <Icon class="h-4 w-4 rotate-180" name="cross" size="sm" />
+      </button>
+    </div>
 
-		<div class="mb-6">
-			<!-- Use the imported SelectBox component -->
-			<SelectBox
-				bind:value={selectedLanguage}
-				class="bg-white rounded-xl shadow-md"
-				label="Select Language"
-				options={selectOptions}
-			/>
-		</div>
+    <div class="mb-6">
+      <!-- Use the imported SelectBox component -->
+      <SelectBox
+        bind:value={selectedLanguage}
+        class="rounded-xl bg-white shadow-md"
+        label="Select Language"
+        options={selectOptions}
+      />
+    </div>
 
-		<!-- Use the themed Button component -->
-		<Button
-			label="Save and continue"
-			onclick={saveLanguageSelection}
-			rightIcon="chevron"
-			theme="secondary"
-		/>
-	</div>
+    <!-- Use the themed Button component -->
+    <Button
+      label="Save and continue"
+      onclick={saveLanguageSelection}
+      rightIcon="chevron"
+      theme="secondary"
+    />
+  </div>
 </div>
+
+<style>
+  /*
+		 * Desktop dropdown styling
+		 */
+
+  .language-switcher {
+    user-select: none;
+  }
+
+  .language-panel {
+    transition: bottom 0.3s ease-in-out;
+    pointer-events: auto !important; /* Ensure panel can receive clicks */
+  }
+</style>

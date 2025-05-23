@@ -6,29 +6,24 @@
     error?: string;
   }
 
-  let {
-    label,
-    error,
-    checked = $bindable(false),
-    ...restProps
-  }: Props = $props();
+  let { label, error, checked = $bindable(false), ...restProps }: Props = $props();
 </script>
 
 <div class="mb-2 flex items-center">
-	<input
-		{...restProps}
-		{checked}
-		class={[
-			'h-4 w-4 rounded border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500',
-			error ? 'border-red-500' : '',
-			restProps.class
-		]}
-		type="checkbox"
-	/>
-	{#if label}
-		<label class="ml-2 text-sm text-themeGray-700">{label}</label>
-	{/if}
+  <input
+    {...restProps}
+    {checked}
+    class={[
+      'border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500 h-4 w-4 rounded',
+      error ? 'border-red-500' : '',
+      restProps.class
+    ]}
+    type="checkbox"
+  />
+  {#if label}
+    <label class="text-themeGray-700 ml-2 text-sm">{label}</label>
+  {/if}
 </div>
 {#if error}
-	<p class="mt-1 text-sm text-red-500">{error}</p>
+  <p class="mt-1 text-sm text-red-500">{error}</p>
 {/if}

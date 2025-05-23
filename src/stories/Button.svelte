@@ -18,12 +18,12 @@
 </script>
 
 <button
-	class={['storybook-button', `storybook-button--${size}`].join(' ')}
-	class:storybook-button--primary={primary}
-	class:storybook-button--secondary={!primary}
-	onclick={onClick}
-	style:background-color={backgroundColor}
-	type="button"
+  class={['storybook-button', `storybook-button--${size}`].join(' ')}
+  class:storybook-button--primary={primary}
+  class:storybook-button--secondary={!primary}
+  onclick={onClick}
+  style:background-color={backgroundColor}
+  type="button"
 >
-	{label}
+  {label}
 </button>

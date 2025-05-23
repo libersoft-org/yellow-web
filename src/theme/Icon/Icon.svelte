@@ -27,12 +27,7 @@
 </script>
 
 <script lang="ts">
-  let {
-    name,
-    basePath = '/assets/icons',
-    size = 'md',
-    ...restProps
-  }: Props = $props();
+  let { name, basePath = '/assets/icons', size = 'md', ...restProps }: Props = $props();
 
   let svgContent = $state('');
 
@@ -44,16 +39,16 @@
 
     // Use fetch to get raw SVG content
     fetch(`/${path}/${name}.svg`)
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         return response.text();
       })
-      .then(text => {
+      .then((text) => {
         svgContent = text;
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(`Icon "${name}" not found:`, error);
         svgContent = '';
       });
@@ -62,17 +57,14 @@
   const sizeClass = $derived(typeof size === 'string' ? sizeMap[size] : undefined);
 </script>
 
-<div
-	{...restProps}
-	class={['icon', restProps.class, sizeClass]}
->
-	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-	{@html svgContent}
+<div {...restProps} class={['icon', restProps.class, sizeClass]}>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html svgContent}
 </div>
 
 <style>
-    .icon :global(svg) {
-        width: 100%;
-        height: 100%;
-    }
+  .icon :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
 </style>

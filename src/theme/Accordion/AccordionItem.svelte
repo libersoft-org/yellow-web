@@ -38,32 +38,30 @@
 </script>
 
 <div
-	class={`transition-background duration-400 ${isOpen ? 'bg-gradient-to-t theme-gradient-yellow' : 'theme-gradient-gray'} mb-4 rounded-lg flex justify-between items-center p-4 shadow-md ${className}`}>
-	<div class="flex-1 pr-4">
-		<button
-			aria-expanded={isOpen}
-			class="w-full text-left text-lg md:text-xl lg:text-2xl font-bold cursor-pointer"
-			onclick={handleToggle}
-			type="button"
-		>
-			<span>{title}</span>
-		</button>
-		{#if isOpen}
-			<div class="pb-4 mt-2 theme-text-body3" transition:slide>
-				{@render children?.()}
-			</div>
-		{/if}
-	</div>
-	<div class="flex-shrink-0">
-		<button
-			class={`transition-background-color duration-300 h-9 w-9 p-2 rounded-full ${isOpen ? 'bg-themeGray-800' : 'bg-themeGray-300'} text-white flex items-center justify-center`}
-			onclick={handleToggle}
-			type="button"
-		>
-			<Icon
-				class={`${isOpen ? "" : "rotate-0"}`}
-				name={isOpen ? "cross" : "plus"}
-			/>
-		</button>
-	</div>
+  class={`transition-background duration-400 ${isOpen ? 'theme-gradient-yellow bg-gradient-to-t' : 'theme-gradient-gray'} mb-4 flex items-center justify-between rounded-lg p-4 shadow-md ${className}`}
+>
+  <div class="flex-1 pr-4">
+    <button
+      aria-expanded={isOpen}
+      class="w-full cursor-pointer text-left text-lg font-bold md:text-xl lg:text-2xl"
+      onclick={handleToggle}
+      type="button"
+    >
+      <span>{title}</span>
+    </button>
+    {#if isOpen}
+      <div class="theme-text-body3 mt-2 pb-4" transition:slide>
+        {@render children?.()}
+      </div>
+    {/if}
+  </div>
+  <div class="flex-shrink-0">
+    <button
+      class={`transition-background-color h-9 w-9 rounded-full p-2 duration-300 ${isOpen ? 'bg-themeGray-800' : 'bg-themeGray-300'} flex items-center justify-center text-white`}
+      onclick={handleToggle}
+      type="button"
+    >
+      <Icon class={`${isOpen ? '' : 'rotate-0'}`} name={isOpen ? 'cross' : 'plus'} />
+    </button>
+  </div>
 </div>

@@ -8,12 +8,7 @@
     children?: any;
   }
 
-  let {
-    show = false,
-    isMobile = false,
-    referenceElement = null,
-    children
-  }: Props = $props();
+  let { show = false, isMobile = false, referenceElement = null, children }: Props = $props();
 
   let dropdownRef: HTMLElement;
   let cleanupAutoUpdate: (() => void) | undefined;
@@ -31,10 +26,7 @@
       // Setup auto-update to reposition on scroll/resize
       cleanupAutoUpdate = autoUpdate(referenceElement!, dropdownRef, () => {
         computePosition(referenceElement!, dropdownRef, {
-          middleware: [
-            shift(),
-            offset(8)
-          ]
+          middleware: [shift(), offset(8)]
         }).then(({ x, y }) => {
           Object.assign(dropdownRef.style, {
             left: `${x}px`,
@@ -54,21 +46,20 @@
 </script>
 
 <div
-	bind:this={dropdownRef}
-	class={[
-		"transition-opacity duration-200 dropdown bg-gradient-to-t theme-gradient-white lg:rounded-lg lg:shadow-lg",
-		isMobile ? "mobile-dropdown" : "theme-floating-dropdown",
-		show ? 'opacity-100 open' : 'opacity-0 pointer-events-none',
-
-	]}
+  bind:this={dropdownRef}
+  class={[
+    'dropdown theme-gradient-white bg-gradient-to-t transition-opacity duration-200 lg:rounded-lg lg:shadow-lg',
+    isMobile ? 'mobile-dropdown' : 'theme-floating-dropdown',
+    show ? 'open opacity-100' : 'pointer-events-none opacity-0'
+  ]}
 >
-	<div class="dropdown-content relative py-2.5 px-4">
-		<div class="absolute left-1/2 -top-2 -translate-x-1/2 w-5 h-5 bg-white rotate-45 rounded-sm"></div>
-		{@render children?.()}
-	</div>
+  <div class="dropdown-content relative px-4 py-2.5">
+    <div
+      class="absolute -top-2 left-1/2 h-5 w-5 -translate-x-1/2 rotate-45 rounded-sm bg-white"
+    ></div>
+    {@render children?.()}
+  </div>
 </div>
 
 <style>
-
 </style>
-

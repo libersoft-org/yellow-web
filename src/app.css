@@ -4,49 +4,49 @@
 @plugin '@tailwindcss/typography';
 
 @layer base {
-    body {
-        font-family: 'Ubuntu', sans-serif;
-    }
+  body {
+    font-family: 'Ubuntu', sans-serif;
+  }
 
+  :root {
+    font-size: 17px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1480px) {
     :root {
-        font-size: 17px;
+      font-size: calc(100vw / 1480 * 17);
     }
-
-    @media (min-width: 1024px) and (max-width: 1480px) {
-        :root {
-            font-size: calc(100vw / 1480 * 17);
-        }
-    }
+  }
 }
 
 @theme {
-    --color-mint-500: oklch(0.72 0.11 178);
-    --color-primary: #ffdd11;
-    --color-secondary: #262626;
+  --color-mint-500: oklch(0.72 0.11 178);
+  --color-primary: #ffdd11;
+  --color-secondary: #262626;
 
-    --color-themeYellow-600: #FFE346;
-    --color-themeYellow-800: #FFC934;
+  --color-themeYellow-600: #ffe346;
+  --color-themeYellow-800: #ffc934;
 
-    --color-themeGray-50: #fcfcfd;
-    --color-themeGray-75: #F4F5F94D;
-    --color-themeGray-100: #F4F5F9;
-    --color-themeGray-150: #E8E9F0;
-    --color-themeGray-200: #C4C4C4;
-    --color-themeGray-300: #BCC4E0;
-    --color-themeGray-400: #808080;
-    --color-themeGray-500: #484848;
-    --color-themeGray-600: #4C4C4C;
-    --color-themeGray-800: #262626;
+  --color-themeGray-50: #fcfcfd;
+  --color-themeGray-75: #f4f5f94d;
+  --color-themeGray-100: #f4f5f9;
+  --color-themeGray-150: #e8e9f0;
+  --color-themeGray-200: #c4c4c4;
+  --color-themeGray-300: #bcc4e0;
+  --color-themeGray-400: #808080;
+  --color-themeGray-500: #484848;
+  --color-themeGray-600: #4c4c4c;
+  --color-themeGray-800: #262626;
 
-    --color-themeGreen-100: #E0FFE3;
-    --color-themeGreen-500: #40B54A;
-    --color-themeRed-100: #FFDEDE;
-    --color-themeRed-500: #DF3636;
-    --color-themeOrange-100: #FFEBCF;
-    --color-themeOrange-500: #F39108;
+  --color-themeGreen-100: #e0ffe3;
+  --color-themeGreen-500: #40b54a;
+  --color-themeRed-100: #ffdede;
+  --color-themeRed-500: #df3636;
+  --color-themeOrange-100: #ffebcf;
+  --color-themeOrange-500: #f39108;
 
-    /* Custom font sizes for Tailwind 4 */
-    /*
+  /* Custom font sizes for Tailwind 4 */
+  /*
     --text-xs: 14px;
     --text-sm: 15px;
     --text-md: 17px;
@@ -63,147 +63,147 @@
     --text-10xl: 45px;
     --text-11xl: 76px;
     */
-    --text-xs: 0.82rem;    /* 14px */
-    --text-sm: 0.88rem;    /* 15px */
-    --text-md: 1rem;       /* 17px */
-    --text-lg: 1.06rem;    /* 18px */
-    --text-xl: 1.18rem;    /* 20px */
-    --text-2xl: 1.35rem;   /* 23px */
-    --text-3xl: 1.41rem;   /* 24px */
-    --text-4xl: 1.47rem;   /* 25px */
-    --text-5xl: 1.65rem;   /* 28px */
-    --text-6xl: 1.71rem;   /* 29px */
-    --text-7xl: 1.76rem;   /* 30px */
-    --text-8xl: 2.06rem;   /* 35px */
-    --text-9xl: 2.24rem;   /* 38px */
-    --text-10xl: 2.65rem;  /* 45px */
-    --text-11xl: 4.47rem;  /* 76px */
+  --text-xs: 0.82rem; /* 14px */
+  --text-sm: 0.88rem; /* 15px */
+  --text-md: 1rem; /* 17px */
+  --text-lg: 1.06rem; /* 18px */
+  --text-xl: 1.18rem; /* 20px */
+  --text-2xl: 1.35rem; /* 23px */
+  --text-3xl: 1.41rem; /* 24px */
+  --text-4xl: 1.47rem; /* 25px */
+  --text-5xl: 1.65rem; /* 28px */
+  --text-6xl: 1.71rem; /* 29px */
+  --text-7xl: 1.76rem; /* 30px */
+  --text-8xl: 2.06rem; /* 35px */
+  --text-9xl: 2.24rem; /* 38px */
+  --text-10xl: 2.65rem; /* 45px */
+  --text-11xl: 4.47rem; /* 76px */
 }
 
 /**
  * Theme specifics
  */
 @utility theme-gradient-yellow {
-    @apply from-themeYellow-800 to-themeYellow-600;
+  @apply from-themeYellow-800 to-themeYellow-600;
 }
 
 @utility theme-gradient-white {
-    @apply from-[#EEF0FA]  to-[#FFFFFF];
+  @apply from-[#EEF0FA] to-[#FFFFFF];
 }
 
 @utility theme-gradient-gray {
-    background: radial-gradient(ellipse at center, #EEF0FA 0%, #F8F9FF 100%);
+  background: radial-gradient(ellipse at center, #eef0fa 0%, #f8f9ff 100%);
 }
 
 @utility theme-text-h1 {
-    @apply text-9xl md:text-10xl lg:text-11xl font-bold;
+  @apply md:text-10xl lg:text-11xl text-9xl font-bold;
 }
 
 @utility theme-text-h2 {
-    @apply text-4xl md:text-8xl lg:text-10xl font-bold;
+  @apply lg:text-10xl text-4xl font-bold md:text-8xl;
 }
 
 @utility theme-text-h3 {
-    @apply text-4xl md:text-5xl lg:text-9xl font-bold;
+  @apply text-4xl font-bold md:text-5xl lg:text-9xl;
 }
 
 @utility theme-text-h4 {
-    @apply text-4xl md:text-5xl lg:text-7xl font-bold;
+  @apply text-4xl font-bold md:text-5xl lg:text-7xl;
 }
 
 @utility theme-text-h5 {
-    @apply text-3xl md:text-5xl lg:text-5xl font-bold;
+  @apply text-3xl font-bold md:text-5xl lg:text-5xl;
 }
 
 @utility theme-text-h6 {
-    @apply text-2xl font-bold;
+  @apply text-2xl font-bold;
 }
 
 @utility theme-text-body1 {
-    @apply text-xs md:text-md lg:text-lg;
+  @apply md:text-md text-xs lg:text-lg;
 }
 
 @utility theme-text-body2 {
-    @apply text-xs md:text-md;
+  @apply md:text-md text-xs;
 }
 
 @utility theme-text-body3 {
-    @apply text-xs md:text-base;
+  @apply text-xs md:text-base;
 }
 
 @utility theme-button--primary {
-    @apply py-2 px-4 rounded-xl rounded-tr-none;
-    @apply bg-gradient-to-t theme-gradient-yellow;
-    @apply border-b-3 border-[#E9B834];
+  @apply rounded-xl rounded-tr-none px-4 py-2;
+  @apply theme-gradient-yellow bg-gradient-to-t;
+  @apply border-b-3 border-[#E9B834];
 }
 
 @utility theme-floating {
-    position: absolute;
-    width: max-content;
-    top: 0;
-    left: 0;
+  position: absolute;
+  width: max-content;
+  top: 0;
+  left: 0;
 }
 
 @utility theme-floating-dropdown {
-    position: absolute;
-    width: max-content;
-    transform: translateX(50%);
-    right: 50%;
-    top: 60px;
-    left: auto;
-    z-index: 50;
+  position: absolute;
+  width: max-content;
+  transform: translateX(50%);
+  right: 50%;
+  top: 60px;
+  left: auto;
+  z-index: 50;
 }
 
 @layer components {
-    .theme-title-underline {
-        position: relative;
-    }
+  .theme-title-underline {
+    position: relative;
+  }
 
-    .theme-title-underline:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0em; /* adjust to move underline closer/farther */
-        height: 0.35em; /* thickness */
-        @apply bg-gradient-to-r theme-gradient-yellow;
-        z-index: -1;
-        border-radius: 2px;
-    }
+  .theme-title-underline:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0em; /* adjust to move underline closer/farther */
+    height: 0.35em; /* thickness */
+    @apply theme-gradient-yellow bg-gradient-to-r;
+    z-index: -1;
+    border-radius: 2px;
+  }
 }
 
 .theme-container {
-    max-width: 1480px;
-    width: 100%;
-    @apply px-3.5;
-    @apply md:px-5;
-    @apply mx-auto;
+  max-width: 1480px;
+  width: 100%;
+  @apply px-3.5;
+  @apply md:px-5;
+  @apply mx-auto;
 }
 
 /**
  * Button
  */
 .button-reset {
-    text-align: inherit;
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
+  text-align: inherit;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
 
-    background: transparent;
+  background: transparent;
 
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
 
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
 
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
 
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
 }

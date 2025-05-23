@@ -8,9 +8,7 @@
     zIndex?: number;
   }
 
-  let {
-    zIndex = 50
-  }: Props = $props();
+  let { zIndex = 50 }: Props = $props();
 
   let isMobileMenuOpen = $state(false);
   let languageModalOpen = $state(false);
@@ -108,104 +106,122 @@
   });
 </script>
 
-{#snippet navigationMenu ()}
-	<nav
-		bind:this={navRef}
-		id="mobile-menu"
-		class="bg-themeGray-800 h-full lg:h-auto fixed top-14 lg:static lg:bg-transparent transition-all duration-450 ease-in-out w-[304px] lg:w-auto z-50"
-		class:left-0={isMobileMenuOpen}
-		class:left-[-100%]={!isMobileMenuOpen}
-		class:lg:left-auto={true}
-		aria-hidden={!isMobileMenuOpen}
-	>
-		<div class="lg:pl-12 p-0 h-full flex lg:items-center">
-			<ul class="flex flex-col lg:flex-row lg:gap-4 w-full">
-				{#each navItems as item}
-					{#if item.hasChildren}
-						<HeaderItem label={item.label} href={item.href} subItems={item.subItems} />
-					{:else}
-						<HeaderItem label={item.label} href={item.href} />
-					{/if}
-				{/each}
-			</ul>
-		</div>
-	</nav>
+{#snippet navigationMenu()}
+  <nav
+    bind:this={navRef}
+    id="mobile-menu"
+    class="bg-themeGray-800 fixed top-14 z-50 h-full w-[304px] transition-all duration-450 ease-in-out lg:static lg:h-auto lg:w-auto lg:bg-transparent"
+    class:left-0={isMobileMenuOpen}
+    class:left-[-100%]={!isMobileMenuOpen}
+    class:lg:left-auto={true}
+    aria-hidden={!isMobileMenuOpen}
+  >
+    <div class="flex h-full p-0 lg:items-center lg:pl-12">
+      <ul class="flex w-full flex-col lg:flex-row lg:gap-4">
+        {#each navItems as item}
+          {#if item.hasChildren}
+            <HeaderItem label={item.label} href={item.href} subItems={item.subItems} />
+          {:else}
+            <HeaderItem label={item.label} href={item.href} />
+          {/if}
+        {/each}
+      </ul>
+    </div>
+  </nav>
 
-	<!-- Mobile menu overlay - no click handler, handled by document click listener -->
-	{#if isMobileMenuOpen || languageModalOpen}
-		<div
-			class="lg:hidden fixed inset-0 bg-black opacity-30 transition-opacity duration-300 z-40 top-14 overlay"
-			onclick={(e) => {
-				// Close appropriate menus
-				if (languageModalOpen) {
-					languageModalOpen = false;
-				}
-				if (isMobileMenuOpen) {
-					closeMobileMenu();
-				}
-			}}
-		></div>
-	{/if}
+  <!-- Mobile menu overlay - no click handler, handled by document click listener -->
+  {#if isMobileMenuOpen || languageModalOpen}
+    <div
+      class="overlay fixed inset-0 top-14 z-40 bg-black opacity-30 transition-opacity duration-300 lg:hidden"
+      onclick={(e) => {
+        // Close appropriate menus
+        if (languageModalOpen) {
+          languageModalOpen = false;
+        }
+        if (isMobileMenuOpen) {
+          closeMobileMenu();
+        }
+      }}
+    ></div>
+  {/if}
 {/snippet}
 
 <div
-	class="header flex flex-col max-w-[1440px] mx-auto fixed top-0 left-0 right-0 lg:min-h-22s lg:border-t-4 border-themeYellow-600 bg-gradient-to-t theme-gradient-yellow lg:theme-gradient-white lg:rounded-bl-2xl lg:rounded-br-2xl shadow-md"
-	style="z-index: {zIndex};"
+  class="header lg:min-h-22s border-themeYellow-600 theme-gradient-yellow lg:theme-gradient-white fixed top-0 right-0 left-0 mx-auto flex max-w-[1440px] flex-col bg-gradient-to-t shadow-md lg:rounded-br-2xl lg:rounded-bl-2xl lg:border-t-4"
+  style="z-index: {zIndex};"
 >
-	<!-- Header Top Row -->
-	<div class="flex justify-between h-full">
+  <!-- Header Top Row -->
+  <div class="flex h-full justify-between">
+    <div
+      class="header__logo theme-gradient-yellow w-full max-w-[179px] bg-gradient-to-t px-4 py-2 lg:max-w-[326px] lg:rounded-bl-2xl lg:px-8 lg:py-4"
+    >
+      <img alt="Yellow Logo" height="58" src="/assets/images/yellow-logo.svg" width="208" />
+    </div>
 
-		<div
-			class="header__logo bg-gradient-to-t theme-gradient-yellow px-4 lg:px-8 py-2 lg:py-4 lg:rounded-bl-2xl w-full max-w-[179px] lg:max-w-[326px]">
-			<img alt="Yellow Logo" height="58" src="/assets/images/yellow-logo.svg" width="208" />
-		</div>
+    {@render navigationMenu()}
 
-		{@render navigationMenu()}
+    <div class="flex items-center pr-6 lg:pr-12">
+      <LanguageSwitcher defaultLanguage="en" on:openModal={(e) => (languageModalOpen = e.detail)} />
 
-
-		<div class="flex items-center pr-6 lg:pr-12">
-			<LanguageSwitcher
-				defaultLanguage="en"
-				on:openModal={(e) => languageModalOpen = e.detail}
-			/>
-
-			<!-- Mobile Menu Toggle Button - Only visible below lg screens -->
-			<button
-				aria-controls="mobile-menu"
-				aria-expanded={isMobileMenuOpen}
-				aria-label="Toggle menu"
-				bind:this={menuToggleRef}
-				class="lg:hidden ml-4 p-2 bg-themeGray-800 rounded-md drop-shadow-md mobile-menu-toggle"
-				onclick={toggleMobileMenu}
-			>
-				{#if isMobileMenuOpen}
-					<!-- X icon when menu is open -->
-					<svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-					</svg>
-				{:else}
-					<!-- Hamburger icon when menu is closed -->
-					<svg class="w-6 h-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-					</svg>
-				{/if}
-			</button>
-		</div>
-	</div>
+      <!-- Mobile Menu Toggle Button - Only visible below lg screens -->
+      <button
+        aria-controls="mobile-menu"
+        aria-expanded={isMobileMenuOpen}
+        aria-label="Toggle menu"
+        bind:this={menuToggleRef}
+        class="bg-themeGray-800 mobile-menu-toggle ml-4 rounded-md p-2 drop-shadow-md lg:hidden"
+        onclick={toggleMobileMenu}
+      >
+        {#if isMobileMenuOpen}
+          <!-- X icon when menu is open -->
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="white"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        {:else}
+          <!-- Hamburger icon when menu is closed -->
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="white"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        {/if}
+      </button>
+    </div>
+  </div>
 </div>
 
 <style>
-    /*.header__logo {
+  /*.header__logo {
 			clip-path: ellipse(275px 195px at 5% 5%);
 			width: 326px;
 		}*/
 
-    /* Overlay behavior with language panel open */
-    :global(body.language-panel-open) .overlay {
-        pointer-events: none; /* Allow clicks to pass through when language panel is open */
-    }
+  /* Overlay behavior with language panel open */
+  :global(body.language-panel-open) .overlay {
+    pointer-events: none; /* Allow clicks to pass through when language panel is open */
+  }
 
-    .overlay {
-        pointer-events: auto; /* Default: catch clicks */
-    }
+  .overlay {
+    pointer-events: auto; /* Default: catch clicks */
+  }
 </style>
