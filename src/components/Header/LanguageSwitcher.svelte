@@ -6,26 +6,27 @@
   import Button from '@/theme/Button/Button.svelte';
   import Icon from '@/theme/Icon/Icon.svelte';
   import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
+  import { m } from '@paraglide/messages';
+  import { getLocale, setLocale } from '@paraglide/runtime';
 
-  interface Props {
-    defaultLanguage?: 'en' | 'cz';
-  }
+  interface Props {}
 
-  let { defaultLanguage = 'en' }: Props = $props();
+  let {}: Props = $props();
 
   // Create event dispatcher to notify parent component
   const dispatch = createEventDispatcher<{
     openModal: boolean;
   }>();
 
-  let currentLanguage = $state(defaultLanguage);
+  console.log('getLocale', getLocale());
+
+  let currentLanguage = $state(getLocale());
   let isOpen = $state(false);
   let isMobileMenuOpen = $state(false);
   let isMobile = $state(false);
   let languageSwitcherRef: HTMLDivElement;
   let buttonRef: HTMLElement;
   let languagePanelRef: HTMLDivElement;
-  let selectedLanguage = $state<'en' | 'cz'>('en');
 
   // Initialize dropdown handlers reference - we'll set this up after DOM elements are available
   let handlers: ReturnType<typeof createDropdownHandlers>;
@@ -34,14 +35,9 @@
   let onEnter: () => void;
   let onLeave: (e: PointerEvent) => void;
 
-  // Initialize selectedLanguage and keep it in sync with currentLanguage
-  $effect(() => {
-    selectedLanguage = currentLanguage;
-  });
-
   const languages = [
     { code: 'en', name: 'English' },
-    { code: 'cz', name: 'Czech' }
+    { code: 'cs', name: 'Czech' }
   ];
 
   // Format languages for SelectBox - show all languages and ensure we have at least one option
@@ -50,7 +46,7 @@
     return languages.map((lang) => ({
       value: lang.code,
       label: lang.name,
-      icon: lang.code
+      icon: 'country/' + lang.code
     }));
   };
 
@@ -62,10 +58,15 @@
     isMobile = document.documentElement.clientWidth < 1024;
   };
 
-  function selectLanguage(langCode: 'en' | 'cz') {
+  function selectLanguage(langCode: 'en' | 'cs') {
     currentLanguage = langCode;
     closeDropdown();
   }
+
+  $effect(() => {
+    // update paraglide runtime locale (will cause browser refresh)
+    setLocale(currentLanguage);
+  });
 
   // Handle overflow and dispatch events when mobile menu state changes
   const handleMobileMenuToggle = (isOpen: boolean) => {
@@ -90,26 +91,9 @@
     handleMobileMenuToggle(false);
   }
 
-  // Make sure currentLanguageData updates reactively
-  $effect(() => {
-    currentLanguageData = languages.find((lang) => lang.code === currentLanguage) || languages[0];
-  });
-
-  let currentLanguageData = $state(
+  const currentLanguageData = $derived(
     languages.find((lang) => lang.code === currentLanguage) || languages[0]
   );
-
-  // Handle language change when saving
-  function saveLanguageSelection() {
-    // Update the current language from the select dropdown
-    currentLanguage = selectedLanguage;
-
-    // Force refresh of language data
-    currentLanguageData = languages.find((lang) => lang.code === currentLanguage) || languages[0];
-
-    // Close the mobile menu
-    closeMobileMenu();
-  }
 
   // Initialize handlers once we have DOM reference
   $effect(() => {
@@ -165,7 +149,7 @@
   onpointerleave={onLeave}
 >
   <button bind:this={buttonRef} class="flex cursor-pointer items-center" onclick={toggleDropdown}>
-    <Icon class="rounded-full" name={currentLanguage} size="4xl" />
+    <Icon class="rounded-full" name={'country/' + currentLanguage} size="4xl" />
   </button>
 
   <!-- Desktop dropdown menu -->
@@ -176,9 +160,9 @@
           {#each languages.filter((lang) => lang.code !== currentLanguage) as language}
             <button
               class="flex w-full cursor-pointer items-center text-sm hover:underline"
-              onclick={() => selectLanguage(language.code as 'en' | 'cz')}
+              onclick={() => selectLanguage(language.code as 'en' | 'cs')}
             >
-              <Icon name={language.code} size="2xl" class="mr-3 rounded-full" />
+              <Icon name={'country/' + language.code} size="2xl" class="mr-3 rounded-full" />
               <span class="whitespace-nowrap">{language.name}</span>
             </button>
           {/each}
@@ -196,7 +180,7 @@
 >
   <div onclick={(e) => e.stopPropagation()} role="none">
     <div class="mb-4 flex items-center justify-between">
-      <h3 class="text-themeGray-800 text-xl font-bold">Choose your language</h3>
+      <h3 class="text-themeGray-800 text-xl font-bold">{m['language.choose_your_language']()}</h3>
       <button
         aria-label="Close language selector"
         class="text-themeGray-800 hover:bg-opacity-20 rounded-full p-2 transition-colors hover:bg-white"
@@ -209,28 +193,16 @@
     <div class="mb-6">
       <!-- Use the imported SelectBox component -->
       <SelectBox
-        bind:value={selectedLanguage}
+        bind:value={currentLanguage}
         class="rounded-xl bg-white shadow-md"
         label="Select Language"
         options={selectOptions}
       />
     </div>
-
-    <!-- Use the themed Button component -->
-    <Button
-      label="Save and continue"
-      onclick={saveLanguageSelection}
-      rightIcon="chevron"
-      theme="secondary"
-    />
   </div>
 </div>
 
 <style>
-  /*
-		 * Desktop dropdown styling
-		 */
-
   .language-switcher {
     user-select: none;
   }

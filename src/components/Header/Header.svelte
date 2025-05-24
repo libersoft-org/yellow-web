@@ -161,7 +161,7 @@
     {@render navigationMenu()}
 
     <div class="flex items-center pr-6 lg:pr-12">
-      <LanguageSwitcher defaultLanguage="en" on:openModal={(e) => (languageModalOpen = e.detail)} />
+      <LanguageSwitcher on:openModal={(e) => (languageModalOpen = e.detail)} />
 
       <!-- Mobile Menu Toggle Button - Only visible below lg screens -->
       <button

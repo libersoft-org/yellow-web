@@ -16,6 +16,7 @@ const config = {
       strict: false
     }),
     alias: {
+      '@paraglide/*': 'src/lib/paraglide/*',
       '@/*': 'src/*'
     }
   },

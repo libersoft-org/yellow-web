@@ -25,12 +25,9 @@
     ...restProps
   }: Props = $props();
 
-  // Find the currently selected option for displaying selected icon
-  $effect(() => {
-    selectedOption = options.find((option) => option.value === value) || null;
-  });
-
-  let selectedOption: SelectOption | null = $state(null);
+  let selectedOption = $derived<SelectOption | null>(
+    options.find((option) => option.value === value) || null
+  );
   let isOpen = $state(false);
   let selectContainer: HTMLDivElement;
 
@@ -85,7 +82,7 @@
     >
       {#if showIcons && selectedOption?.icon}
         <div class="text-themeGray-700 mr-2 flex-shrink-0">
-          <Icon name={selectedOption.icon} size="sm" />
+          <Icon name={selectedOption.icon} size="lg" />
         </div>
       {/if}
 
@@ -105,6 +102,7 @@
     {#if isOpen}
       <div
         class="border-themeGray-300 absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-lg border bg-white shadow-lg"
+        style="bottom: calc(100% + 4px);"
         role="listbox"
       >
         {#each options as option}
@@ -120,7 +118,7 @@
           >
             {#if showIcons && option.icon}
               <div class="text-themeGray-700 mr-3 flex-shrink-0">
-                <Icon name={option.icon} size="md" />
+                <Icon name={option.icon} size="lg" />
               </div>
             {/if}
             <div>{option.label}</div>
