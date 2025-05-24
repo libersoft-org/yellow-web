@@ -35,21 +35,17 @@
       </div>
     </div>
 
-    <div
-      class="app-features-layout flex w-full flex-col justify-center gap-4 md:px-[8rem] lg:flex-row lg:gap-10"
-    >
+    <div class="app-features-layout flex w-full flex-col justify-center gap-4 md:px-[8rem] lg:flex-row lg:gap-10">
       <div class="flex flex-1 flex-col gap-4 lg:max-w-[351px] lg:gap-8 lg:pt-20">
         {@render feature({
           title: 'Messages',
           icon: 'message',
-          description:
-            'Innovative messaging with unlimited files, widgets, multipart messages, and more.'
+          description: 'Innovative messaging with unlimited files, widgets, multipart messages, and more.'
         })}
         {@render feature({
           title: 'E-commerce',
           icon: 'cart',
-          description:
-            'Smart-contract wallet enables payments, purchases, donations, crowdfunding, and more.'
+          description: 'Smart-contract wallet enables payments, purchases, donations, crowdfunding, and more.'
         })}
       </div>
 
@@ -70,8 +66,7 @@
         {@render feature({
           title: 'Social media',
           icon: 'phone',
-          description:
-            'Advanced social features: video channels, forum, newsfeed, stories, events, and more.'
+          description: 'Advanced social features: video channels, forum, newsfeed, stories, events, and more.'
         })}
       </div>
 
@@ -84,8 +79,7 @@
         {@render feature({
           title: 'Entertainment',
           icon: 'dice',
-          description:
-            'Last but not least, the platform also provides fun features such as dating and video games.'
+          description: 'Last but not least, the platform also provides fun features such as dating and video games.'
         })}
       </div>
     </div>

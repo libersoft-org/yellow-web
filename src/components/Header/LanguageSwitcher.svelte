@@ -91,9 +91,7 @@
     handleMobileMenuToggle(false);
   }
 
-  const currentLanguageData = $derived(
-    languages.find((lang) => lang.code === currentLanguage) || languages[0]
-  );
+  const currentLanguageData = $derived(languages.find((lang) => lang.code === currentLanguage) || languages[0]);
 
   // Initialize handlers once we have DOM reference
   $effect(() => {

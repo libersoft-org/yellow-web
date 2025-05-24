@@ -23,13 +23,7 @@
       {heroText}
     </div>
     <div class="flex">
-      <Button
-        iconSize="xl"
-        icon="download"
-        label="Download Yellow"
-        theme="secondary"
-        class="mr-5"
-      />
+      <Button iconSize="xl" icon="download" label="Download Yellow" theme="secondary" class="mr-5" />
       <Button iconSize="xl" icon="account" label="Create free account" theme="primary" />
     </div>
   </div>

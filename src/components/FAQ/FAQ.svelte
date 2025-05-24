@@ -34,8 +34,7 @@
     },
     {
       id: 'faq-4',
-      question:
-        'Is Yellow Client backward compatible with classic e-mail protocols (SMTP, IMAP, POP3)?',
+      question: 'Is Yellow Client backward compatible with classic e-mail protocols (SMTP, IMAP, POP3)?',
       answer:
         'Yes, Yellow Client is fully backward compatible with classic email protocols including SMTP, IMAP, and POP3. This ensures you can continue to access all your existing email accounts while also enjoying the advanced features offered by AMTP for supported accounts.'
     }

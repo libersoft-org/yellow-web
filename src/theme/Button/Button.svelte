@@ -10,24 +10,13 @@
     iconSize?: IconProps['size'];
   }
 
-  let {
-    label,
-    theme = 'primary',
-    icon,
-    rightIcon,
-    iconSize = 'sm',
-    ...restProps
-  }: Props = $props();
+  let { label, theme = 'primary', icon, rightIcon, iconSize = 'sm', ...restProps }: Props = $props();
 </script>
 
 {#snippet makeIcon(icon: string | IconProps)}
   <div class="button__icon">
     {#if typeof icon === 'string'}
-      <Icon
-        size={iconSize}
-        name={icon}
-        class={[theme === 'secondary' ? 'text-themeYellow-600' : '']}
-      />
+      <Icon size={iconSize} name={icon} class={[theme === 'secondary' ? 'text-themeYellow-600' : '']} />
     {:else}
       <Icon {...icon} />
     {/if}

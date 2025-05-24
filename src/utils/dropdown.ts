@@ -106,11 +106,7 @@ export function createDropdownHandlers({
   /**
    * Sets up an outside click handler
    */
-  const setupOutsideClickHandler = (
-    isOpen: boolean,
-    containerElement: HTMLElement,
-    callback: () => void
-  ) => {
+  const setupOutsideClickHandler = (isOpen: boolean, containerElement: HTMLElement, callback: () => void) => {
     if (!isOpen || !containerElement || !browser) return;
 
     cleanupOutsideClickHandler();

@@ -18,8 +18,7 @@
 <Story name="Default">
   {#snippet children(args)}
     <Card {...args}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-      labore.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
     </Card>
   {/snippet}
 </Story>
@@ -27,8 +26,7 @@
 <Story name="With footer">
   {#snippet children(args)}
     <Card {...args}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-      labore.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
       {#snippet footerSlot()}
         Footer rendered
       {/snippet}

@@ -16,18 +16,9 @@
     showIcons?: boolean;
   }
 
-  let {
-    label,
-    options = [],
-    error,
-    value = $bindable(''),
-    showIcons = true,
-    ...restProps
-  }: Props = $props();
+  let { label, options = [], error, value = $bindable(''), showIcons = true, ...restProps }: Props = $props();
 
-  let selectedOption = $derived<SelectOption | null>(
-    options.find((option) => option.value === value) || null
-  );
+  let selectedOption = $derived<SelectOption | null>(options.find((option) => option.value === value) || null);
   let isOpen = $state(false);
   let selectContainer: HTMLDivElement;
 
@@ -90,10 +81,7 @@
         {selectedOption?.label || 'Select an option'}
       </div>
 
-      <div
-        class="text-themeGray-700 ml-2 flex-shrink-0 transition-transform duration-200"
-        class:rotate-90={isOpen}
-      >
+      <div class="text-themeGray-700 ml-2 flex-shrink-0 transition-transform duration-200" class:rotate-90={isOpen}>
         <Icon name="chevron" size="sm" />
       </div>
     </button>

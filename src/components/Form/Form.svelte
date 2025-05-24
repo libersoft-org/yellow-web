@@ -79,9 +79,7 @@
         >
           <option value="">Lorem ipsum</option>
         </select>
-        <div
-          class="text-themeGray-700 pointer-events-none absolute inset-y-0 right-0 flex items-center px-2"
-        >
+        <div class="text-themeGray-700 pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
           <svg
             aria-hidden="true"
             class="h-5 w-5"

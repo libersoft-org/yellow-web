@@ -19,8 +19,7 @@
 <Story name="Primary">
   {#snippet children(args)}
     <Box {...args}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-      labore.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
     </Box>
   {/snippet}
 </Story>
@@ -28,8 +27,7 @@
 <Story args={{ theme: 'secondary' }} name="Secondary">
   {#snippet children(args)}
     <Box {...args}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-      labore.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
     </Box>
   {/snippet}
 </Story>
@@ -37,8 +35,7 @@
 <Story args={{ theme: 'secondary' }} name="With footer">
   {#snippet children(args)}
     <Box {...args}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-      labore.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
       {#snippet footerSlot()}
         <a href="#">
           <Icon name="arrow" size="md" />

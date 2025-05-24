@@ -14,9 +14,7 @@
 {#snippet badge(infos)}
   <div class="mb-2 flex gap-2">
     {#each infos as info (info)}
-      <div
-        class="rounded-md border-1 bg-gray-100 px-1.5 py-0.5 text-xs font-semibold first:text-blue-800"
-      >
+      <div class="rounded-md border-1 bg-gray-100 px-1.5 py-0.5 text-xs font-semibold first:text-blue-800">
         {info}
       </div>
     {/each}
@@ -64,17 +62,17 @@
   {@render badge(['theme-text-body1'])}
   <div class="mb-8">
     <h6 class="theme-text-body1">
-      Body 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde
-      suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-      dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+      Body 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam
+      beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
+      quasi quidem quibusdam.
     </h6>
   </div>
   {@render badge(['theme-text-body2'])}
   <div class="mb-8">
     <h6 class="theme-text-body2">
-      Body 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde
-      suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-      dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+      Body 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam
+      beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum
+      quasi quidem quibusdam.
     </h6>
   </div>
 </Story>

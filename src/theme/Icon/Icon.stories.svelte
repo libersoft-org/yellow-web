@@ -26,9 +26,7 @@
 {/snippet}
 
 <Story name="Default">
-  <div
-    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem;"
-  >
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem;">
     {#each iconNames as name (name)}
       {@render iconBox(name, name)}
     {/each}
@@ -36,9 +34,7 @@
 </Story>
 
 <Story name="Rotate">
-  <div
-    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem;"
-  >
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem;">
     {@render iconBox('chevron', 'rotate-0', { class: 'rotate-0' })}
     {@render iconBox('chevron', 'rotate-90', { class: 'rotate-90' })}
     {@render iconBox('chevron', 'rotate-180', { class: 'rotate-180' })}
@@ -47,9 +43,7 @@
 </Story>
 
 <Story name="Color">
-  <div
-    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem;"
-  >
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem;">
     {@render iconBox('chevron', 'text-red-300', { class: 'text-red-300' })}
     {@render iconBox('chevron', 'text-yellow-300', { class: 'text-yellow-300' })}
     {@render iconBox('chevron', 'text-blue-300', { class: 'text-blue-300' })}
@@ -58,9 +52,7 @@
 </Story>
 
 <Story name="Sizes">
-  <div
-    style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem;"
-  >
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem;">
     {@render iconBox('chevron', '2xl', { size: '2xl' })}
     {@render iconBox('chevron', 'xl', { size: 'xl' })}
     {@render iconBox('chevron', 'lg', { size: 'lg' })}

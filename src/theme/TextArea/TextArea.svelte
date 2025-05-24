@@ -6,14 +6,7 @@
     error?: string;
   }
 
-  let {
-    label,
-    error,
-    placeholder,
-    rows = 4,
-    value = $bindable(''),
-    ...restProps
-  }: Props = $props();
+  let { label, error, placeholder, rows = 4, value = $bindable(''), ...restProps }: Props = $props();
 </script>
 
 <div class="mb-4">

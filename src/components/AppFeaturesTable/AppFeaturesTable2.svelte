@@ -31,13 +31,7 @@
 
   let {
     title = 'with other software',
-    headers = [
-      'Software',
-      'Open source',
-      'Distributed/decentralized',
-      'End-to-end encryption',
-      'Developed by'
-    ],
+    headers = ['Software', 'Open source', 'Distributed/decentralized', 'End-to-end encryption', 'Developed by'],
     rows = [
       {
         cells: [
@@ -104,9 +98,7 @@
     <div class="px-4 py-8 md:px-10 md:px-25 md:py-21">
       <div class="mb-8 text-center">
         <h2 class="theme-text-h2 text-left md:text-center">
-          <span class="theme-title-underline">Comparison<br /></span><span
-            class="text-lg md:text-2xl">{title}</span
-          >
+          <span class="theme-title-underline">Comparison<br /></span><span class="text-lg md:text-2xl">{title}</span>
         </h2>
       </div>
 

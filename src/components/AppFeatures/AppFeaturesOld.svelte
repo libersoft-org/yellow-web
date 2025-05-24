@@ -19,20 +19,17 @@
     {
       title: 'Messages',
       icon: 'message',
-      description:
-        'Innovative messaging with unlimited files, widgets, multipart messages, and more.'
+      description: 'Innovative messaging with unlimited files, widgets, multipart messages, and more.'
     },
     {
       title: 'E-commerce',
       icon: 'cart',
-      description:
-        'Smart-contract wallet enables payments, purchases, donations, crowdfunding, and more.'
+      description: 'Smart-contract wallet enables payments, purchases, donations, crowdfunding, and more.'
     },
     {
       title: 'Social media',
       icon: 'phone',
-      description:
-        'Advanced social features: video channels, forum, newsfeed, stories, events, and more.'
+      description: 'Advanced social features: video channels, forum, newsfeed, stories, events, and more.'
     },
     {
       title: 'Business tools',
@@ -42,8 +39,7 @@
     {
       title: 'Entertainment',
       icon: 'dice',
-      description:
-        'Last but not least, the platform also provides fun features such as dating and video games.'
+      description: 'Last but not least, the platform also provides fun features such as dating and video games.'
     }
   ];
 </script>

@@ -3,12 +3,7 @@
 
   const title = 'Liberland Software Foundation';
 
-  const address = [
-    'Liberty Street 1',
-    'Liberty City',
-    'LL-00001 Liberland',
-    'Organization ID: LLC230002'
-  ];
+  const address = ['Liberty Street 1', 'Liberty City', 'LL-00001 Liberland', 'Organization ID: LLC230002'];
 
   const contactTitle = 'Get in touch';
   const contactEmail = 'info@libersoft.org';
@@ -45,13 +40,7 @@
       href="mailto:{contactEmail}"
       class="text-themeGray-800 hover:text-themeYellow-400 inline-flex items-center gap-2 font-bold underline"
     >
-      <svg
-        class="text-themeYellow-400 h-6 w-6"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
+      <svg class="text-themeYellow-400 h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path
           d="M2.25 6.75l8.954 6.716a2.25 2.25 0 002.592 0L22.75 6.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5z"
         />

@@ -93,9 +93,7 @@
         <thead class="hidden md:table-header-group">
           <tr class="md:table-row">
             {#each headers as header, headerIndex}
-              <th
-                class="theme-gradient-yellow text-themeGray-800 bg-gradient-to-t py-4.5 text-base font-bold"
-              >
+              <th class="theme-gradient-yellow text-themeGray-800 bg-gradient-to-t py-4.5 text-base font-bold">
                 <div class="px-5.5">
                   {@html formatHeaderText(header)}
                 </div>
@@ -125,9 +123,7 @@
                     role={columnIndex === 0 ? 'button' : undefined}
                     tabindex={columnIndex === 0 ? 0 : undefined}
                     aria-expanded={columnIndex === 0 ? activeAccordionItem === rowIndex : undefined}
-                    aria-controls={columnIndex === 0
-                      ? `accordion-content-panel-${rowIndex}`
-                      : undefined}
+                    aria-controls={columnIndex === 0 ? `accordion-content-panel-${rowIndex}` : undefined}
                     id={columnIndex === 0
                       ? `accordion-trigger-${rowIndex}`
                       : columnIndex > 0 && activeAccordionItem === rowIndex
@@ -140,11 +136,7 @@
                       {@html formatText(cell.text)}
                       {#if columnIndex === 0}
                         <span class="accordion-chevron ml-auto md:hidden">
-                          <Icon
-                            name="chevron"
-                            class={activeAccordionItem === rowIndex ? 'rotate-90' : ''}
-                            size="sm"
-                          />
+                          <Icon name="chevron" class={activeAccordionItem === rowIndex ? 'rotate-90' : ''} size="sm" />
                         </span>
                       {/if}
                     </div>
@@ -161,9 +153,7 @@
                     id={columnIndex === 0 && activeAccordionItem === rowIndex
                       ? `accordion-content-panel-${rowIndex}`
                       : undefined}
-                    aria-labelledby={columnIndex === 0
-                      ? `accordion-trigger-${rowIndex}`
-                      : undefined}
+                    aria-labelledby={columnIndex === 0 ? `accordion-trigger-${rowIndex}` : undefined}
                   >
                     <div
                       class="cell-wrapper flex h-full items-center justify-between px-5.5 py-4 md:{getJustifyClass(
@@ -171,9 +161,7 @@
                       )}"
                     >
                       {#if headers[columnIndex]}
-                        <span
-                          class="text-themeGray-500 flex items-center text-sm font-medium md:hidden"
-                        >
+                        <span class="text-themeGray-500 flex items-center text-sm font-medium md:hidden">
                           {headers[columnIndex]}
                         </span>
                       {/if}

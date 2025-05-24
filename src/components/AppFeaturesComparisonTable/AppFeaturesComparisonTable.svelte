@@ -31,13 +31,7 @@
 
   let {
     title = 'with other software',
-    headers = [
-      'Software',
-      'Open source',
-      'Distributed/decentralized',
-      'End-to-end encryption',
-      'Developed by'
-    ],
+    headers = ['Software', 'Open source', 'Distributed/decentralized', 'End-to-end encryption', 'Developed by'],
     rows = [
       {
         cells: [

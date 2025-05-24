@@ -54,9 +54,7 @@
   ]}
 >
   <div class="dropdown-content relative px-4 py-2.5">
-    <div
-      class="absolute -top-2 left-1/2 h-5 w-5 -translate-x-1/2 rotate-45 rounded-sm bg-white"
-    ></div>
+    <div class="absolute -top-2 left-1/2 h-5 w-5 -translate-x-1/2 rotate-45 rounded-sm bg-white"></div>
     {@render children?.()}
   </div>
 </div>

@@ -112,9 +112,7 @@
           </td>
         </tr>
         <tr>
-          <th class="text-themeGray-400"
-            >Client - encryption, signature<br />and login keys management</th
-          >
+          <th class="text-themeGray-400">Client - encryption, signature<br />and login keys management</th>
           <td class="text-center">
             <span class="status-check status-error">✕</span>
           </td>
