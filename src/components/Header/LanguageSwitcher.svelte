@@ -18,8 +18,6 @@
     openModal: boolean;
   }>();
 
-  console.log('getLocale', getLocale());
-
   let currentLanguage = $state(getLocale());
   let isOpen = $state(false);
   let isMobileMenuOpen = $state(false);
