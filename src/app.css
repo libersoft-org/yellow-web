@@ -95,6 +95,10 @@
   background: radial-gradient(ellipse at center, #eef0fa 0%, #f8f9ff 100%);
 }
 
+@utility theme-gradient-radial-grey {
+  background: radial-gradient(ellipse at 50% 50%, #f8f9ff 0%, #eaecf7 100%);
+}
+
 @utility theme-text-h1 {
   @apply md:text-10xl lg:text-11xl text-9xl font-bold;
 }
