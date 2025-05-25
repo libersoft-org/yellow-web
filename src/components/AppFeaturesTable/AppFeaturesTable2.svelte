@@ -120,14 +120,6 @@
 </div>
 
 <style>
-  .svg-bg :global(svg) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-  }
-
   .table-container-wrapper {
     @apply flex flex-col;
   }
