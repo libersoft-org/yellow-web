@@ -1,120 +1,105 @@
 <script lang="ts">
   import type { HTMLSelectAttributes } from 'svelte/elements';
+  import { Select } from 'bits-ui';
   import Icon from '@/theme/Icon/Icon.svelte';
-  import { onMount } from 'svelte';
 
   export interface SelectOption {
     value: string;
     label: string;
     icon?: string;
+    disabled?: boolean;
   }
 
-  interface Props extends HTMLSelectAttributes {
+  interface Props {
     label?: string;
     options: SelectOption[];
     error?: string;
     showIcons?: boolean;
+    value?: string;
+    class?: string;
+    id?: string;
+    name?: string;
   }
 
-  let { label, options = [], error, value = $bindable(''), showIcons = true, ...restProps }: Props = $props();
+  let {
+    label,
+    options = [],
+    error,
+    value = $bindable(''),
+    showIcons = true,
+    class: className = '',
+    id,
+    name
+  }: Props = $props();
 
-  let selectedOption = $derived<SelectOption | null>(options.find((option) => option.value === value) || null);
-  let isOpen = $state(false);
-  let selectContainer: HTMLDivElement;
-
-  function toggleDropdown() {
-    isOpen = !isOpen;
+  // Handle value change from Select component
+  function handleValueChange(newValue: string) {
+    value = newValue;
   }
 
-  function selectOption(option: SelectOption) {
-    value = option.value;
-    isOpen = false;
-  }
-
-  // Close dropdown when clicking outside
-  onMount(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (selectContainer && !selectContainer.contains(event.target as Node) && isOpen) {
-        isOpen = false;
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  });
+  // Get the currently selected option
+  const selectedLabel = $derived(value ? options.find((option) => option.value === value)?.label : 'Select an option');
 </script>
 
 <div class="mb-4">
-  <div bind:this={selectContainer} class="relative">
-    <!-- Hidden select for form submission -->
-    <select {...restProps} class="sr-only" style="display: none;" {value}>
-      {#each options as option}
-        <option value={option.value}>{option.label}</option>
-      {/each}
-    </select>
-
-    <!-- Custom select display -->
-    <button
-      aria-expanded={isOpen}
-      aria-haspopup="listbox"
+  <Select.Root type="single" onValueChange={handleValueChange} {value} items={options}>
+    <Select.Trigger
       class={[
-        'relative flex w-full cursor-pointer items-center rounded-lg border-0 bg-white px-4 py-3',
-        error ? 'border-red-500' : 'border-themeGray-300',
+        'theme-gradient-white relative flex w-full cursor-pointer items-center rounded-lg bg-gradient-to-t px-4 py-3 drop-shadow-md',
+        error ? 'border border-red-500' : '',
         'hover:border-themeYellow-600 transition-colors duration-200',
-        isOpen ? 'ring-themeYellow-600 border-transparent ring-2' : '',
-        'text-left', // Ensure text alignment is left
-        restProps.class
+        'text-left',
+        className
       ]}
-      onclick={toggleDropdown}
-      type="button"
+      aria-label={label || 'Select an option'}
+      {id}
+      {name}
     >
-      {#if showIcons && selectedOption?.icon}
+      {#if showIcons && value && options.find((o) => o.value === value)?.icon}
         <div class="text-themeGray-700 mr-2 flex-shrink-0">
-          <Icon name={selectedOption.icon} size="lg" />
+          <Icon name={options.find((o) => o.value === value)?.icon || ''} size="lg" />
         </div>
       {/if}
-
       <div class="text-themeGray-800 flex-grow">
-        {selectedOption?.label || 'Select an option'}
+        {selectedLabel}
       </div>
-
-      <div class="text-themeGray-700 ml-2 flex-shrink-0 transition-transform duration-200" class:rotate-90={isOpen}>
+      <div class="text-themeGray-700 ml-2 flex-shrink-0">
         <Icon name="chevron" size="sm" />
       </div>
-    </button>
+    </Select.Trigger>
 
-    <!-- Dropdown options -->
-    {#if isOpen}
-      <div
-        class="border-themeGray-300 absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-lg border bg-white shadow-lg"
-        style="bottom: calc(100% + 4px);"
-        role="listbox"
+    <Select.Portal>
+      <Select.Content
+        class="border-themeGray-300 z-50 max-h-60 min-w-[var(--bits-select-anchor-width)] rounded-lg border bg-white px-1 py-1 shadow-lg"
+        sideOffset={4}
       >
-        {#each options as option}
-          <button
-            type="button"
-            class={[
-              'hover:bg-themeGray-100 flex w-full cursor-pointer items-center px-4 py-2 text-left',
-              option.value === value ? 'bg-themeGray-100 font-medium' : ''
-            ]}
-            onclick={() => selectOption(option)}
-            role="option"
-            aria-selected={option.value === value}
-          >
-            {#if showIcons && option.icon}
-              <div class="text-themeGray-700 mr-3 flex-shrink-0">
-                <Icon name={option.icon} size="lg" />
-              </div>
-            {/if}
-            <div>{option.label}</div>
-          </button>
-        {/each}
-      </div>
-    {/if}
-  </div>
+        <Select.Viewport class="p-1">
+          {#each options as option}
+            <Select.Item
+              class="hover:bg-themeGray-100 flex w-full cursor-pointer items-center px-4 py-2 text-left text-sm"
+              value={option.value}
+              label={option.label}
+              disabled={option.disabled}
+            >
+              {#snippet children({ selected })}
+                {#if showIcons && option.icon}
+                  <div class="text-themeGray-700 mr-3 flex-shrink-0">
+                    <Icon name={option.icon} size="lg" />
+                  </div>
+                {/if}
+                <div>{option.label}</div>
+                {#if selected}
+                  <div class="ml-auto">
+                    <Icon name="check" size="sm" />
+                  </div>
+                {/if}
+              {/snippet}
+            </Select.Item>
+          {/each}
+        </Select.Viewport>
+      </Select.Content>
+    </Select.Portal>
+  </Select.Root>
 
   {#if error}
     <p class="mt-1 text-sm text-red-500">{error}</p>

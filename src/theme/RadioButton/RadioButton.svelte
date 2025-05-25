@@ -1,33 +1,40 @@
 <script lang="ts">
-  import type { HTMLInputAttributes } from 'svelte/elements';
+  import { RadioGroup, Label, useId } from 'bits-ui';
 
-  interface Props extends Omit<HTMLInputAttributes, 'type'> {
-    label?: string;
+  interface Props {
     value: string;
-    name: string;
-    error?: string;
+    id?: string;
+    label?: string;
+    disabled?: boolean;
   }
 
-  let { label, value, name, error, checked = $bindable(false), ...restProps }: Props = $props();
+  let { value, id = useId(), label, disabled = false }: Props = $props();
 </script>
 
-<div class="mb-2 flex items-center">
-  <input
-    {...restProps}
-    {checked}
-    class={[
-      'border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500 h-4 w-4',
-      error ? 'border-red-500' : '',
-      restProps.class
-    ]}
-    {name}
-    type="radio"
+<div class="flex items-center">
+  <RadioGroup.Item
+    {id}
     {value}
-  />
+    {disabled}
+    class="theme-gradient-white text-themeYellow-600 peer inline-flex h-[27px] w-[27px] shrink-0 cursor-pointer rounded-full border border-[#C09A05] bg-gradient-to-t drop-shadow-md transition-all duration-150 ease-in-out focus:ring-0 focus:outline-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[state=checked]:border-[#C09A05]"
+    aria-labelledby={label ? `${id}-label` : undefined}
+  >
+    {#snippet children({ checked })}
+      <div class="flex h-full w-full items-center justify-center">
+        {#if checked}
+          <div class="h-[11px] w-[11px] rounded-full bg-black"></div>
+        {/if}
+      </div>
+    {/snippet}
+  </RadioGroup.Item>
+
   {#if label}
-    <label class="text-themeGray-700 ml-2 text-sm">{label}</label>
+    <Label.Root
+      for={id}
+      id={`${id}-label`}
+      class="text-themeGray-700 ml-2 text-sm peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+    >
+      {label}
+    </Label.Root>
   {/if}
 </div>
-{#if error}
-  <p class="mt-1 text-sm text-red-500">{error}</p>
-{/if}
