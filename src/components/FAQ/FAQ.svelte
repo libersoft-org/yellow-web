@@ -41,7 +41,7 @@
   ];
 
   // Set the first item as default active
-  const defaultActiveId = 'faq-1';
+  const defaultActiveId = ['faq-1'];
 </script>
 
 {#snippet questionContent(item: FAQItem)}
