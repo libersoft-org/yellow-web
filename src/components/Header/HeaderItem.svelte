@@ -16,8 +16,8 @@
   const hasChildren = $derived(subItems.length > 0);
   let isMobile = $state(false);
 
-  let headerItemRef: HTMLElement;
-  let buttonRef: HTMLElement;
+  let headerItemRef = $state<HTMLElement | null>(null);
+  let buttonRef = $state<HTMLElement | null>(null);
   let show = $state(false);
 
   // Check if mobile view on mount and on resize

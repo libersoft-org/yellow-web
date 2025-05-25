@@ -24,16 +24,26 @@
   let isOpen = $state(false);
   let isMobileMenuOpen = $state(false);
   let isMobile = $state(false);
-  let languageSwitcherRef: HTMLDivElement;
-  let buttonRef: HTMLElement;
-  let languagePanelRef: HTMLDivElement;
+  let languageSwitcherRef = $state<HTMLDivElement | null>(null);
+  let buttonRef = $state<HTMLElement | null>(null);
+  let languagePanelRef = $state<HTMLDivElement | null>(null);
 
   // Initialize dropdown handlers reference - we'll set this up after DOM elements are available
   let handlers: ReturnType<typeof createDropdownHandlers>;
-  let toggleDropdown: (e: MouseEvent) => void;
-  let closeDropdown: () => void;
-  let onEnter: () => void;
-  let onLeave: (e: PointerEvent) => void;
+
+  // Create a reactive state to safely store the handler functions
+  const dropdownHandlers = $state({
+    toggleDropdown: (e: MouseEvent) => {},
+    closeDropdown: () => {},
+    onEnter: () => {},
+    onLeave: (e: PointerEvent) => {}
+  });
+
+  // Create direct references for easy access in the template
+  const toggleDropdown = (e: MouseEvent) => dropdownHandlers.toggleDropdown(e);
+  const closeDropdown = () => dropdownHandlers.closeDropdown();
+  const onEnter = () => dropdownHandlers.onEnter();
+  const onLeave = (e: PointerEvent) => dropdownHandlers.onLeave(e);
 
   const languages = [
     { code: 'en', name: 'English' },
@@ -119,8 +129,11 @@
       }
     });
 
-    // Make direct references for template usage
-    ({ toggleDropdown, closeDropdown, onEnter, onLeave } = handlers);
+    // Assign handlers to our reactive state object instead of directly to constants
+    dropdownHandlers.toggleDropdown = handlers.toggleDropdown;
+    dropdownHandlers.closeDropdown = handlers.closeDropdown;
+    dropdownHandlers.onEnter = handlers.onEnter;
+    dropdownHandlers.onLeave = handlers.onLeave;
   });
 
   // Handle initial check and resize events

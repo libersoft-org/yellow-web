@@ -131,8 +131,11 @@
 
   <!-- Mobile menu overlay - no click handler, handled by document click listener -->
   {#if isMobileMenuOpen || languageModalOpen}
-    <div
-      class="overlay fixed inset-0 top-14 z-40 bg-black opacity-30 transition-opacity duration-300 lg:hidden"
+    <button
+      type="button"
+      tabindex="0"
+      aria-label="Close menu"
+      class="overlay fixed inset-0 top-14 z-40 border-0 bg-black opacity-30 transition-opacity duration-300 lg:hidden"
       onclick={(e) => {
         // Close appropriate menus
         if (languageModalOpen) {
@@ -142,7 +145,17 @@
           closeMobileMenu();
         }
       }}
-    ></div>
+      onkeydown={(e) => {
+        if (e.key === 'Enter' || e.key === 'Escape') {
+          if (languageModalOpen) {
+            languageModalOpen = false;
+          }
+          if (isMobileMenuOpen) {
+            closeMobileMenu();
+          }
+        }
+      }}
+    ></button>
   {/if}
 {/snippet}
 

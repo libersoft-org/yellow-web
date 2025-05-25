@@ -47,8 +47,9 @@
   <form onsubmit={handleSubmit}>
     <!-- Input -->
     <div class="mb-4">
-      <label class="text-themeGray-800 mb-1.5 block text-sm font-medium">Input</label>
+      <label for="formInput" class="text-themeGray-800 mb-1.5 block text-sm font-medium">Input</label>
       <input
+        id="formInput"
         class="border-themeGray-300 focus:ring-themeYellow-600 w-full rounded-lg border bg-white px-4 py-3 focus:border-transparent focus:ring-2 focus:outline-none"
         oninput={handleInputChange}
         placeholder="Enter your text here"
@@ -58,8 +59,9 @@
 
     <!-- Textarea -->
     <div class="mb-4">
-      <label class="text-themeGray-800 mb-1.5 block text-sm font-medium">Textarea</label>
+      <label for="formTextarea" class="text-themeGray-800 mb-1.5 block text-sm font-medium">Textarea</label>
       <textarea
+        id="formTextarea"
         class="border-themeGray-300 focus:ring-themeYellow-600 w-full rounded-lg border bg-white px-4 py-3 focus:border-transparent focus:ring-2 focus:outline-none"
         oninput={handleTextareaChange}
         placeholder="Enter your message here"
@@ -70,9 +72,10 @@
 
     <!-- SelectBox -->
     <div class="mb-4">
-      <label class="text-themeGray-800 mb-1.5 block text-sm font-medium">Selectbox</label>
+      <label for="formSelect" class="text-themeGray-800 mb-1.5 block text-sm font-medium">Selectbox</label>
       <div class="relative">
         <select
+          id="formSelect"
           class="border-themeGray-300 focus:ring-themeYellow-600 w-full appearance-none rounded-lg border bg-white px-4 py-3 pr-10 focus:border-transparent focus:ring-2 focus:outline-none"
           onchange={handleSelectChange}
           value={selectValue}
@@ -99,39 +102,49 @@
 
     <!-- Radio Buttons -->
     <div class="my-4">
-      <div class="mb-2 flex gap-4">
-        <div class="flex items-center">
-          <input
-            checked={radioValue === 'option1'}
-            class="border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500 h-4 w-4"
-            name="radioOptions"
-            onchange={() => (radioValue = 'option1')}
-            type="radio"
-            value="option1"
-          />
+      <fieldset>
+        <legend class="text-themeGray-800 mb-1.5 block text-sm font-medium">Options</legend>
+        <div class="mb-2 flex gap-4">
+          <div class="flex items-center">
+            <input
+              id="radioOption1"
+              checked={radioValue === 'option1'}
+              class="border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500 h-4 w-4"
+              name="radioOptions"
+              onchange={() => (radioValue = 'option1')}
+              type="radio"
+              value="option1"
+            />
+            <label for="radioOption1" class="text-themeGray-700 ml-2 text-sm">Option 1</label>
+          </div>
+          <div class="flex items-center">
+            <input
+              id="radioOption2"
+              checked={radioValue === 'option2'}
+              class="border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500 h-4 w-4"
+              name="radioOptions"
+              onchange={() => (radioValue = 'option2')}
+              type="radio"
+              value="option2"
+            />
+            <label for="radioOption2" class="text-themeGray-700 ml-2 text-sm">Option 2</label>
+          </div>
         </div>
-        <div class="flex items-center">
-          <input
-            checked={radioValue === 'option2'}
-            class="border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500 h-4 w-4"
-            name="radioOptions"
-            onchange={() => (radioValue = 'option2')}
-            type="radio"
-            value="option2"
-          />
-        </div>
-      </div>
+      </fieldset>
     </div>
 
     <!-- Checkbox -->
     <div class="mb-2 flex items-center">
       <input
+        id="consentCheckbox"
         checked={consentValue}
         class="border-themeGray-300 text-themeYellow-600 focus:ring-themeYellow-500 h-4 w-4 rounded"
         onchange={handleCheckboxChange}
         type="checkbox"
       />
-      <label class="text-themeGray-700 ml-2 text-sm">Souhlasím se zpracováním osobních údajů</label>
+      <label for="consentCheckbox" class="text-themeGray-700 ml-2 text-sm"
+        >Souhlasím se zpracováním osobních údajů</label
+      >
     </div>
 
     <div class="mt-6">
