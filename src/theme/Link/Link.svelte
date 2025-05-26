@@ -8,6 +8,7 @@
     iconSize?: 'sm' | 'md' | 'lg';
     iconWrapperClass?: string;
     iconClass?: string;
+    textClass?: string;
     class?: string;
     target?: string;
     rel?: string;
@@ -20,6 +21,7 @@
     iconSize = 'md',
     iconWrapperClass = 'bg-themeGray-700 rounded-full p-2',
     iconClass = 'text-themeYellow-500',
+    textClass = '',
     class: className = 'text-themeGray-200 hover:text-themeYellow-400 transition-colors duration-200 font-normal',
     target,
     rel
@@ -33,7 +35,7 @@
     </span>
   {/if}
   <span class="relative inline-block">
-    <span class="text-white">{@html label}</span>
+    <span class={`${textClass}`}>{@html label}</span>
     <span class="absolute bottom-[-5px] left-0 h-[1px] w-0 bg-current transition-all duration-300 group-hover:w-full"
     ></span>
   </span>

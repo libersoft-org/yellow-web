@@ -91,6 +91,7 @@
         label={social.label}
         icon={social.icon}
         iconWrapperClass="text-themeYellow-600 flex items-center justify-center rounded-full p-2 border-1 border-themeYellow-600 h-9 w-9"
+        textClass="text-white"
         target="_blank"
         rel="noopener noreferrer"
         class="text-themeYellow-600 md:text-md hover:text-themeYellow-400 flex w-full items-center gap-3 px-0 text-xs md:justify-center md:px-8 lg:px-10  {i !==
@@ -113,6 +114,7 @@
             icon="chevron"
             iconSize="sm"
             iconWrapperClass="text-themeYellow-600"
+            textClass="text-white"
             class="text-themeYellow-600 md:text-md text-xs"
           />
         </li>

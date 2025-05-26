@@ -9,6 +9,7 @@
   import TextImage from '@/components/TextImage/TextImage.svelte';
   import FAQ from '@/components/FAQ/FAQ.svelte';
   import Form from '@/components/Form/Form.svelte';
+  import Text from '@/components/Text/Text.svelte';
 </script>
 
 <div>
@@ -25,7 +26,9 @@
       <div>
         <Form />
       </div>
-      <div></div>
+      <div>
+        <Text />
+      </div>
     </div>
   </div>
 
