@@ -36,7 +36,9 @@
         </div>
       </div>
 
-      <div class="app-features-layout flex w-full flex-col justify-center gap-4 md:px-[8rem] lg:flex-row lg:gap-10">
+      <div
+        class="app-features-layout flex w-full flex-col justify-center gap-4 md:grid md:grid-cols-2 lg:flex lg:grid-cols-none lg:flex-row lg:gap-10 lg:px-[8rem]"
+      >
         <div class="flex flex-1 flex-col gap-4 lg:max-w-[351px] lg:gap-8 lg:pt-20">
           {@render feature({
             title: 'Messages',
@@ -50,11 +52,10 @@
           })}
         </div>
 
-        <div class="-order-1 flex flex-1 flex-col items-center gap-8 lg:order-none lg:max-w-[384px]">
+        <div class="-order-1 flex flex-1 flex-col items-center gap-8 md:col-span-2 lg:order-none lg:max-w-[384px]">
           <!-- Image -->
           <div
-            class="flex w-full max-w-[380px] justify-center md:col-span-2 md:row-start-1
-              md:hidden md:justify-center lg:col-span-1
+            class="flex w-full max-w-[380px] justify-center md:justify-center lg:col-span-1
               lg:col-start-2 lg:row-start-1 lg:block lg:justify-start"
           >
             <img

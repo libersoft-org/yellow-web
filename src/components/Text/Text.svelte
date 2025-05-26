@@ -28,13 +28,13 @@
 {/snippet}
 
 {#snippet cardHeaderSnippet()}
-  <div class="card-block__header md:px-15 md:py-4">
-    <h3 class="mb-6 text-center text-6xl font-medium">{title}</h3>
+  <div class="card-block__header px-6 pt-5 lg:px-15 lg:py-4">
+    <h3 class="text-center text-4xl font-medium md:text-5xl lg:text-6xl">{title}</h3>
   </div>
 {/snippet}
 
 {#snippet leftColumnSnippet()}
-  <div class="flex-1">
+  <div class="w-full lg:flex-1">
     <div class="mb-2 text-xl font-bold">Address</div>
     <div class="text-md mb-4">
       {#each address as line}
@@ -59,7 +59,7 @@
 {/snippet}
 
 {#snippet rightColumnSnippet()}
-  <div class="flex flex-1 flex-col gap-3">
+  <div class="flex w-full flex-col gap-3 lg:flex-1">
     {#each links as link}
       <Link
         href={link.href}
@@ -75,8 +75,8 @@
 {/snippet}
 
 {#snippet contentSnippet()}
-  <div class="card-block__body pt-1 md:px-15 md:pb-10">
-    <div class="flex flex-col gap-8 md:flex-row md:gap-16">
+  <div class="card-block__body px-6 pt-1 md:px-15 md:pb-10">
+    <div class="flex flex-col gap-8 lg:flex-row lg:gap-16">
       {@render leftColumnSnippet()}
       {@render rightColumnSnippet()}
     </div>
