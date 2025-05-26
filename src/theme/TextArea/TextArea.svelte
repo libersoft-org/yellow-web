@@ -20,13 +20,13 @@
 
 <div class="mb-4">
   {#if label}
-    <label for={id} class="text-themeGray-800 mb-1.5 block text-sm font-medium">{label}</label>
+    <label for={id} class="text-themeGray-800 mb-1.5 block text-xl font-medium">{label}</label>
   {/if}
   <textarea
     {id}
     {...restProps}
     class={[
-      'theme-gradient-white w-full rounded-lg border-0 border-none bg-gradient-to-t px-4 py-3 drop-shadow-md',
+      'w-full rounded-lg border-0 border-none bg-white px-4 py-3 drop-shadow-md',
       error ? 'border border-red-500' : '',
       'focus:border-0 focus:ring-0 focus:outline-none',
       restProps.class

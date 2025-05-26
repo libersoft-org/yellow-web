@@ -32,6 +32,9 @@
     name
   }: Props = $props();
 
+  // Track open state
+  let open = $state(false);
+
   // Handle value change from Select component
   function handleValueChange(newValue: string) {
     value = newValue;
@@ -42,7 +45,13 @@
 </script>
 
 <div class="mb-4">
-  <Select.Root type="single" onValueChange={handleValueChange} {value} items={options}>
+  <Select.Root
+    type="single"
+    onValueChange={handleValueChange}
+    {value}
+    items={options}
+    onOpenChange={(isOpen) => (open = isOpen)}
+  >
     <Select.Trigger
       class={[
         'theme-gradient-white relative flex w-full cursor-pointer items-center rounded-lg bg-gradient-to-t px-4 py-3 drop-shadow-md',
@@ -63,7 +72,7 @@
       <div class="text-themeGray-800 flex-grow">
         {selectedLabel}
       </div>
-      <div class="text-themeGray-700 ml-2 flex-shrink-0">
+      <div class="text-themeGray-700 ml-2 flex-shrink-0 transition-transform duration-200" class:rotate-90={open}>
         <Icon name="chevron" size="sm" />
       </div>
     </Select.Trigger>

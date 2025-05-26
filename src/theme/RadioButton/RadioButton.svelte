@@ -32,7 +32,7 @@
     <Label.Root
       for={id}
       id={`${id}-label`}
-      class="text-themeGray-700 ml-2 text-sm peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      class="text-themeGray-700 ml-2 text-base peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
     >
       {label}
     </Label.Root>

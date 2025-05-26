@@ -40,9 +40,9 @@
     {#snippet children({ checked, indeterminate })}
       <div class="inline-flex items-center justify-center text-black">
         {#if indeterminate}
-          <Icon name="minus" size="sm" />
+          <Icon name="minus" size="md" />
         {:else if checked}
-          <Icon name="check" size="sm" />
+          <Icon name="check" size="md" />
         {/if}
       </div>
     {/snippet}
@@ -52,7 +52,7 @@
     <Label.Root
       for={id}
       id={`${id}-label`}
-      class="text-themeGray-700 ml-2 text-sm peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      class="text-themeGray-700 ml-2 text-base peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
     >
       {@html label}
     </Label.Root>
