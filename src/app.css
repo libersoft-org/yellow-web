@@ -99,6 +99,39 @@
   background: radial-gradient(ellipse at 50% 50%, #f8f9ff 0%, #eaecf7 100%);
 }
 
+/**
+ * Custom Bullet Lists
+ */
+.theme-bullet-list {
+  @apply list-none pl-0;
+}
+
+.theme-bullet-list > li {
+  @apply relative mb-0.5 pl-6;
+}
+
+.theme-bullet-list > li::before {
+  content: '';
+  @apply absolute left-0 h-3 w-3 rounded-full;
+  top: 9px;
+  background: radial-gradient(circle, #ffe346 0%, #ffc934 100%);
+}
+
+.theme-bullet-list ul {
+  @apply mt-1 list-none pl-6;
+}
+
+.theme-bullet-list ul > li {
+  @apply relative mb-0.5 pl-4;
+  font-size: 0.941rem;
+}
+
+.theme-bullet-list ul > li::before {
+  content: '';
+  @apply bg-themeGray-600 absolute left-0 h-1.5 w-1.5 rounded-full;
+  top: 9px;
+}
+
 @utility theme-text-h1 {
   @apply md:text-10xl lg:text-11xl text-9xl font-bold;
 }

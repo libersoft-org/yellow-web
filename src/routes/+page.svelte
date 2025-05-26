@@ -5,6 +5,7 @@
   import AppFeatures from '@/components/AppFeatures/AppFeatures.svelte';
   import AppCharacteristics from '@/components/AppCharacteristics/AppCharacteristics.svelte';
   import AppFeaturesTable2 from '@/components/AppFeaturesTable/AppFeaturesTable2.svelte';
+  import TextImageHighlighted from '@/components/TextImageHighlighted/TextImageHighlighted.svelte';
   import TextImage from '@/components/TextImage/TextImage.svelte';
   import FAQ from '@/components/FAQ/FAQ.svelte';
   import Form from '@/components/Form/Form.svelte';
@@ -16,6 +17,7 @@
   <AppFeatures />
   <AppCharacteristics />
   <AppFeaturesTable2 />
+  <TextImageHighlighted />
   <TextImage />
 
   <div class="theme-container mx-auto py-12">
