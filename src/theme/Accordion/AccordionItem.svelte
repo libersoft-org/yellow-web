@@ -46,7 +46,7 @@
   type="button"
   aria-expanded={isOpen}
   onclick={handleToggle}
-  class={`transition-background duration-400 ${isOpen ? 'theme-gradient-yellow bg-gradient-to-t' : 'theme-gradient-gray'} mb-4 flex w-full items-center justify-between rounded-lg p-4 shadow-md ${className} cursor-pointer text-left`}
+  class={`transition-background duration-400 ${isOpen ? 'theme-gradient-yellow bg-gradient-to-t' : 'theme-gradient-gray'} mb-4 flex w-full items-center justify-between rounded-lg px-10 py-6 shadow-md ${className} cursor-pointer text-left`}
 >
   <div class="flex-1 pr-4">
     <span class="w-full text-left text-lg font-bold md:text-xl lg:text-2xl">{title}</span>
