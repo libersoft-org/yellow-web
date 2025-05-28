@@ -3,22 +3,15 @@
   import { browser } from '$app/environment';
   import { createDropdownHandlers } from '@/utils/dropdown';
   import SelectBox from '@/theme/SelectBox/SelectBox.svelte';
-  import Button from '@/theme/Button/Button.svelte';
   import Icon from '@/theme/Icon/Icon.svelte';
   import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
   import { m } from '@paraglide/messages';
   import { getLocale, setLocale } from '@paraglide/runtime';
 
-  interface Props {}
-
-  let {}: Props = $props();
-
   // Create event dispatcher to notify parent component
   const dispatch = createEventDispatcher<{
     openModal: boolean;
   }>();
-
-  console.log('getLocale', getLocale());
 
   let currentLanguage = $state(getLocale());
   let isOpen = $state(false);
@@ -26,7 +19,6 @@
   let isMobile = $state(false);
   let languageSwitcherRef = $state<HTMLDivElement | null>(null);
   let buttonRef = $state<HTMLElement | null>(null);
-  let languagePanelRef = $state<HTMLDivElement | null>(null);
 
   // Initialize dropdown handlers reference - we'll set this up after DOM elements are available
   let handlers: ReturnType<typeof createDropdownHandlers>;
@@ -59,8 +51,6 @@
       icon: 'country/' + lang.code
     }));
   };
-
-  let selectOptions = $state(getSelectOptions());
 
   // Check if mobile view on mount and on resize
   const checkMobile = () => {
@@ -100,8 +90,6 @@
     isMobileMenuOpen = false;
     handleMobileMenuToggle(false);
   }
-
-  const currentLanguageData = $derived(languages.find((lang) => lang.code === currentLanguage) || languages[0]);
 
   // Initialize handlers once we have DOM reference
   $effect(() => {
@@ -185,7 +173,6 @@
 
 <!-- Mobile Language Switcher Panel -->
 <div
-  bind:this={languagePanelRef}
   class="bg-themeYellow-600 language-panel fixed right-0 left-0 z-50 rounded-t-2xl p-5"
   style="bottom: {isMobileMenuOpen ? '0' : '-100%'}"
 >
@@ -205,9 +192,9 @@
       <!-- Use the imported SelectBox component -->
       <SelectBox
         bind:value={currentLanguage}
-        class="rounded-xl bg-white shadow-md"
+        class="relative rounded-xl bg-white shadow-md"
         label="Select Language"
-        options={selectOptions}
+        options={getSelectOptions()}
       />
     </div>
   </div>
@@ -221,5 +208,10 @@
   .language-panel {
     transition: bottom 0.3s ease-in-out;
     pointer-events: auto !important; /* Ensure panel can receive clicks */
+  }
+
+  /* Ensure SelectBox content appears above all other elements on mobile */
+  :global([data-bits-floating-content-wrapper]) {
+    z-index: 101 !important;
   }
 </style>

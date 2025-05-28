@@ -1,6 +1,6 @@
 <script lang="ts">
   import Link from '@/theme/Link/Link.svelte';
-
+  import Icon from '@/theme/Icon/Icon.svelte';
   export let blockTitle = 'Výrazný textový blok v2';
   const title = 'Liberland Software Foundation';
 
@@ -35,25 +35,23 @@
 
 {#snippet leftColumnSnippet()}
   <div class="w-full lg:flex-1">
-    <div class="mb-2 text-xl font-bold">Address</div>
+    <h4 class="mb-2 text-xl font-bold">Address</h4>
     <div class="text-md mb-4">
       {#each address as line}
-        <div>{line}</div>
+        <div class="text-themeGray-400">{line}</div>
       {/each}
     </div>
-    <div class="text-md mb-6">Organization ID: {organizationId}</div>
+    <div class="text-md text-themeGray-400 mb-6"><strong>Organization ID:</strong> {organizationId}</div>
 
-    <div class="mb-2 text-6xl font-medium">{contactTitle}</div>
+    <h3 class="text-6xl font-medium">{contactTitle}</h3>
     <a
       href="mailto:{contactEmail}"
-      class="text-themeGray-800 hover:text-themeYellow-400 inline-flex items-center gap-2 text-xl font-bold underline"
+      class="inline-flex items-center gap-2 text-xl font-bold underline hover:no-underline"
     >
-      <svg class="text-themeYellow-400 h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path
-          d="M2.25 6.75l8.954 6.716a2.25 2.25 0 002.592 0L22.75 6.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5z"
-        />
-      </svg>
-      <span>{contactEmail}</span>
+      <span class="text-themeYellow-800">
+        <Icon name="envelope" size="5xl" />
+      </span>
+      <span class="text-themeGray-800 inline-block pt-1">{contactEmail}</span>
     </a>
   </div>
 {/snippet}
@@ -65,8 +63,8 @@
         href={link.href}
         label={link.label}
         icon={link.icon}
-        iconWrapperClass="bg-themeYellow-600 rounded-full p-2 flex items-center justify-center h-8 w-8"
-        class="hover:text-themeYellow-400 text-md font-medium"
+        iconWrapperClass="bg-themeYellow-600 text-black rounded-full p-2 flex items-center justify-center h-8 w-8"
+        class="text-md text-themeGray-400"
         target="_blank"
         rel="noopener noreferrer"
       />

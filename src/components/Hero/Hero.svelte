@@ -16,15 +16,21 @@
 
 {#snippet leftSide()}
   <div class="flex flex-col items-center justify-center">
-    <h1 class="theme-text-h1 mb-8">
+    <h1 class="theme-text-h1 mb-5 md:mb-8">
       Welcome <br class="hidden md:block" /> to <span class="theme-title-underline">Yellow</span>
     </h1>
-    <div class="theme-text-body1 mb-13 text-center">
+    <div class="theme-text-body1 mb-4.5 text-center md:mb-10 lg:mb-13">
       {heroText}
     </div>
-    <div class="flex">
-      <Button iconSize="xl" icon="download" label="Download Yellow" theme="secondary" class="mr-5" />
-      <Button iconSize="xl" icon="account" label="Create free account" theme="primary" />
+    <div class="flex flex-col md:flex-row">
+      <Button
+        iconSize="xl"
+        icon="download"
+        label="Download Yellow"
+        theme="secondary"
+        class="mr-5 mb-5 w-full md:mb-0 md:w-auto"
+      />
+      <Button iconSize="xl" icon="account" label="Create free account" theme="primary" class="w-full md:w-auto" />
     </div>
   </div>
 {/snippet}
@@ -36,7 +42,7 @@
 {/snippet}
 
 <div
-  class="relative isolate mb-20 bg-cover bg-center pt-24.5 pb-9 md:pt-35 md:pb-8 lg:pt-46 lg:pb-13"
+  class="relative isolate mb-20 bg-cover bg-center pt-20.5 pb-8.5 md:pt-35 md:pb-8 lg:pt-46 lg:pb-13"
   style="background-image: url('{backgroundImage}')"
 >
   <div class="theme-container relative mx-auto">
