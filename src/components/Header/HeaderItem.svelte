@@ -75,7 +75,7 @@
 >
   <a
     bind:this={buttonRef}
-    class="lg:hover:theme-button--primary lg:text-md flex w-full items-center gap-1 border-b-2 border-transparent px-8 py-3.5 text-base font-medium text-white lg:w-auto lg:px-4 lg:py-2 lg:font-bold lg:text-gray-700"
+    class="lg:hover:theme-button--primary lg:text-md flex w-full items-center gap-1 border-b-2 border-transparent px-8 py-3.5 text-base text-lg font-medium text-white lg:w-auto lg:px-4 lg:py-2 lg:font-bold lg:text-gray-700"
     class:theme-button--primary={!isMobile && (active || show)}
     {href}
     onclick={onClick}
