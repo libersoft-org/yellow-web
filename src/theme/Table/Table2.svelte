@@ -175,7 +175,7 @@
                       {/if}
                       {#if cell.icon}
                         <span class="status-check status-{cell.iconStatus}">
-                          <Icon name={cell.icon} size="lg" />
+                          <Icon name={cell.icon} size="xs" />
                         </span>
                       {:else}
                         {@html formatText(cell.text)}
@@ -193,15 +193,13 @@
 
   {#if shouldShowButton}
     <div
-      class={`absolute bottom-[-40px] left-1/2 z-10 flex h-[60px] w-[105%] w-[calc(100%+14px)] -translate-x-1/2 justify-center pb-4  lg:pb-0 ${overlayType === 'gray' ? 'bg-gradient-to-b from-transparent to-[#f2f3fa]' : 'bg-gradient-to-b from-[rgba(242,243,250,0)] to-[#f2f3fa]'}`}>
-  }
+      class={`absolute bottom-[-40px] left-1/2 z-10 flex h-[60px] w-[105%] w-[calc(100%+14px)] -translate-x-1/2 justify-center pb-4 lg:pb-0 ${overlayType === 'gray' ? 'bg-gradient-to-b from-transparent to-[#f2f3fa]' : 'bg-gradient-to-b from-[rgba(242,243,250,0)] to-[#f2f3fa]'}`}
     >
-      <a href={nLink}>
-  }>
-        <Button label={nLabel} the} theme={nTheme} rig} rightIcon={nRightIcon} />
-}></Button>
+      <a href={buttonLink}>
+        <Button label={buttonLabel} theme={buttonTheme} rightIcon={buttonRightIcon} />
       </a>
-    </div>{/if}
+    </div>
+  {/if}
 </div>
 
 <style>
