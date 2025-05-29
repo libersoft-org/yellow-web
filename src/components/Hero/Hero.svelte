@@ -53,7 +53,7 @@
 {/snippet}
 
 <div
-  class="relative isolate mb-20 bg-cover bg-center pt-20.5 pb-8.5 md:pt-35 md:pb-8 lg:pt-46 lg:pb-13"
+  class="relative isolate mb-10 bg-cover bg-center pt-20.5 pb-8.5 md:mb-15 md:pt-35 md:pb-8 lg:mb-20 lg:pt-46 lg:pb-13"
   style="background-image: url('{backgroundImage}')"
 >
   <div class="theme-container relative mx-auto">

@@ -108,7 +108,7 @@
       <div class="feature flex h-full">
         <Box
           title={m['app_characteristics.box6.title']({})}
-          icon=""
+          class="w-full md:w-auto"
           theme="primary"
           footerType="button"
           footerLink="/"

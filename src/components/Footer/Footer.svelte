@@ -74,7 +74,7 @@
         class="flex inline-flex items-center gap-2 text-xl underline transition-colors duration-200 hover:no-underline"
       >
         <div class="text-themeYellow-600">
-          <Icon name="envelope" size="xl" />
+          <Icon name="envelope" size="5xl" />
         </div>
         <span class="md:text-md text-xs lg:text-xl">{contactEmail}</span>
       </a>
@@ -84,7 +84,7 @@
 
 {#snippet socialLinksSection()}
   <div
-    class="footer-social md:border-themeGray-600 order-last mb-12.5 flex flex-wrap md:order-first md:justify-items-center md:border-t md:border-b md:py-6 lg:grid lg:grid-cols-5"
+    class="footer-social md:border-themeGray-600 order-last flex flex-wrap md:order-first md:mb-12.5 md:flex-row md:flex-wrap md:gap-y-6 md:border-t md:border-b md:py-6 lg:flex lg:flex-row lg:flex-wrap lg:justify-center lg:gap-y-0"
   >
     {#each socialLinks as social, i}
       <Link
@@ -92,13 +92,13 @@
         label={social.label}
         icon={social.icon}
         iconWrapperClass="text-themeYellow-600 flex items-center justify-center rounded-full p-2 border-1 border-themeYellow-600 h-9 w-9"
-        textClass="text-white"
+        textClass="text-themeGray-200  hover:text-white"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-themeYellow-600 md:text-md hover:text-themeYellow-400 flex w-full items-center gap-3 px-0 text-xs md:justify-center md:px-8 lg:px-10  {i !==
+        class="text-themeYellow-600 md:text-md hover:text-themeYellow-400 lg:border-themeGray-600 flex w-full items-center gap-3 px-0 pb-3 text-xs md:w-[33.33%] md:pr-4 md:pb-0 lg:w-1/5 lg:justify-center lg:px-4 lg:px-8 {i ===
         0
-          ? 'lg:border-themeGray-600 lg:border-l'
-          : ''}"
+          ? 'lg:border-l-0'
+          : 'lg:border-l'}"
       />
     {/each}
   </div>
@@ -115,7 +115,7 @@
             icon="chevron"
             iconSize="sm"
             iconWrapperClass="text-themeYellow-600"
-            textClass="text-white"
+            textClass="text-themeGray-200 hover:text-white"
             class="text-themeYellow-600 md:text-md text-xs"
           />
         </li>

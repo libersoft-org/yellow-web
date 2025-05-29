@@ -34,7 +34,7 @@
     </div>
     <!-- Image Content -->
     <div class="relative flex h-full w-full flex-1 justify-center">
-      <div class="top-50% absolute left-0 translate-y-[-50%]">
+      <div class="md:top-50% md:absolute md:left-0 md:translate-y-[-50%]">
         <img alt={imageAlt} class="h-auto max-w-full rounded-xl" src={imagePath} />
       </div>
     </div>

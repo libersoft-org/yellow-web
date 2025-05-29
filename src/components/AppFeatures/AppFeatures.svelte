@@ -6,8 +6,8 @@
 </script>
 
 {#snippet feature({ title, icon, description }: { title: string; icon: string; description: string })}
-  <div class="feature w-full">
-    <Card {title} {icon}>
+  <div class="feature w-full md:h-full lg:h-auto">
+    <Card {title} {icon} class="md:h-full lg:h-auto">
       {@html description}
     </Card>
   </div>
@@ -23,13 +23,9 @@
   </div>
 
   <div class="theme-container relative flex w-full flex-col items-center px-4 sm:px-6 lg:px-0">
-    <div class="relative">
+    <div class="theme-gradient-radial-grey relative rounded-2xl px-3 pt-7.5 pb-16 md:pb-12 lg:bg-none lg:px-0 lg:py-0">
       <div class="svg-bg margin-auto pointer-events-none absolute top-5 -z-10 hidden w-full lg:block">
         {@html svgBackground}
-
-        <div class="absolute inset-x-0 -bottom-8 mt-16 flex justify-center md:mt-2 lg:mt-1">
-          <Button label={m['app_features.feature_button']()} rightIcon="chevron" theme="secondary" />
-        </div>
       </div>
 
       <div
@@ -51,12 +47,12 @@
         <div class="-order-1 flex flex-1 flex-col items-center gap-8 md:col-span-2 lg:order-none lg:max-w-[384px]">
           <!-- Image -->
           <div
-            class="flex w-full max-w-[380px] justify-center md:justify-center lg:col-span-1
-              lg:col-start-2 lg:row-start-1 lg:block lg:justify-start"
+            class="flex w-full max-w-[240px] justify-center md:max-w-[320px] md:justify-center lg:col-span-1 lg:col-start-2
+              lg:row-start-1 lg:block lg:max-w-[380px] lg:justify-start"
           >
             <img
               alt={m['app_features.mobile_image_alt']()}
-              class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full"
+              class="lg:max-w-full"
               src="/assets/images/app-features-mobile.png"
             />
           </div>
@@ -80,6 +76,9 @@
             description: m['app_features.features.entertainment.description']()
           })}
         </div>
+      </div>
+      <div class="absolute inset-x-0 -bottom-6 flex justify-center lg:-bottom-18.5">
+        <Button label={m['app_features.feature_button']()} rightIcon="chevron" theme="secondary" />
       </div>
     </div>
   </div>

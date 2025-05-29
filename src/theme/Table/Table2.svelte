@@ -51,7 +51,7 @@
   const shouldShowButton = $derived(buttonLabel && buttonLink && buttonLink !== '#');
 
   function getShadowClass(customShadow: string) {
-    if (customShadow === 'multi-side') return 'shadow-top-left-right';
+    if (customShadow === 'multi-side') return '';
     if (customShadow === 'none') return '';
     return 'drop-shadow-md';
   }
@@ -86,12 +86,12 @@
   }
 </script>
 
-<div class={['table-container relative rounded-3xl', getShadowClass(customShadow)]}>
+<div class={['table-container relative rounded-3xl shadow-xl', getShadowClass(customShadow)]}>
   <div class={['table overflow-hidden rounded-3xl', rounded ? 'table--rounded' : '']}>
     <table class="w-full lg:h-[1px]">
       {#if headers.length > 0}
-        <thead class="hidden lg:table-header-group">
-          <tr class="lg:table-row">
+        <thead class="lg:table-header-group">
+          <tr class="hidden lg:table-row">
             {#each headers as header, headerIndex}
               <th class="theme-gradient-yellow text-themeGray-800 bg-gradient-to-t py-4.5 text-base font-bold">
                 <div class="px-5.5">
@@ -99,6 +99,14 @@
                 </div>
               </th>
             {/each}
+          </tr>
+          <tr class="lg:hidden">
+            <th
+              class="theme-gradient-yellow text-themeGray-800 flex justify-between bg-gradient-to-t py-4.5 text-base font-bold"
+            >
+              <div class="px-5.5">Name</div>
+              <div class="px-5.5">Features</div>
+            </th>
           </tr>
         </thead>
       {/if}
@@ -167,7 +175,7 @@
                       {/if}
                       {#if cell.icon}
                         <span class="status-check status-{cell.iconStatus}">
-                          <Icon name={cell.icon} size="xs" />
+                          <Icon name={cell.icon} size="lg" />
                         </span>
                       {:else}
                         {@html formatText(cell.text)}
@@ -183,19 +191,17 @@
     </table>
   </div>
 
-  {#if showOverlay}
-    <div
-      class={`pointer-events-none absolute -bottom-[7px] -mx-[7px] h-32 w-[calc(100%+14px)] ${overlayType === 'gray' ? 'bg-gradient-to-b from-transparent to-[#f2f3fa]' : 'bg-gradient-to-b from-[rgba(242,243,250,0)] to-white'}`}
-    ></div>
-  {/if}
-
   {#if shouldShowButton}
-    <div class="absolute right-0 bottom-0 left-0 z-10 flex justify-center pb-4 lg:pb-0">
-      <a href={buttonLink}>
-        <Button label={buttonLabel} theme={buttonTheme} rightIcon={buttonRightIcon} />
+    <div
+      class={`absolute bottom-[-40px] left-1/2 z-10 flex h-[60px] w-[105%] w-[calc(100%+14px)] -translate-x-1/2 justify-center pb-4  lg:pb-0 ${overlayType === 'gray' ? 'bg-gradient-to-b from-transparent to-[#f2f3fa]' : 'bg-gradient-to-b from-[rgba(242,243,250,0)] to-[#f2f3fa]'}`}>
+  }
+    >
+      <a href={nLink}>
+  }>
+        <Button label={nLabel} the} theme={nTheme} rig} rightIcon={nRightIcon} />
+}></Button>
       </a>
-    </div>
-  {/if}
+    </div>{/if}
 </div>
 
 <style>
@@ -203,13 +209,6 @@
 
   .table-container {
     @apply flex flex-col;
-  }
-
-  .shadow-top-left-right {
-    box-shadow:
-      0 -4px 6px -1px rgba(0, 0, 0, 0.1),
-      -4px 0 6px -1px rgba(0, 0, 0, 0.1),
-      4px 0 6px -1px rgba(0, 0, 0, 0.1);
   }
 
   .table :global {
@@ -229,7 +228,7 @@
     }
 
     tbody tr:last-child > :where(td, th) > .cell-wrapper {
-      @apply lg:pb-20;
+      @apply lg:pb-10;
     }
 
     tbody tr:nth-child(even) :where(td, th) > .cell-wrapper {
@@ -273,9 +272,9 @@
       @apply flex justify-between;
     }
 
-    /* Mobile accordion content styling */
+    /* Mobile accordion content styling  */
     .accordion-content-cell {
-      @apply border-themeGray-150 bg-themeGray-50 border-t py-0;
+      @apply bg-themeGray-50;
     }
   }
 </style>
