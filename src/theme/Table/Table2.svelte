@@ -88,10 +88,10 @@
 
 <div class={['table-container relative rounded-3xl', getShadowClass(customShadow)]}>
   <div class={['table overflow-hidden rounded-3xl', rounded ? 'table--rounded' : '']}>
-    <table class="w-full md:h-[1px]">
+    <table class="w-full lg:h-[1px]">
       {#if headers.length > 0}
-        <thead class="hidden md:table-header-group">
-          <tr class="md:table-row">
+        <thead class="hidden lg:table-header-group">
+          <tr class="lg:table-row">
             {#each headers as header, headerIndex}
               <th class="theme-gradient-yellow text-themeGray-800 bg-gradient-to-t py-4.5 text-base font-bold">
                 <div class="px-5.5">
@@ -104,17 +104,17 @@
       {/if}
 
       {#if rows.length > 0}
-        <tbody class="block md:table-row-group">
+        <tbody class="block lg:table-row-group">
           {#each rows as row, rowIndex}
-            <tr class="block md:table-row">
+            <tr class="block lg:table-row">
               {#each row.cells as cell, columnIndex}
                 {#if cell.isHeader}
                   <th
                     class={`
-											block md:table-cell
+											block lg:table-cell
 											${columnIndex === 0 ? 'accordion-trigger' : 'accordion-content-cell'}
 											${columnIndex > 0 ? (activeAccordionItem === rowIndex ? 'block' : 'hidden') : ''}
-											md:block
+											lg:block
 											${cell.className || ''}
 										`}
                     onclick={() => {
@@ -131,11 +131,11 @@
                         : undefined}
                   >
                     <div
-                      class={`cell-wrapper flex h-full items-center px-5.5 py-4.5 text-sm md:text-base md:${getJustifyClass(cell.alignment)}`}
+                      class={`cell-wrapper flex h-full items-center px-5.5 py-4.5 text-sm lg:text-base lg:${getJustifyClass(cell.alignment)}`}
                     >
                       {@html formatText(cell.text)}
                       {#if columnIndex === 0}
-                        <span class="accordion-chevron ml-auto md:hidden">
+                        <span class="accordion-chevron ml-auto lg:hidden">
                           <Icon name="chevron" class={activeAccordionItem === rowIndex ? 'rotate-90' : ''} size="sm" />
                         </span>
                       {/if}
@@ -145,9 +145,9 @@
                   <td
                     class={`
 											accordion-content-cell block
-											md:table-cell
+											lg:table-cell
 											${activeAccordionItem === rowIndex ? 'block' : 'hidden'}
-											md:block
+											lg:block
 											${cell.className || ''}
 										`}
                     id={columnIndex === 0 && activeAccordionItem === rowIndex
@@ -156,12 +156,12 @@
                     aria-labelledby={columnIndex === 0 ? `accordion-trigger-${rowIndex}` : undefined}
                   >
                     <div
-                      class="cell-wrapper flex h-full items-center justify-between px-5.5 py-4 md:{getJustifyClass(
+                      class="cell-wrapper flex h-full items-center justify-between px-5.5 py-4 lg:{getJustifyClass(
                         cell.alignment
                       )}"
                     >
                       {#if headers[columnIndex]}
-                        <span class="text-themeGray-500 flex items-center text-sm font-medium md:hidden">
+                        <span class="text-themeGray-500 flex items-center text-sm font-medium lg:hidden">
                           {headers[columnIndex]}
                         </span>
                       {/if}
@@ -190,7 +190,7 @@
   {/if}
 
   {#if shouldShowButton}
-    <div class="absolute right-0 bottom-0 left-0 z-10 flex justify-center pb-4 md:pb-0">
+    <div class="absolute right-0 bottom-0 left-0 z-10 flex justify-center pb-4 lg:pb-0">
       <a href={buttonLink}>
         <Button label={buttonLabel} theme={buttonTheme} rightIcon={buttonRightIcon} />
       </a>
@@ -214,26 +214,26 @@
 
   .table :global {
     table {
-      @apply w-full border-collapse md:overflow-hidden;
+      @apply w-full border-collapse lg:overflow-hidden;
     }
 
-    /* --- DESKTOP STYLES (md and up) --- */
+    /* --- DESKTOP STYLES (lg and up) --- */
 
     tbody tr th:first-child,
     thead tr th:first-child {
-      @apply md:pl-6;
+      @apply lg:pl-6;
     }
 
     tbody tr td:last-child {
-      @apply md:pr-4;
+      @apply lg:pr-4;
     }
 
     tbody tr:last-child > :where(td, th) > .cell-wrapper {
-      @apply md:pb-20;
+      @apply lg:pb-20;
     }
 
     tbody tr:nth-child(even) :where(td, th) > .cell-wrapper {
-      @apply md:bg-themeGray-75;
+      @apply lg:bg-themeGray-75;
     }
 
     tbody tr:not(:last-child) :where(td, th) > .cell-wrapper {
@@ -262,15 +262,20 @@
       @apply p-0;
     }
 
-    /* --- MOBILE ACCORDION STYLES --- */
-    @media (max-width: 767px) {
-      tbody tr:last-child :where(td, th) > .cell-wrapper {
-        @apply border-b-themeGray-150 border-b;
-      }
+    /* --- MOBILE STYLES (below lg) --- */
 
-      tr:last-child {
-        @apply mb-0;
-      }
+    /* Header styling for mobile */
+    .accordion-trigger {
+      @apply cursor-pointer bg-white text-left;
+    }
+
+    .accordion-trigger .cell-wrapper {
+      @apply flex justify-between;
+    }
+
+    /* Mobile accordion content styling */
+    .accordion-content-cell {
+      @apply border-themeGray-150 bg-themeGray-50 border-t py-0;
     }
   }
 </style>
