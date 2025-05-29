@@ -3,5 +3,187 @@
   "hello_world": "Hello, {name} from en!",
   "language": {
     "choose_your_language": "Choose your language"
+  },
+  "hero": {
+    "welcome": "Welcome to",
+    "app_name": "Yellow",
+    "description": "Experience the freedom of decentralized world. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.",
+    "download_button": "Download Yellow",
+    "create_account_button": "Create free account",
+    "app_alt_text": "Yellow app on multiple devices"
+  },
+  "app_features": {
+    "title_part1": "One app,",
+    "title_part2": "one account,",
+    "title_part3": "for everything you need!",
+    "feature_button": "See all features",
+    "features": {
+      "messages": {
+        "title": "Messages",
+        "description": "Innovative messaging with unlimited files, widgets, multipart messages, and more."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Smart-contract wallet enables payments, purchases, donations, crowdfunding, and more."
+      },
+      "social": {
+        "title": "Social media",
+        "description": "Advanced social features: video channels, forum, newsfeed, stories, events, and more."
+      },
+      "business": {
+        "title": "Business tools",
+        "description": "Calendar and Tasks help businesses organize, share, and boost productivity."
+      },
+      "entertainment": {
+        "title": "Entertainment",
+        "description": "Last but not least, the platform also provides fun features such as dating and video games."
+      }
+    },
+    "mobile_image_alt": "App Features Mobile"
+  },
+  "app_characteristics": {
+    "title_part1": "Key",
+    "title_part2": "characteristics",
+    "subtitle": "Cutting edge technology!",
+    "box1": {
+      "title": "Distributed and decentralized network",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm."
+    },
+    "box2": {
+      "title": "Privacy and security",
+      "description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi."
+    },
+    "box3": {
+      "title": "Open source",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm."
+    },
+    "box4": {
+      "title": "Modularity",
+      "description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi."
+    },
+    "box5": {
+      "title": "Smart home <br> integration",
+      "description": "Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong> semper dalarect lacus vel facilisis volutpat est velitcm."
+    },
+    "box6": {
+      "title": "Take your experience to the next level",
+      "description": "with our all-in-one app",
+      "button_text": "Explore more"
+    }
+  },
+  "text": {
+    "block_title": "Featured text block v2",
+    "organization_title": "Liberland Software Foundation",
+    "address": {
+      "title": "Address",
+      "line1": "Liberty Street 1",
+      "line2": "Liberty City",
+      "line3": "LL-00001 Liberland"
+    },
+    "organization_id": "Organization ID:",
+    "organization_id_value": "LLC230002",
+    "contact_title": "Get in touch",
+    "contact_email": "info@libersoft.org",
+    "links": {
+      "github": "Github Page",
+      "telegram_chat": "Telegram Chat Group",
+      "telegram_announcements": "Telegram Announcements",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook Group"
+    }
+  },
+  "text_image": {
+    "title": "Paragraphs and image layout",
+    "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui.",
+    "paragraph2": "Etiam lorem lacus, mattis eu cursus tempus, convallis et libero. Ut eget bibendum purus. Aliquam molestie, lacus in ullamcorper lobortis, ipsum est condimentum lorem, a auctor orci velit at nulla. Morbi accumsan pulvinar sapien vitae maximus. Aliquam porta sit amet odio vel condimentum. Morbi et augue eget enim vulputate auctor. Ut porta nibh, gravida quam et elementum nec, ornare a velit. Mauris elit quam, ultricies sit amet lectus eius, molestie congue nisi. Ut egestas diam justo, eu pretium magna vestibulum a. In vehicula, est quis mattis lobortis, elit ipsum posuere ipsum, non lobortis lorem, porttitor auctor nisl.",
+    "image_alt": "Phone Screenshot",
+    "bullet_list": {
+      "item1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "item2": "Vestibulum fringilla ex in nisi molestie.",
+      "item2_sub1": "Integer finibus dolor sapien, a venenatis sapien porttitor ut.",
+      "item2_sub2": "Mauris non metus tincidunt, ornare turpis.",
+      "item2_sub3": "Donec sollicitudin consectetur purus.",
+      "item3": "Suspendisse eget semper leo.",
+      "item4": "Cras vitae feugiat turpis.",
+      "item5": "Etiam suscipit viverra consequat.",
+      "item6": "Mauris et est lectus in hendrerit ante ac felis blandit."
+    }
+  },
+  "text_image_highlighted": {
+    "title": "Featured text block",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui. Fusce eleifend convallis nulla quis molestie. Cras rutrum nisl neque.",
+    "image_alt": "Screenshot"
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "item1": {
+      "question": "What is AMTP?",
+      "answer": "Advanced Mail Transfer Protocol (AMTP) is a new generation of e-mail network protocol that surpasses the limitations of traditional protocols such as SMTP, POP, and IMAP by utilizing new technologies and a modular concept. It fully replaces these protocols with its functionality and even significantly expands their usability thanks to its modular design. It also uses more modern, secure methods of real-time data transmission."
+    },
+    "item2": {
+      "question": "What is Yellow?",
+      "answer": "Yellow is a modern email client that utilizes the AMTP protocol to provide a more secure, reliable, and feature-rich email experience compared to traditional email clients. It's designed with a focus on user privacy, speed, and ease of use."
+    },
+    "item3": {
+      "question": "Why is this software named \"Yellow\"?",
+      "answer": "The name Yellow was chosen to represent clarity, optimism, and visibility in email communications. Just as yellow is a vibrant and attention-grabbing color, our email client aims to make your important communications stand out and your email experience brighter."
+    },
+    "item4": {
+      "question": "Is Yellow Client backward compatible with classic e-mail protocols (SMTP, IMAP, POP3)?",
+      "answer": "Yes, Yellow Client is fully backward compatible with classic email protocols including SMTP, IMAP, and POP3. This ensures you can continue to access all your existing email accounts while also enjoying the advanced features offered by AMTP for supported accounts."
+    }
+  },
+  "form": {
+    "title": "Form",
+    "input": {
+      "label": "Input",
+      "placeholder": "Enter your text here"
+    },
+    "textarea": {
+      "label": "Textarea",
+      "placeholder": "Enter your message here"
+    },
+    "select": {
+      "label": "Selectbox",
+      "placeholder": "Select an option",
+      "options": {
+        "option1": "Lorem ipsum",
+        "option2": "Dolor sit amet",
+        "option3": "Consectetur adipiscing"
+      }
+    },
+    "radio": {
+      "label": "Options",
+      "option1": "Option 1",
+      "option2": "Option 2"
+    },
+    "checkbox": {
+      "label": "I agree to the processing of <a href=\"/\" class=\"underline hover:no-underline\">personal data</a>"
+    },
+    "button": "Send message"
+  },
+  "footer": {
+    "contact": {
+      "title": "Get in touch",
+      "email": "info@libersoft.org"
+    },
+    "social": {
+      "github": "GitHub Page",
+      "telegram_chat": "Telegram <br class=\"hidden md:block\"> Chat Group",
+      "telegram_announcements": "Telegram <br class=\"hidden md:block\"> Announcements",
+      "facebook": "Facebook Group",
+      "linkedin": "LinkedIn"
+    },
+    "links": {
+      "about": "About",
+      "features": "Features",
+      "download": "Download",
+      "comparison": "Comparison",
+      "documentation": "Documentation",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "signup": "Create free account"
+    },
+    "copyright": "Copyright © {year} Yellow | All Rights Reserved"
   }
 }

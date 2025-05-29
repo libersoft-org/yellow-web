@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { m } from '@paraglide/messages';
+
   interface Props {
     title?: string;
     textContent?: string[];
@@ -10,13 +12,10 @@
   }
 
   let {
-    title = 'Odstavce a vzhled obrázku',
-    textContent = [
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui.',
-      'Etiam lorem lacus, mattis eu cursus tempus, convallis et libero. Ut eget bibendum purus. Aliquam molestie, lacus in ullamcorper lobortis, ipsum est condimentum lorem, a auctor orci velit at nulla. Morbi accumsan pulvinar sapien vitae maximus. Aliquam porta sit amet odio vel condimentum. Morbi et augue eget enim vulputate auctor. Ut porta nibh, gravida quam et elementum nec, ornare a velit. Mauris elit quam, ultricies sit amet lectus eius, molestie congue nisi. Ut egestas diam justo, eu pretium magna vestibulum a. In vehicula, est quis mattis lobortis, elit ipsum posuere ipsum, non lobortis lorem, porttitor auctor nisl.'
-    ],
+    title = m['text_image.title']({}),
+    textContent = [m['text_image.paragraph1']({}), m['text_image.paragraph2']({})],
     imagePath = '/assets/images/textImage.png',
-    imageAlt = 'Phone Screenshot',
+    imageAlt = m['text_image.image_alt']({}),
     imagePosition = 'left',
     showImage = true,
     showBulletList = true
@@ -36,19 +35,19 @@
 
       {#if showBulletList}
         <ul class="theme-bullet-list text-themeGray-700 mt-6 mb-8 text-lg font-medium">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>{m['text_image.bullet_list.item1']({})}</li>
           <li>
-            Vestibulum fringilla ex in nisi molestie.
+            {m['text_image.bullet_list.item2']({})}
             <ul class="text-themeGray-400 text-lg font-normal">
-              <li>Integer finibus dolor sapien, a venenatis sapien porttitor ut.</li>
-              <li>Mauris non metus tincidunt, ornare turpis.</li>
-              <li>Donec sollicitudin consectetur purus.</li>
+              <li>{m['text_image.bullet_list.item2_sub1']({})}</li>
+              <li>{m['text_image.bullet_list.item2_sub2']({})}</li>
+              <li>{m['text_image.bullet_list.item2_sub3']({})}</li>
             </ul>
           </li>
-          <li>Suspendisse eget semper leo.</li>
-          <li>Cras vitae feugiat turpis.</li>
-          <li>Etiam suscipit viverra consequat.</li>
-          <li>Mauris et est lectus in hendrerit ante ac felis blandit.</li>
+          <li>{m['text_image.bullet_list.item3']({})}</li>
+          <li>{m['text_image.bullet_list.item4']({})}</li>
+          <li>{m['text_image.bullet_list.item5']({})}</li>
+          <li>{m['text_image.bullet_list.item6']({})}</li>
         </ul>
       {/if}
     </div>

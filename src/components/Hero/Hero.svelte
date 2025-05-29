@@ -1,5 +1,6 @@
 <script lang="ts">
   import Button from '@/theme/Button/Button.svelte';
+  import { m } from '@paraglide/messages';
 
   interface Props {
     imageSrc?: string;
@@ -10,34 +11,44 @@
   let {
     imageSrc = 'assets/images/desktop.png',
     backgroundImage = 'assets/images/hero-bg.png',
-    heroText = 'Experience the freedom of decentralized world. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.'
+    heroText
   }: Props = $props();
+
+  // Use the translated description, but allow prop override
+  const description = $derived(heroText || m['hero.description']());
 </script>
 
 {#snippet leftSide()}
   <div class="flex flex-col items-center justify-center">
     <h1 class="theme-text-h1 mb-5 md:mb-8">
-      Welcome <br class="hidden md:block" /> to <span class="theme-title-underline">Yellow</span>
+      {m['hero.welcome']()} <br class="hidden md:block" />
+      <span class="theme-title-underline">{m['hero.app_name']()}</span>
     </h1>
     <div class="theme-text-body1 mb-4.5 text-center md:mb-10 lg:mb-13">
-      {heroText}
+      {description}
     </div>
     <div class="flex flex-col md:flex-row">
       <Button
         iconSize="xl"
         icon="download"
-        label="Download Yellow"
+        label={m['hero.download_button']()}
         theme="secondary"
         class="mr-5 mb-5 w-full md:mb-0 md:w-auto"
       />
-      <Button iconSize="xl" icon="account" label="Create free account" theme="primary" class="w-full md:w-auto" />
+      <Button
+        iconSize="xl"
+        icon="account"
+        label={m['hero.create_account_button']()}
+        theme="primary"
+        class="w-full md:w-auto"
+      />
     </div>
   </div>
 {/snippet}
 
 {#snippet rightSide()}
   <div class="mb-10 flex h-full items-center justify-center md:mb-0">
-    <img src={imageSrc} alt="Yellow app on multiple devices" class="h-auto max-w-full" />
+    <img src={imageSrc} alt={m['hero.app_alt_text']()} class="h-auto max-w-full" />
   </div>
 {/snippet}
 

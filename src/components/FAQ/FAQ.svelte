@@ -1,6 +1,7 @@
 <script lang="ts">
   import Accordion from '@/theme/Accordion/Accordion.svelte';
   import AccordionItem from '@/theme/Accordion/AccordionItem.svelte';
+  import { m } from '@paraglide/messages';
 
   interface FAQItem {
     id: string;
@@ -10,33 +11,29 @@
   }
 
   // Local variables for FAQ content
-  const heading = 'Často kladené otázky';
+  const heading = m['faq.heading']({});
 
   const faqItems: FAQItem[] = [
     {
       id: 'faq-1',
-      question: 'What is AMTP?',
-      answer:
-        'Advanced Mail Transfer Protocol (AMTP) is a new generation of e-mail network protocol that surpasses the limitations of traditional protocols such as SMTP, POP, and IMAP by utilizing new technologies and a modular concept. It fully replaces these protocols with its functionality and even significantly expands their usability thanks to its modular design. It also uses more modern, secure methods of real-time data transmission.',
+      question: m['faq.item1.question']({}),
+      answer: m['faq.item1.answer']({}),
       isOpen: true
     },
     {
       id: 'faq-2',
-      question: 'What is Yellow?',
-      answer:
-        "Yellow is a modern email client that utilizes the AMTP protocol to provide a more secure, reliable, and feature-rich email experience compared to traditional email clients. It's designed with a focus on user privacy, speed, and ease of use."
+      question: m['faq.item2.question']({}),
+      answer: m['faq.item2.answer']({})
     },
     {
       id: 'faq-3',
-      question: 'Why is this software named "Yellow"?',
-      answer:
-        'The name Yellow was chosen to represent clarity, optimism, and visibility in email communications. Just as yellow is a vibrant and attention-grabbing color, our email client aims to make your important communications stand out and your email experience brighter.'
+      question: m['faq.item3.question']({}),
+      answer: m['faq.item3.answer']({})
     },
     {
       id: 'faq-4',
-      question: 'Is Yellow Client backward compatible with classic e-mail protocols (SMTP, IMAP, POP3)?',
-      answer:
-        'Yes, Yellow Client is fully backward compatible with classic email protocols including SMTP, IMAP, and POP3. This ensures you can continue to access all your existing email accounts while also enjoying the advanced features offered by AMTP for supported accounts.'
+      question: m['faq.item4.question']({}),
+      answer: m['faq.item4.answer']({})
     }
   ];
 

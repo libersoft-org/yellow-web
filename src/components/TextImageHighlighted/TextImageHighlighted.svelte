@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { m } from '@paraglide/messages';
+
   interface Props {
     textContent?: string;
     imagePath?: string;
@@ -8,10 +10,10 @@
   }
 
   let {
-    textContent = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui. Fusce eleifend convallis nulla quis molestie. Cras rutrum nisl neque.`,
+    textContent = m['text_image_highlighted.content']({}),
     imagePath = '/assets/images/ntb-image.png',
-    imageAlt = 'Screenshot',
-    title = 'Výrazný textový blok',
+    imageAlt = m['text_image_highlighted.image_alt']({}),
+    title = m['text_image_highlighted.title']({}),
     imagePosition = 'right'
   }: Props = $props();
 </script>

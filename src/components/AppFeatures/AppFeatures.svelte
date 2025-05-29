@@ -2,15 +2,10 @@
   import Card from '@/theme/Card/Card.svelte';
   import svgBackground from './bg.svg?raw';
   import Button from '@/theme/Button/Button.svelte';
-
-  interface Feature {
-    title: string;
-    icon: string; // or a component/function if it's not a string
-    description: string;
-  }
+  import { m } from '@paraglide/messages';
 </script>
 
-{#snippet feature({ title, icon, description }: Feature)}
+{#snippet feature({ title, icon, description }: { title: string; icon: string; description: string })}
   <div class="feature w-full">
     <Card {title} {icon}>
       {@html description}
@@ -21,8 +16,9 @@
 <div class="app-features relative mb-20 flex flex-col items-center justify-center lg:mb-50">
   <div class="mb-8 text-center">
     <h2 class="theme-text-h2">
-      One app, <span class="theme-title-underline">one account,</span><br />
-      for everything you need!
+      {m['app_features.title_part1']()} <span class="theme-title-underline">{m['app_features.title_part2']()}</span><br
+      />
+      {m['app_features.title_part3']()}
     </h2>
   </div>
 
@@ -32,7 +28,7 @@
         {@html svgBackground}
 
         <div class="absolute inset-x-0 -bottom-8 mt-16 flex justify-center md:mt-2 lg:mt-1">
-          <Button label="See all features" rightIcon="chevron" theme="secondary" />
+          <Button label={m['app_features.feature_button']()} rightIcon="chevron" theme="secondary" />
         </div>
       </div>
 
@@ -41,14 +37,14 @@
       >
         <div class="flex flex-1 flex-col gap-4 lg:max-w-[351px] lg:gap-8 lg:pt-20">
           {@render feature({
-            title: 'Messages',
+            title: m['app_features.features.messages.title'](),
             icon: 'message',
-            description: 'Innovative messaging with unlimited files, widgets, multipart messages, and more.'
+            description: m['app_features.features.messages.description']()
           })}
           {@render feature({
-            title: 'E-commerce',
+            title: m['app_features.features.ecommerce.title'](),
             icon: 'cart',
-            description: 'Smart-contract wallet enables payments, purchases, donations, crowdfunding, and more.'
+            description: m['app_features.features.ecommerce.description']()
           })}
         </div>
 
@@ -59,29 +55,29 @@
               lg:col-start-2 lg:row-start-1 lg:block lg:justify-start"
           >
             <img
-              alt="App Features Mobile"
+              alt={m['app_features.mobile_image_alt']()}
               class="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-full"
               src="/assets/images/app-features-mobile.png"
             />
           </div>
 
           {@render feature({
-            title: 'Social media',
+            title: m['app_features.features.social.title'](),
             icon: 'phone',
-            description: 'Advanced social features: video channels, forum, newsfeed, stories, events, and more.'
+            description: m['app_features.features.social.description']()
           })}
         </div>
 
         <div class="flex flex-1 flex-col gap-4 lg:max-w-[351px] lg:gap-8 lg:pt-20">
           {@render feature({
-            title: 'Business tools',
+            title: m['app_features.features.business.title'](),
             icon: 'calendar',
-            description: 'Calendar and Tasks help businesses organize, share, and boost productivity.'
+            description: m['app_features.features.business.description']()
           })}
           {@render feature({
-            title: 'Entertainment',
+            title: m['app_features.features.entertainment.title'](),
             icon: 'dice',
-            description: 'Last but not least, the platform also provides fun features such as dating and video games.'
+            description: m['app_features.features.entertainment.description']()
           })}
         </div>
       </div>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import Icon from '@/theme/Icon/Icon.svelte';
   import Link from '@/theme/Link/Link.svelte';
+  import { m } from '@paraglide/messages';
 
   type PositionType = 'static' | 'sticky' | 'fixed';
 
@@ -34,40 +35,40 @@
   const currentYear = new Date().getFullYear();
 
   let {
-    contactEmail = 'info@libersoft.org',
+    contactEmail = m['footer.contact.email']({}),
     socialLinks = [
-      { icon: 'open-source', href: 'https://github.com/yellow', label: 'GitHub Page' },
+      { icon: 'open-source', href: 'https://github.com/yellow', label: m['footer.social.github']({}) },
       {
         icon: 'message',
         href: 'https://t.me/yellow',
-        label: 'Telegram <br class="hidden md:block"> Chat Group'
+        label: m['footer.social.telegram_chat']({})
       },
       {
         icon: 'message',
         href: 'https://t.me/yellow-announcements',
-        label: 'Telegram <br class="hidden md:block"> Announcements'
+        label: m['footer.social.telegram_announcements']({})
       },
-      { icon: 'message', href: 'https://facebook.com/yellow', label: 'Facebook Group' },
-      { icon: 'open-source', href: 'https://linkedin.com/company/yellow', label: 'LinkedIn' }
+      { icon: 'message', href: 'https://facebook.com/yellow', label: m['footer.social.facebook']({}) },
+      { icon: 'open-source', href: 'https://linkedin.com/company/yellow', label: m['footer.social.linkedin']({}) }
     ],
     mainLinks = [
-      { label: 'About', href: '/about' },
-      { label: 'Features', href: '/features' },
-      { label: 'Download', href: '/download' },
-      { label: 'Comparsion', href: '/comparsion' },
-      { label: 'Documentation', href: '/documentation' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Contact', href: '/contact' },
-      { label: 'Create free account', href: '/signup' }
+      { label: m['footer.links.about']({}), href: '/about' },
+      { label: m['footer.links.features']({}), href: '/features' },
+      { label: m['footer.links.download']({}), href: '/download' },
+      { label: m['footer.links.comparison']({}), href: '/comparsion' },
+      { label: m['footer.links.documentation']({}), href: '/documentation' },
+      { label: m['footer.links.faq']({}), href: '/faq' },
+      { label: m['footer.links.contact']({}), href: '/contact' },
+      { label: m['footer.links.signup']({}), href: '/signup' }
     ],
-    copyright = `Copyright © ${currentYear} Yellow | All Rights Reserved`
+    copyright = m['footer.copyright']({ year: currentYear })
   }: Props = $props();
 </script>
 
 {#snippet contactSection()}
   <div class="footer-contact mb-10 flex flex-col items-center justify-center font-bold text-white">
     <div class="flex flex-col flex-wrap items-center justify-center gap-2 md:flex-row md:gap-6.5">
-      <h2 class="theme-text-h2">Get in touch</h2>
+      <h2 class="theme-text-h2">{m['footer.contact.title']({})}</h2>
       <a
         href="mailto:{contactEmail}"
         class="flex inline-flex items-center gap-2 text-xl underline transition-colors duration-200 hover:no-underline"

@@ -1,65 +1,45 @@
 <script lang="ts">
   import Box from '@/theme/Box/Box.svelte';
+  import { m } from '@paraglide/messages';
 
-  type Feature = {
-    title: string;
-    description: string;
-    icon: string;
-    link: string;
-    theme: 'primary' | 'secondary';
-    highlight?: boolean;
-    buttonText?: string;
-  };
-
-  const features: Feature[] = [
+  // Structure for storing component data
+  const features = [
     {
-      title: 'Distributed and decentralized network',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm.',
+      boxNumber: 1,
       icon: 'network',
       link: '/',
-      theme: 'secondary'
+      theme: 'secondary' as const
     },
     {
-      title: 'Privacy and security',
-      description:
-        'Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi.',
+      boxNumber: 2,
       icon: 'shield',
       link: '/',
-      theme: 'secondary'
+      theme: 'secondary' as const
     },
     {
-      title: 'Open source',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm.',
+      boxNumber: 3,
       icon: 'open-source',
       link: '/',
-      theme: 'secondary'
+      theme: 'secondary' as const
     },
     {
-      title: 'Modularity',
-      description:
-        'Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi.',
+      boxNumber: 4,
       icon: 'cube',
       link: '/',
-      theme: 'secondary'
+      theme: 'secondary' as const
     },
     {
-      title: 'Smart home <br> integration',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong> semper dalarect lacus vel facilisis volutpat est velitcm.',
+      boxNumber: 5,
       icon: 'wifi',
       link: '/',
-      theme: 'secondary'
+      theme: 'secondary' as const
     },
     {
-      title: 'Take your experience to the next level',
-      description: 'with our all-in-one app',
+      boxNumber: 6,
       icon: '',
       link: '/',
-      theme: 'primary',
-      highlight: true,
-      buttonText: 'Explore more'
+      theme: 'primary' as const,
+      highlight: true
     }
   ];
 </script>
@@ -67,25 +47,75 @@
 <div class="app-features flex flex-col items-center justify-center">
   <div class="mb-10 text-center">
     <h2 class="theme-text-h2 mb-3">
-      Key <span class="theme-title-underline">characteristics</span>
+      {m['app_characteristics.title_part1']({})}<span class="theme-title-underline"
+        >{m['app_characteristics.title_part2']({})}</span
+      >
     </h2>
-    <div class="text-themeGray-400 text-xl">Cutting edge technology!</div>
+    <div class="text-themeGray-400 text-xl">{m['app_characteristics.subtitle']({})}</div>
   </div>
   <div class="theme-container relative flex flex-col items-center">
     <div class="grid w-full grid-cols-1 gap-3.5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
-      {#each features as feature}
-        <div class="feature flex h-full">
-          <Box
-            title={feature.title}
-            icon={feature.icon}
-            theme={feature.theme}
-            footerType={feature.theme === 'secondary' ? 'link' : 'button'}
-            footerLink={feature.link}
-            footerText={feature.buttonText}
-            description={feature.description}
-          ></Box>
-        </div>
-      {/each}
+      <div class="feature flex h-full">
+        <Box
+          title={m['app_characteristics.box1.title']({})}
+          icon="network"
+          theme="secondary"
+          footerType="link"
+          footerLink="/"
+          description={m['app_characteristics.box1.description']({})}
+        ></Box>
+      </div>
+      <div class="feature flex h-full">
+        <Box
+          title={m['app_characteristics.box2.title']({})}
+          icon="shield"
+          theme="secondary"
+          footerType="link"
+          footerLink="/"
+          description={m['app_characteristics.box2.description']({})}
+        ></Box>
+      </div>
+      <div class="feature flex h-full">
+        <Box
+          title={m['app_characteristics.box3.title']({})}
+          icon="open-source"
+          theme="secondary"
+          footerType="link"
+          footerLink="/"
+          description={m['app_characteristics.box3.description']({})}
+        ></Box>
+      </div>
+      <div class="feature flex h-full">
+        <Box
+          title={m['app_characteristics.box4.title']({})}
+          icon="cube"
+          theme="secondary"
+          footerType="link"
+          footerLink="/"
+          description={m['app_characteristics.box4.description']({})}
+        ></Box>
+      </div>
+      <div class="feature flex h-full">
+        <Box
+          title={m['app_characteristics.box5.title']({})}
+          icon="wifi"
+          theme="secondary"
+          footerType="link"
+          footerLink="/"
+          description={m['app_characteristics.box5.description']({})}
+        ></Box>
+      </div>
+      <div class="feature flex h-full">
+        <Box
+          title={m['app_characteristics.box6.title']({})}
+          icon=""
+          theme="primary"
+          footerType="button"
+          footerLink="/"
+          footerText={m['app_characteristics.box6.button_text']({})}
+          description={m['app_characteristics.box6.description']({})}
+        ></Box>
+      </div>
     </div>
   </div>
 </div>

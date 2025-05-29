@@ -1,25 +1,27 @@
 <script lang="ts">
   import Link from '@/theme/Link/Link.svelte';
   import Icon from '@/theme/Icon/Icon.svelte';
-  export let blockTitle = 'Výrazný textový blok v2';
-  const title = 'Liberland Software Foundation';
+  import { m } from '@paraglide/messages';
 
-  const address = ['Liberty Street 1', 'Liberty City', 'LL-00001 Liberland'];
-  const organizationId = 'LLC230002';
+  export let blockTitle = m['text.block_title']({});
+  const title = m['text.organization_title']({});
 
-  const contactTitle = 'Get in touch';
-  const contactEmail = 'info@libersoft.org';
+  const address = [m['text.address.line1']({}), m['text.address.line2']({}), m['text.address.line3']({})];
+  const organizationId = m['text.organization_id_value']({});
+
+  const contactTitle = m['text.contact_title']({});
+  const contactEmail = m['text.contact_email']({});
 
   const links = [
-    { label: 'Github Page', icon: 'github', href: 'https://github.com/yellow' },
-    { label: 'Telegram Chat Group', icon: 'telegram', href: 'https://t.me/yellow' },
+    { label: m['text.links.github']({}), icon: 'github', href: 'https://github.com/yellow' },
+    { label: m['text.links.telegram_chat']({}), icon: 'telegram', href: 'https://t.me/yellow' },
     {
-      label: 'Telegram Announcements',
+      label: m['text.links.telegram_announcements']({}),
       icon: 'telegram',
       href: 'https://t.me/yellow-announcements'
     },
-    { label: 'LinkedIn', icon: 'linkedin', href: 'https://linkedin.com/company/yellow' },
-    { label: 'Facebook Group', icon: 'facebook', href: 'https://facebook.com/yellow' }
+    { label: m['text.links.linkedin']({}), icon: 'linkedin', href: 'https://linkedin.com/company/yellow' },
+    { label: m['text.links.facebook']({}), icon: 'facebook', href: 'https://facebook.com/yellow' }
   ];
 </script>
 
@@ -35,13 +37,13 @@
 
 {#snippet leftColumnSnippet()}
   <div class="w-full lg:flex-1">
-    <h4 class="mb-2 text-xl font-bold">Address</h4>
+    <h4 class="mb-2 text-xl font-bold">{m['text.address.title']({})}</h4>
     <div class="text-md mb-4">
       {#each address as line}
         <div class="text-themeGray-400">{line}</div>
       {/each}
     </div>
-    <div class="text-md text-themeGray-400 mb-6"><strong>Organization ID:</strong> {organizationId}</div>
+    <div class="text-md text-themeGray-400 mb-6"><strong>{m['text.organization_id']({})}</strong> {organizationId}</div>
 
     <h3 class="text-6xl font-medium">{contactTitle}</h3>
     <a
