@@ -70,7 +70,7 @@
       />
 
       <!-- SelectBox using our new Bits UI component -->
-      <div class="mb-4">
+      <div class="mb-4 md:mb-7">
         <label
           for="formSelect"
           class="text-themeGray-800
