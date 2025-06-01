@@ -51,9 +51,9 @@
     cursor-pointer items-center 
     justify-between 
     rounded-lg 
-    px-10 
-    py-6 text-left
-    shadow-md duration-400 
+    px-5.5 py-6 
+    text-left shadow-md
+    duration-400 md:px-10 
     ${isOpen ? 'theme-gradient-yellow bg-gradient-to-t' : 'theme-gradient-gray'} 
     ${className}`}
 >
