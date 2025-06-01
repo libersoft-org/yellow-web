@@ -192,9 +192,7 @@
   </div>
 
   {#if shouldShowButton}
-    <div
-      class={`absolute bottom-[-40px] left-1/2 z-10 flex h-[60px] w-[105%] w-[calc(100%+14px)] -translate-x-1/2 justify-center pb-4 lg:pb-0 ${overlayType === 'gray' ? 'bg-gradient-to-b from-transparent to-[#f2f3fa]' : 'bg-gradient-to-b from-[rgba(242,243,250,0)] to-[#f2f3fa]'}`}
-    >
+    <div class={`lg:pb-0'} absolute bottom-[-40px] left-1/2 z-10 flex h-[60px] -translate-x-1/2 justify-center pb-4`}>
       <a href={buttonLink}>
         <Button label={buttonLabel} theme={buttonTheme} rightIcon={buttonRightIcon} />
       </a>
@@ -204,6 +202,29 @@
 
 <style>
   @reference "../../app.css";
+  .table-container {
+    position: relative;
+  }
+
+  .table-container::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    height: 140px;
+    width: calc(100% + 32px);
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.7) 20%,
+      rgba(255, 255, 255, 0.8) 30%,
+      rgba(255, 255, 255, 1) 35%
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+  }
 
   .table-container {
     @apply flex flex-col;
