@@ -23,11 +23,13 @@
     basePath?: string;
     imgProps?: HTMLImgAttributes;
     size?: IconSizeMapType | number;
+    mdSize?: IconSizeMapType;
+    lgSize?: IconSizeMapType;
   }
 </script>
 
 <script lang="ts">
-  let { name, basePath = '/assets/icons', size = 'md', ...restProps }: Props = $props();
+  let { name, basePath = '/assets/icons', size = 'md', mdSize, lgSize, ...restProps }: Props = $props();
 
   let svgContent = $state('');
 
@@ -54,10 +56,18 @@
       });
   });
 
-  const sizeClass = $derived(typeof size === 'string' ? sizeMap[size] : undefined);
+  // Generate base size class
+  const baseSizeClass = $derived(typeof size === 'string' ? sizeMap[size] : undefined);
+
+  // Generate responsive classes if provided
+  const mdSizeClass = $derived(mdSize ? `md:${sizeMap[mdSize].replace(/ /g, ' md:')}` : '');
+  const lgSizeClass = $derived(lgSize ? `lg:${sizeMap[lgSize].replace(/ /g, ' lg:')}` : '');
+
+  // Combine all size classes
+  const sizeClasses = $derived([baseSizeClass, mdSizeClass, lgSizeClass].filter(Boolean).join(' '));
 </script>
 
-<div {...restProps} class={['icon', restProps.class, sizeClass]}>
+<div {...restProps} class={['icon', restProps.class, sizeClasses]}>
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html svgContent}
 </div>

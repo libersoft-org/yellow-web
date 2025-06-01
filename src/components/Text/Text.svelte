@@ -27,19 +27,15 @@
 
 {#snippet headerSnippet()}
   <h2
-    class="mb-6
-    text-8xl
-    font-bold"
+    class="theme-text-h3
+    mb-6 font-bold"
   >
     {blockTitle}
   </h2>
 {/snippet}
 
 {#snippet cardHeaderSnippet()}
-  <div
-    class="card-block__header
-    px-6 pt-5 lg:px-15 lg:py-4"
-  >
+  <div class="card-block__header px-10 pt-7 pb-4 lg:px-15">
     <h3
       class="text-center text-4xl font-medium
       md:text-5xl
@@ -52,42 +48,27 @@
 
 {#snippet leftColumnSnippet()}
   <div class="w-full lg:flex-1">
-    <h4
-      class="mb-2
-      text-xl
-      font-bold"
-    >
+    <h4 class="mb-2 text-xl font-bold">
       {m['text.address.title']({})}
     </h4>
-    <div
-      class="text-md
-      mb-4"
-    >
+    <div class="text-md mb-5">
       {#each address as line}
-        <div class="text-themeGray-400">{line}</div>
+        <div class="text-themeGray-400 text-base">{line}</div>
       {/each}
     </div>
-    <div
-      class="text-md
-      text-themeGray-400
-      mb-6"
-    >
+    <div class="text-md text-themeGray-400 mb-7">
       <strong>{m['text.organization_id']({})}</strong>
       {organizationId}
     </div>
 
-    <h3
-      class="text-6xl
-      font-medium"
-    >
+    <h3 class="text-6xl font-medium">
       {contactTitle}
     </h3>
     <a
       href="mailto:{contactEmail}"
       class="inline-flex items-center
         gap-2
-        text-xl
-        font-bold
+        text-xl font-bold
         underline hover:no-underline"
     >
       <span class="text-themeYellow-800">
@@ -103,24 +84,20 @@
 {/snippet}
 
 {#snippet rightColumnSnippet()}
-  <div
-    class="flex w-full
-    flex-col gap-3
-    lg:flex-1"
-  >
+  <div class="flex w-full flex-col gap-3 lg:flex-1">
     {#each links as link}
       <Link
         href={link.href}
         label={link.label}
         icon={link.icon}
         iconWrapperClass="flex items-center justify-center 
-          h-8 w-8 
+          h-8.5 w-8.5 
+          mr-2
           p-2 
           rounded-full 
-          bg-themeYellow-600 
+          theme-gradient-yellow bg-gradient-to-bl
           text-black"
-        class="text-md 
-          text-themeGray-400"
+        class="text-md text-themeGray-400"
         target="_blank"
         rel="noopener noreferrer"
       />
@@ -131,8 +108,7 @@
 {#snippet contentSnippet()}
   <div
     class="card-block__body
-    px-6 pt-1
-    md:px-15 md:pb-10"
+    px-6 pt-1 pb-10"
   >
     <div
       class="flex flex-col gap-8
@@ -145,11 +121,7 @@
 {/snippet}
 
 {#snippet shadowSvgSnippet()}
-  <div
-    class="mb-6
-    flex w-full
-    justify-center"
-  >
+  <div class="flex w-full justify-center">
     <svg xmlns="http://www.w3.org/2000/svg" width="674" height="48" viewBox="0 0 674 48" fill="none">
       <rect
         width="19"
@@ -178,17 +150,16 @@
 {/snippet}
 
 <div
-  class="mx-auto
-  mb-12
-  max-w-7xl
-  px-4"
+  class="mx-auto mb-6 max-w-7xl px-0
+  md:mb-8
+  md:px-4 lg:mb-12"
 >
   {@render headerSnippet()}
 
   <div
-    class="rounded-3xl
-    bg-white
-    shadow-lg"
+    class="theme-shadow-soft
+    rounded-3xl
+    bg-white"
   >
     {@render cardHeaderSnippet()}
     {@render shadowSvgSnippet()}

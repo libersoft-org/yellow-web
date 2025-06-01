@@ -68,11 +68,11 @@
 {#snippet contactSection()}
   <div
     class="footer-contact
-    border-themeGray-600 mb-7.5 flex flex-col
-    items-center justify-center
-    border-b pb-7.5
-    font-bold text-white
-    md:mb-10 md:pb-0"
+    border-themeGray-600 mb-7.5 flex
+    flex-col items-center justify-center border-b
+    pb-7.5 font-bold
+    text-white
+    md:mb-10 md:border-0 md:pb-0"
   >
     <div
       class="flex flex-col flex-wrap items-center justify-center

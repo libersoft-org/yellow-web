@@ -52,7 +52,7 @@
   mx-auto"
 >
   <h2
-    class="theme-text-h4
+    class="theme-text-h3
     mb-8
     text-center"
   >

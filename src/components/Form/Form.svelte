@@ -40,18 +40,16 @@
   w-full"
 >
   <h2
-    class="mb-6
-    text-2xl
-    font-bold"
+    class="theme-text-h3
+    mb-6 font-bold"
   >
     {title}
   </h2>
   <div
-    class="bg-themeYellow-600 w-full
-    max-w-[620px]
-    rounded-xl p-6 drop-shadow-md
-    md:p-10
-    lg:p-12.5"
+    class="bg-themeYellow-650 theme-shadow-soft
+    w-full
+    max-w-[620px] rounded-xl p-6
+    md:p-10 lg:p-12.5"
   >
     <form onsubmit={handleSubmit}>
       <!-- Input -->
@@ -117,10 +115,7 @@
         />
       </div>
 
-      <div
-        class="mt-6 flex
-        justify-center"
-      >
+      <div class="mt-6 flex justify-center">
         <Button label={m['form.button']({})} rightIcon="chevron" iconSize="sm" type="submit" theme="secondary" />
       </div>
     </form>

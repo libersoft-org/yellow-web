@@ -16,19 +16,15 @@
     {id}
     {value}
     {disabled}
-    class="theme-gradient-white text-themeYellow-600 peer 
-      inline-flex 
-      h-[27px] 
-      w-[27px] shrink-0 
-      cursor-pointer rounded-full 
-      border 
+    class="theme-gradient-white text-themeYellow-600  peer inline-flex 
+      h-[20px] w-[20px] 
+      shrink-0 cursor-pointer rounded-full border 
       border-[#C09A05] 
-      bg-gradient-to-t 
-      drop-shadow-md transition-all duration-150 
-      ease-in-out focus:ring-0 
+      bg-gradient-to-t drop-shadow-md focus:ring-0
       focus:outline-none 
       data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 
-      data-[state=checked]:border-[#C09A05]"
+      data-[state=checked]:border-[#C09A05] md:h-[27px] 
+      md:w-[27px]"
     aria-labelledby={label ? `${id}-label` : undefined}
   >
     {#snippet children({ checked })}
@@ -39,9 +35,9 @@
       >
         {#if checked}
           <div
-            class="h-[11px] w-[11px]
-            rounded-full
-            bg-black"
+            class="h-[8px] w-[8px] rounded-full bg-black
+            md:h-[11px]
+            md:w-[11px]"
           ></div>
         {/if}
       </div>

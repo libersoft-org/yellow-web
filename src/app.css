@@ -25,6 +25,7 @@
   --color-secondary: #262626;
 
   --color-themeYellow-600: #ffe346;
+  --color-themeYellow-650: #ffd940;
   --color-themeYellow-800: #ffc934;
 
   --color-themeGray-50: #fcfcfd;
@@ -101,6 +102,13 @@
 }
 
 /**
+ * Custom shadows
+ */
+@utility theme-shadow-soft {
+  box-shadow: 0px 5px 50px 0px #cfd2e1;
+}
+
+/**
  * Custom Bullet Lists
  */
 .theme-bullet-list {
@@ -134,7 +142,7 @@
 }
 
 @utility theme-text-h1 {
-  @apply md:text-10xl lg:text-11xl text-9xl font-bold;
+  @apply md:text-10xl text-9xl font-bold;
 }
 
 @utility theme-text-h2 {
@@ -142,7 +150,7 @@
 }
 
 @utility theme-text-h3 {
-  @apply text-4xl font-bold md:text-5xl lg:text-9xl;
+  @apply text-4xl font-bold md:text-5xl lg:text-8xl;
 }
 
 @utility theme-text-h4 {

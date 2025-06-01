@@ -50,8 +50,8 @@
     mb-4 flex w-full 
     cursor-pointer items-center 
     justify-between 
-    rounded-lg 
-    px-5.5 py-6 
+    rounded-xl 
+    px-5.5 py-5.5 
     text-left shadow-md
     duration-400 md:px-10 
     ${isOpen ? 'theme-gradient-yellow bg-gradient-to-t' : 'theme-gradient-gray'} 
@@ -61,17 +61,14 @@
     class="flex-1
     pr-4"
   >
-    <span
+    <h3
       class="w-full
-      text-left text-lg font-bold md:text-xl
-      lg:text-2xl">{title}</span
+      text-left text-lg font-bold md:text-xl lg:text-2xl"
     >
+      {title}
+    </h3>
     {#if isOpen}
-      <div
-        class="theme-text-body3
-        mt-2 pb-4"
-        transition:slide
-      >
+      <div class="theme-text-body3 mt-2 max-w-4xl pr-4 not-last:pb-4" transition:slide>
         {@render children?.()}
       </div>
     {/if}
