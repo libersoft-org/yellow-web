@@ -28,7 +28,10 @@
   {disabled}
   {required}
   {orientation}
-  class={`flex ${orientation === 'vertical' ? 'flex-col' : 'flex-row'} gap-2 ${className}`}
+  class={`flex 
+    ${orientation === 'vertical' ? 'flex-col' : 'flex-row'} 
+    gap-2 
+    ${className}`}
 >
   {@render children?.()}
 </RadioGroup.Root>

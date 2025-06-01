@@ -20,7 +20,14 @@
 
 <div class="mb-4">
   {#if label}
-    <label for={id} class="text-themeGray-800 mb-1.5 block text-xl font-medium">{label}</label>
+    <label
+      for={id}
+      class="text-themeGray-800
+      mb-1.5
+      block
+      text-xl
+      font-medium">{label}</label
+    >
   {/if}
   <textarea
     {id}
@@ -36,6 +43,12 @@
     {value}
   ></textarea>
   {#if error}
-    <p class="mt-1 text-sm text-red-500">{error}</p>
+    <p
+      class="mt-1
+      text-sm
+      text-red-500"
+    >
+      {error}
+    </p>
   {/if}
 </div>

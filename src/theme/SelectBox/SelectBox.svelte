@@ -54,10 +54,9 @@
   >
     <Select.Trigger
       class={[
-        'theme-gradient-white relative flex w-full cursor-pointer items-center rounded-lg bg-gradient-to-t px-4 py-3 drop-shadow-md',
+        'theme-gradient-white relative flex w-full cursor-pointer items-center rounded-lg bg-gradient-to-t px-4 py-3 text-left drop-shadow-md',
         error ? 'border border-red-500' : '',
         'hover:border-themeYellow-600 transition-colors duration-200',
-        'text-left',
         className
       ]}
       aria-label={label || 'Select an option'}

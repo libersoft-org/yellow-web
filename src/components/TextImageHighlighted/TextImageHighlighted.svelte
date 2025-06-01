@@ -21,10 +21,8 @@
 <div class="theme-container m-auto mb-12">
   <div
     class={[
-      'text-image-wrapper rounded-3xl px-7.5 py-5 md:px-15 md:py-7 lg:py-10 lg:pr-4 lg:pl-20',
-      'flex flex-col items-center justify-between md:flex-row',
-      imagePosition === 'left' ? 'flex-col-reverse md:flex-row-reverse' : '',
-      'theme-gradient-radial-grey'
+      'text-image-wrapper theme-gradient-radial-grey flex flex-col items-center justify-between rounded-3xl px-7.5 py-5 md:flex-row md:px-15 md:py-7 lg:py-10 lg:pr-4 lg:pl-20',
+      imagePosition === 'left' ? 'flex-col-reverse md:flex-row-reverse' : ''
     ]}
   >
     <!-- Text Content -->

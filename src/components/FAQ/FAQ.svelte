@@ -47,8 +47,17 @@
   </AccordionItem>
 {/snippet}
 
-<div class="theme-container mx-auto">
-  <h2 class="theme-text-h4 mb-8 text-center">{heading}</h2>
+<div
+  class="theme-container
+  mx-auto"
+>
+  <h2
+    class="theme-text-h4
+    mb-8
+    text-center"
+  >
+    {heading}
+  </h2>
   <Accordion defaultActive={defaultActiveId}>
     {#each faqItems as item}
       {@render questionContent(item)}

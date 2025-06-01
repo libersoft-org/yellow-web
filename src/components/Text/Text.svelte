@@ -26,47 +26,101 @@
 </script>
 
 {#snippet headerSnippet()}
-  <h2 class="mb-6 text-8xl font-bold">{blockTitle}</h2>
+  <h2
+    class="mb-6
+    text-8xl
+    font-bold"
+  >
+    {blockTitle}
+  </h2>
 {/snippet}
 
 {#snippet cardHeaderSnippet()}
-  <div class="card-block__header px-6 pt-5 lg:px-15 lg:py-4">
-    <h3 class="text-center text-4xl font-medium md:text-5xl lg:text-6xl">{title}</h3>
+  <div
+    class="card-block__header
+    px-6 pt-5 lg:px-15 lg:py-4"
+  >
+    <h3
+      class="text-center text-4xl font-medium
+      md:text-5xl
+      lg:text-6xl"
+    >
+      {title}
+    </h3>
   </div>
 {/snippet}
 
 {#snippet leftColumnSnippet()}
   <div class="w-full lg:flex-1">
-    <h4 class="mb-2 text-xl font-bold">{m['text.address.title']({})}</h4>
-    <div class="text-md mb-4">
+    <h4
+      class="mb-2
+      text-xl
+      font-bold"
+    >
+      {m['text.address.title']({})}
+    </h4>
+    <div
+      class="text-md
+      mb-4"
+    >
       {#each address as line}
         <div class="text-themeGray-400">{line}</div>
       {/each}
     </div>
-    <div class="text-md text-themeGray-400 mb-6"><strong>{m['text.organization_id']({})}</strong> {organizationId}</div>
+    <div
+      class="text-md
+      text-themeGray-400
+      mb-6"
+    >
+      <strong>{m['text.organization_id']({})}</strong>
+      {organizationId}
+    </div>
 
-    <h3 class="text-6xl font-medium">{contactTitle}</h3>
+    <h3
+      class="text-6xl
+      font-medium"
+    >
+      {contactTitle}
+    </h3>
     <a
       href="mailto:{contactEmail}"
-      class="inline-flex items-center gap-2 text-xl font-bold underline hover:no-underline"
+      class="inline-flex items-center
+        gap-2
+        text-xl
+        font-bold
+        underline hover:no-underline"
     >
       <span class="text-themeYellow-800">
         <Icon name="envelope" size="5xl" />
       </span>
-      <span class="text-themeGray-800 inline-block pt-1">{contactEmail}</span>
+      <span
+        class="text-themeGray-800
+        inline-block
+        pt-1">{contactEmail}</span
+      >
     </a>
   </div>
 {/snippet}
 
 {#snippet rightColumnSnippet()}
-  <div class="flex w-full flex-col gap-3 lg:flex-1">
+  <div
+    class="flex w-full
+    flex-col gap-3
+    lg:flex-1"
+  >
     {#each links as link}
       <Link
         href={link.href}
         label={link.label}
         icon={link.icon}
-        iconWrapperClass="bg-themeYellow-600 text-black rounded-full p-2 flex items-center justify-center h-8 w-8"
-        class="text-md text-themeGray-400"
+        iconWrapperClass="flex items-center justify-center 
+          h-8 w-8 
+          p-2 
+          rounded-full 
+          bg-themeYellow-600 
+          text-black"
+        class="text-md 
+          text-themeGray-400"
         target="_blank"
         rel="noopener noreferrer"
       />
@@ -75,8 +129,15 @@
 {/snippet}
 
 {#snippet contentSnippet()}
-  <div class="card-block__body px-6 pt-1 md:px-15 md:pb-10">
-    <div class="flex flex-col gap-8 lg:flex-row lg:gap-16">
+  <div
+    class="card-block__body
+    px-6 pt-1
+    md:px-15 md:pb-10"
+  >
+    <div
+      class="flex flex-col gap-8
+      lg:flex-row lg:gap-16"
+    >
       {@render leftColumnSnippet()}
       {@render rightColumnSnippet()}
     </div>
@@ -84,7 +145,11 @@
 {/snippet}
 
 {#snippet shadowSvgSnippet()}
-  <div class="mb-6 flex w-full justify-center">
+  <div
+    class="mb-6
+    flex w-full
+    justify-center"
+  >
     <svg xmlns="http://www.w3.org/2000/svg" width="674" height="48" viewBox="0 0 674 48" fill="none">
       <rect
         width="19"
@@ -112,10 +177,19 @@
   </div>
 {/snippet}
 
-<div class="mx-auto mb-12 max-w-7xl px-4">
+<div
+  class="mx-auto
+  mb-12
+  max-w-7xl
+  px-4"
+>
   {@render headerSnippet()}
 
-  <div class="rounded-3xl bg-white shadow-lg">
+  <div
+    class="rounded-3xl
+    bg-white
+    shadow-lg"
+  >
     {@render cardHeaderSnippet()}
     {@render shadowSvgSnippet()}
     {@render contentSnippet()}

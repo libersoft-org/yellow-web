@@ -16,13 +16,33 @@
     {id}
     {value}
     {disabled}
-    class="theme-gradient-white text-themeYellow-600 peer inline-flex h-[27px] w-[27px] shrink-0 cursor-pointer rounded-full border border-[#C09A05] bg-gradient-to-t drop-shadow-md transition-all duration-150 ease-in-out focus:ring-0 focus:outline-none data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 data-[state=checked]:border-[#C09A05]"
+    class="theme-gradient-white text-themeYellow-600 peer 
+      inline-flex 
+      h-[27px] 
+      w-[27px] shrink-0 
+      cursor-pointer rounded-full 
+      border 
+      border-[#C09A05] 
+      bg-gradient-to-t 
+      drop-shadow-md transition-all duration-150 
+      ease-in-out focus:ring-0 
+      focus:outline-none 
+      data-[disabled]:cursor-not-allowed data-[disabled]:opacity-50 
+      data-[state=checked]:border-[#C09A05]"
     aria-labelledby={label ? `${id}-label` : undefined}
   >
     {#snippet children({ checked })}
-      <div class="flex h-full w-full items-center justify-center">
+      <div
+        class="flex
+        h-full w-full
+        items-center justify-center"
+      >
         {#if checked}
-          <div class="h-[11px] w-[11px] rounded-full bg-black"></div>
+          <div
+            class="h-[11px] w-[11px]
+            rounded-full
+            bg-black"
+          ></div>
         {/if}
       </div>
     {/snippet}
@@ -32,7 +52,10 @@
     <Label.Root
       for={id}
       id={`${id}-label`}
-      class="text-themeGray-700 ml-2 text-base peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+      class="text-themeGray-700 
+        ml-2 
+        text-base 
+        peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
     >
       {label}
     </Label.Root>

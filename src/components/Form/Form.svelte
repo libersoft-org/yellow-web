@@ -35,9 +35,24 @@
   }
 </script>
 
-<div class="mx-auto w-full">
-  <h2 class="mb-6 text-2xl font-bold">{title}</h2>
-  <div class="bg-themeYellow-600 w-full max-w-[620px] rounded-xl p-6 drop-shadow-md md:p-10 lg:p-12.5">
+<div
+  class="mx-auto
+  w-full"
+>
+  <h2
+    class="mb-6
+    text-2xl
+    font-bold"
+  >
+    {title}
+  </h2>
+  <div
+    class="bg-themeYellow-600 w-full
+    max-w-[620px]
+    rounded-xl p-6 drop-shadow-md
+    md:p-10
+    lg:p-12.5"
+  >
     <form onsubmit={handleSubmit}>
       <!-- Input -->
       <Input
@@ -58,8 +73,13 @@
 
       <!-- SelectBox using our new Bits UI component -->
       <div class="mb-4">
-        <label for="formSelect" class="text-themeGray-800 mb-1.5 block text-xl font-medium"
-          >{m['form.select.label']({})}</label
+        <label
+          for="formSelect"
+          class="text-themeGray-800
+          mb-1.5
+          block
+          text-xl
+          font-medium">{m['form.select.label']({})}</label
         >
         <SelectBox
           id="formSelect"
@@ -73,7 +93,13 @@
       <!-- Radio Buttons using RadioGroup and RadioButton -->
       <div class="mb-4">
         <fieldset>
-          <legend class="text-themeGray-800 mb-1.5 block text-xl font-medium">{m['form.radio.label']({})}</legend>
+          <legend
+            class="text-themeGray-800
+            mb-1.5
+            block
+            text-xl
+            font-medium">{m['form.radio.label']({})}</legend
+          >
           <RadioGroup bind:value={radioValue} name="radioOptions" orientation="horizontal">
             <RadioButton value="option1" label={m['form.radio.option1']({})} />
             <RadioButton value="option2" label={m['form.radio.option2']({})} />
@@ -91,7 +117,10 @@
         />
       </div>
 
-      <div class="mt-6 flex justify-center">
+      <div
+        class="mt-6 flex
+        justify-center"
+      >
         <Button label={m['form.button']({})} rightIcon="chevron" iconSize="sm" type="submit" theme="secondary" />
       </div>
     </form>

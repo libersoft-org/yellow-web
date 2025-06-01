@@ -46,19 +46,45 @@
   type="button"
   aria-expanded={isOpen}
   onclick={handleToggle}
-  class={`transition-background duration-400 ${isOpen ? 'theme-gradient-yellow bg-gradient-to-t' : 'theme-gradient-gray'} mb-4 flex w-full items-center justify-between rounded-lg px-10 py-6 shadow-md ${className} cursor-pointer text-left`}
+  class={`transition-background 
+    mb-4 flex w-full 
+    cursor-pointer items-center 
+    justify-between 
+    rounded-lg 
+    px-10 
+    py-6 text-left
+    shadow-md duration-400 
+    ${isOpen ? 'theme-gradient-yellow bg-gradient-to-t' : 'theme-gradient-gray'} 
+    ${className}`}
 >
-  <div class="flex-1 pr-4">
-    <span class="w-full text-left text-lg font-bold md:text-xl lg:text-2xl">{title}</span>
+  <div
+    class="flex-1
+    pr-4"
+  >
+    <span
+      class="w-full
+      text-left text-lg font-bold md:text-xl
+      lg:text-2xl">{title}</span
+    >
     {#if isOpen}
-      <div class="theme-text-body3 mt-2 pb-4" transition:slide>
+      <div
+        class="theme-text-body3
+        mt-2 pb-4"
+        transition:slide
+      >
         {@render children?.()}
       </div>
     {/if}
   </div>
   <div class="flex-shrink-0">
     <div
-      class="transition-background-color bg-themeGray-800 flex h-9 w-9 items-center justify-center rounded-full p-2 text-white duration-300"
+      class="bg-themeGray-800 transition-background-color flex
+        h-9 w-9
+        items-center
+        justify-center
+        rounded-full
+        p-2
+        text-white duration-300"
     >
       <Icon class={`${isOpen ? '' : 'rotate-0'}`} name={isOpen ? 'cross' : 'plus'} />
     </div>

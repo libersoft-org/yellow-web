@@ -6,15 +6,26 @@
 </script>
 
 {#snippet feature({ title, icon, description }: { title: string; icon: string; description: string })}
-  <div class="feature w-full md:h-full lg:h-auto">
+  <div
+    class="feature
+    w-full
+    md:h-full lg:h-auto"
+  >
     <Card {title} {icon} class="md:h-full lg:h-auto">
       {@html description}
     </Card>
   </div>
 {/snippet}
 
-<div class="app-features relative mb-20 flex flex-col items-center justify-center lg:mb-50">
-  <div class="mb-8 text-center">
+<div
+  class="relative
+  mb-20 flex flex-col items-center
+  justify-center lg:mb-50"
+>
+  <div
+    class="mb-8
+    text-center"
+  >
     <h2 class="theme-text-h2">
       {m['app_features.title_part1']()} <span class="theme-title-underline">{m['app_features.title_part2']()}</span><br
       />
@@ -22,16 +33,43 @@
     </h2>
   </div>
 
-  <div class="theme-container relative flex w-full flex-col items-center px-4 sm:px-6 lg:px-0">
-    <div class="theme-gradient-radial-grey relative rounded-2xl px-3 pt-7.5 pb-16 md:pb-12 lg:bg-none lg:px-0 lg:py-0">
-      <div class="svg-bg margin-auto pointer-events-none absolute top-5 -z-10 hidden w-full lg:block">
+  <div
+    class="theme-container
+    relative flex w-full
+    flex-col
+    items-center px-4 sm:px-6
+    lg:px-0"
+  >
+    <div
+      class="theme-gradient-radial-grey
+      relative
+      rounded-2xl
+      px-3 pt-7.5 pb-16 md:pb-12 lg:bg-none lg:px-0
+      lg:py-0"
+    >
+      <div
+        class="svg-bg margin-auto pointer-events-none
+        absolute
+        top-5 -z-10
+        hidden
+        w-full lg:block"
+      >
         {@html svgBackground}
       </div>
 
       <div
-        class="app-features-layout flex w-full flex-col justify-center gap-4 md:grid md:grid-cols-2 lg:flex lg:grid-cols-none lg:flex-row lg:gap-10 lg:px-[8rem]"
+        class="flex w-full flex-col justify-center gap-4
+          md:grid
+          md:grid-cols-2
+          lg:flex lg:grid-cols-none lg:flex-row lg:gap-10 lg:px-[8rem]"
       >
-        <div class="flex flex-1 flex-col gap-4 lg:max-w-[351px] lg:gap-8 lg:pt-20">
+        <div
+          class="flex flex-1
+          flex-col
+          gap-4 lg:max-w-[351px]
+          lg:gap-8
+          lg:pt-20"
+        >
           {@render feature({
             title: m['app_features.features.messages.title'](),
             icon: 'message',
@@ -44,11 +82,18 @@
           })}
         </div>
 
-        <div class="-order-1 flex flex-1 flex-col items-center gap-8 md:col-span-2 lg:order-none lg:max-w-[384px]">
+        <div
+          class="-order-1 flex flex-1 flex-col
+          items-center gap-8 md:col-span-2
+          lg:order-none
+          lg:max-w-[384px]"
+        >
           <!-- Image -->
           <div
-            class="flex w-full max-w-[240px] justify-center md:max-w-[320px] md:justify-center lg:col-span-1 lg:col-start-2
-              lg:row-start-1 lg:block lg:max-w-[380px] lg:justify-start"
+            class="flex w-full
+              max-w-[240px] justify-center md:max-w-[320px]
+              md:justify-center lg:col-span-1 lg:col-start-2 lg:row-start-1
+              lg:block lg:max-w-[380px] lg:justify-start"
           >
             <img
               alt={m['app_features.mobile_image_alt']()}
@@ -64,7 +109,13 @@
           })}
         </div>
 
-        <div class="flex flex-1 flex-col gap-4 lg:max-w-[351px] lg:gap-8 lg:pt-20">
+        <div
+          class="flex flex-1
+          flex-col
+          gap-4 lg:max-w-[351px]
+          lg:gap-8
+          lg:pt-20"
+        >
           {@render feature({
             title: m['app_features.features.business.title'](),
             icon: 'calendar',
@@ -77,7 +128,11 @@
           })}
         </div>
       </div>
-      <div class="absolute inset-x-0 -bottom-6 flex justify-center lg:-bottom-18.5">
+      <div
+        class="absolute inset-x-0 -bottom-6
+        flex justify-center
+        lg:-bottom-18.5"
+      >
         <Button label={m['app_features.feature_button']()} rightIcon="chevron" theme="secondary" />
       </div>
     </div>
