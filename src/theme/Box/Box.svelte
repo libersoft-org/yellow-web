@@ -32,14 +32,15 @@
 
 <div
   class={[
-    'box relative flex h-full flex-col rounded-xl rounded-br-none px-8.5 pt-4 pb-3 pb-9 drop-shadow-md md:px-12 md:pt-10 md:pb-3 md:pb-9 lg:px-15 lg:pt-12.5 lg:pb-4 lg:pb-11',
+    'box relative flex h-full flex-col rounded-xl rounded-br-none drop-shadow-md',
+    'px-8.5 pt-4 pb-3 md:px-12 md:pt-10 md:pb-3 md:pb-9 lg:px-15 lg:pt-12.5 lg:pb-4 lg:pb-11',
     theme === 'primary' ? 'text-themeGray-800 theme-gradient-yellow bg-gradient-to-t' : '',
     theme === 'secondary' ? 'bg-themeGray-800 text-white' : '',
     restProps.class
   ]}
 >
   {#if showHeader}
-    <div class="box-header mb-2 flex justify-between gap-4">
+    <div class="box-header mb-2 flex justify-between gap-4 md:mb-4.5">
       {#if title}
         <div class="box-header__title theme-text-h5 mt-4">{@html title}</div>
       {/if}

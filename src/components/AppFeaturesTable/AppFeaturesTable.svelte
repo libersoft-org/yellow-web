@@ -96,10 +96,10 @@
 {#snippet leftSide()}
   <div class="table-container relative flex flex-col items-center justify-center">
     <div class="mb-4">
-      <h2 class="theme-text-h2 text-center"><span class="theme-title-underline">{title}</span></h2>
+      <h2 class="theme-text-h2 relative z-10 text-center"><span class="theme-title-underline z-5">{title}</span></h2>
     </div>
 
-    <div class="table-container-wrapper relative mb-9 lg:mb-0">
+    <div class="table-container-wrapper relative mb-11 lg:mb-0">
       <Table
         {rows}
         {headers}
@@ -114,12 +114,14 @@
 {/snippet}
 
 {#snippet rightSide()}
-  <div class="image-container flex flex-col">
-    <div class="relative order-2 lg:order-1">
+  <div class="image-container flex flex-col items-center lg:items-start">
+    <div class="relative order-2 w-full md:w-2/3 lg:order-1 lg:w-full">
       <img src={imagePath} alt="Yellow app features" class="max-w-full" />
     </div>
 
-    <div class="legend order-1 mt-6 flex justify-center gap-4 pl-4.5 sm:flex-row lg:order-2 lg:justify-start">
+    <div
+      class="legend order-1 mt-6 mb-3 flex justify-center gap-4 pl-4.5 sm:flex-row lg:order-2 lg:mb-0 lg:justify-start"
+    >
       {#each legendItems as item}
         <div class="flex items-start gap-1 md:items-center">
           <span class={item.colorClass}>
@@ -132,7 +134,7 @@
   </div>
 {/snippet}
 
-<div class="app-features-table theme-container mb-20 flex flex-col items-center justify-center lg:mb-29">
+<div class="app-features-table theme-container md::mb-20 mb-11 flex flex-col items-center justify-center lg:mb-29">
   <div class="bg-themeGray-120 relative rounded-xl lg:bg-transparent">
     <div class="svg-bg margin-auto absolute top-5 hidden max-h-[758px] w-full lg:flex" style:z-index="-1">
       {@html svgBackground}

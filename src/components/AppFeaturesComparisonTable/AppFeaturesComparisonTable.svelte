@@ -96,7 +96,7 @@
   <div class="theme-container relative">
     <div class="px-4 pb-8 md:px-10 md:px-25 md:pb-21">
       <div class="mb-5 text-center">
-        <h2 class="theme-text-h2 text-left md:text-center">
+        <h2 class="theme-text-h2 text-center">
           <span class="theme-title-underline">Comparison</span><br />{title}
         </h2>
       </div>
