@@ -32,9 +32,9 @@
     },
     { label: 'Download', href: '/' },
     { label: 'Comparsion', href: '/' },
-    { label: 'Documentation', href: '/' },
-    { label: 'FAQ', href: '/' },
-    { label: 'Contact', href: '/' },
+    { label: 'Documentation', href: '/documentation' },
+    { label: 'FAQ', href: '/faq' },
+    { label: 'Contact', href: '/contact' },
     { label: 'Create free account', href: '/', highlighted: true }
   ];
 

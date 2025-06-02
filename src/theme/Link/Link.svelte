@@ -12,6 +12,7 @@
     class?: string;
     target?: string;
     rel?: string;
+    underlined?: boolean;
   }
 
   let {
@@ -24,7 +25,8 @@
     textClass = '',
     class: className = 'text-themeGray-200 hover:text-themeYellow-400 transition-colors duration-200 font-normal',
     target,
-    rel
+    rel,
+    underlined = false
   }: Props = $props();
 </script>
 
@@ -34,9 +36,16 @@
       <Icon name={icon} size={iconSize} class={iconClass} />
     </span>
   {/if}
-  <span class="relative inline-block">
-    <span class={`${textClass}`}>{@html label}</span>
-    <span class="absolute bottom-[-5px] left-0 h-[1px] w-0 bg-current transition-all duration-300 group-hover:w-full"
-    ></span>
+  <span class="relative inline-block leading-snug">
+    <span class={`${textClass} leading-snug`}>{@html label}</span>
+    {#if underlined}
+      <!-- Default: Underlined with hover effect to remove underline -->
+      <span class="absolute top-[100%] left-0 h-[2px] w-full bg-current transition-all duration-300 group-hover:w-0"
+      ></span>
+    {:else}
+      <!-- Non-underlined with hover effect to add underline -->
+      <span class="absolute top-[100%] left-0 h-[2px] w-0 bg-current transition-all duration-300 group-hover:w-full"
+      ></span>
+    {/if}
   </span>
 </a>

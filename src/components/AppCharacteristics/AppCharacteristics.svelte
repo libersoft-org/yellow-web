@@ -44,9 +44,9 @@
   ];
 </script>
 
-<div class="flex flex-col items-center justify-center">
+<div class="mb-20 flex flex-col items-center justify-center lg:mb-29">
   <div class="mb-10 text-center">
-    <h2 class="theme-text-h2 mb-3">
+    <h2 class="theme-text-h2 mb-0.5">
       {m['app_characteristics.title_part1']({})}<span class="theme-title-underline"
         >{m['app_characteristics.title_part2']({})}</span
       >

@@ -4,7 +4,6 @@
 
   interface Cell {
     text: string;
-    alignment?: 'left' | 'center' | 'right';
     isHeader?: boolean;
     className?: string;
     icon?: string;
@@ -24,12 +23,12 @@
     rounded?: boolean;
     showOverlay?: boolean;
     overlayType?: 'gray' | 'white';
-    customShadow?: 'standard' | 'multi-side' | 'none';
-    showButton?: boolean;
+    // showButton?: boolean; // This prop seems unused based on shouldShowButton, but was in original
     buttonLabel?: string;
     buttonLink?: string;
     buttonTheme?: 'primary' | 'secondary';
     buttonRightIcon?: string;
+    class?: string;
   }
 
   let {
@@ -39,83 +38,138 @@
     formatHeaders = false,
     formatNewlines = false,
     rounded = true,
-    showOverlay = false,
-    overlayType = 'gray',
-    customShadow = 'standard',
+    showOverlay = true,
+    overlayType = 'white',
     buttonLabel = 'See all',
     buttonLink = '#',
     buttonTheme = 'secondary',
-    buttonRightIcon = 'chevron'
+    buttonRightIcon = 'chevron',
+    class: className = ''
   }: Props = $props();
 
   const shouldShowButton = $derived(buttonLabel && buttonLink && buttonLink !== '#');
 
-  function getShadowClass(customShadow: string) {
-    if (customShadow === 'multi-side') return 'shadow-top-left-right';
-    if (customShadow === 'none') return '';
-    return 'drop-shadow-md';
-  }
-
-  function getJustifyClass(alignment: 'left' | 'center' | 'right' = 'left') {
-    if (alignment === 'center') return 'justify-center';
-    if (alignment === 'right') return 'justify-end';
-    return 'justify-start';
-  }
-
   function formatText(text: string) {
     if (!text) return '';
-
     if (formatNewlines) {
       text = text.replace(/\n/g, '<br>');
     }
-
     return text;
   }
 
   function formatHeaderText(text: string) {
     if (!text) return '';
-
     if (formatHeaders) {
       text = text.replace(/\//g, '/<br>');
     }
-
     return text;
+  }
+
+  // State for accordion
+  let activeAccordionItem = $state<number | null>(null);
+
+  function toggleAccordion(index: number) {
+    activeAccordionItem = activeAccordionItem === index ? null : index;
   }
 </script>
 
-<div class={['table-container relative', getShadowClass(customShadow)]}>
-  <div class={['table ', rounded ? 'table--rounded' : '']}>
-    <table class="h-px w-full">
+<div
+  class="table-container relative flex flex-col rounded-3xl shadow-xl {className}"
+  class:has-overlay={showOverlay}
+  data-overlay-type={overlayType}
+>
+  <div class={['table overflow-hidden rounded-3xl', rounded ? 'table--rounded' : '']}>
+    <table class="w-full lg:h-[1px]">
       {#if headers.length > 0}
-        <thead>
-          <tr>
-            {#each headers as header}
-              <th>{@html formatHeaderText(header)}</th>
+        <thead class="lg:table-header-group">
+          <tr class="hidden lg:table-row">
+            {#each headers as header, headerIndex}
+              <th
+                class="theme-gradient-yellow text-themeGray-800 bg-gradient-to-t py-4.5 text-center text-base font-bold first:text-left"
+              >
+                <div class="px-5.5">
+                  {@html formatHeaderText(header)}
+                </div>
+              </th>
             {/each}
+          </tr>
+          <tr class="lg:hidden">
+            <th
+              class="theme-gradient-yellow text-themeGray-800 flex justify-between bg-gradient-to-t py-4.5 text-base font-bold"
+            >
+              <div class="px-5.5">Name</div>
+              <div class="px-5.5">Features</div>
+            </th>
           </tr>
         </thead>
       {/if}
 
       {#if rows.length > 0}
-        <tbody>
+        <tbody class="block lg:table-row-group">
           {#each rows as row, rowIndex}
-            <tr>
+            <tr class="block lg:table-row">
               {#each row.cells as cell, columnIndex}
                 {#if cell.isHeader}
-                  <th class={cell.className || ''}>
-                    <div class="cell-wrapper flex items-center {getJustifyClass(cell.alignment)}">
+                  <th
+                    class={`
+											block lg:table-cell
+											${columnIndex === 0 ? 'accordion-trigger' : 'accordion-content-cell'}
+											${columnIndex > 0 ? (activeAccordionItem === rowIndex ? 'block' : 'hidden') : ''}
+											lg:block
+											${cell.className || ''}
+										`}
+                    onclick={() => {
+                      if (columnIndex === 0) toggleAccordion(rowIndex);
+                    }}
+                    role={columnIndex === 0 ? 'button' : undefined}
+                    tabindex={columnIndex === 0 ? 0 : undefined}
+                    aria-expanded={columnIndex === 0 ? activeAccordionItem === rowIndex : undefined}
+                    aria-controls={columnIndex === 0 ? `accordion-content-panel-${rowIndex}` : undefined}
+                    id={columnIndex === 0
+                      ? `accordion-trigger-${rowIndex}`
+                      : columnIndex > 0 && activeAccordionItem === rowIndex
+                        ? `accordion-content-panel-${rowIndex}`
+                        : undefined}
+                  >
+                    <div class="cell-wrapper flex h-full items-center px-5.5 py-4.5 text-sm lg:text-base">
                       {@html formatText(cell.text)}
+                      {#if columnIndex === 0}
+                        <span class="accordion-chevron ml-auto lg:hidden">
+                          <Icon name="chevron" class={activeAccordionItem === rowIndex ? 'rotate-90' : ''} size="sm" />
+                        </span>
+                      {/if}
                     </div>
                   </th>
                 {:else}
-                  <td>
-                    <div class="cell-wrapper flex items-center {getJustifyClass(cell.alignment)}">
+                  <td
+                    class={`
+											accordion-content-cell block
+											lg:table-cell
+											${activeAccordionItem === rowIndex ? 'block' : 'hidden'}
+											lg:block
+											${cell.className || ''}
+										`}
+                    id={columnIndex === 0 && activeAccordionItem === rowIndex
+                      ? `accordion-content-panel-${rowIndex}`
+                      : undefined}
+                    aria-labelledby={columnIndex === 0 ? `accordion-trigger-${rowIndex}` : undefined}
+                  >
+                    <div class="cell-wrapper flex h-full items-center justify-between px-5.5 py-2 lg:justify-center">
+                      {#if headers[columnIndex]}
+                        <span
+                          class="text-themeGray-500 flex w-1/2 items-center text-xs font-medium md:w-full lg:hidden lg:text-sm"
+                        >
+                          {headers[columnIndex]}
+                        </span>
+                      {/if}
                       {#if cell.icon}
                         <span class="status-check status-{cell.iconStatus}">
-                          <Icon name={cell.icon} size="xs" />
+                          <Icon name={cell.icon} size="md" />
                         </span>
                       {:else}
-                        {@html formatText(cell.text)}
+                        <span class="text-themeGray-400 text-right text-xs md:text-center lg:text-sm">
+                          {@html formatText(cell.text)}
+                        </span>
                       {/if}
                     </div>
                   </td>
@@ -124,20 +178,12 @@
             </tr>
           {/each}
         </tbody>
-      {:else}
-        {@render children?.()}
       {/if}
     </table>
   </div>
 
-  {#if showOverlay}
-    <div
-      class={`gradient-overlay gradient-overlay-${overlayType} pointer-events-none absolute bottom-[-7px] h-32`}
-    ></div>
-  {/if}
-
   {#if shouldShowButton}
-    <div class="absolute right-0 bottom-0 left-0 z-10 flex justify-center">
+    <div class={`lg:pb-0'} absolute bottom-[-40px] left-1/2 z-10 flex h-[60px] -translate-x-1/2 justify-center pb-4`}>
       <a href={buttonLink}>
         <Button label={buttonLabel} theme={buttonTheme} rightIcon={buttonRightIcon} />
       </a>
@@ -146,124 +192,103 @@
 </div>
 
 <style>
-  /* See https://tailwindcss.com/docs/functions-and-directives#reference-directive */
   @reference "../../app.css";
 
-  .table-container {
-    @apply flex flex-col;
+  .table-container.has-overlay::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 0;
+    height: 140px;
+    width: calc(100% + 32px);
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.7) 20%,
+      rgba(255, 255, 255, 0.8) 30%,
+      rgba(255, 255, 255, 1) 35%
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
   }
 
-  .gradient-overlay {
-    width: calc(100% + 14px);
-    left: -7px;
-    right: -7px;
-  }
-
-  .gradient-overlay-gray {
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(242, 243, 250, 1) 60%);
-  }
-
-  .gradient-overlay-white {
-    background: linear-gradient(to bottom, rgba(242, 243, 250, 0) 0%, rgba(255, 255, 255, 1) 60%);
-  }
-
-  .shadow-top-left-right {
-    box-shadow:
-      0 -4px 6px -1px rgba(0, 0, 0, 0.1),
-      -4px 0 6px -1px rgba(0, 0, 0, 0.1),
-      4px 0 6px -1px rgba(0, 0, 0, 0.1);
+  /* Gray overlay type */
+  :global(.table-container[data-overlay-type='gray'].has-overlay)::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(242, 243, 250, 0.3) 0%,
+      rgba(242, 243, 250, 0.7) 20%,
+      rgba(242, 243, 250, 0.8) 30%,
+      rgba(242, 243, 250, 1) 35%
+    );
   }
 
   .table :global {
-    /* Table */
-
     table {
-      @apply w-full border-collapse;
-      @apply overflow-hidden;
+      @apply w-full border-collapse lg:overflow-hidden;
     }
 
-    /* Head */
+    /* --- DESKTOP STYLES (lg and up) --- */
 
-    thead th {
-      @apply theme-gradient-yellow bg-gradient-to-t;
-      @apply px-8 py-4.5;
-      @apply text-base font-bold;
-      @apply text-themeGray-800;
-      @apply text-left;
-    }
-
-    .table--rounded :global(thead th:first-child) {
-      @apply rounded-tl-2xl;
-    }
-
-    .table--rounded :global(thead th:last-child) {
-      @apply rounded-tr-2xl;
-    }
-
-    /* Body */
-
-    tbody tr th:first-child {
-      @apply pl-8;
+    tbody tr th:first-child,
+    thead tr th:first-child {
+      @apply lg:pl-6;
     }
 
     tbody tr td:last-child {
-      @apply pr-4;
+      @apply lg:pr-4;
     }
 
-    tbody tr:last-child :where(td, th) .cell-wrapper {
-      @apply pb-20;
+    tbody tr:last-child > :where(td, th) > .cell-wrapper {
+      @apply lg:pb-10;
     }
 
-    tbody th .cell-wrapper,
-    tbody td .cell-wrapper {
-      @apply px-4 py-4.5;
-      @apply h-full;
+    tbody tr:nth-child(even) :where(td, th) > .cell-wrapper {
+      @apply lg:bg-themeGray-75;
     }
 
-    tbody th {
-      @apply font-bold;
-      @apply text-left;
-    }
-
-    tbody td {
-      @apply text-left;
-    }
-
-    tbody tr:nth-child(even) td .cell-wrapper,
-    tbody tr:nth-child(even) th .cell-wrapper {
-      @apply bg-themeGray-75;
-    }
-
-    tbody tr:not(:last-child) td .cell-wrapper,
-    tbody tr:not(:last-child) th .cell-wrapper {
-      @apply border-b-themeGray-150 border-b;
+    tbody tr:not(:last-child) :where(td, th) > .cell-wrapper {
+      @apply border-b-themeGray-150 border-b border-solid;
     }
 
     /* Status indicators */
 
     .status-check {
-      @apply inline-flex items-center justify-center;
-      @apply h-9 w-9 rounded-full;
-      @apply text-sm;
+      @apply inline-flex h-9 w-9 items-center justify-center rounded-full text-sm;
     }
 
     .status-success {
-      @apply bg-[var(--color-themeGreen-100)];
-      @apply text-[var(--color-themeGreen-500)];
+      @apply bg-[var(--color-themeGreen-100)] text-[var(--color-themeGreen-500)];
     }
 
     .status-error {
-      @apply bg-[var(--color-themeRed-100)];
-      @apply text-[var(--color-themeRed-500)];
+      @apply bg-[var(--color-themeRed-100)] text-[var(--color-themeRed-500)];
     }
 
     .status-warning {
-      @apply bg-[var(--color-themeOrange-100)];
-      @apply text-[var(--color-themeOrange-500)];
+      @apply bg-[var(--color-themeOrange-100)] text-[var(--color-themeOrange-500)];
     }
 
     .status-check .icon {
       @apply p-0;
+    }
+
+    /* --- MOBILE STYLES (below lg) --- */
+
+    /* Header styling for mobile */
+    .accordion-trigger {
+      @apply cursor-pointer bg-white text-left;
+    }
+
+    .accordion-trigger .cell-wrapper {
+      @apply flex justify-between;
+    }
+
+    /* Mobile accordion content styling  */
+    .accordion-content-cell {
+      @apply bg-themeGray-50;
     }
   }
 </style>

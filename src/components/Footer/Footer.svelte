@@ -123,14 +123,12 @@
         textClass="text-themeGray-200 hover:text-white"
         target="_blank"
         rel="noopener noreferrer"
-        class="md:text-md text-themeYellow-600 
-          hover:text-themeYellow-400 lg:border-themeGray-600 flex
-          w-full 
-          items-center gap-3 px-0 pb-3 text-xs md:w-[33.33%] md:pr-4
-          md:pb-0 lg:w-1/5 
-          lg:justify-center lg:px-4 
-          lg:px-8 
-          lg:pb-3 {i === 0 ? 'lg:border-l-0' : 'lg:border-l'}"
+        class="md:text-md text-themeYellow-600 lg:border-themeGray-600 
+          flex w-full
+          items-center gap-3 px-0 
+          pb-3 text-xs md:w-[33.33%]
+          md:pr-4 md:pb-0 lg:w-1/5 lg:justify-center lg:px-4 lg:pb-3 
+          {i === 0 ? 'lg:border-l-0' : 'lg:border-l'}"
       />
     {/each}
   </div>

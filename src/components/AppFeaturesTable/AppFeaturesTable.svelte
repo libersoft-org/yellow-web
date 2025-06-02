@@ -91,64 +91,59 @@
   function shouldShowOverlay(rows: Row[]) {
     return rows.length > 5;
   }
-
-  function getTableContainerClass(rows: Row[]) {
-    const baseClasses = 'bg-white rounded-2xl relative';
-    return `${baseClasses}`;
-  }
 </script>
 
 {#snippet leftSide()}
-  <div class="table-container relative">
-    <div class="mb-8">
-      <h2 class="theme-text-h1 text-center"><span class="theme-title-underline">{title}</span></h2>
+  <div class="table-container relative flex flex-col items-center justify-center">
+    <div class="mb-4">
+      <h2 class="theme-text-h2 text-center"><span class="theme-title-underline">{title}</span></h2>
     </div>
 
-    <div class={getTableContainerClass(rows)}>
+    <div class="table-container-wrapper relative mb-9 lg:mb-0">
       <Table
         {rows}
         {headers}
         showOverlay={shouldShowOverlay(rows)}
         overlayType="gray"
+        class="max-w-[538px]"
         {buttonLabel}
         {buttonLink}
-        customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
       />
     </div>
   </div>
 {/snippet}
 
 {#snippet rightSide()}
-  <div class="image-container flex flex-col items-center justify-center">
-    <div class="relative">
+  <div class="image-container flex flex-col">
+    <div class="relative order-2 lg:order-1">
       <img src={imagePath} alt="Yellow app features" class="max-w-full" />
     </div>
 
-    <div class="legend mt-6 flex flex-col justify-center gap-4 sm:flex-row">
+    <div class="legend order-1 mt-6 flex justify-center gap-4 pl-4.5 sm:flex-row lg:order-2 lg:justify-start">
       {#each legendItems as item}
-        <div class="flex items-center gap-2">
+        <div class="flex items-start gap-1 md:items-center">
           <span class={item.colorClass}>
-            <Icon name={item.icon} size="md" />
+            <Icon name={item.icon} size="sm" />
           </span>
-          <span class="text-themeGray-600">{item.text}</span>
+          <span class="text-themeGray-600 text-xs">{item.text}</span>
         </div>
       {/each}
     </div>
   </div>
 {/snippet}
 
-<div class="app-features-table theme-container flex flex-col items-center justify-center">
-  <div class=" relative">
-    <div class="svg-bg margin-auto absolute top-5 max-h-[758px] w-full" style:z-index="-1">
+<div class="app-features-table theme-container mb-20 flex flex-col items-center justify-center lg:mb-29">
+  <div class="bg-themeGray-120 relative rounded-xl lg:bg-transparent">
+    <div class="svg-bg margin-auto absolute top-5 hidden max-h-[758px] w-full lg:flex" style:z-index="-1">
       {@html svgBackground}
     </div>
 
-    <div class="px-10 px-25 py-21">
+    <div class="py-6 md:px-10 md:py-14 lg:px-22 lg:py-21">
       <div class="flex flex-wrap">
-        <div class="w-full px-4 lg:w-2/5">
+        <div class="w-full w-full px-4 lg:w-4/9">
           {@render leftSide()}
         </div>
-        <div class="w-full px-4 lg:w-3/5">
+        <div class="w-full w-full px-4 lg:w-5/9">
           {@render rightSide()}
         </div>
       </div>
@@ -163,9 +158,5 @@
     object-fit: cover;
     top: 0;
     left: 0;
-  }
-
-  .table-container {
-    @apply flex flex-col;
   }
 </style>

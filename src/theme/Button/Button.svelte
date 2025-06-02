@@ -27,17 +27,18 @@
   {...restProps}
   class={[
     'button',
-    'cursor-pointer rounded-2xl rounded-tr-none px-4.5 py-4.5 font-bold drop-shadow-md md:px-7 md:py-3 lg:px-8.5 lg:py-3.5',
+    'transition-background cursor-pointer rounded-2xl rounded-tr-none font-bold drop-shadow-md duration-300',
+    'px-4.5 py-4.5 md:px-7 md:py-3 lg:px-8.5 lg:py-3.5',
     theme === 'primary'
-      ? 'text-secondary from-themeYellow-600 to-themeYellow-800 hover:from-themeYellow-400 hover:to-themeYellow-300 theme-button--primary bg-gradient-to-b hover:bg-gradient-to-b'
+      ? 'text-secondary from-themeYellow-600 to-themeYellow-800 hover:from-themeYellow-800 hover:to-themeYellow-600 bg-gradient-to-b'
       : '',
     theme === 'secondary'
-      ? 'from-themeGray-600 to-themeGray-800 hover:from-themeGray-500 hover:to-themeGray-700 bg-gradient-to-b text-white hover:bg-gradient-to-b'
+      ? 'from-themeGray-600 to-themeGray-800 hover:from-themeGray-800 hover:to-themeGray-600 bg-gradient-to-b text-white'
       : '',
     restProps.class
   ]}
 >
-  <div class="button__inner flex items-center justify-center gap-3.5">
+  <div class="button__inner flex items-center justify-center {rightIcon ? 'gap-3.5' : 'gap-2'}">
     {#if icon}
       {@render makeIcon(icon)}
     {/if}

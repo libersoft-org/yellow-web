@@ -10,9 +10,10 @@
     isOpen?: boolean;
   }
 
-  // Local variables for FAQ content
-  const heading = m['faq.heading']({});
+  // Set the first item as default active
+  const defaultActiveId = ['faq-1'];
 
+  // FAQ items
   const faqItems: FAQItem[] = [
     {
       id: 'faq-1',
@@ -36,9 +37,6 @@
       answer: m['faq.item4.answer']({})
     }
   ];
-
-  // Set the first item as default active
-  const defaultActiveId = ['faq-1'];
 </script>
 
 {#snippet questionContent(item: FAQItem)}
@@ -47,17 +45,7 @@
   </AccordionItem>
 {/snippet}
 
-<div
-  class="theme-container
-  mx-auto"
->
-  <h2
-    class="theme-text-h3
-    mb-8
-    text-center"
-  >
-    {heading}
-  </h2>
+<div class="theme-container mx-auto">
   <Accordion defaultActive={defaultActiveId}>
     {#each faqItems as item}
       {@render questionContent(item)}

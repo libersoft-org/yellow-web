@@ -19,8 +19,8 @@
 
 <div
   class="relative
-  mb-20 flex flex-col items-center
-  justify-center lg:mb-50"
+ mb-20 flex flex-col items-center
+ justify-center lg:mb-45"
 >
   <div
     class="mb-8

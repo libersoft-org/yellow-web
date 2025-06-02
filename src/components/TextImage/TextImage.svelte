@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { m } from '@paraglide/messages';
+  import Link from '../../theme/Link/Link.svelte';
 
   interface Props {
     title?: string;
@@ -12,14 +12,50 @@
   }
 
   let {
-    title = m['text_image.title']({}),
-    textContent = [m['text_image.paragraph1']({}), m['text_image.paragraph2']({})],
+    title = 'Paragraphs and image layout',
+    textContent = [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui.',
+      'Etiam lorem lacus, mattis eu cursus tempus, convallis et libero. Ut eget bibendum purus. Aliquam molestie, lacus in ullamcorper lobortis, ipsum est condimentum lorem, a auctor orci velit at nulla. Morbi accumsan pulvinar sapien vitae maximus. Aliquam porta sit amet odio vel condimentum. Morbi et augue eget enim vulputate auctor. Ut porta nibh, gravida quam et elementum nec, ornare a velit. Mauris elit quam, ultricies sit amet lectus eius, molestie congue nisi. Ut egestas diam justo, eu pretium magna vestibulum a. In vehicula, est quis mattis lobortis, elit ipsum posuere ipsum, non lobortis lorem, porttitor auctor nisl.',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor.'
+    ],
     imagePath = '/assets/images/textImage.png',
-    imageAlt = m['text_image.image_alt']({}),
+    imageAlt = 'Phone Screenshot',
     imagePosition = 'left',
     showImage = true,
     showBulletList = true
   }: Props = $props();
+
+  // Bullet list content converted to array structure
+  const bulletItems = [
+    {
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      subItems: []
+    },
+    {
+      text: 'Vestibulum fringilla ex in nisi molestie.',
+      subItems: [
+        'Integer finibus dolor sapien, a venenatis sapien porttitor ut.',
+        'Mauris non metus tincidunt, ornare turpis.',
+        'Donec sollicitudin consectetur purus.'
+      ]
+    },
+    {
+      text: 'Suspendisse eget semper leo.',
+      subItems: []
+    },
+    {
+      text: 'Cras vitae feugiat turpis.',
+      subItems: []
+    },
+    {
+      text: 'Etiam suscipit viverra consequat.',
+      subItems: []
+    },
+    {
+      text: 'Mauris et est lectus in hendrerit ante ac felis blandit.',
+      subItems: []
+    }
+  ];
 </script>
 
 <div
@@ -61,16 +97,63 @@
 
     <!-- Text Content -->
     <div class="w-full md:flex-1">
-      {#each textContent as paragraph, index}
-        <p
-          class="theme-text-body1
-          text-themeGray-700
-          mb-4"
-          class:font-bold={index === 0}
-        >
-          {@html paragraph}
-        </p>
-      {/each}
+      <p
+        class="theme-text-body1
+        text-themeGray-700
+        mb-4
+        font-bold"
+      >
+        {@html textContent[0]}
+      </p>
+      <p
+        class="theme-text-body3
+        text-themeGray-400
+        mb-4"
+      >
+        {@html textContent[1]}
+      </p>
+      <p
+        class="theme-text-body3
+        text-themeGray-400
+        mb-4"
+      >
+        {@html textContent[2]}
+      </p>
+
+      <div class="mt-2 mb-6 flex flex-wrap gap-2">
+        <Link
+          href="https://yellow.libersoft.org"
+          label="Link underlined"
+          textClass="text-themeGray-800 text-base font-medium"
+          class="text-themeYellow-800"
+          underlined={true}
+        />
+
+        <Link
+          href="https://yellow.libersoft.org"
+          label="Link underlined"
+          textClass="text-themeGray-800 text-base font-medium"
+          class="text-themeGray-800"
+          underlined={true}
+        />
+
+        <Link
+          href="https://yellow.libersoft.org"
+          label="Link"
+          textClass="text-themeGray-800 text-base font-medium"
+          class="text-themeYellow-800"
+        />
+
+        <Link
+          href="https://yellow.libersoft.org"
+          label="Link with icon"
+          icon="envelope"
+          iconSize="md"
+          iconWrapperClass="bg-themeYellow-800 text-themeGray-800 rounded-full p-2"
+          textClass="text-themeGray-800 text-base font-medium"
+          class="text-themeYellow-800"
+        />
+      </div>
 
       {#if showBulletList}
         <ul
@@ -80,23 +163,22 @@
           text-sm font-medium
           lg:text-lg"
         >
-          <li>{m['text_image.bullet_list.item1']({})}</li>
-          <li>
-            {m['text_image.bullet_list.item2']({})}
-            <ul
-              class="md:text-md text-themeGray-400
-              text-xs
-              font-normal"
-            >
-              <li>{m['text_image.bullet_list.item2_sub1']({})}</li>
-              <li>{m['text_image.bullet_list.item2_sub2']({})}</li>
-              <li>{m['text_image.bullet_list.item2_sub3']({})}</li>
-            </ul>
-          </li>
-          <li>{m['text_image.bullet_list.item3']({})}</li>
-          <li>{m['text_image.bullet_list.item4']({})}</li>
-          <li>{m['text_image.bullet_list.item5']({})}</li>
-          <li>{m['text_image.bullet_list.item6']({})}</li>
+          {#each bulletItems as item}
+            <li>
+              {item.text}
+              {#if item.subItems.length > 0}
+                <ul
+                  class="md:text-md text-themeGray-400
+                  text-xs
+                  font-normal"
+                >
+                  {#each item.subItems as subItem}
+                    <li>{subItem}</li>
+                  {/each}
+                </ul>
+              {/if}
+            </li>
+          {/each}
         </ul>
       {/if}
     </div>

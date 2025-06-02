@@ -92,23 +92,6 @@
       "facebook": "Facebook skupina"
     }
   },
-  "text_image": {
-    "title": "Odstavce a vzhled obrázku",
-    "paragraph1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui.",
-    "paragraph2": "Etiam lorem lacus, mattis eu cursus tempus, convallis et libero. Ut eget bibendum purus. Aliquam molestie, lacus in ullamcorper lobortis, ipsum est condimentum lorem, a auctor orci velit at nulla. Morbi accumsan pulvinar sapien vitae maximus. Aliquam porta sit amet odio vel condimentum. Morbi et augue eget enim vulputate auctor. Ut porta nibh, gravida quam et elementum nec, ornare a velit. Mauris elit quam, ultricies sit amet lectus eius, molestie congue nisi. Ut egestas diam justo, eu pretium magna vestibulum a. In vehicula, est quis mattis lobortis, elit ipsum posuere ipsum, non lobortis lorem, porttitor auctor nisl.",
-    "image_alt": "Snímek telefonu",
-    "bullet_list": {
-      "item1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "item2": "Vestibulum fringilla ex in nisi molestie.",
-      "item2_sub1": "Integer finibus dolor sapien, a venenatis sapien porttitor ut.",
-      "item2_sub2": "Mauris non metus tincidunt, ornare turpis.",
-      "item2_sub3": "Donec sollicitudin consectetur purus.",
-      "item3": "Suspendisse eget semper leo.",
-      "item4": "Cras vitae feugiat turpis.",
-      "item5": "Etiam suscipit viverra consequat.",
-      "item6": "Mauris et est lectus in hendrerit ante ac felis blandit."
-    }
-  },
   "text_image_highlighted": {
     "title": "Výrazný textový blok",
     "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui. Fusce eleifend convallis nulla quis molestie. Cras rutrum nisl neque.",
