@@ -1,0 +1,22 @@
+/* tailwind-safelist.css */
+
+@theme {
+  --safelist: {
+    pattern: /(max-w|max-h|w|h)-(2\.5|3|4|4\.5|6|6\.5|8|8\.5|10|12|32|36)/,
+    variants: ['md', 'lg'],
+  };
+
+  /* Also include your custom spacing if needed */
+  --spacing-2-5: 0.625rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-4-5: 1.125rem;
+  --spacing-6: 1.5rem;
+  --spacing-6-5: 1.625rem;
+  --spacing-8: 2rem;
+  --spacing-8-5: 2.125rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-32: 8rem;
+  --spacing-36: 9rem;
+} 
