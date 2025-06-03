@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Icon from '@/theme/Icon/Icon.svelte';
+  import Icon, { type IconSizeMapType } from '@/theme/Icon/Icon.svelte';
   import Link from '@/theme/Link/Link.svelte';
   import { m } from '@paraglide/messages';
 
@@ -9,7 +9,9 @@
     label: string;
     href: string;
     icon?: string;
-    iconSize?: 'sm' | 'md' | 'lg';
+    iconSize?: IconSizeMapType;
+    mdIconSize?: IconSizeMapType;
+    lgIconSize?: IconSizeMapType;
   }
 
   interface LinkSection {
@@ -68,20 +70,21 @@
 {#snippet contactSection()}
   <div
     class="footer-contact
-    border-themeGray-600 mb-7.5 flex
-    flex-col items-center justify-center border-b
-    pb-7.5 font-bold
-    text-white
+    border-themeGray-600 mb-7.5 flex flex-col
+    items-center
+    justify-center
+    border-b pb-7.5
+    font-bold text-white
     md:mb-10 md:border-0 md:pb-0"
   >
     <div
-      class="flex flex-col flex-wrap items-center justify-center
+      class="flex flex-col flex-wrap items-center
       gap-2 md:flex-row md:gap-6.5"
     >
       <h2 class="theme-text-h2">{m['footer.contact.title']({})}</h2>
       <a
         href="mailto:{contactEmail}"
-        class="flex inline-flex items-center
+        class="flex inline-flex items-end
           gap-2
           text-xl
           underline transition-colors duration-200 hover:no-underline"
@@ -90,9 +93,9 @@
           class="text-themeYellow-600
           mr-2"
         >
-          <Icon name="envelope" size="5xl" />
+          <Icon name="envelope" size="3xl" mdSize="4xl" lgSize="5xl" />
         </div>
-        <span class="md:text-md text-xs lg:text-xl">{contactEmail}</span>
+        <span class="md:text-md mb-1 text-xs lg:text-xl">{contactEmail}</span>
       </a>
     </div>
   </div>
@@ -101,13 +104,12 @@
 {#snippet socialLinksSection()}
   <div
     class="footer-social
-      md:border-themeGray-600 order-last flex w-1/2 flex-col flex-wrap
-      md:order-first md:mb-12.5
-      md:w-full md:flex-row
-      md:flex-wrap md:gap-y-6
-      md:border-t
-      md:border-b md:py-6 lg:justify-center
-      lg:gap-y-0"
+      md:border-themeGray-600 order-last flex
+      w-1/2
+      flex-col flex-wrap
+      md:order-first md:mb-12.5 md:w-full md:flex-row md:flex-wrap md:gap-y-6
+      md:border-t md:border-b md:py-6
+      lg:justify-center lg:gap-y-0"
   >
     {#each socialLinks as social, i}
       <Link

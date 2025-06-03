@@ -61,7 +61,7 @@
         <div
           class="flex flex-1 flex-col
           gap-4 lg:max-w-[351px]
-          lg:gap-8 lg:pt-20"
+          lg:gap-6 lg:pt-19"
         >
           {@render feature({
             title: m['app_features.features.messages.title'](),
@@ -77,7 +77,7 @@
 
         <div
           class="-order-1 flex flex-1
-          flex-col items-center gap-8
+          flex-col items-center gap-5
           md:col-span-2 lg:order-none
           lg:max-w-[384px]"
         >
@@ -106,8 +106,8 @@
         <div
           class="flex flex-1 flex-col
           gap-4 lg:max-w-[351px]
-          lg:gap-8
-          lg:pt-20"
+          lg:gap-6
+          lg:pt-19"
         >
           {@render feature({
             title: m['app_features.features.business.title'](),
@@ -124,7 +124,7 @@
       <div
         class="absolute inset-x-0 -bottom-6
         flex justify-center
-        lg:-bottom-18.5"
+        lg:-bottom-22"
       >
         <Button label={m['app_features.feature_button']()} rightIcon="chevron" theme="secondary" />
       </div>

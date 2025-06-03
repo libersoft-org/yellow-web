@@ -108,7 +108,7 @@
 {#snippet contentSnippet()}
   <div
     class="card-block__body
-    px-6 pt-1 pb-10"
+    px-6 pt-1 pb-10 md:px-10 lg:px-14"
   >
     <div
       class="flex flex-col gap-8

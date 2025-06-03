@@ -26,7 +26,7 @@
           h-10 w-10 items-center justify-center
           rounded-full p-1 md:h-12 md:w-12"
         >
-          <Icon name={icon} size="xl" class="" />
+          <Icon name={icon} size="md" lgSize="xl" />
         </div>
       {/if}
       {#if title}

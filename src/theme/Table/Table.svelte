@@ -79,15 +79,15 @@
   data-overlay-type={overlayType}
 >
   <div class={['table overflow-hidden rounded-3xl', rounded ? 'table--rounded' : '']}>
-    <table class="w-full lg:h-[1px]">
+    <table class="w-full bg-white lg:h-[1px]">
       {#if headers.length > 0}
         <thead class="lg:table-header-group">
           <tr class="hidden lg:table-row">
             {#each headers as header, headerIndex}
               <th
-                class="theme-gradient-yellow text-themeGray-800 bg-gradient-to-t py-4.5 text-center text-base font-bold first:text-left"
+                class="theme-gradient-yellow text-themeGray-800 bg-gradient-to-t py-3 text-center text-base font-bold first:text-left lg:py-4.5"
               >
-                <div class="px-5.5">
+                <div class="px-5.5 text-base lg:text-xl">
                   {@html formatHeaderText(header)}
                 </div>
               </th>
@@ -131,11 +131,17 @@
                         ? `accordion-content-panel-${rowIndex}`
                         : undefined}
                   >
-                    <div class="cell-wrapper flex h-full items-center px-5.5 py-4.5 text-sm lg:text-base">
-                      {@html formatText(cell.text)}
+                    <div class="cell-wrapper flex h-full items-center py-3 text-sm lg:px-5.5 lg:py-4 lg:text-base">
+                      <div class="lg:text-md max-w-2/3 text-xs md:text-base lg:max-w-full">
+                        {@html formatText(cell.text)}
+                      </div>
                       {#if columnIndex === 0}
-                        <span class="accordion-chevron ml-auto lg:hidden">
-                          <Icon name="chevron" class={activeAccordionItem === rowIndex ? 'rotate-90' : ''} size="sm" />
+                        <span class="accordion-chevron ml-auto pr-1 lg:hidden">
+                          <Icon
+                            name="chevron"
+                            class={activeAccordionItem === rowIndex ? 'rotate-270' : 'rotate-90'}
+                            size="sm"
+                          />
                         </span>
                       {/if}
                     </div>
@@ -154,17 +160,21 @@
                       : undefined}
                     aria-labelledby={columnIndex === 0 ? `accordion-trigger-${rowIndex}` : undefined}
                   >
-                    <div class="cell-wrapper flex h-full items-center justify-between px-5.5 py-2 lg:justify-center">
+                    <div
+                      class="cell-wrapper flex h-full min-h-[43px] items-center justify-between py-2 lg:justify-center lg:px-5.5"
+                    >
                       {#if headers[columnIndex]}
                         <span
-                          class="text-themeGray-500 flex w-1/2 items-center text-xs font-medium md:w-full lg:hidden lg:text-sm"
+                          class="text-themeGray-400 flex w-1/2 items-center text-xs font-medium md:w-full lg:hidden lg:text-sm"
                         >
                           {headers[columnIndex]}
                         </span>
                       {/if}
                       {#if cell.icon}
-                        <span class="status-check status-{cell.iconStatus}">
-                          <Icon name={cell.icon} size="md" />
+                        <span
+                          class="status-check status-{cell.iconStatus} inline-flex h-6 w-6 items-center justify-center rounded-full text-sm lg:h-9 lg:w-9"
+                        >
+                          <Icon name={cell.icon} size="sm" lgSize="md" />
                         </span>
                       {:else}
                         <span class="text-themeGray-400 text-right text-xs md:text-center lg:text-sm">
@@ -183,10 +193,12 @@
   </div>
 
   {#if shouldShowButton}
-    <div class={`lg:pb-0'} absolute bottom-[-40px] left-1/2 z-10 flex h-[60px] -translate-x-1/2 justify-center pb-4`}>
-      <a href={buttonLink}>
+    <div class="w-full">
+      <div
+        class="absolute bottom-[-75px] left-1/2 z-10 flex h-[60px] w-full -translate-x-1/2 justify-center md:bottom-[-40px]"
+      >
         <Button label={buttonLabel} theme={buttonTheme} rightIcon={buttonRightIcon} />
-      </a>
+      </div>
     </div>
   {/if}
 </div>
@@ -196,13 +208,7 @@
 
   .table-container.has-overlay::after {
     content: '';
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    right: 0;
-    height: 140px;
-    width: calc(100% + 32px);
+    @apply absolute right-0 -bottom-[30px] left-1/2 z-[1] h-[70px] w-[calc(100%+32px)] -translate-x-1/2 md:-bottom-[60px] md:h-[140px];
     background: linear-gradient(
       to bottom,
       rgba(255, 255, 255, 0.3) 0%,
@@ -211,7 +217,6 @@
       rgba(255, 255, 255, 1) 35%
     );
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    z-index: 1;
   }
 
   /* Gray overlay type */
@@ -237,8 +242,18 @@
       @apply lg:pl-6;
     }
 
+    tbody tr th:last-child,
+    thead tr th:last-child {
+      @apply lg:pr-6;
+    }
+
+    tbody tr :where(th, td),
+    thead tr :where(td) {
+      @apply pr-6 pl-6 lg:pr-0 lg:pl-0;
+    }
+
     tbody tr td:last-child {
-      @apply lg:pr-4;
+      @apply lg:pr-6;
     }
 
     tbody tr:last-child > :where(td, th) > .cell-wrapper {
@@ -254,11 +269,6 @@
     }
 
     /* Status indicators */
-
-    .status-check {
-      @apply inline-flex h-9 w-9 items-center justify-center rounded-full text-sm;
-    }
-
     .status-success {
       @apply bg-[var(--color-themeGreen-100)] text-[var(--color-themeGreen-500)];
     }
@@ -286,9 +296,9 @@
       @apply flex justify-between;
     }
 
-    /* Mobile accordion content styling  */
-    .accordion-content-cell {
-      @apply bg-themeGray-50;
+    /* Mobile accordion content styling */
+    .accordion-content-cell .cell-wrapper {
+      @apply bg-themeGray-50 lg:bg-white;
     }
   }
 </style>

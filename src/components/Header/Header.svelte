@@ -118,7 +118,7 @@
     aria-hidden={!isMobileMenuOpen}
   >
     <div class="flex h-full p-0 lg:items-center lg:pl-12">
-      <ul class="flex w-full flex-col lg:flex-row lg:gap-4">
+      <ul class="flex w-full flex-col lg:flex-row lg:gap-2">
         {#each navItems as item}
           {#if item.hasChildren}
             <HeaderItem label={item.label} href={item.href} subItems={item.subItems} />

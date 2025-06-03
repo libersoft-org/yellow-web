@@ -32,8 +32,8 @@
 
 <div
   class={[
-    'box relative flex h-full flex-col rounded-xl rounded-br-none drop-shadow-md',
-    'px-8.5 pt-4 pb-3 md:px-12 md:pt-10 md:pb-3 md:pb-9 lg:px-15 lg:pt-12.5 lg:pb-4 lg:pb-11',
+    'box relative flex h-full flex-col rounded-xl rounded-br-none drop-shadow-xl',
+    'px-8.5 pt-4 pb-9 md:px-12 md:pt-10 lg:px-15 lg:pt-12.5 lg:pb-4 lg:pb-11',
     theme === 'primary' ? 'text-themeGray-800 theme-gradient-yellow bg-gradient-to-t' : '',
     theme === 'secondary' ? 'bg-themeGray-800 text-white' : '',
     restProps.class
@@ -42,15 +42,15 @@
   {#if showHeader}
     <div class="box-header mb-2 flex justify-between gap-4 md:mb-4.5">
       {#if title}
-        <div class="box-header__title theme-text-h5 mt-4">{@html title}</div>
+        <h3 class="box-header__title theme-text-h5 mt-4">{@html title}</h3>
       {/if}
     </div>
   {/if}
   <div
     class={[
-      'box__body theme-text-body2 mb-3 md:mb-8.5',
-      theme === 'primary' ? 'text-themeGray-800' : '',
-      theme === 'secondary' ? 'text-themeGray-200' : ''
+      'box__body theme-text-body2',
+      theme === 'primary' ? 'text-themeGray-800 mb-6.5 md:mb-10' : '',
+      theme === 'secondary' ? 'text-themeGray-200 mb-4 md:mb-8.5' : ''
     ]}
   >
     {#if description}
@@ -59,11 +59,11 @@
   </div>
 
   {#if showFooter}
-    <div class="box__footer mt-auto flex items-center justify-between">
+    <div class="box__footer flex items-center justify-between">
       {#if footerSlot}
         {@render footerSlot()}
       {:else if footerType === 'link'}
-        <a href={footerLink} class="flex items-center text-yellow-400">
+        <a href={footerLink} class="flex items-center text-yellow-300">
           <Icon name="arrow" size="2xl" />
         </a>
       {:else if footerType === 'button'}

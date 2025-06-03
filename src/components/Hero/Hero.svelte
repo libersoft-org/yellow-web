@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '@/theme/Button/Button.svelte';
   import { m } from '@paraglide/messages';
-
+  import svgBackground from './bg.svg?raw';
   interface Props {
     imageSrc?: string;
     backgroundImage?: string;
@@ -53,9 +53,14 @@
 {/snippet}
 
 <div
-  class="relative isolate mb-10 bg-cover bg-center pt-20.5 pb-8.5 md:mb-15 md:pt-35 md:pb-8 lg:mb-20 lg:pt-46 lg:pb-13"
+  class="relative isolate mb-10 overflow-hidden bg-cover bg-center
+  pt-20.5 pb-8.5 md:mb-15 md:pt-35 md:pb-8 lg:mb-20 lg:pt-46 lg:pb-13"
   style="background-image: url('{backgroundImage}')"
 >
+  <div class="svg-bg absolute -top-2 right-0 hidden max-h-[758px] lg:flex" style:z-index="-1">
+    {@html svgBackground}
+  </div>
+
   <div class="theme-container relative mx-auto">
     <div class="flex flex-wrap">
       <div class="order-2 w-full lg:order-1 lg:w-2/5">

@@ -92,7 +92,7 @@
   }: Props = $props();
 </script>
 
-<div class="app-features-comparison-table flex flex-col items-center justify-center md:mb-10 lg:mb-30">
+<div class="app-features-comparison-table mb-20 flex flex-col items-center justify-center md:mb-10 lg:mb-15">
   <div class="theme-container relative">
     <div class="px-4 pb-8 md:px-10 md:px-25 md:pb-21">
       <div class="mb-5 text-center">

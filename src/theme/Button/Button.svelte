@@ -30,7 +30,7 @@
     'transition-background cursor-pointer rounded-2xl rounded-tr-none font-bold drop-shadow-md duration-300',
     'px-4.5 py-4.5 md:px-7 md:py-3 lg:px-8.5 lg:py-3.5',
     theme === 'primary'
-      ? 'text-secondary from-themeYellow-600 to-themeYellow-800 hover:from-themeYellow-800 hover:to-themeYellow-600 bg-gradient-to-b'
+      ? 'text-secondary theme-button--primary from-themeYellow-600 to-themeYellow-800 hover:from-themeYellow-800 hover:to-themeYellow-600 bg-gradient-to-b'
       : '',
     theme === 'secondary'
       ? 'from-themeGray-600 to-themeGray-800 hover:from-themeGray-800 hover:to-themeGray-600 bg-gradient-to-b text-white'

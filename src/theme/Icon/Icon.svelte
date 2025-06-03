@@ -32,7 +32,6 @@
   let { name, basePath = '/assets/icons', size = 'md', mdSize, lgSize, ...restProps }: Props = $props();
 
   let svgContent = $state('');
-
   $effect(() => {
     // Determine if this is a public path or a source path
     const path = basePath.startsWith('/')
@@ -56,18 +55,20 @@
       });
   });
 
-  // Generate base size class
-  const baseSizeClass = $derived(typeof size === 'string' ? sizeMap[size] : undefined);
+  // Function to add responsive prefix to each class in a space-delimited string
+  function withPrefix(classes: string, prefix: string): string {
+    return classes
+      .split(' ')
+      .map((cls) => `${prefix}:${cls}`)
+      .join(' ');
+  }
 
-  // Generate responsive classes if provided
-  const mdSizeClass = $derived(mdSize ? `md:${sizeMap[mdSize].replace(/ /g, ' md:')}` : '');
-  const lgSizeClass = $derived(lgSize ? `lg:${sizeMap[lgSize].replace(/ /g, ' lg:')}` : '');
-
-  // Combine all size classes
-  const sizeClasses = $derived([baseSizeClass, mdSizeClass, lgSizeClass].filter(Boolean).join(' '));
+  const baseClasses = $derived(typeof size === 'string' ? sizeMap[size] : '');
+  const mdClasses = $derived(mdSize ? withPrefix(sizeMap[mdSize], 'md') : '');
+  const lgClasses = $derived(lgSize ? withPrefix(sizeMap[lgSize], 'lg') : '');
 </script>
 
-<div {...restProps} class={['icon', restProps.class, sizeClasses]}>
+<div {...restProps} class="icon {restProps.class || ''} {baseClasses} {mdClasses} {lgClasses}">
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html svgContent}
 </div>

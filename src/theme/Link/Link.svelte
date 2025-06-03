@@ -1,11 +1,13 @@
 <script lang="ts">
-  import Icon from '../Icon/Icon.svelte';
+  import Icon, { type IconSizeMapType } from '../Icon/Icon.svelte';
 
   interface Props {
     href: string;
     label: string;
     icon?: string;
-    iconSize?: 'sm' | 'md' | 'lg';
+    iconSize?: IconSizeMapType;
+    mdIconSize?: IconSizeMapType;
+    lgIconSize?: IconSizeMapType;
     iconWrapperClass?: string;
     iconClass?: string;
     textClass?: string;
@@ -20,6 +22,8 @@
     label,
     icon,
     iconSize = 'md',
+    mdIconSize,
+    lgIconSize,
     iconWrapperClass = 'bg-themeGray-700 rounded-full p-2',
     iconClass = 'text-themeYellow-500',
     textClass = '',
@@ -33,7 +37,7 @@
 <a aria-label={label} class="flex items-center {className} group gap-1.5" {href} {rel} {target}>
   {#if icon}
     <span class={iconWrapperClass}>
-      <Icon name={icon} size={iconSize} class={iconClass} />
+      <Icon name={icon} size={iconSize} mdSize={mdIconSize} lgSize={lgIconSize} class={iconClass} />
     </span>
   {/if}
   <span class="relative inline-block leading-snug">

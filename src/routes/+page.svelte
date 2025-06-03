@@ -16,7 +16,6 @@
   <AppCharacteristics />
   <AppFeaturesTable />
   <AppFeaturesComparisonTable />
-  <TextImageHighlighted />
   <Footer />
 </div>
 

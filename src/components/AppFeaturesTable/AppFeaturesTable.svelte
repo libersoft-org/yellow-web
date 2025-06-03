@@ -99,7 +99,7 @@
       <h2 class="theme-text-h2 relative z-10 text-center"><span class="theme-title-underline z-5">{title}</span></h2>
     </div>
 
-    <div class="table-container-wrapper relative mb-11 lg:mb-0">
+    <div class="table-container-wrapper relative mb-19 lg:mb-0">
       <Table
         {rows}
         {headers}

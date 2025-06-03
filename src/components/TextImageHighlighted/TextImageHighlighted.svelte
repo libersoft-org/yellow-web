@@ -18,7 +18,7 @@
   }: Props = $props();
 </script>
 
-<div class="theme-container m-auto mb-12">
+<div class="theme-container m-auto mb-18 md:mb-30">
   <div
     class={[
       'text-image-wrapper theme-gradient-radial-grey flex flex-col items-center justify-between rounded-3xl px-7.5 py-5 md:flex-row md:px-15 md:py-7 lg:py-10 lg:pr-4 lg:pl-20',
