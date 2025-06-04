@@ -70,12 +70,12 @@
 {#snippet contactSection()}
   <div
     class="footer-contact
-    border-themeGray-600 mb-7.5 flex flex-col
-    items-center
-    justify-center
-    border-b pb-7.5
-    font-bold text-white
-    md:mb-10 md:border-0 md:pb-0"
+    border-themeGray-600
+    mb-7.5 flex flex-col items-center
+    justify-center border-b
+    pb-7.5 font-bold
+    text-white md:mb-10
+    md:border-0 md:pb-0"
   >
     <div
       class="flex flex-col flex-wrap items-center
@@ -104,12 +104,14 @@
 {#snippet socialLinksSection()}
   <div
     class="footer-social
-      md:border-themeGray-600 order-last flex
-      w-1/2
-      flex-col flex-wrap
-      md:order-first md:mb-12.5 md:w-full md:flex-row md:flex-wrap md:gap-y-6
-      md:border-t md:border-b md:py-6
-      lg:justify-center lg:gap-y-0"
+      md:border-themeGray-600
+      order-last flex
+      w-1/2 flex-col flex-wrap md:order-first md:mb-12.5 md:w-full
+      md:flex-row md:flex-wrap
+      md:gap-y-6
+      md:border-t md:border-b
+      md:py-6 lg:justify-center
+      lg:gap-y-0"
   >
     {#each socialLinks as social, i}
       <Link
@@ -120,16 +122,18 @@
           rounded-full 
           p-2 
           h-9 w-9 
-          border-1 border-themeYellow-600 
+          border-1 border-themeYellow-300 
           text-themeYellow-600"
-        textClass="text-themeGray-200 hover:text-white"
+        textClass="text-themeGray-200 group-hover:text-white"
         target="_blank"
         rel="noopener noreferrer"
-        class="md:text-md text-themeYellow-600 lg:border-themeGray-600 
-          flex w-full
-          items-center gap-3 px-0 
-          pb-3 text-xs md:w-[33.33%]
-          md:pr-4 md:pb-0 lg:w-1/5 lg:justify-center lg:px-4 lg:pb-3 
+        class="md:text-md text-themeYellow-600 
+          lg:border-themeGray-600 
+          flex 
+          w-full items-center gap-3
+          px-0 pb-3 text-xs  
+          md:w-[33.33%]
+          md:pr-4 md:pb-0 lg:w-1/5 lg:justify-center lg:px-4 lg:pb-3
           {i === 0 ? 'lg:border-l-0' : 'lg:border-l'}"
       />
     {/each}
@@ -143,10 +147,7 @@
     w-1/2 justify-center
     pb-8 md:w-full"
   >
-    <ul
-      class="flex flex-wrap
-      gap-x-6 gap-y-2"
-    >
+    <ul class="flex flex-wrap gap-x-6 gap-y-2">
       {#each mainLinks as link, i}
         <li
           class="flex w-full
