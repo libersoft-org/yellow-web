@@ -35,7 +35,8 @@
 
   <div
     class="theme-container relative
-    flex w-full flex-col items-center
+    flex
+    w-full flex-col items-center
     px-4 sm:px-6 lg:px-0"
   >
     <div
@@ -76,18 +77,20 @@
         </div>
 
         <div
-          class="-order-1 flex flex-1
-          flex-col items-center gap-5
-          md:col-span-2 lg:order-none
+          class="-order-1 flex
+          flex-1 flex-col
+          items-center gap-5
+          md:col-span-2
+          lg:order-none
           lg:max-w-[384px]"
         >
           <!-- Image -->
           <div
             class="flex w-full
-              max-w-[240px] justify-center md:max-w-[320px]
+              max-w-[240px] justify-center
+              md:max-w-[320px]
               lg:col-span-1 lg:col-start-2
-              lg:row-start-1 lg:block lg:max-w-[380px]
-              lg:justify-start"
+              lg:row-start-1 lg:block lg:max-w-[380px] lg:justify-start"
           >
             <img
               alt={m['app_features.mobile_image_alt']()}
@@ -122,9 +125,9 @@
         </div>
       </div>
       <div
-        class="absolute inset-x-0 -bottom-6
-        flex justify-center
-        lg:-bottom-22"
+        class="absolute
+        inset-x-0 -bottom-6
+        flex justify-center lg:-bottom-22"
       >
         <Button label={m['app_features.feature_button']()} rightIcon="chevron" theme="secondary" />
       </div>
