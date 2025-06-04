@@ -1,5 +1,4 @@
 @import 'tailwindcss';
-@import './tailwind-safelist.css';
 
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
