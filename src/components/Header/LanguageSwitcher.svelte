@@ -8,7 +8,7 @@
   import { m } from '@paraglide/messages';
   import { getLocale, setLocale } from '@paraglide/runtime';
 
-  // Define the props this component accepts
+  // Define the props
   let { openModal } = $props();
 
   let currentLanguage = $state(getLocale());
@@ -68,8 +68,10 @@
 
   // Handle overflow and dispatch events when mobile menu state changes
   const handleMobileMenuToggle = (isOpen: boolean) => {
-    // Notify parent component to show/hide overlay using callback prop
-    openModal?.(isOpen);
+    // Call the callback prop if provided
+    if (openModal) {
+      openModal(isOpen);
+    }
 
     // Prevent scrolling when mobile menu is open
     if (browser) {

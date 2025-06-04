@@ -166,16 +166,17 @@
 >
   <!-- Header Top Row -->
   <div class="flex h-full justify-between">
-    <div
+    <a
+      href="/"
       class="header__logo theme-gradient-yellow w-full max-w-[179px] bg-gradient-to-t px-4 py-2 lg:max-w-[326px] lg:rounded-bl-2xl lg:px-8 lg:py-4"
     >
       <img alt="Yellow Logo" height="58" src="/assets/images/yellow-logo.svg" width="208" />
-    </div>
+    </a>
 
     {@render navigationMenu()}
 
     <div class="flex items-center pr-6 lg:pr-12">
-      <LanguageSwitcher on:openModal={(e) => (languageModalOpen = e.detail)} />
+      <LanguageSwitcher openModal={(value: boolean) => (languageModalOpen = value)} />
 
       <!-- Mobile Menu Toggle Button - Only visible below lg screens -->
       <button
