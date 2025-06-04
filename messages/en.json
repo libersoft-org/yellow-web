@@ -5,7 +5,7 @@
     "choose_your_language": "Choose your language"
   },
   "hero": {
-    "welcome": "Welcome to",
+    "welcome": "Welcome <br class='hidden md:block'> to",
     "app_name": "Yellow",
     "description": "Experience the freedom of decentralized world. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.",
     "download_button": "Download Yellow",
@@ -40,6 +40,18 @@
       }
     },
     "mobile_image_alt": "App Features Mobile"
+  },
+  "featuresTable": {
+    "title": "Features",
+    "button": "See all features",
+    "status1": "Not implemented",
+    "status2": "Fully implemented",
+    "status3": "Partially implemented"
+  },
+  "comparisonTable": {
+    "title": "Comparison",
+    "subtitle": "with other software",
+    "button": "See all comparisons"
   },
   "app_characteristics": {
     "title_part1": "Key",

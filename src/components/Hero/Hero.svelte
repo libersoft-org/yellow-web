@@ -21,7 +21,7 @@
 {#snippet leftSide()}
   <div class="flex flex-col items-center justify-center">
     <h1 class="md:text-10xl lg:text-12xl mb-5 text-9xl font-bold md:mb-8">
-      {m['hero.welcome']()} <br class="hidden md:block" />
+      {@html m['hero.welcome']()}
       <span class="theme-title-underline">{m['hero.app_name']()}</span>
     </h1>
     <div class="theme-text-body1 text-themeGray-400 mb-4.5 text-center md:mb-10 lg:mb-13">

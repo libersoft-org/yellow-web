@@ -5,7 +5,7 @@
     "choose_your_language": "Vyberte si jazyk"
   },
   "hero": {
-    "welcome": "Vítejte v",
+    "welcome": "Vítejte <br class='hidden md:block'>v",
     "app_name": "Yellow",
     "description": "Zažijte svobodu decentralizovaného světa. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.",
     "download_button": "Stáhnout Yellow",
@@ -40,6 +40,18 @@
       }
     },
     "mobile_image_alt": "Mobilní aplikace Yellow"
+  },
+  "featuresTable": {
+    "title": "Funkce",
+    "button": "Všechny funkce",
+    "status1": "Neimplementováno",
+    "status2": "Plně implementováno",
+    "status3": "Částečně implementováno"
+  },
+  "comparisonTable": {
+    "title": "Srovnání",
+    "subtitle": "s ostatním softwarem",
+    "button": "Všechna srovnání"
   },
   "app_characteristics": {
     "title_part1": "Klíčové",

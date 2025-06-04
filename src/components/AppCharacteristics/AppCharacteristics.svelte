@@ -47,9 +47,8 @@
 <div class="mb-11 flex flex-col items-center justify-center md:mb-20 lg:mb-29">
   <div class="mb-6 text-center md:mb-10">
     <h2 class="theme-text-h2 mb-0.5">
-      {m['app_characteristics.title_part1']({})}<span class="theme-title-underline"
-        >{m['app_characteristics.title_part2']({})}</span
-      >
+      {m['app_characteristics.title_part1']({})}
+      <span class="theme-title-underline"> {m['app_characteristics.title_part2']({})}</span>
     </h2>
     <div class="text-themeGray-400 text-xl">{m['app_characteristics.subtitle']({})}</div>
   </div>

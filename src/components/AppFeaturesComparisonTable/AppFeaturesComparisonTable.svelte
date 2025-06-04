@@ -1,5 +1,6 @@
 <script lang="ts">
   import Table from '@/theme/Table/Table.svelte';
+  import { m } from '@paraglide/messages';
 
   interface Cell {
     text: string;
@@ -87,7 +88,7 @@
         ]
       }
     ],
-    buttonLabel = 'See all comparsions',
+    buttonLabel = m['comparisonTable.button']({}),
     buttonLink = '/comparisons'
   }: Props = $props();
 </script>
@@ -97,7 +98,9 @@
     <div class="px-4 pb-8 md:px-10 md:px-25 md:pb-21">
       <div class="mb-5 text-center">
         <h2 class="theme-text-h2 text-center">
-          <span class="theme-title-underline">Comparison</span><br />{title}
+          <span class="theme-title-underline">{m['comparisonTable.title']({})}</span><br />{m[
+            'comparisonTable.subtitle'
+          ]({})}
         </h2>
       </div>
 

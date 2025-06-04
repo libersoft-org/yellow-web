@@ -2,6 +2,7 @@
   import Table from '@/theme/Table/Table.svelte';
   import svgBackground from './bg.svg?raw';
   import Icon from '@/theme/Icon/Icon.svelte';
+  import { m } from '@paraglide/messages';
 
   interface Cell {
     text: string;
@@ -79,12 +80,12 @@
       }
     ],
     imagePath = 'assets/images/fluid.png',
-    buttonLabel = 'See all features',
+    buttonLabel = m['featuresTable.button']({}),
     buttonLink = '/features',
     legendItems = [
-      { icon: 'cross', text: 'Not implemented', colorClass: 'text-red-400' },
-      { icon: 'check', text: 'Fully implemented', colorClass: 'text-green-500' },
-      { icon: 'check', text: 'Partially implemented', colorClass: 'text-yellow-500' }
+      { icon: 'cross', text: m['featuresTable.status1']({}), colorClass: 'text-red-400' },
+      { icon: 'check', text: m['featuresTable.status2']({}), colorClass: 'text-green-500' },
+      { icon: 'check', text: m['featuresTable.status3']({}), colorClass: 'text-yellow-500' }
     ]
   }: Props = $props();
 
@@ -96,7 +97,9 @@
 {#snippet leftSide()}
   <div class="table-container relative flex flex-col items-center justify-center">
     <div class="mb-4">
-      <h2 class="theme-text-h2 relative z-10 text-center"><span class="theme-title-underline z-5">{title}</span></h2>
+      <h2 class="theme-text-h2 relative z-10 text-center">
+        <span class="theme-title-underline z-5">{m['featuresTable.title']({})}</span>
+      </h2>
     </div>
 
     <div class="table-container-wrapper relative mb-19 lg:mb-0">
