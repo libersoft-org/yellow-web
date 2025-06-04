@@ -23,11 +23,12 @@
   let isOpen = $state(false);
   let initializedOpen = $state(false);
 
+  // Track if the accordion item is active
   $effect(() => {
     isOpen = store.isActive(id);
   });
 
-  // Only set initial open state once
+  // Handle initial open state
   $effect(() => {
     if (open && !initializedOpen) {
       initializedOpen = true;

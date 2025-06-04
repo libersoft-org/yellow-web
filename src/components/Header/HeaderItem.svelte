@@ -3,6 +3,7 @@
   import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
   import { createDropdownHandlers } from '@/utils/dropdown';
   import type { Action } from 'svelte/action';
+  import { onMount } from 'svelte';
 
   interface Props {
     label: string;
@@ -32,6 +33,7 @@
   let onLeave = $state<(e: PointerEvent) => void>((e: PointerEvent) => {});
   let bindFloatingRef = $state<Action<HTMLElement>>(() => ({}));
 
+  // Initialize dropdown handlers when headerItemRef is available
   $effect(() => {
     if (!headerItemRef) return;
 
@@ -51,7 +53,8 @@
     bindFloatingRef = handlers.bindFloatingRef;
   });
 
-  $effect(() => {
+  // Set up resize listener
+  onMount(() => {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       checkMobile();
       window.addEventListener('resize', checkMobile);

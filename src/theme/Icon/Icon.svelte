@@ -63,24 +63,26 @@
   let { name, basePath = '/assets/icons', size = 'md', mdSize, lgSize, ...restProps }: Props = $props();
 
   let svgContent = $state('');
-  $effect(() => {
-    const path = basePath.startsWith('/') ? basePath.replace(/^\//, '') : basePath;
 
-    fetch(`/${path}/${name}.svg`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.text();
-      })
-      .then((text) => {
-        svgContent = text;
-      })
-      .catch((error) => {
-        console.error(`Icon "${name}" not found:`, error);
-        svgContent = '';
-      });
+  // Load SVG content when name or basePath changes
+  $effect(() => {
+    loadSvg(name, basePath);
   });
+
+  async function loadSvg(iconName: string, path: string) {
+    const cleanPath = path.startsWith('/') ? path.replace(/^\//, '') : path;
+
+    try {
+      const response = await fetch(`/${cleanPath}/${iconName}.svg`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      svgContent = await response.text();
+    } catch (error) {
+      console.error(`Icon "${iconName}" not found:`, error);
+      svgContent = '';
+    }
+  }
 
   const baseClasses = $derived(typeof size === 'string' ? sizeMap[size] : '');
   const mdClasses = $derived(mdSize ? mdSizeMap[mdSize] : '');

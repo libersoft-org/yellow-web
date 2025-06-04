@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   import { createDropdownHandlers } from '@/utils/dropdown';
   import SelectBox from '@/theme/SelectBox/SelectBox.svelte';
@@ -8,10 +8,8 @@
   import { m } from '@paraglide/messages';
   import { getLocale, setLocale } from '@paraglide/runtime';
 
-  // Create event dispatcher to notify parent component
-  const dispatch = createEventDispatcher<{
-    openModal: boolean;
-  }>();
+  // Define the props this component accepts
+  let { openModal } = $props();
 
   let currentLanguage = $state(getLocale());
   let isOpen = $state(false);
@@ -63,15 +61,15 @@
     closeDropdown();
   }
 
+  // Update locale when language changes
   $effect(() => {
-    // update paraglide runtime locale (will cause browser refresh)
     setLocale(currentLanguage);
   });
 
   // Handle overflow and dispatch events when mobile menu state changes
   const handleMobileMenuToggle = (isOpen: boolean) => {
-    // Notify parent component to show/hide overlay
-    dispatch('openModal', isOpen);
+    // Notify parent component to show/hide overlay using callback prop
+    openModal?.(isOpen);
 
     // Prevent scrolling when mobile menu is open
     if (browser) {
@@ -91,7 +89,7 @@
     handleMobileMenuToggle(false);
   }
 
-  // Initialize handlers once we have DOM reference
+  // Initialize handlers when DOM elements are available
   $effect(() => {
     if (!languageSwitcherRef) return;
 

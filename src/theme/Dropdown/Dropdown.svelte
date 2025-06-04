@@ -12,20 +12,13 @@
   let { show = false, isMobile = false, referenceElement = null, children, class: className = '' }: Props = $props();
 
   let dropdownRef: HTMLElement;
-  let cleanupAutoUpdate: (() => void) | undefined;
 
   // Setup floating UI when shown and reference element exists
   $effect(() => {
-    // Clean up previous instance if exists
-    if (cleanupAutoUpdate) {
-      cleanupAutoUpdate();
-      cleanupAutoUpdate = undefined;
-    }
-
     // Only setup positioning if we have both elements and dropdown is visible
     if (show && referenceElement && dropdownRef && !isMobile) {
       // Setup auto-update to reposition on scroll/resize
-      cleanupAutoUpdate = autoUpdate(referenceElement!, dropdownRef, () => {
+      const cleanup = autoUpdate(referenceElement!, dropdownRef, () => {
         computePosition(referenceElement!, dropdownRef, {
           placement: 'bottom',
           middleware: [offset(8), flip(), shift({ padding: 5 })]
@@ -38,14 +31,9 @@
           });
         });
       });
-    }
 
-    // Clean up on component unmount
-    return () => {
-      if (cleanupAutoUpdate) {
-        cleanupAutoUpdate();
-      }
-    };
+      return cleanup; // Svelte 5 will automatically call this function when the effect needs to be cleaned up
+    }
   });
 </script>
 
