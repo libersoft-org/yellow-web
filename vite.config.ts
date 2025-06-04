@@ -23,6 +23,9 @@ export default defineConfig({
     port: 4173,
     allowedHosts: ['*']
   },
+  server: {
+    host: '0.0.0.0' // enable local network access
+  },
   test: {
     workspace: [
       {

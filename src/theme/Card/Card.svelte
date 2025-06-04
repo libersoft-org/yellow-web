@@ -4,26 +4,29 @@
   interface Props {
     title?: string;
     icon?: string;
+    class?: string;
     children?: any;
     headerSlot?: any;
     footerSlot?: any;
   }
 
-  let { title, icon, headerSlot, footerSlot, children }: Props = $props();
+  let { title, icon, class: className = '', headerSlot, footerSlot, children }: Props = $props();
 
   const showHeader = $derived(title || icon || headerSlot);
 </script>
 
 <div
-  class="card theme-gradient-white border-t-themeYellow-600 flex flex-col rounded-xl border-t-4 bg-gradient-to-b px-8.5 py-7 drop-shadow-md"
+  class="card theme-gradient-white border-t-themeYellow-600 flex flex-col rounded-xl border-t-4 bg-gradient-to-b px-8.5 py-7 drop-shadow-md {className}"
 >
   {#if showHeader}
     <div class="card-header mb-2 flex items-center gap-4">
       {#if icon}
         <div
-          class="card-header__icon bg-themeGray-800 text-themeYellow-600 flex h-12 w-12 items-center justify-center rounded-full p-1"
+          class="card-header__icon bg-themeGray-800 text-themeYellow-800 flex
+          h-10 w-10 items-center justify-center
+          rounded-full p-1 md:h-12 md:w-12"
         >
-          <Icon name={icon} size="xl" class="" />
+          <Icon name={icon} size="md" lgSize="xl" />
         </div>
       {/if}
       {#if title}

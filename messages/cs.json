@@ -1,4 +1,184 @@
 {
   "$schema": "https://inlang.com/schema/inlang-message-format",
-  "hello_world": "Hello, {name} from cs!"
+  "hello_world": "Hello, {name} from cs!",
+  "language": {
+    "choose_your_language": "Vyberte si jazyk"
+  },
+  "hero": {
+    "welcome": "Vítejte <br class='hidden md:block'>v",
+    "app_name": "Yellow",
+    "description": "Zažijte svobodu decentralizovaného světa. Lorem ipsum dolor sit amet consecetur adipiscing elit. In nunc velit, tincidunt eu finibus vitae, condimentum at magna.",
+    "download_button": "Stáhnout Yellow",
+    "create_account_button": "Vytvořit bezplatný účet",
+    "app_alt_text": "Aplikace Yellow na více zařízeních"
+  },
+  "app_features": {
+    "title_part1": "Jedna aplikace,",
+    "title_part2": "jeden účet,",
+    "title_part3": "pro všechno, co potřebujete!",
+    "feature_button": "Zobrazit všechny funkce",
+    "features": {
+      "messages": {
+        "title": "Zprávy",
+        "description": "Inovativní zprávy s neomezenými soubory, widgety, vícečástnými zprávami a dalšími funkcemi."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Chytrá peněženka umožňuje platby, nákupy, dary, crowdfunding a další funkce."
+      },
+      "social": {
+        "title": "Sociální sítě",
+        "description": "Pokročilé sociální funkce: video kanály, fórum, novinky, příběhy, události a další."
+      },
+      "business": {
+        "title": "Obchodní nástroje",
+        "description": "Kalendář a úkoly pomáhají firmám organizovat, sdílet a zvyšovat produktivitu."
+      },
+      "entertainment": {
+        "title": "Zábava",
+        "description": "V neposlední řadě platforma nabízí i zábavné funkce jako seznamování a videohry."
+      }
+    },
+    "mobile_image_alt": "Mobilní aplikace Yellow"
+  },
+  "featuresTable": {
+    "title": "Funkce",
+    "button": "Všechny funkce",
+    "status1": "Neimplementováno",
+    "status2": "Plně implementováno",
+    "status3": "Částečně implementováno"
+  },
+  "comparisonTable": {
+    "title": "Srovnání",
+    "subtitle": "s ostatním softwarem",
+    "button": "Všechna srovnání"
+  },
+  "app_characteristics": {
+    "title_part1": "Klíčové",
+    "title_part2": "charakteristiky",
+    "subtitle": "Špičková technologie!",
+    "box1": {
+      "title": "Distribuovaná a decentralizovaná síť",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm."
+    },
+    "box2": {
+      "title": "Soukromí a bezpečnost",
+      "description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi."
+    },
+    "box3": {
+      "title": "Open source",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm."
+    },
+    "box4": {
+      "title": "Modularita",
+      "description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi."
+    },
+    "box5": {
+      "title": "Integrace <br> chytré domácnosti",
+      "description": "Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong> semper dalarect lacus vel facilisis volutpat est velitcm."
+    },
+    "box6": {
+      "title": "Posuňte svůj zážitek na další úroveň",
+      "description": "s naší komplexní aplikací",
+      "button_text": "Prozkoumejte více"
+    }
+  },
+  "text": {
+    "block_title": "Výrazný textový blok v2",
+    "organization_title": "Nadace Liberland Software",
+    "address": {
+      "title": "Adresa",
+      "line1": "Liberty Street 1",
+      "line2": "Liberty City",
+      "line3": "LL-00001 Liberland"
+    },
+    "organization_id": "ID organizace:",
+    "organization_id_value": "LLC230002",
+    "contact_title": "Kontaktujte nás",
+    "contact_email": "info@libersoft.org",
+    "links": {
+      "github": "Github stránka",
+      "telegram_chat": "Telegram chat skupina",
+      "telegram_announcements": "Telegram oznámení",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook skupina"
+    }
+  },
+  "text_image_highlighted": {
+    "title": "Výrazný textový blok",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui. Fusce eleifend convallis nulla quis molestie. Cras rutrum nisl neque.",
+    "image_alt": "Snímek obrazovky"
+  },
+  "faq": {
+    "heading": "Často kladené otázky",
+    "item1": {
+      "question": "Co je AMTP?",
+      "answer": "Advanced Mail Transfer Protocol (AMTP) je nová generace síťového protokolu pro e-mail, který překonává omezení tradičních protokolů jako SMTP, POP a IMAP využitím nových technologií a modulárního konceptu. Plně nahrazuje tyto protokoly svou funkcionalitou a dokonce výrazně rozšiřuje jejich použitelnost díky svému modulárnímu designu. Používá také modernější, bezpečnější metody přenosu dat v reálném čase."
+    },
+    "item2": {
+      "question": "Co je Yellow?",
+      "answer": "Yellow je moderní e-mailový klient, který využívá protokol AMTP k poskytování bezpečnějšího, spolehlivějšího a funkčně bohatšího e-mailového zážitku ve srovnání s tradičními e-mailovými klienty. Je navržen s důrazem na soukromí uživatelů, rychlost a snadné použití."
+    },
+    "item3": {
+      "question": "Proč se tento software jmenuje \"Yellow\"?",
+      "answer": "Název Yellow byl zvolen, aby reprezentoval jasnost, optimismus a viditelnost v e-mailové komunikaci. Stejně jako je žlutá živá a pozornost poutající barva, náš e-mailový klient má za cíl zvýraznit vaši důležitou komunikaci a zpříjemnit váš e-mailový zážitek."
+    },
+    "item4": {
+      "question": "Je Yellow klient zpětně kompatibilní s klasickými e-mailovými protokoly (SMTP, IMAP, POP3)?",
+      "answer": "Ano, Yellow klient je plně zpětně kompatibilní s klasickými e-mailovými protokoly včetně SMTP, IMAP a POP3. To zajišťuje, že můžete i nadále přistupovat ke všem svým stávajícím e-mailovým účtům a zároveň využívat pokročilé funkce nabízené AMTP pro podporované účty."
+    }
+  },
+  "form": {
+    "title": "Formulář",
+    "input": {
+      "label": "Vstup",
+      "placeholder": "Zadejte svůj text zde"
+    },
+    "textarea": {
+      "label": "Textové pole",
+      "placeholder": "Zadejte svou zprávu zde"
+    },
+    "select": {
+      "label": "Výběrové pole",
+      "placeholder": "Vyberte možnost",
+      "options": {
+        "option1": "Lorem ipsum",
+        "option2": "Dolor sit amet",
+        "option3": "Consectetur adipiscing"
+      }
+    },
+    "radio": {
+      "label": "Možnosti",
+      "option1": "Možnost 1",
+      "option2": "Možnost 2"
+    },
+    "checkbox": {
+      "label": "Souhlasím se zpracováním <a href=\"/\" class=\"underline hover:no-underline\">osobních údajů</a>"
+    },
+    "button": "Odeslat zprávu"
+  },
+  "footer": {
+    "contact": {
+      "title": "Kontaktujte nás",
+      "email": "info@libersoft.org"
+    },
+    "social": {
+      "github": "GitHub stránka",
+      "telegram_chat": "Telegram <br class=\"hidden md:block\"> chat skupina",
+      "telegram_announcements": "Telegram <br class=\"hidden md:block\"> oznámení",
+      "facebook": "Facebook skupina",
+      "linkedin": "LinkedIn"
+    },
+    "links": {
+      "about": "O nás",
+      "features": "Funkce",
+      "download": "Stáhnout",
+      "comparison": "Porovnání",
+      "documentation": "Dokumentace",
+      "faq": "FAQ",
+      "contact": "Kontakt",
+      "signup": "Vytvořit účet zdarma"
+    },
+    "copyright": "Copyright © {year} Yellow | Všechna práva vyhrazena"
+  }
 }

@@ -12,7 +12,7 @@
   }
 
   interface AccordionStore {
-    activeId: string | null;
+    isActive: (id: string) => boolean;
     toggle: (id: string) => void;
   }
 
@@ -21,14 +21,20 @@
   const store = getContext<AccordionStore>('accordion-store');
 
   let isOpen = $state(false);
+  let initializedOpen = $state(false);
 
+  // Track if the accordion item is active
   $effect(() => {
-    isOpen = store.activeId === id;
+    isOpen = store.isActive(id);
   });
 
+  // Handle initial open state
   $effect(() => {
-    if (open && !store.activeId) {
-      store.toggle(id);
+    if (open && !initializedOpen) {
+      initializedOpen = true;
+      if (!isOpen) {
+        store.toggle(id);
+      }
     }
   });
 
@@ -37,31 +43,48 @@
   }
 </script>
 
-<div
-  class={`transition-background duration-400 ${isOpen ? 'theme-gradient-yellow bg-gradient-to-t' : 'theme-gradient-gray'} mb-4 flex items-center justify-between rounded-lg p-4 shadow-md ${className}`}
+<button
+  type="button"
+  aria-expanded={isOpen}
+  onclick={handleToggle}
+  class={`transition-background 
+    mb-4 flex w-full 
+    cursor-pointer items-center 
+    justify-between 
+    rounded-xl 
+    px-5.5 py-5.5 
+    text-left shadow-md
+    duration-400 md:px-10 
+    ${isOpen ? 'theme-gradient-yellow bg-gradient-to-t' : 'theme-gradient-gray'} 
+    ${className}`}
 >
-  <div class="flex-1 pr-4">
-    <button
-      aria-expanded={isOpen}
-      class="w-full cursor-pointer text-left text-lg font-bold md:text-xl lg:text-2xl"
-      onclick={handleToggle}
-      type="button"
+  <div
+    class="flex-1
+    pr-4"
+  >
+    <h3
+      class="w-full
+      text-left text-lg font-bold md:text-xl lg:text-2xl"
     >
-      <span>{title}</span>
-    </button>
+      {title}
+    </h3>
     {#if isOpen}
-      <div class="theme-text-body3 mt-2 pb-4" transition:slide>
+      <div class="theme-text-body3 mt-2 max-w-4xl pr-4 not-last:pb-4" transition:slide>
         {@render children?.()}
       </div>
     {/if}
   </div>
   <div class="flex-shrink-0">
-    <button
-      class={`transition-background-color h-9 w-9 rounded-full p-2 duration-300 ${isOpen ? 'bg-themeGray-800' : 'bg-themeGray-300'} flex items-center justify-center text-white`}
-      onclick={handleToggle}
-      type="button"
+    <div
+      class="bg-themeGray-800 transition-background-color flex
+        h-9 w-9
+        items-center
+        justify-center
+        rounded-full
+        p-2
+        text-white duration-300"
     >
       <Icon class={`${isOpen ? '' : 'rotate-0'}`} name={isOpen ? 'cross' : 'plus'} />
-    </button>
+    </div>
   </div>
-</div>
+</button>
