@@ -1,9 +1,9 @@
 <script lang="ts">
   import Table from '@/theme/Table/Table.svelte';
+  import { m } from '@paraglide/messages';
 
   interface Cell {
     text: string;
-    alignment?: 'left' | 'center' | 'right';
     isHeader?: boolean;
     className?: string;
     icon?: string;
@@ -35,84 +35,86 @@
     rows = [
       {
         cells: [
-          { text: 'Yellow', alignment: 'left', isHeader: true },
-          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-          { text: 'LiberSoft, Liberland', alignment: 'left' }
+          { text: 'Yellow', isHeader: true },
+          { text: '', iconStatus: 'success', icon: 'check' },
+          { text: '', iconStatus: 'success', icon: 'check' },
+          { text: '', iconStatus: 'success', icon: 'check' },
+          { text: 'LiberSoft, Liberland' }
         ]
       },
       {
         cells: [
-          { text: 'E-mail', alignment: 'left', isHeader: true },
-          { text: 'some software', alignment: 'center' },
-          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-          { text: 'some software', alignment: 'center' },
-          { text: 'Jon Postel and Suzanne Sluizer, USA', alignment: 'left' }
+          { text: 'E-mail', isHeader: true },
+          { text: 'some software' },
+          { text: '', iconStatus: 'success', icon: 'check' },
+          { text: 'some software' },
+          { text: 'Jon Postel and Suzanne Sluizer, USA' }
         ]
       },
       {
         cells: [
-          { text: 'WhatsApp', alignment: 'left', isHeader: true },
-          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-          { text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-          { text: 'Meta Platforms Inc., USA', alignment: 'left' }
+          { text: 'WhatsApp', isHeader: true },
+          { text: '', iconStatus: 'error', icon: 'cross' },
+          { text: '', iconStatus: 'error', icon: 'cross' },
+          { text: '', iconStatus: 'success', icon: 'check' },
+          { text: 'Meta Platforms Inc., USA' }
         ]
       },
       {
         cells: [
-          { text: 'Messages\n(RCS protocol)', alignment: 'left', isHeader: true },
-          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-          { text: 'mobile operators', alignment: 'center' },
-          { text: 'in development', alignment: 'center' },
-          { text: 'Google LLC, USA / GSM Association, UK', alignment: 'left' }
+          { text: 'Messages\n(RCS protocol)', isHeader: true },
+          { text: '', iconStatus: 'error', icon: 'cross' },
+          { text: 'mobile operators' },
+          { text: 'in development' },
+          { text: 'Google LLC, USA / GSM Association, UK' }
         ]
       },
       {
         cells: [
-          { text: 'WeChat', alignment: 'left', isHeader: true },
-          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-          { text: 'Tencent Holdings Ltd., China', alignment: 'left' }
+          { text: 'WeChat', isHeader: true },
+          { text: '', iconStatus: 'error', icon: 'cross' },
+          { text: '', iconStatus: 'error', icon: 'cross' },
+          { text: '', iconStatus: 'error', icon: 'cross' },
+          { text: 'Tencent Holdings Ltd., China' }
         ]
       },
       {
         cells: [
-          { text: 'Facebook Messenger', alignment: 'left', isHeader: true },
-          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-          { text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-          { text: 'Meta Platforms Inc., USA', alignment: 'left' }
+          { text: 'Facebook Messenger', isHeader: true },
+          { text: '', iconStatus: 'error', icon: 'cross' },
+          { text: '', iconStatus: 'error', icon: 'cross' },
+          { text: '', iconStatus: 'error', icon: 'cross' },
+          { text: 'Meta Platforms Inc., USA' }
         ]
       }
     ],
-    buttonLabel = 'See all comparsions',
+    buttonLabel = m['comparisonTable.button']({}),
     buttonLink = '/comparisons'
   }: Props = $props();
 </script>
 
-<div class="app-features-comparison-table flex flex-col items-center justify-center">
+<div class="app-features-comparison-table mb-20 flex flex-col items-center justify-center md:mb-10 lg:mb-15">
   <div class="theme-container relative">
-    <div class="px-10 px-25 py-21">
-      <div class="mb-8 text-center">
-        <h2 class="theme-text-h2">
-          <span class="theme-title-underline">Comparison<br /></span>{title}
+    <div class="px-4 pb-8 md:px-10 md:px-25 md:pb-21">
+      <div class="mb-5 text-center">
+        <h2 class="theme-text-h2 text-center">
+          <span class="theme-title-underline">{m['comparisonTable.title']({})}</span><br />{m[
+            'comparisonTable.subtitle'
+          ]({})}
         </h2>
       </div>
 
-      <div class="table-container-wrapper relative rounded-2xl bg-white">
+      <div class="table-container-wrapper relative">
         <Table
           {buttonLabel}
           {buttonLink}
-          customShadow={rows.length > 5 ? 'multi-side' : 'standard'}
           formatHeaders={true}
           formatNewlines={true}
           {headers}
           overlayType="white"
           {rows}
           showOverlay={rows.length > 5}
+          class="max-h-[538px]"
         />
       </div>
     </div>
@@ -120,15 +122,4 @@
 </div>
 
 <style>
-  .svg-bg :global(svg) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-  }
-
-  .table-container-wrapper {
-    @apply flex flex-col;
-  }
 </style>

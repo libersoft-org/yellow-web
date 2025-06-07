@@ -18,6 +18,14 @@ export default defineConfig({
       outdir: './src/lib/paraglide'
     })
   ],
+  preview: {
+    host: true,
+    port: 4173,
+    allowedHosts: ['*']
+  },
+  server: {
+    host: '0.0.0.0' // enable local network access
+  },
   test: {
     workspace: [
       {

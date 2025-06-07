@@ -4,26 +4,37 @@
   interface Props {
     class?: string;
     children?: any;
-    defaultActive?: string | null;
+    defaultActive?: string[] | string | null;
   }
 
   let { class: className = '', children, defaultActive = null }: Props = $props();
 
-  let activeId = $state<string | null>(defaultActive);
+  // Convert defaultActive to array if it's a string
+  let activeIds = $state<string[]>(
+    defaultActive ? (Array.isArray(defaultActive) ? defaultActive : [defaultActive]) : []
+  );
 
   const store = {
     toggle(id: string) {
-      activeId = activeId === id ? null : id;
+      if (activeIds.includes(id)) {
+        activeIds = activeIds.filter((activeId) => activeId !== id);
+      } else {
+        activeIds = [...activeIds, id];
+      }
     },
 
-    get activeId() {
-      return activeId;
+    isActive(id: string) {
+      return activeIds.includes(id);
     }
   };
 
   setContext('accordion-store', store);
 </script>
 
-<div class={`mx-auto max-w-[1000px] ${className}`}>
+<div
+  class={`mx-auto 
+  max-w-[1000px] 
+  ${className}`}
+>
   {@render children?.()}
 </div>

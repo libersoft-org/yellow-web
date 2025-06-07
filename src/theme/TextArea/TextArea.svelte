@@ -4,21 +4,37 @@
   interface Props extends HTMLTextareaAttributes {
     label?: string;
     error?: string;
+    id?: string;
   }
 
-  let { label, error, placeholder, rows = 4, value = $bindable(''), ...restProps }: Props = $props();
+  let {
+    label,
+    error,
+    placeholder,
+    rows = 4,
+    id = `textarea-${Math.random().toString(36).substring(2, 9)}`,
+    value = $bindable(''),
+    ...restProps
+  }: Props = $props();
 </script>
 
 <div class="mb-4">
   {#if label}
-    <label class="text-themeGray-800 mb-1.5 block text-sm font-medium">{label}</label>
+    <label
+      for={id}
+      class="text-themeGray-800 mb-2 block
+      text-xl font-medium"
+    >
+      {label}
+    </label>
   {/if}
   <textarea
+    {id}
     {...restProps}
     class={[
-      'w-full rounded-lg border bg-white px-4 py-3',
-      error ? 'border-red-500' : 'border-themeGray-300',
-      'focus:ring-themeYellow-600 focus:border-transparent focus:ring-2 focus:outline-none',
+      'w-full rounded-lg border-0 border-none bg-white px-4 py-3 drop-shadow-md',
+      error ? 'border border-red-500' : '',
+      'focus:border-0 focus:ring-0 focus:outline-none',
       restProps.class
     ]}
     {placeholder}
@@ -26,6 +42,8 @@
     {value}
   ></textarea>
   {#if error}
-    <p class="mt-1 text-sm text-red-500">{error}</p>
+    <p class="mt-1 text-sm text-red-500">
+      {error}
+    </p>
   {/if}
 </div>

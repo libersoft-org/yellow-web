@@ -3,6 +3,7 @@
   import LanguageSwitcher from '@/components/Header/LanguageSwitcher.svelte';
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
+  import Icon from '@/theme/Icon/Icon.svelte';
 
   interface Props {
     zIndex?: number;
@@ -23,18 +24,18 @@
       href: '/',
       hasChildren: true,
       subItems: [
-        { label: 'Our Company', href: '/about/company' },
-        { label: 'Our Team', href: '/about/team' },
-        { label: 'Our Mission', href: '/about/mission' },
-        { label: 'Our History', href: '/about/history' }
+        { label: 'Our Company', href: '#' },
+        { label: 'Our Team', href: '#' },
+        { label: 'Our Mission', href: '#' },
+        { label: 'Our History', href: '#' }
       ]
     },
-    { label: 'Download', href: '/' },
-    { label: 'Comparsion', href: '/' },
-    { label: 'Documentation', href: '/' },
-    { label: 'FAQ', href: '/' },
-    { label: 'Contact', href: '/' },
-    { label: 'Create free account', href: '/', highlighted: true }
+    { label: 'Download', href: '#' },
+    { label: 'Comparsion', href: '#' },
+    { label: 'Documentation', href: '#' },
+    { label: 'FAQ', href: '#' },
+    { label: 'Contact', href: '#' },
+    { label: 'Create free account', href: '#', highlighted: true }
   ];
 
   function toggleMobileMenu(e: MouseEvent) {
@@ -110,14 +111,14 @@
   <nav
     bind:this={navRef}
     id="mobile-menu"
-    class="bg-themeGray-800 fixed top-14 z-50 h-full w-[304px] transition-all duration-450 ease-in-out lg:static lg:h-auto lg:w-auto lg:bg-transparent"
+    class="bg-themeGray-800 fixed top-13.5 z-50 h-full w-[304px] transition-all duration-450 ease-in-out lg:static lg:h-auto lg:w-auto lg:bg-transparent"
     class:left-0={isMobileMenuOpen}
     class:left-[-100%]={!isMobileMenuOpen}
     class:lg:left-auto={true}
     aria-hidden={!isMobileMenuOpen}
   >
     <div class="flex h-full p-0 lg:items-center lg:pl-12">
-      <ul class="flex w-full flex-col lg:flex-row lg:gap-4">
+      <ul class="flex w-full flex-col lg:flex-row lg:gap-2">
         {#each navItems as item}
           {#if item.hasChildren}
             <HeaderItem label={item.label} href={item.href} subItems={item.subItems} />
@@ -131,8 +132,11 @@
 
   <!-- Mobile menu overlay - no click handler, handled by document click listener -->
   {#if isMobileMenuOpen || languageModalOpen}
-    <div
-      class="overlay fixed inset-0 top-14 z-40 bg-black opacity-30 transition-opacity duration-300 lg:hidden"
+    <button
+      type="button"
+      tabindex="0"
+      aria-label="Close menu"
+      class="overlay fixed inset-0 top-13.5 z-40 border-0 bg-black opacity-30 transition-opacity duration-300 lg:hidden"
       onclick={(e) => {
         // Close appropriate menus
         if (languageModalOpen) {
@@ -142,7 +146,17 @@
           closeMobileMenu();
         }
       }}
-    ></div>
+      onkeydown={(e) => {
+        if (e.key === 'Enter' || e.key === 'Escape') {
+          if (languageModalOpen) {
+            languageModalOpen = false;
+          }
+          if (isMobileMenuOpen) {
+            closeMobileMenu();
+          }
+        }
+      }}
+    ></button>
   {/if}
 {/snippet}
 
@@ -152,16 +166,17 @@
 >
   <!-- Header Top Row -->
   <div class="flex h-full justify-between">
-    <div
+    <a
+      href="/"
       class="header__logo theme-gradient-yellow w-full max-w-[179px] bg-gradient-to-t px-4 py-2 lg:max-w-[326px] lg:rounded-bl-2xl lg:px-8 lg:py-4"
     >
       <img alt="Yellow Logo" height="58" src="/assets/images/yellow-logo.svg" width="208" />
-    </div>
+    </a>
 
     {@render navigationMenu()}
 
     <div class="flex items-center pr-6 lg:pr-12">
-      <LanguageSwitcher on:openModal={(e) => (languageModalOpen = e.detail)} />
+      <LanguageSwitcher openModal={(value: boolean) => (languageModalOpen = value)} />
 
       <!-- Mobile Menu Toggle Button - Only visible below lg screens -->
       <button
@@ -172,27 +187,25 @@
         class="bg-themeGray-800 mobile-menu-toggle ml-4 rounded-md p-2 drop-shadow-md lg:hidden"
         onclick={toggleMobileMenu}
       >
-        {#if isMobileMenuOpen}
-          <!-- X icon when menu is open -->
-          <svg class="h-6 w-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        {:else}
-          <!-- Hamburger icon when menu is closed -->
-          <svg class="h-6 w-6" fill="none" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        {/if}
+        <div class="relative h-6 w-6">
+          {#if isMobileMenuOpen}
+            <!-- X icon when menu is open -->
+            <Icon name="cross" size="xl" class="text-white" />
+          {:else}
+            <!-- Hamburger icon when menu is closed -->
+            <Icon name="hamburger" size="xl" class="text-white" />
+          {/if}
+        </div>
       </button>
     </div>
   </div>
 </div>
 
 <style>
-  /*.header__logo {
-			clip-path: ellipse(275px 195px at 5% 5%);
-			width: 326px;
-		}*/
+  .header__logo {
+    clip-path: ellipse(275px 195px at 5% 5%);
+    width: 326px;
+  }
 
   /* Overlay behavior with language panel open */
   :global(body.language-panel-open) .overlay {

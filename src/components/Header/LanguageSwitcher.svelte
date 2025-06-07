@@ -1,37 +1,39 @@
 <script lang="ts">
-  import { createEventDispatcher, onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import { browser } from '$app/environment';
   import { createDropdownHandlers } from '@/utils/dropdown';
   import SelectBox from '@/theme/SelectBox/SelectBox.svelte';
-  import Button from '@/theme/Button/Button.svelte';
   import Icon from '@/theme/Icon/Icon.svelte';
   import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
   import { m } from '@paraglide/messages';
   import { getLocale, setLocale } from '@paraglide/runtime';
 
-  interface Props {}
-
-  let {}: Props = $props();
-
-  // Create event dispatcher to notify parent component
-  const dispatch = createEventDispatcher<{
-    openModal: boolean;
-  }>();
+  // Define the props
+  let { openModal } = $props();
 
   let currentLanguage = $state(getLocale());
   let isOpen = $state(false);
   let isMobileMenuOpen = $state(false);
   let isMobile = $state(false);
-  let languageSwitcherRef: HTMLDivElement;
-  let buttonRef: HTMLElement;
-  let languagePanelRef: HTMLDivElement;
+  let languageSwitcherRef = $state<HTMLDivElement | null>(null);
+  let buttonRef = $state<HTMLElement | null>(null);
 
   // Initialize dropdown handlers reference - we'll set this up after DOM elements are available
   let handlers: ReturnType<typeof createDropdownHandlers>;
-  let toggleDropdown: (e: MouseEvent) => void;
-  let closeDropdown: () => void;
-  let onEnter: () => void;
-  let onLeave: (e: PointerEvent) => void;
+
+  // Create a reactive state to safely store the handler functions
+  const dropdownHandlers = $state({
+    toggleDropdown: (e: MouseEvent) => {},
+    closeDropdown: () => {},
+    onEnter: () => {},
+    onLeave: (e: PointerEvent) => {}
+  });
+
+  // Create direct references for easy access in the template
+  const toggleDropdown = (e: MouseEvent) => dropdownHandlers.toggleDropdown(e);
+  const closeDropdown = () => dropdownHandlers.closeDropdown();
+  const onEnter = () => dropdownHandlers.onEnter();
+  const onLeave = (e: PointerEvent) => dropdownHandlers.onLeave(e);
 
   const languages = [
     { code: 'en', name: 'English' },
@@ -48,8 +50,6 @@
     }));
   };
 
-  let selectOptions = $state(getSelectOptions());
-
   // Check if mobile view on mount and on resize
   const checkMobile = () => {
     // Use viewport width for more reliable measurement
@@ -61,15 +61,17 @@
     closeDropdown();
   }
 
+  // Update locale when language changes
   $effect(() => {
-    // update paraglide runtime locale (will cause browser refresh)
     setLocale(currentLanguage);
   });
 
   // Handle overflow and dispatch events when mobile menu state changes
   const handleMobileMenuToggle = (isOpen: boolean) => {
-    // Notify parent component to show/hide overlay
-    dispatch('openModal', isOpen);
+    // Call the callback prop if provided
+    if (openModal) {
+      openModal(isOpen);
+    }
 
     // Prevent scrolling when mobile menu is open
     if (browser) {
@@ -89,9 +91,7 @@
     handleMobileMenuToggle(false);
   }
 
-  const currentLanguageData = $derived(languages.find((lang) => lang.code === currentLanguage) || languages[0]);
-
-  // Initialize handlers once we have DOM reference
+  // Initialize handlers when DOM elements are available
   $effect(() => {
     if (!languageSwitcherRef) return;
 
@@ -117,8 +117,11 @@
       }
     });
 
-    // Make direct references for template usage
-    ({ toggleDropdown, closeDropdown, onEnter, onLeave } = handlers);
+    // Assign handlers to our reactive state object instead of directly to constants
+    dropdownHandlers.toggleDropdown = handlers.toggleDropdown;
+    dropdownHandlers.closeDropdown = handlers.closeDropdown;
+    dropdownHandlers.onEnter = handlers.onEnter;
+    dropdownHandlers.onLeave = handlers.onLeave;
   });
 
   // Handle initial check and resize events
@@ -170,7 +173,6 @@
 
 <!-- Mobile Language Switcher Panel -->
 <div
-  bind:this={languagePanelRef}
   class="bg-themeYellow-600 language-panel fixed right-0 left-0 z-50 rounded-t-2xl p-5"
   style="bottom: {isMobileMenuOpen ? '0' : '-100%'}"
 >
@@ -190,9 +192,9 @@
       <!-- Use the imported SelectBox component -->
       <SelectBox
         bind:value={currentLanguage}
-        class="rounded-xl bg-white shadow-md"
+        class="relative rounded-xl bg-white shadow-md"
         label="Select Language"
-        options={selectOptions}
+        options={getSelectOptions()}
       />
     </div>
   </div>
@@ -206,5 +208,10 @@
   .language-panel {
     transition: bottom 0.3s ease-in-out;
     pointer-events: auto !important; /* Ensure panel can receive clicks */
+  }
+
+  /* Ensure SelectBox content appears above all other elements on mobile */
+  :global([data-bits-floating-content-wrapper]) {
+    z-index: 101 !important;
   }
 </style>
