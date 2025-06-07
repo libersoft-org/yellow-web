@@ -54,14 +54,14 @@
       { icon: 'open-source', href: 'https://linkedin.com/company/yellow', label: m['footer.social.linkedin']({}) }
     ],
     mainLinks = [
-      { label: m['footer.links.about']({}), href: '/about' },
-      { label: m['footer.links.features']({}), href: '/features' },
-      { label: m['footer.links.download']({}), href: '/download' },
-      { label: m['footer.links.comparison']({}), href: '/comparsion' },
-      { label: m['footer.links.documentation']({}), href: '/documentation' },
-      { label: m['footer.links.faq']({}), href: '/faq' },
-      { label: m['footer.links.contact']({}), href: '/contact' },
-      { label: m['footer.links.signup']({}), href: '/signup' }
+      { label: m['footer.links.about']({}), href: '#' },
+      { label: m['footer.links.features']({}), href: '#' },
+      { label: m['footer.links.download']({}), href: '#' },
+      { label: m['footer.links.comparison']({}), href: '#' },
+      { label: m['footer.links.documentation']({}), href: '#' },
+      { label: m['footer.links.faq']({}), href: '#' },
+      { label: m['footer.links.contact']({}), href: '#' },
+      { label: m['footer.links.signup']({}), href: '#' }
     ],
     copyright = m['footer.copyright']({ year: currentYear })
   }: Props = $props();
@@ -118,20 +118,20 @@
         href={social.href}
         label={social.label}
         icon={social.icon}
-        iconWrapperClass="flex items-center justify-center 
-          rounded-full 
-          p-2 
-          h-9 w-9 
-          border-1 border-themeYellow-300 
+        iconWrapperClass="flex items-center justify-center
+          rounded-full
+          p-2
+          h-9 w-9
+          border-1 border-themeYellow-300
           text-themeYellow-600"
         textClass="text-themeGray-200 group-hover:text-white"
         target="_blank"
         rel="noopener noreferrer"
-        class="md:text-md text-themeYellow-600 
-          lg:border-themeGray-600 
-          flex 
+        class="md:text-md text-themeYellow-600
+          lg:border-themeGray-600
+          flex
           w-full items-center gap-3
-          px-0 pb-3 text-xs  
+          px-0 pb-3 text-xs
           md:w-[33.33%]
           md:pr-4 md:pb-0 lg:w-1/5 lg:justify-center lg:px-4 lg:pb-3
           {i === 0 ? 'lg:border-l-0' : 'lg:border-l'}"
@@ -161,7 +161,7 @@
             iconSize="sm"
             iconWrapperClass="text-themeYellow-600"
             textClass="text-themeGray-200 hover:text-white"
-            class="md:text-md text-themeYellow-600 
+            class="md:text-md text-themeYellow-600
               text-xs"
           />
         </li>

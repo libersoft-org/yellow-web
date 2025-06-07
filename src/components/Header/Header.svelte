@@ -24,18 +24,18 @@
       href: '/',
       hasChildren: true,
       subItems: [
-        { label: 'Our Company', href: '/about/company' },
-        { label: 'Our Team', href: '/about/team' },
-        { label: 'Our Mission', href: '/about/mission' },
-        { label: 'Our History', href: '/about/history' }
+        { label: 'Our Company', href: '#' },
+        { label: 'Our Team', href: '#' },
+        { label: 'Our Mission', href: '#' },
+        { label: 'Our History', href: '#' }
       ]
     },
-    { label: 'Download', href: '/' },
-    { label: 'Comparsion', href: '/' },
-    { label: 'Documentation', href: '/documentation' },
-    { label: 'FAQ', href: '/faq' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'Create free account', href: '/', highlighted: true }
+    { label: 'Download', href: '#' },
+    { label: 'Comparsion', href: '#' },
+    { label: 'Documentation', href: '#' },
+    { label: 'FAQ', href: '#' },
+    { label: 'Contact', href: '#' },
+    { label: 'Create free account', href: '#', highlighted: true }
   ];
 
   function toggleMobileMenu(e: MouseEvent) {
