@@ -4,6 +4,7 @@
   import { browser } from '$app/environment';
   import { onMount } from 'svelte';
   import Icon from '@/theme/Icon/Icon.svelte';
+  import { Routes } from '@/utils/routes';
 
   interface Props {
     zIndex?: number;
@@ -17,11 +18,11 @@
   let menuToggleRef: HTMLElement;
   let outsideClickHandler: ((e: MouseEvent) => void) | null = null;
 
-  // Navigation items array
+  // Navigation items array using Routes factory functions
   const navItems = [
     {
       label: 'About',
-      href: '/',
+      href: Routes.home(),
       hasChildren: true,
       subItems: [
         { label: 'Our Company', href: '/about/company' },
@@ -30,12 +31,12 @@
         { label: 'Our History', href: '/about/history' }
       ]
     },
-    { label: 'Download', href: '/' },
-    { label: 'Comparsion', href: '/' },
-    { label: 'Documentation', href: '/documentation' },
-    { label: 'FAQ', href: '/faq' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'Create free account', href: '/', highlighted: true }
+    { label: 'Download', href: Routes.home() },
+    { label: 'Comparison', href: Routes.home() },
+    { label: 'Documentation', href: Routes.documentation() },
+    { label: 'FAQ', href: Routes.faq() },
+    { label: 'Contact', href: Routes.contact() },
+    { label: 'Create free account', href: Routes.home(), highlighted: true }
   ];
 
   function toggleMobileMenu(e: MouseEvent) {
