@@ -1,5 +1,5 @@
 <script>
-  // Documentation route layout
+	// Documentation route layout
 </script>
 
 <slot />

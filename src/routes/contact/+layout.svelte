@@ -1,5 +1,5 @@
 <script>
-  // Contact route layout
+	// Contact route layout
 </script>
 
 <slot />

@@ -55,7 +55,7 @@
     "mdsvex": "^0.12.3",
     "playwright": "^1.52.0",
     "prettier": "^3.4.2",
-    "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-svelte": "^3.4.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "storybook": "^8.6.12",
     "svelte": "^5.0.0",
