@@ -1,32 +1,28 @@
+.vscode/
+*.crt
+*.key
 test-results
 node_modules
-
-# Output
+.secret_git
 .output
+.idea
 .vercel
 .netlify
 .wrangler
-/.svelte-kit
+.svelte-kit/
 /build
-
-# OS
 .DS_Store
 Thumbs.db
-
-# Env
 .env
 .env.*
 !.env.example
 !.env.test
-
-# Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-# Paraglide
 src/lib/paraglide
-
 *storybook.log
-
-# Custom
 .local/*
+bun.lock
+bun.lockb
+bun.lockb.txt
+package-lock.json
