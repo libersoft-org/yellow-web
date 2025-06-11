@@ -19,10 +19,11 @@
 			<span class="theme-title-underline">{m['hero.app_name']()}</span>
 		</h1>
 		<div class="theme-text-body1 text-themeGray-400 mb-4.5 text-center md:mb-10 lg:mb-13">
+			{m['hero.motto']()}<br />
 			{description}
 		</div>
 		<div class="flex flex-col md:flex-row">
-			<Button iconSize="xl" icon="download" label={m['hero.download_button']()} theme="secondary" class="mr-5 mb-5 w-full md:mb-0 md:w-auto" />
+			<Button iconSize="xl" icon="download" label={m['hero.download_button']() + ' ' + m['hero.app_name']()} theme="secondary" class="mr-5 mb-5 w-full md:mb-0 md:w-auto" />
 			<Button iconSize="xl" icon="account" label={m['hero.create_account_button']()} theme="primary" class="w-full md:w-auto" />
 		</div>
 	</div>
