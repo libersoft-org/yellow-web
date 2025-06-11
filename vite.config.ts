@@ -3,6 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { svelteTesting } from '@testing-library/svelte/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import fs from 'fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { storybookTest } from '@storybook/experimental-addon-test/vitest-plugin';
@@ -20,11 +21,24 @@ export default defineConfig({
 	],
 	preview: {
 		host: true,
-		port: 9000,
+		port: 4173,
 		allowedHosts: ['*'],
 	},
 	server: {
-		host: '0.0.0.0', // enable local network access
+		https: fs.existsSync(path.resolve(__dirname, 'server.key'))
+			? {
+					key: fs.readFileSync(path.resolve(__dirname, 'server.key')),
+					cert: fs.readFileSync(path.resolve(__dirname, 'server.crt')),
+				}
+			: fs.existsSync(path.resolve(__dirname, 'certs/server.key'))
+				? {
+						key: fs.readFileSync(path.resolve(__dirname, 'certs/server.key')),
+						cert: fs.readFileSync(path.resolve(__dirname, 'certs/server.crt')),
+					}
+				: undefined,
+		allowedHosts: true,
+		host: true,
+		port: 9000,
 	},
 	test: {
 		workspace: [

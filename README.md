@@ -22,7 +22,7 @@ Clone the repository and install dependencies:
 
 ```sh
 git clone https://github.com/libersoft-org/yellow-web
-cd yellow-web-2.0
+cd yellow-web
 bun i
 ```
 
