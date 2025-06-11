@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Table from '@/theme/Table/Table.svelte';
-	import svgBackground from './bg.svg?raw';
-	import Icon from '@/theme/Icon/Icon.svelte';
-	import { m } from '@paraglide/messages';
 	import { Routes } from '@/utils/routes';
+	import { m } from '@paraglide/messages';
+	import svgBackground from './bg.svg?raw';
+	import Table from '@/theme/Table/Table.svelte';
+	import Icon from '@/theme/Icon/Icon.svelte';
 
 	interface Cell {
 		text: string;
@@ -81,12 +81,12 @@
 			},
 		],
 		imagePath = 'assets/images/fluid.png',
-		buttonLabel = m['featuresTable.button']({}),
+		buttonLabel = m['featuresTable.button'](),
 		buttonLink = Routes.features(),
 		legendItems = [
-			{ icon: 'cross', text: m['featuresTable.status1']({}), colorClass: 'text-red-400' },
-			{ icon: 'check', text: m['featuresTable.status2']({}), colorClass: 'text-green-500' },
-			{ icon: 'check', text: m['featuresTable.status3']({}), colorClass: 'text-yellow-500' },
+			{ icon: 'cross', text: m['featuresTable.status1'](), colorClass: 'text-red-400' },
+			{ icon: 'check', text: m['featuresTable.status2'](), colorClass: 'text-green-500' },
+			{ icon: 'check', text: m['featuresTable.status3'](), colorClass: 'text-yellow-500' },
 		],
 	}: Props = $props();
 
