@@ -2,6 +2,7 @@
 	import Icon, { type IconSizeMapType } from '@/theme/Icon/Icon.svelte';
 	import Link from '@/theme/Link/Link.svelte';
 	import { m } from '@paraglide/messages';
+	import { Routes } from '@/utils/routes';
 
 	type PositionType = 'static' | 'sticky' | 'fixed';
 
@@ -54,14 +55,14 @@
 			{ icon: 'open-source', href: 'https://linkedin.com/company/yellow', label: m['footer.social.linkedin']({}) },
 		],
 		mainLinks = [
-			{ label: m['footer.links.about']({}), href: '#' },
-			{ label: m['footer.links.features']({}), href: '#' },
-			{ label: m['footer.links.download']({}), href: '#' },
-			{ label: m['footer.links.comparison']({}), href: '#' },
-			{ label: m['footer.links.documentation']({}), href: '#' },
-			{ label: m['footer.links.faq']({}), href: '#' },
-			{ label: m['footer.links.contact']({}), href: '#' },
-			{ label: m['footer.links.signup']({}), href: '#' },
+			{ label: m['footer.links.about']({}), href: Routes.home() },
+			{ label: m['footer.links.features']({}), href: Routes.home() },
+			{ label: m['footer.links.download']({}), href: Routes.home() },
+			{ label: m['footer.links.comparison']({}), href: Routes.home() },
+			{ label: m['footer.links.documentation']({}), href: Routes.documentation() },
+			{ label: m['footer.links.faq']({}), href: Routes.faq() },
+			{ label: m['footer.links.contact']({}), href: Routes.contact() },
+			{ label: m['footer.links.signup']({}), href: Routes.home() },
 		],
 		copyright = m['footer.copyright']({ year: currentYear }),
 	}: Props = $props();
