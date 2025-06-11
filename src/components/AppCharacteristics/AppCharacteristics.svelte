@@ -55,7 +55,6 @@
 			{m['app_characteristics.title_part1']()}
 			<span class="theme-title-underline"> {m['app_characteristics.title_part2']()}</span>
 		</h2>
-		<div class="text-themeGray-400 text-xl">{m['app_characteristics.subtitle']()}</div>
 	</div>
 	<div class="theme-container relative flex flex-col items-center">
 		<div class="grid w-full grid-cols-1 gap-3.5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">

@@ -57,26 +57,25 @@
 	"app_characteristics": {
 		"title_part1": "Key",
 		"title_part2": "characteristics",
-		"subtitle": "Cutting edge technology!",
 		"box1": {
 			"title": "Distributed and decentralized network",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm."
+			"description": "Platform offers innovative network protocols AMTP and DMTP.<br /><br />AMTP (Advanced Mail Transfer Protocol) - A next-generation, partially censorship-resistant protocol where data is stored on distributed servers and synchronized with end-user devices.<br /><br />DMTP (Decentralized Mail Transfer Protocol) - An upcoming fully censorship-resistant protocol, eliminating central servers entirely and relying on decentralized storage."
 		},
 		"box2": {
 			"title": "Privacy and security",
-			"description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi."
+			"description": "Protect your privacy and communicate safely! The platform emphasizes a high level of security, primarily through encrypted data transfer, end-to-end encryption and content digital signing, as well as providing simple and secure transfer of user's private keys across devices."
 		},
 		"box3": {
 			"title": "Open source",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm."
+			"description": "The client and server applications, as well as the entire set of modules, are released as open source. This ensures transparency and credibility of our project. Developers worldwide can create or integrate new modules, ensuring that the platform continually evolves."
 		},
 		"box4": {
 			"title": "Modularity",
-			"description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi."
+			"description": "Whether you want to use the platform just for messaging or a full suite of social and e-commerce tools, the platform's modular design puts you in charge of your user experience. Choose just the features you really use."
 		},
 		"box5": {
 			"title": "Smart home <br> integration",
-			"description": "Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong> semper dalarect lacus vel facilisis volutpat est velitcm."
+			"description": "Seamlessly connect your IoT devices to Yellow, creating a secure and convenient way to manage your smart home within the same trusted environment."
 		},
 		"box6": {
 			"title": "Take your experience to the next level",

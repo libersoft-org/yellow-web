@@ -57,26 +57,25 @@
 	"app_characteristics": {
 		"title_part1": "Klíčové",
 		"title_part2": "charakteristiky",
-		"subtitle": "Špičková technologie!",
 		"box1": {
 			"title": "Distribuovaná a decentralizovaná síť",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm."
+			"description": "Platforma nabízí inovativní síťové protokoly AMTP a DMTP.<br /><br />AMTP (Advanced Mail Transfer Protocol) - protokol nové generace, který je částečně odolný proti cenzuře a jehož data jsou uložena na distribuovaných serverech a synchronizována se zařízeními koncových uživatelů.<br /><br />DMTP (Decentralized Mail Transfer Protocol) - připravovaný protokol plně odolný vůči cenzuře, který zcela eliminuje centrální servery a spoléhá na decentralizované ukládání dat."
 		},
 		"box2": {
 			"title": "Soukromí a bezpečnost",
-			"description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi."
+			"description": "Chraňte své soukromí a komunikujte bezpečně! Platforma klade důraz na vysokou úroveň zabezpečení, především prostřednictvím šifrovaného přenosu dat, koncového šifrování a digitálního podepisování obsahu, a také poskytuje jednoduchý a bezpečný přenos soukromých klíčů uživatele mezi zařízeními."
 		},
 		"box3": {
-			"title": "Open source",
-			"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit semper dalarect lacus vel facilisis volutpat est velitcm."
+			"title": "Otevřený zdrojový kód",
+			"description": "Klientská a serverová aplikace, stejně jako celá sada modulů, jsou zveřejněny s otevřeným zdrojovým kódem. To zajišťuje transparentnost a důvěryhodnost našeho projektu. Vývojáři z celého světa mohou vytvářet nebo integrovat nové moduly, což zajišťuje neustálý rozvoj platformy."
 		},
 		"box4": {
 			"title": "Modularita",
-			"description": "Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque volutpat sapien vitae sodales eleifend. Pellentesque habitant morbi."
+			"description": "Ať už chcete platformu používat pouze pro zasílání zpráv nebo využívat kompletní sadu služeb sociálních médií, e-commerce nebo obchodních nástrojů, modulární design platformy vám dává možnost rozhodovat o vašem uživatelském prostředí. Vyberte si jen ty funkce, které skutečně používáte."
 		},
 		"box5": {
 			"title": "Integrace <br> chytré domácnosti",
-			"description": "Lorem ipsum dolor sit amet, consectetur <strong>adipiscing elit</strong> semper dalarect lacus vel facilisis volutpat est velitcm."
+			"description": "Jednoduše propojte svá IoT zařízení s aplikací Yellow a vytvořte bezpečný a pohodlný způsob správy vaší chytré domácnosti v rámci vašeho důvěryhodného prostředí."
 		},
 		"box6": {
 			"title": "Posuňte svůj zážitek na další úroveň",
