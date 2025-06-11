@@ -24,7 +24,16 @@
 			{description}
 		</div>
 		<div class="flex flex-col md:flex-row">
-			<Button iconSize="xl" icon="download" label={m['hero.download_button']() + ' ' + m['hero.app_name']()} theme="secondary" class="mr-5 mb-5 w-full md:mb-0 md:w-auto" />
+			<Button
+				iconSize="xl"
+				icon="download"
+				label={m['hero.download_button']() + ' ' + m['hero.app_name']()}
+				theme="secondary"
+				class="mr-5 mb-5 w-full md:mb-0 md:w-auto"
+				onclick={() => {
+					window.alert();
+				}}
+			/>
 			<Button iconSize="xl" icon="account" label={m['hero.create_account_button']()} theme="primary" class="w-full md:w-auto" />
 		</div>
 	</div>
