@@ -6,7 +6,7 @@
 	import AppCharacteristics from '@/components/AppCharacteristics/AppCharacteristics.svelte';
 	import AppFeaturesTable from '@/components/AppFeaturesTable/AppFeaturesTable.svelte';
 	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
-	import TextImageHighlighted from '@/components/TextImageHighlighted/TextImageHighlighted.svelte';
+	//import TextImageHighlighted from '@/components/TextImageHighlighted/TextImageHighlighted.svelte';
 </script>
 
 <style>
