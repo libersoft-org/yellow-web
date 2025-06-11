@@ -1,10 +1,12 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { Routes } from '@/utils/routes';
+	import { browser } from '$app/environment';
+	import { m } from '@paraglide/messages';
 	import HeaderItem from '@/components/Header/HeaderItem.svelte';
 	import LanguageSwitcher from '@/components/Header/LanguageSwitcher.svelte';
-	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
-	import { Routes } from '@/utils/routes';
+
 	interface Props {
 		zIndex?: number;
 	}
@@ -17,20 +19,20 @@
 	// Navigation items array using Routes factory functions
 	const navItems = [
 		{
-			label: 'About',
+			label: m['footer.links.about'](),
 			href: Routes.home(),
 			hasChildren: true,
 			subItems: [
-				{ label: 'Home', href: Routes.home() },
-				{ label: 'Features', href: Routes.features() },
+				{ label: m['footer.links.about'](), href: Routes.home() },
+				{ label: m['footer.links.features'](), href: Routes.features() },
+				{ label: m['footer.links.comparison'](), href: Routes.comparison() },
 			],
 		},
-		{ label: 'Download', href: Routes.download() },
-		{ label: 'Comparison', href: Routes.comparison() },
-		{ label: 'Documentation', href: Routes.documentation() },
-		{ label: 'FAQ', href: Routes.faq() },
-		{ label: 'Contact', href: Routes.contact() },
-		{ label: 'Create free account', href: Routes.account(), highlighted: true },
+		{ label: m['footer.links.download'](), href: Routes.download() },
+		{ label: m['footer.links.documentation'](), href: Routes.documentation() },
+		{ label: m['footer.links.faq'](), href: Routes.faq() },
+		{ label: m['footer.links.contact'](), href: Routes.contact() },
+		{ label: m['footer.links.signup'](), href: Routes.account(), highlighted: true },
 	];
 
 	function toggleMobileMenu(e: MouseEvent) {
