@@ -21,23 +21,23 @@
 		"features": {
 			"messages": {
 				"title": "Zprávy",
-				"description": "Inovativní zprávy s neomezenými soubory, widgety, vícečástnými zprávami a dalšími funkcemi."
+				"description": "Vysoce inovativní zasílání rychlých zpráv zahrnuje jedinečné funkce, jako je zasílání souborů s neomezenou velikostí, widgety, vícedílné zprávy, více témat v rámci konverzace, šablony zpráv a mnoho dalšího."
 			},
 			"ecommerce": {
 				"title": "E-commerce",
-				"description": "Chytrá peněženka umožňuje platby, nákupy, dary, crowdfunding a další funkce."
+				"description": "Díky integraci kryptoměnové peněženky, která podporuje smart contracty, nabízí platforma pokročilé funkce e-commerce, které jsou s peněženkou propojeny. Patří mezi ně funkce jako: posílání plateb mezi uživateli, nákupy v e-shopech, na tržišti a ve virtuálním chatu, posílání darů na konkrétní účely, podpora crowdfundingových kampaní, prodej videoobsahu v rámci videokanálů, posílání plateb během živých přenosů, doplňování vlastního obsahu, nákup prémiových členství, platby ve hrách a mnoho dalšího."
 			},
 			"social": {
-				"title": "Sociální sítě",
-				"description": "Pokročilé sociální funkce: video kanály, fórum, novinky, příběhy, události a další."
+				"title": "Sociální média",
+				"description": "Platforma nabízí pokročilé funkce sociálních médií, jako jsou videokanály, fórum, newsfeed, příběhy, události, virtuální svět, mapy a další."
 			},
 			"business": {
 				"title": "Obchodní nástroje",
-				"description": "Kalendář a úkoly pomáhají firmám organizovat, sdílet a zvyšovat produktivitu."
+				"description": "Moduly, jako jsou Kalendář a Úkoly, poskytují podnikovým uživatelům snadný způsob, jak si organizovat, sdílet a zvýšit produktivitu v pracovním prostředí."
 			},
 			"entertainment": {
 				"title": "Zábava",
-				"description": "V neposlední řadě platforma nabízí i zábavné funkce jako seznamování a videohry."
+				"description": "V rámci platformy je možné se i bavit díky funkcím, jako je seznamka nebo video hry."
 			}
 		},
 		"mobile_image_alt": "Mobilní aplikace Yellow"

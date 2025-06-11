@@ -41,9 +41,9 @@
 						description: m['app_features.features.messages.description'](),
 					})}
 					{@render feature({
-						title: m['app_features.features.ecommerce.title'](),
-						icon: 'cart',
-						description: m['app_features.features.ecommerce.description'](),
+						title: m['app_features.features.business.title'](),
+						icon: 'calendar',
+						description: m['app_features.features.business.description'](),
 					})}
 				</div>
 				<div class="-order-1 flex flex-1 flex-col items-center gap-5 md:col-span-2 lg:order-none lg:max-w-[384px]">
@@ -52,16 +52,16 @@
 						<img alt={m['app_features.mobile_image_alt']()} class="lg:max-w-full" src="/assets/images/app-features-mobile.png" />
 					</div>
 					{@render feature({
-						title: m['app_features.features.social.title'](),
-						icon: 'phone',
-						description: m['app_features.features.social.description'](),
+						title: m['app_features.features.ecommerce.title'](),
+						icon: 'cart',
+						description: m['app_features.features.ecommerce.description'](),
 					})}
 				</div>
 				<div class="flex flex-1 flex-col gap-4 lg:max-w-[351px] lg:gap-6 lg:pt-19">
 					{@render feature({
-						title: m['app_features.features.business.title'](),
-						icon: 'calendar',
-						description: m['app_features.features.business.description'](),
+						title: m['app_features.features.social.title'](),
+						icon: 'phone',
+						description: m['app_features.features.social.description'](),
 					})}
 					{@render feature({
 						title: m['app_features.features.entertainment.title'](),
