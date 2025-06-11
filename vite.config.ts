@@ -20,7 +20,7 @@ export default defineConfig({
 	],
 	preview: {
 		host: true,
-		port: 8000,
+		port: 9000,
 		allowedHosts: ['*'],
 	},
 	server: {
