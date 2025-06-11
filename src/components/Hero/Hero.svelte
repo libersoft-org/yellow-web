@@ -3,6 +3,7 @@
 	import { m } from '@paraglide/messages';
 	import svgBackground from './bg.svg?raw';
 	import { Routes } from '@/utils/routes';
+	import { goto } from '$app/navigation';
 	interface Props {
 		imageSrc?: string;
 		backgroundImage?: string;
@@ -31,7 +32,7 @@
 				theme="secondary"
 				class="mr-5 mb-5 w-full md:mb-0 md:w-auto"
 				onclick={() => {
-					window.alert();
+					goto(Routes.download());
 				}}
 			/>
 			<Button iconSize="xl" icon="account" label={m['hero.create_account_button']()} theme="primary" class="w-full md:w-auto" />
