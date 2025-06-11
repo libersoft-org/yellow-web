@@ -38,42 +38,18 @@
 			{organizationId}
 		</div>
 		<h3 class="text-6xl font-medium">{contactTitle}</h3>
-		<a
-			href="mailto:{contactEmail}"
-			class="inline-flex items-center
-        gap-2
-        text-xl font-bold
-        underline hover:no-underline"
-		>
+		<a href="mailto:{contactEmail}" class="inline-flex items-center gap-2 text-xl font-bold underline hover:no-underline">
 			<span class="text-themeYellow-800">
 				<Icon name="envelope" size="5xl" />
 			</span>
-			<span
-				class="text-themeGray-800
-        inline-block
-        pt-1">{contactEmail}</span
-			>
+			<span class="text-themeGray-800 inline-block pt-1">{contactEmail}</span>
 		</a>
 	</div>
 {/snippet}
 {#snippet rightColumnSnippet()}
 	<div class="flex w-full flex-col gap-3 lg:flex-1">
 		{#each links as link}
-			<Link
-				href={link.href}
-				label={link.label}
-				icon={link.icon}
-				iconWrapperClass="flex items-center justify-center 
-          h-8.5 w-8.5 
-          mr-2
-          p-2 
-          rounded-full 
-          theme-gradient-yellow bg-gradient-to-bl
-          text-black"
-				class="text-md text-themeGray-400"
-				target="_blank"
-				rel="noopener noreferrer"
-			/>
+			<Link href={link.href} label={link.label} icon={link.icon} iconWrapperClass="flex items-center justify-center h-8.5 w-8.5 mr-2 p-2 rounded-full theme-gradient-yellow bg-gradient-to-bl text-black" class="text-md text-themeGray-400" target="_blank" rel="noopener noreferrer" />
 		{/each}
 	</div>
 {/snippet}

@@ -31,7 +31,7 @@
 	}
 	const currentYear = new Date().getFullYear();
 	let {
-		contactEmail = m['footer.contact.email'](),
+		contactEmail = 'info@libersoft.org',
 		socialLinks = [
 			{ icon: 'open-source', href: 'https://github.com/libersoft-org/yellow-documentation', label: m['footer.social.github']() },
 			{ icon: 'message', href: 'https://t.me/libersoft', label: m['footer.social.telegram_chat']() },
@@ -59,7 +59,6 @@
 {#snippet contactSection()}
 	<div class="footer-contact border-themeGray-600 mb-7.5 flex flex-col items-center justify-center border-b pb-7.5 font-bold text-white md:mb-10 md:border-0 md:pb-0">
 		<div class="flex flex-col flex-wrap items-center gap-2 md:flex-row md:gap-6.5">
-			<h2 class="theme-text-h2">{m['footer.contact.title']()}</h2>
 			<a href="mailto:{contactEmail}" class="flex inline-flex items-end gap-2 text-xl underline transition-colors duration-200 hover:no-underline">
 				<div class="text-themeYellow-600 mr-2">
 					<Icon name="envelope" size="3xl" mdSize="4xl" lgSize="5xl" />

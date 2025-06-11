@@ -163,10 +163,6 @@
 		"button": "Odeslat zprávu"
 	},
 	"footer": {
-		"contact": {
-			"title": "Kontaktujte nás",
-			"email": "info@libersoft.org"
-		},
 		"social": {
 			"github": "GitHub stránka",
 			"telegram_chat": "Telegram <br class=\"hidden md:block\"> chat skupina",

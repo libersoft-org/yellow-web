@@ -163,10 +163,6 @@
 		"button": "Send message"
 	},
 	"footer": {
-		"contact": {
-			"title": "Get in touch",
-			"email": "info@libersoft.org"
-		},
 		"social": {
 			"github": "GitHub Page",
 			"telegram_chat": "Telegram <br class=\"hidden md:block\"> Chat Group",
