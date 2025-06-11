@@ -2,7 +2,6 @@
 	import Table from '@/theme/Table/Table.svelte';
 	import { Routes } from '@/utils/routes';
 	import { m } from '@paraglide/messages';
-
 	interface Cell {
 		text: string;
 		isHeader?: boolean;
@@ -10,17 +9,14 @@
 		icon?: string;
 		iconStatus?: 'success' | 'error' | 'warning';
 	}
-
 	interface Row {
 		cells: Cell[];
 	}
-
 	interface LegendItem {
 		icon: string;
 		text: string;
 		colorClass: string;
 	}
-
 	interface Props {
 		title?: string;
 		subtitle?: string;
@@ -29,7 +25,6 @@
 		buttonLabel?: string;
 		buttonLink?: string;
 	}
-
 	let {
 		title = 'with other software',
 		headers = ['Software', 'Open source', 'Distributed/decentralized', 'End-to-end encryption', 'Developed by'],
@@ -54,7 +49,7 @@
 			},
 		],
 		buttonLabel = m['comparisonTable.button'](),
-		buttonLink = Routes.features(),
+		buttonLink = Routes.comparison(),
 	}: Props = $props();
 </script>
 
@@ -69,7 +64,6 @@
 					<span class="theme-title-underline">{m['comparisonTable.title']()}</span><br />{m['comparisonTable.subtitle']()}
 				</h2>
 			</div>
-
 			<div class="table-container-wrapper relative">
 				<Table {buttonLabel} {buttonLink} formatHeaders={true} formatNewlines={true} {headers} overlayType="white" {rows} showOverlay={rows.length > 5} class="max-h-[538px]" />
 			</div>

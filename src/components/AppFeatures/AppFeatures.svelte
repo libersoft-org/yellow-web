@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import Card from '@/theme/Card/Card.svelte';
-	import svgBackground from './bg.svg?raw';
-	import Button from '@/theme/Button/Button.svelte';
-	import { m } from '@paraglide/messages';
 	import { Routes } from '@/utils/routes';
+	import { m } from '@paraglide/messages';
+	import svgBackground from './bg.svg?raw';
+	import Card from '@/theme/Card/Card.svelte';
+	import Button from '@/theme/Button/Button.svelte';
 </script>
 
 <style>

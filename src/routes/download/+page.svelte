@@ -79,18 +79,20 @@
 <style>
 </style>
 
-<div>
-	<Header zIndex={100} />
-	<SimpleHero title={m['footer.links.download']()} backgroundImage="assets/images/hero-bg.png" />
-	<Table {rows} {headers} class="max-w-[700px]" />
-	<!--
- <div class="theme-container mx-auto py-12">
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-			<div>
-				<Text />
-			</div>
-		</div>
-	</div>
+<Header zIndex={100} />
+<SimpleHero title={m['footer.links.download']()} backgroundImage="assets/images/hero-bg.png" />
+<div class="relative mb-16 flex flex-col items-center justify-center md:mb-20 lg:mb-45">
+	<div class="mb-4 text-center md:mb-8">
+		<Table {rows} {headers} class="max-w-[700px]" />
+		<!--
+  <div class="theme-container mx-auto py-12">
+   <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+    <div>
+     <Text />
+    </div>
+   </div>
+  </div>
  -->
-	<Footer />
+	</div>
 </div>
+<Footer />
