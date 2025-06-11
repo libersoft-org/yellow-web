@@ -86,7 +86,7 @@
 	},
 	"text": {
 		"block_title": "Výrazný textový blok v2",
-		"organization_title": "Nadace Liberland Software",
+		"organization_title": "LiberSoft",
 		"address": {
 			"title": "Adresa",
 			"line1": "Liberty Street 1",
@@ -113,18 +113,22 @@
 	"faq": {
 		"heading": "Často kladené otázky",
 		"item1": {
-			"question": "Co je AMTP?",
-			"answer": "Advanced Mail Transfer Protocol (AMTP) je nová generace síťového protokolu pro e-mail, který překonává omezení tradičních protokolů jako SMTP, POP a IMAP využitím nových technologií a modulárního konceptu. Plně nahrazuje tyto protokoly svou funkcionalitou a dokonce výrazně rozšiřuje jejich použitelnost díky svému modulárnímu designu. Používá také modernější, bezpečnější metody přenosu dat v reálném čase."
-		},
-		"item2": {
 			"question": "Co je Yellow?",
 			"answer": "Yellow je moderní e-mailový klient, který využívá protokol AMTP k poskytování bezpečnějšího, spolehlivějšího a funkčně bohatšího e-mailového zážitku ve srovnání s tradičními e-mailovými klienty. Je navržen s důrazem na soukromí uživatelů, rychlost a snadné použití."
 		},
+		"item2": {
+			"question": "Co je AMTP?",
+			"answer": "Advanced Mail Transfer Protocol (AMTP) je ..."
+		},
 		"item3": {
+			"question": "Co je DMTP?",
+			"answer": "Decentralized Mail Transfer Protocol (DMTP) je ..."
+		},
+		"item4": {
 			"question": "Proč se tento software jmenuje \"Yellow\"?",
 			"answer": "Název Yellow byl zvolen, aby reprezentoval jasnost, optimismus a viditelnost v e-mailové komunikaci. Stejně jako je žlutá živá a pozornost poutající barva, náš e-mailový klient má za cíl zvýraznit vaši důležitou komunikaci a zpříjemnit váš e-mailový zážitek."
 		},
-		"item4": {
+		"item5": {
 			"question": "Je Yellow klient zpětně kompatibilní s klasickými e-mailovými protokoly (SMTP, IMAP, POP3)?",
 			"answer": "Ano, Yellow klient je plně zpětně kompatibilní s klasickými e-mailovými protokoly včetně SMTP, IMAP a POP3. To zajišťuje, že můžete i nadále přistupovat ke všem svým stávajícím e-mailovým účtům a zároveň využívat pokročilé funkce nabízené AMTP pro podporované účty."
 		}

@@ -82,7 +82,7 @@
 <div>
 	<Header zIndex={100} />
 	<SimpleHero title={m['footer.links.download']()} backgroundImage="assets/images/hero-bg.png" />
-	<Table {rows} {headers} class="max-w-[538px]" />
+	<Table {rows} {headers} class="max-w-[700px]" />
 	<!--
  <div class="theme-container mx-auto py-12">
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">

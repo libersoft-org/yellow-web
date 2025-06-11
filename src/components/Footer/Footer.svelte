@@ -31,23 +31,23 @@
 	}
 	const currentYear = new Date().getFullYear();
 	let {
-		contactEmail = m['footer.contact.email']({}),
+		contactEmail = m['footer.contact.email'](),
 		socialLinks = [
-			{ icon: 'open-source', href: 'https://github.com/libersoft-org/yellow-documentation', label: m['footer.social.github']({}) },
-			{ icon: 'message', href: 'https://t.me/libersoft', label: m['footer.social.telegram_chat']({}) },
-			{ icon: 'message', href: 'https://t.me/libersoft_ann', label: m['footer.social.telegram_announcements']({}) },
-			{ icon: 'message', href: 'https://www.facebook.com/groups/libersoft', label: m['footer.social.facebook']({}) },
-			{ icon: 'open-source', href: 'https://www.linkedin.com/company/libersoft-org/', label: m['footer.social.linkedin']({}) },
+			{ icon: 'open-source', href: 'https://github.com/libersoft-org/yellow-documentation', label: m['footer.social.github']() },
+			{ icon: 'message', href: 'https://t.me/libersoft', label: m['footer.social.telegram_chat']() },
+			{ icon: 'message', href: 'https://t.me/libersoft_ann', label: m['footer.social.telegram_announcements']() },
+			{ icon: 'message', href: 'https://www.facebook.com/groups/libersoft', label: m['footer.social.facebook']() },
+			{ icon: 'open-source', href: 'https://www.linkedin.com/company/libersoft-org/', label: m['footer.social.linkedin']() },
 		],
 		mainLinks = [
-			{ label: m['footer.links.about']({}), href: Routes.home() },
-			{ label: m['footer.links.features']({}), href: Routes.features() },
-			{ label: m['footer.links.download']({}), href: Routes.download() },
-			{ label: m['footer.links.comparison']({}), href: Routes.comparison() },
-			{ label: m['footer.links.documentation']({}), href: Routes.documentation() },
-			{ label: m['footer.links.faq']({}), href: Routes.faq() },
-			{ label: m['footer.links.contact']({}), href: Routes.contact() },
-			{ label: m['footer.links.signup']({}), href: Routes.account() },
+			{ label: m['footer.links.about'](), href: Routes.home() },
+			{ label: m['footer.links.features'](), href: Routes.features() },
+			{ label: m['footer.links.download'](), href: Routes.download() },
+			{ label: m['footer.links.comparison'](), href: Routes.comparison() },
+			{ label: m['footer.links.documentation'](), href: Routes.documentation() },
+			{ label: m['footer.links.faq'](), href: Routes.faq() },
+			{ label: m['footer.links.contact'](), href: Routes.contact() },
+			{ label: m['footer.links.signup'](), href: Routes.account() },
 		],
 		copyright = m['footer.copyright']({ year: currentYear }),
 	}: Props = $props();
@@ -59,7 +59,7 @@
 {#snippet contactSection()}
 	<div class="footer-contact border-themeGray-600 mb-7.5 flex flex-col items-center justify-center border-b pb-7.5 font-bold text-white md:mb-10 md:border-0 md:pb-0">
 		<div class="flex flex-col flex-wrap items-center gap-2 md:flex-row md:gap-6.5">
-			<h2 class="theme-text-h2">{m['footer.contact.title']({})}</h2>
+			<h2 class="theme-text-h2">{m['footer.contact.title']()}</h2>
 			<a href="mailto:{contactEmail}" class="flex inline-flex items-end gap-2 text-xl underline transition-colors duration-200 hover:no-underline">
 				<div class="text-themeYellow-600 mr-2">
 					<Icon name="envelope" size="3xl" mdSize="4xl" lgSize="5xl" />

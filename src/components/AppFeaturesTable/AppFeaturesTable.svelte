@@ -109,7 +109,7 @@
 	<div class="table-container relative flex flex-col items-center justify-center">
 		<div class="mb-4">
 			<h2 class="theme-text-h2 relative z-10 text-center">
-				<span class="theme-title-underline z-5">{m['featuresTable.title']({})}</span>
+				<span class="theme-title-underline z-5">{m['featuresTable.title']()}</span>
 			</h2>
 		</div>
 		<div class="table-container-wrapper relative mb-19 lg:mb-0">

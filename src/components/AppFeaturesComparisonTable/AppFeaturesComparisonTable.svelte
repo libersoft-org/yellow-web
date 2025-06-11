@@ -53,7 +53,7 @@
 				cells: [{ text: 'Facebook Messenger', isHeader: true }, { text: '', iconStatus: 'error', icon: 'cross' }, { text: '', iconStatus: 'error', icon: 'cross' }, { text: '', iconStatus: 'error', icon: 'cross' }, { text: 'Meta Platforms Inc., USA' }],
 			},
 		],
-		buttonLabel = m['comparisonTable.button']({}),
+		buttonLabel = m['comparisonTable.button'](),
 		buttonLink = Routes.features(),
 	}: Props = $props();
 </script>
@@ -66,7 +66,7 @@
 		<div class="px-4 pb-8 md:px-10 md:px-25 md:pb-21">
 			<div class="mb-5 text-center">
 				<h2 class="theme-text-h2 text-center">
-					<span class="theme-title-underline">{m['comparisonTable.title']({})}</span><br />{m['comparisonTable.subtitle']({})}
+					<span class="theme-title-underline">{m['comparisonTable.title']()}</span><br />{m['comparisonTable.subtitle']()}
 				</h2>
 			</div>
 

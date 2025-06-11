@@ -17,24 +17,29 @@
 	const faqItems: FAQItem[] = [
 		{
 			id: 'faq-1',
-			question: m['faq.item1.question']({}),
-			answer: m['faq.item1.answer']({}),
+			question: m['faq.item1.question'](),
+			answer: m['faq.item1.answer'](),
 			isOpen: true,
 		},
 		{
 			id: 'faq-2',
-			question: m['faq.item2.question']({}),
-			answer: m['faq.item2.answer']({}),
+			question: m['faq.item2.question'](),
+			answer: m['faq.item2.answer'](),
 		},
 		{
 			id: 'faq-3',
-			question: m['faq.item3.question']({}),
-			answer: m['faq.item3.answer']({}),
+			question: m['faq.item3.question'](),
+			answer: m['faq.item3.answer'](),
 		},
 		{
 			id: 'faq-4',
-			question: m['faq.item4.question']({}),
-			answer: m['faq.item4.answer']({}),
+			question: m['faq.item4.question'](),
+			answer: m['faq.item4.answer'](),
+		},
+		{
+			id: 'faq-5',
+			question: m['faq.item5.question'](),
+			answer: m['faq.item5.answer'](),
 		},
 	];
 </script>
