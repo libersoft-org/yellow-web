@@ -35,7 +35,16 @@
 					goto(Routes.download());
 				}}
 			/>
-			<Button iconSize="xl" icon="account" label={m['hero.create_account_button']()} theme="primary" class="w-full md:w-auto" />
+			<Button
+				iconSize="xl"
+				icon="account"
+				label={m['hero.create_account_button']()}
+				theme="primary"
+				class="w-full md:w-auto"
+				onclick={() => {
+					goto(Routes.account());
+				}}
+			/>
 		</div>
 	</div>
 {/snippet}
