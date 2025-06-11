@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Table from '@/theme/Table/Table.svelte';
+	import { Routes } from '@/utils/routes';
 	import { m } from '@paraglide/messages';
 
 	interface Cell {
@@ -53,7 +54,7 @@
 			},
 		],
 		buttonLabel = m['comparisonTable.button']({}),
-		buttonLink = '/comparisons',
+		buttonLink = Routes.features(),
 	}: Props = $props();
 </script>
 

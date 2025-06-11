@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from '@/theme/Button/Button.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
+	import { goto } from '$app/navigation';
 
 	interface Cell {
 		text: string;
@@ -245,7 +246,7 @@
 	{#if shouldShowButton}
 		<div class="w-full">
 			<div class="absolute bottom-[-75px] left-1/2 z-10 flex h-[60px] w-full -translate-x-1/2 justify-center md:bottom-[-40px]">
-				<Button label={buttonLabel} theme={buttonTheme} rightIcon={buttonRightIcon} />
+				<Button label={buttonLabel} theme={buttonTheme} rightIcon={buttonRightIcon} onclick={() => goto(buttonLink)} />
 			</div>
 		</div>
 	{/if}
