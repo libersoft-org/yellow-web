@@ -1,8 +1,12 @@
 // Route factory functions for dynamic route generation
+// Existing routes in your project
 export const Routes = {
-	// Existing routes in your project
 	home: () => '/',
+	download: () => '/download',
+	comparison: () => '/comparison',
 	documentation: () => '/documentation',
-	contact: () => '/contact',
 	faq: () => '/faq',
+	contact: () => '/contact',
+	account: () => '/account',
+	features: () => '/features',
 };

@@ -171,15 +171,15 @@
 			"linkedin": "LinkedIn"
 		},
 		"links": {
-			"about": "O nás",
+			"about": "O projektu",
 			"features": "Funkce",
 			"download": "Stáhnout",
-			"comparison": "Porovnání",
+			"comparison": "Srovnání",
 			"documentation": "Dokumentace",
-			"faq": "FAQ",
+			"faq": "Časté dotazy",
 			"contact": "Kontakt",
 			"signup": "Vytvořit účet zdarma"
 		},
-		"copyright": "Copyright © {year} Yellow | Všechna práva vyhrazena"
+		"copyright": "Yellow, {year}"
 	}
 }

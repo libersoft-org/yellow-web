@@ -2,6 +2,7 @@
 	import Button from '@/theme/Button/Button.svelte';
 	import { m } from '@paraglide/messages';
 	import svgBackground from './bg.svg?raw';
+	import { Routes } from '@/utils/routes';
 	interface Props {
 		imageSrc?: string;
 		backgroundImage?: string;
@@ -14,7 +15,7 @@
 
 {#snippet leftSide()}
 	<div class="flex flex-col items-center justify-center">
-		<h1 class="md:text-10xl lg:text-12xl mb-5 text-9xl font-bold md:mb-8 text-center">
+		<h1 class="md:text-10xl lg:text-11xl mb-5 text-9xl font-bold md:mb-8 text-center">
 			{@html m['hero.welcome']()}
 			<span class="theme-title-underline">{m['hero.app_name']()}</span>
 		</h1>

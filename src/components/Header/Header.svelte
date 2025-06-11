@@ -5,19 +5,15 @@
 	import { onMount } from 'svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
 	import { Routes } from '@/utils/routes';
-
 	interface Props {
 		zIndex?: number;
 	}
-
 	let { zIndex = 50 }: Props = $props();
-
 	let isMobileMenuOpen = $state(false);
 	let languageModalOpen = $state(false);
 	let navRef: HTMLElement;
 	let menuToggleRef: HTMLElement;
 	let outsideClickHandler: ((e: MouseEvent) => void) | null = null;
-
 	// Navigation items array using Routes factory functions
 	const navItems = [
 		{
@@ -25,52 +21,39 @@
 			href: Routes.home(),
 			hasChildren: true,
 			subItems: [
-				{ label: 'Our Company', href: '#' },
-				{ label: 'Our Team', href: '#' },
-				{ label: 'Our Mission', href: '#' },
-				{ label: 'Our History', href: '#' },
+				{ label: 'Home', href: Routes.home() },
+				{ label: 'Features', href: Routes.features() },
 			],
 		},
-		{ label: 'Download', href: Routes.home() },
-		{ label: 'Comparison', href: Routes.home() },
+		{ label: 'Download', href: Routes.download() },
+		{ label: 'Comparison', href: Routes.comparison() },
 		{ label: 'Documentation', href: Routes.documentation() },
 		{ label: 'FAQ', href: Routes.faq() },
 		{ label: 'Contact', href: Routes.contact() },
-		{ label: 'Create free account', href: Routes.home(), highlighted: true },
+		{ label: 'Create free account', href: Routes.account(), highlighted: true },
 	];
 
 	function toggleMobileMenu(e: MouseEvent) {
 		e.stopPropagation(); // Prevent event from bubbling up
-
 		// Toggle the state
 		isMobileMenuOpen = !isMobileMenuOpen;
-
 		// Prevent scrolling when mobile menu is open
 		if (browser) {
 			document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
-
 			// Set up or remove outside click handler based on menu state
 			if (isMobileMenuOpen) {
 				// Remove any existing handler
-				if (outsideClickHandler) {
-					document.removeEventListener('click', outsideClickHandler);
-				}
-
+				if (outsideClickHandler) document.removeEventListener('click', outsideClickHandler);
 				// Create new handler with a delay to avoid the current click
 				setTimeout(() => {
 					outsideClickHandler = (event: MouseEvent) => {
 						// Only handle clicks when menu is open
 						if (!isMobileMenuOpen) return;
-
 						// Skip if clicking the menu toggle button itself
 						if (menuToggleRef && menuToggleRef.contains(event.target as Node)) return;
-
 						// Close menu if clicking outside the navigation
-						if (navRef && !navRef.contains(event.target as Node)) {
-							closeMobileMenu();
-						}
+						if (navRef && !navRef.contains(event.target as Node)) closeMobileMenu();
 					};
-
 					document.addEventListener('click', outsideClickHandler);
 				}, 10);
 			} else if (outsideClickHandler) {
@@ -82,7 +65,6 @@
 
 	function closeMobileMenu() {
 		if (!isMobileMenuOpen) return;
-
 		isMobileMenuOpen = false;
 		if (browser) {
 			document.body.style.overflow = '';
@@ -138,7 +120,6 @@
 			</ul>
 		</div>
 	</nav>
-
 	<!-- Mobile menu overlay - no click handler, handled by document click listener -->
 	{#if isMobileMenuOpen || languageModalOpen}
 		<button
@@ -148,21 +129,13 @@
 			class="overlay fixed inset-0 top-13.5 z-40 border-0 bg-black opacity-30 transition-opacity duration-300 lg:hidden"
 			onclick={e => {
 				// Close appropriate menus
-				if (languageModalOpen) {
-					languageModalOpen = false;
-				}
-				if (isMobileMenuOpen) {
-					closeMobileMenu();
-				}
+				if (languageModalOpen) languageModalOpen = false;
+				if (isMobileMenuOpen) closeMobileMenu();
 			}}
 			onkeydown={e => {
 				if (e.key === 'Enter' || e.key === 'Escape') {
-					if (languageModalOpen) {
-						languageModalOpen = false;
-					}
-					if (isMobileMenuOpen) {
-						closeMobileMenu();
-					}
+					if (languageModalOpen) languageModalOpen = false;
+					if (isMobileMenuOpen) closeMobileMenu();
 				}
 			}}
 		></button>
@@ -175,12 +148,9 @@
 		<a href="/" class="header__logo theme-gradient-yellow w-full max-w-[179px] bg-gradient-to-t px-4 py-2 lg:max-w-[326px] lg:rounded-bl-2xl lg:px-8 lg:py-4">
 			<img alt="Yellow Logo" height="58" src="/assets/images/yellow-logo.svg" width="208" />
 		</a>
-
 		{@render navigationMenu()}
-
 		<div class="flex items-center pr-6 lg:pr-12">
 			<LanguageSwitcher openModal={(value: boolean) => (languageModalOpen = value)} />
-
 			<!-- Mobile Menu Toggle Button - Only visible below lg screens -->
 			<button aria-controls="mobile-menu" aria-expanded={isMobileMenuOpen} aria-label="Toggle menu" bind:this={menuToggleRef} class="bg-themeGray-800 mobile-menu-toggle ml-4 rounded-md p-2 drop-shadow-md lg:hidden" onclick={toggleMobileMenu}>
 				<div class="relative h-6 w-6">
