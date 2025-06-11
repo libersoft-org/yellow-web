@@ -2,55 +2,32 @@
 	import Link from '@/theme/Link/Link.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
 	import { m } from '@paraglide/messages';
-
 	export let blockTitle = m['text.block_title']({});
 	const title = m['text.organization_title']({});
-
 	const address = [m['text.address.line1']({}), m['text.address.line2']({}), m['text.address.line3']({})];
 	const organizationId = m['text.organization_id_value']({});
-
 	const contactTitle = m['text.contact_title']({});
 	const contactEmail = m['text.contact_email']({});
-
 	const links = [
-		{ label: m['text.links.github']({}), icon: 'github', href: 'https://github.com/yellow' },
-		{ label: m['text.links.telegram_chat']({}), icon: 'telegram', href: 'https://t.me/yellow' },
-		{
-			label: m['text.links.telegram_announcements']({}),
-			icon: 'telegram',
-			href: 'https://t.me/yellow-announcements',
-		},
-		{ label: m['text.links.linkedin']({}), icon: 'linkedin', href: 'https://linkedin.com/company/yellow' },
-		{ label: m['text.links.facebook']({}), icon: 'facebook', href: 'https://facebook.com/yellow' },
+		{ label: m['text.links.github']({}), icon: 'github', href: 'https://github.com/libersoft-org/yellow-documentation' },
+		{ label: m['text.links.telegram_chat']({}), icon: 'telegram', href: 'https://t.me/libersoft' },
+		{ label: m['text.links.telegram_announcements']({}), icon: 'telegram', href: 'https://t.me/libersoft_ann' },
+		{ label: m['text.links.linkedin']({}), icon: 'linkedin', href: 'https://www.linkedin.com/company/libersoft-org/' },
+		{ label: m['text.links.facebook']({}), icon: 'facebook', href: 'https://www.facebook.com/groups/libersoft' },
 	];
 </script>
 
 {#snippet headerSnippet()}
-	<h2
-		class="theme-text-h3
-    mb-6 font-bold"
-	>
-		{blockTitle}
-	</h2>
+	<h2 class="theme-text-h3 mb-6 font-bold">{blockTitle}</h2>
 {/snippet}
-
 {#snippet cardHeaderSnippet()}
 	<div class="card-block__header px-10 pt-7 pb-4 lg:px-15">
-		<h3
-			class="text-center text-4xl font-medium
-      md:text-5xl
-      lg:text-6xl"
-		>
-			{title}
-		</h3>
+		<h3 class="text-center text-4xl font-medium md:text-5xl lg:text-6xl">{title}</h3>
 	</div>
 {/snippet}
-
 {#snippet leftColumnSnippet()}
 	<div class="w-full lg:flex-1">
-		<h4 class="mb-2 text-xl font-bold">
-			{m['text.address.title']({})}
-		</h4>
+		<h4 class="mb-2 text-xl font-bold">{m['text.address.title']({})}</h4>
 		<div class="text-md mb-5">
 			{#each address as line}
 				<div class="text-themeGray-400 text-base">{line}</div>
@@ -60,10 +37,7 @@
 			<strong>{m['text.organization_id']({})}</strong>
 			{organizationId}
 		</div>
-
-		<h3 class="text-6xl font-medium">
-			{contactTitle}
-		</h3>
+		<h3 class="text-6xl font-medium">{contactTitle}</h3>
 		<a
 			href="mailto:{contactEmail}"
 			class="inline-flex items-center
@@ -82,7 +56,6 @@
 		</a>
 	</div>
 {/snippet}
-
 {#snippet rightColumnSnippet()}
 	<div class="flex w-full flex-col gap-3 lg:flex-1">
 		{#each links as link}
@@ -104,22 +77,14 @@
 		{/each}
 	</div>
 {/snippet}
-
 {#snippet contentSnippet()}
-	<div
-		class="card-block__body
-    px-6 pt-1 pb-10 md:px-10 lg:px-14"
-	>
-		<div
-			class="flex flex-col gap-8
-      lg:flex-row lg:gap-16"
-		>
+	<div class="card-block__body px-6 pt-1 pb-10 md:px-10 lg:px-14">
+		<div class="flex flex-col gap-8 lg:flex-row lg:gap-16">
 			{@render leftColumnSnippet()}
 			{@render rightColumnSnippet()}
 		</div>
 	</div>
 {/snippet}
-
 {#snippet shadowSvgSnippet()}
 	<div class="flex w-full justify-center">
 		<svg xmlns="http://www.w3.org/2000/svg" width="674" height="48" viewBox="0 0 674 48" fill="none">
@@ -143,19 +108,9 @@
 		</svg>
 	</div>
 {/snippet}
-
-<div
-	class="mx-auto mb-6 max-w-7xl px-0
-  md:mb-8
-  md:px-4 lg:mb-12"
->
+<div class="mx-auto mb-6 max-w-7xl px-0 md:mb-8 md:px-4 lg:mb-12">
 	{@render headerSnippet()}
-
-	<div
-		class="theme-shadow-soft
-    rounded-3xl
-    bg-white"
-	>
+	<div class="theme-shadow-soft rounded-3xl bg-white">
 		{@render cardHeaderSnippet()}
 		{@render shadowSvgSnippet()}
 		{@render contentSnippet()}
