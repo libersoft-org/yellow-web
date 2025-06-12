@@ -13,7 +13,7 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title={m['footer.links.documentation']()} backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title="TEMPLATE PAGE" backgroundImage="assets/images/hero-bg.png" />
 	<div class="py-8 md:py-16">
 		<TextImage />
 		<Form />
