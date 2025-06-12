@@ -17,9 +17,6 @@
 	];
 </script>
 
-{#snippet headerSnippet()}
-	<h2 class="theme-text-h3 mb-6 font-bold">{blockTitle}</h2>
-{/snippet}
 {#snippet cardHeaderSnippet()}
 	<div class="card-block__header px-10 pt-7 pb-4 lg:px-15">
 		<h3 class="text-center text-4xl font-medium md:text-5xl lg:text-6xl">{title}</h3>
@@ -85,7 +82,6 @@
 	</div>
 {/snippet}
 <div class="mx-auto mb-6 max-w-7xl px-0 md:mb-8 md:px-4 lg:mb-12">
-	{@render headerSnippet()}
 	<div class="theme-shadow-soft rounded-3xl bg-white">
 		{@render cardHeaderSnippet()}
 		{@render shadowSvgSnippet()}
