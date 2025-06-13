@@ -63,8 +63,19 @@
 	},
 	"comparisonTable": {
 		"title": "Srovnání",
-		"subtitle": "s ostatním softwarem",
-		"button": "Všechna srovnání"
+		"subtitle": "s jiným software",
+		"button": "Všechna srovnání",
+		"table_headers": {
+			"software": "Software",
+			"open_source": "Otevřený zdrojový kód",
+			"distributed": "Distribuovaná / decentralizovaná síť",
+			"e2e": "Koncové šifrování",
+			"developed_by": "Vývojář"
+		},
+		"table_description": {
+			"some_software": "některý software",
+			"mobile_operators": "mobilní operátoři"
+		}
 	},
 	"app_characteristics": {
 		"title_part1": "Klíčové",
