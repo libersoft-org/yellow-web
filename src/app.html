@@ -9,7 +9,29 @@
 		<meta content="width=device-width, initial-scale=1" name="viewport" />
 		%sveltekit.head%
 	</head>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KEY3XNZGMW"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'G-KEY3XNZGMW');
+	</script>
+
 	<body data-sveltekit-preload-data="hover">
+		<!-- Toplist -->
+		<a href="https://www.toplist.cz" id="toplistcz1839881" title="TOPlist"
+			><noscript><img src="https://toplist.cz/dot.asp?id=1839881&njs=1" border="0" alt="TOPlist" width="1" height="1" /></noscript>
+			<script language="JavaScript">
+				(function (d, e, s) {
+					d.getElementById('toplistcz1839881').innerHTML = '<img src="https://toplist.cz/dot.asp?id=1839881&http=' + e(d.referrer) + '&t=' + e(d.title) + '&l=' + e(d.URL) + '&wi=' + e(s.width) + '&he=' + e(s.height) + '&cd=' + e(s.colorDepth) + '" width="1" height="1" border="0" alt="TOPlist" />';
+				})(document, encodeURIComponent, window.screen);
+			</script></a
+		>
+
 		<div class="main" style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
