@@ -132,6 +132,17 @@
 		"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui. Fusce eleifend convallis nulla quis molestie. Cras rutrum nisl neque.",
 		"image_alt": "Snímek obrazovky"
 	},
+	"download": {
+		"disclaimer": "je v současné době ve vývoji a k dispozici jsou pouze zdrojové kódy pro zkušební účely. Software může obsahovat chyby a není určen pro produkční použití.",
+		"table_header": {
+			"software": "Software",
+			"links": "Odkazy"
+		},
+		"table_cells": {
+			"web_version": "webová verze",
+			"native_version": "nativní verze - desktopová a mobilní"
+		}
+	},
 	"faq": {
 		"heading": "Často kladené otázky",
 		"item1": {

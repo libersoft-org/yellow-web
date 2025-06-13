@@ -132,6 +132,17 @@
 		"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum fringilla ex in nisi molestie fringilla. Integer finibus dolor sapien, a venenatis sapien porttitor ut. Mauris non metus tincidunt, ornare turpis ac, accumsan dolor. Quisque non leo sit amet lorem vulputate vulputate sed quis dui. Fusce eleifend convallis nulla quis molestie. Cras rutrum nisl neque.",
 		"image_alt": "Screenshot"
 	},
+	"download": {
+		"disclaimer": "is currently under development and only source codes are available for testing purposes. The software may contain errors and is not intended for production use.",
+		"table_header": {
+			"software": "Software",
+			"links": "Links"
+		},
+		"table_cells": {
+			"web_version": "web version",
+			"native_version": "native version - desktop and mobile"
+		}
+	},
 	"faq": {
 		"heading": "Frequently Asked Questions",
 		"item1": {
