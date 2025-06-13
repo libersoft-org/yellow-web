@@ -36,43 +36,43 @@
 	}
 
 	let {
-		title = 'Features',
-		headers = ['Feature', 'Implemented'],
+		title = m['featuresTable.title'](),
+		headers = [m['featuresTable.table_header.feature'](), m['featuresTable.table_header.implemented']()],
 		rows = [
 			{
 				cells: [
-					{ text: 'AMTP protocol', alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item1'](), alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
 				],
 			},
 			{
 				cells: [
-					{ text: 'DMTP protocol', alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item2'](), alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
 				],
 			},
 			{
 				cells: [
-					{ text: 'Server - modularity', alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item3'](), alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
 				],
 			},
 			{
 				cells: [
-					{ text: 'Client - modularity', alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item4'](), alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'warning', icon: 'check' },
 				],
 			},
 			{
 				cells: [
-					{ text: 'Encrypted connection', alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item5'](), alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
 				],
 			},
 			{
 				cells: [
 					{
-						text: 'Client - encryption, signature and login keys management',
+						text: m['featuresTable.table_items.item6'](),
 						alignment: 'left',
 						isHeader: true,
 					},

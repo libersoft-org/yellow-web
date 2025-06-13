@@ -47,7 +47,19 @@
 		"button": "See all features",
 		"status1": "Not implemented",
 		"status2": "Fully implemented",
-		"status3": "Partially implemented"
+		"status3": "Partially implemented",
+		"table_header": {
+			"feature": "Feature",
+			"implemented": "Implemented"
+		},
+		"table_items": {
+			"item1": "AMTP protocol",
+			"item2": "DMTP protocol",
+			"item3": "Server - modularity",
+			"item4": "Client - modularity",
+			"item5": "Encrypted connection",
+			"item6": "Client - End-to-end encryption"
+		}
 	},
 	"comparisonTable": {
 		"title": "Comparison",
