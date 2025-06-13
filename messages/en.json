@@ -134,6 +134,8 @@
 	},
 	"download": {
 		"disclaimer": "is currently under development and only source codes are available for testing purposes. The software may contain errors and is not intended for production use.",
+		"download": "Download",
+		"source": "Source code",
 		"table_header": {
 			"software": "Software",
 			"links": "Links"

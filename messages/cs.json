@@ -134,6 +134,8 @@
 	},
 	"download": {
 		"disclaimer": "je v současné době ve vývoji a k dispozici jsou pouze zdrojové kódy pro zkušební účely. Software může obsahovat chyby a není určen pro produkční použití.",
+		"download": "Stáhnout",
+		"source": "Zdrojový kód",
 		"table_header": {
 			"software": "Software",
 			"links": "Odkazy"
