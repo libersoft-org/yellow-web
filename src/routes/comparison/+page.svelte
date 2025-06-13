@@ -3,7 +3,34 @@
 	import Footer from '@/components/Footer/Footer.svelte';
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
+	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
 	import { m } from '@paraglide/messages';
+
+	function convertComparisonData(comparisonSections) {
+		return comparisonSections.map(section => {
+			const headers = ['Software', ...section.columns];
+			const rows = Object.entries(section.rows).map(([software, values]) => {
+				const cells = [{ text: software, isHeader: true }, ...values.map(value => convertValueToCell(value))];
+				return { cells };
+			});
+
+			return {
+				title: section.title,
+				headers,
+				rows,
+			};
+		});
+	}
+
+	function convertValueToCell(value) {
+		if (value === 1) {
+			return { iconStatus: 'success', icon: 'check' };
+		} else if (value === 0) {
+			return { iconStatus: 'error', icon: 'cross' };
+		} else {
+			return { text: String(value) };
+		}
+	}
 	const comparison = [
 		{
 			title: 'Transparency, network and security',
@@ -168,6 +195,8 @@
 			},
 		},
 	];
+
+	const convertedSections = convertComparisonData(comparison);
 </script>
 
 <style>
@@ -176,14 +205,12 @@
 <div>
 	<Header zIndex={100} />
 	<SimpleHero title={m['footer.links.comparison']()} backgroundImage="assets/images/hero-bg.png" />
-	<!--
- <div class="theme-container mx-auto py-12">
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-			<div>
-				<Text />
-			</div>
-		</div>
+
+	<div class="theme-container mx-auto py-12">
+		{#each convertedSections as section}
+			<AppFeaturesComparisonTable title={section.title} subtitle="" headers={section.headers} rows={section.rows} buttonLabel="" buttonLink="" />
+		{/each}
 	</div>
- -->
+
 	<Footer />
 </div>

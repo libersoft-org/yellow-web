@@ -3,7 +3,55 @@
 	import Footer from '@/components/Footer/Footer.svelte';
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
+	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
 	import { m } from '@paraglide/messages';
+
+	function convertModulesToTables(modulesData, stateData) {
+		return modulesData.map(module => {
+			const headers = ['Feature', 'Status'];
+			const rows = module.features.map(feature => {
+				const statusIcon = getStatusIcon(feature.implemented, stateData);
+				return {
+					cells: [{ text: feature.name }, statusIcon],
+				};
+			});
+
+			return {
+				title: module.name,
+				headers,
+				rows,
+			};
+		});
+	}
+
+	function convertCoreToTable(coreData, stateData) {
+		const headers = ['Feature', 'Status'];
+		const rows = coreData.map(feature => {
+			const statusIcon = getStatusIcon(feature.implemented, stateData);
+			return {
+				cells: [{ text: feature.name }, statusIcon],
+			};
+		});
+
+		return {
+			title: 'Core Features',
+			headers,
+			rows,
+		};
+	}
+
+	function getStatusIcon(implemented, stateData) {
+		switch (implemented) {
+			case 0:
+				return { iconStatus: 'error', icon: 'cross' };
+			case 1:
+				return { iconStatus: 'success', icon: 'check' };
+			case 2:
+				return { iconStatus: 'warning', icon: 'warning' };
+			default:
+				return { text: 'Unknown' };
+		}
+	}
 	const state = [
 		{
 			name: 'Not implemented',
@@ -688,6 +736,10 @@
 			],
 		},
 	];
+
+	const coreTable = convertCoreToTable(core, state);
+	const moduleTables = convertModulesToTables(modules, state);
+	const allTables = [coreTable, ...moduleTables];
 </script>
 
 <style>
@@ -696,14 +748,14 @@
 <div>
 	<Header zIndex={100} />
 	<SimpleHero title={m['footer.links.features']()} backgroundImage="assets/images/hero-bg.png" />
-	<!--
- <div class="theme-container mx-auto py-12">
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-			<div>
-				<Text />
+
+	<div class="theme-container mx-auto py-12">
+		{#each allTables as table, index}
+			<div class={index > 0 ? 'mt-16' : ''}>
+				<AppFeaturesComparisonTable title={table.title} subtitle="" headers={table.headers} rows={table.rows} buttonLabel="" buttonLink="" />
 			</div>
-		</div>
+		{/each}
 	</div>
- -->
+
 	<Footer />
 </div>

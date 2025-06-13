@@ -29,7 +29,8 @@
 	const check: Cell = { iconStatus: 'success', icon: 'check' };
 	const cross: Cell = { iconStatus: 'error', icon: 'cross' };
 	let {
-		title = 'with other software',
+		title = m['comparisonTable.title'](),
+		subtitle = m['comparisonTable.subtitle'](),
 		headers = [m['comparisonTable.table_headers.software'](), m['comparisonTable.table_headers.open_source'](), m['comparisonTable.table_headers.distributed'](), m['comparisonTable.table_headers.e2e'](), m['comparisonTable.table_headers.developed_by']()],
 		rows = [
 			{
@@ -64,7 +65,7 @@
 		<div class="px-4 pb-8 md:px-10 md:px-25 md:pb-21">
 			<div class="mb-5 text-center">
 				<h2 class="theme-text-h2 text-center">
-					<span class="theme-title-underline">{m['comparisonTable.title']()}</span><br />{m['comparisonTable.subtitle']()}
+					<span class="theme-title-underline">{title}</span><br />{subtitle}
 				</h2>
 			</div>
 			<div class="table-container-wrapper relative">

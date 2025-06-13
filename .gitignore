@@ -25,4 +25,5 @@ src/lib/paraglide
 bun.lock
 bun.lockb
 bun.lockb.txt
-package-lock.json
+package-lock.json.dev_intention
+.dev_intention
