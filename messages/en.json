@@ -157,7 +157,7 @@
 		},
 		"item3": {
 			"question": "What is DMTP?",
-			"answer": "Decentralized Mail Transfer Protocol (DMTP) is an upcoming protocol that completely eliminates central servers and relies on decentralized data storage. DMTP is designed to be fully censorship-resistant and provide users with the maximum level of privacy and security. It allows users to communicate directly with each other without the need for intermediaries. This provides users with a significant degree of privacy. Users create their own identity (which is in the form of a public address, similar to that of cryptocurrencies, for example). The network is fully decentralised and there is no central authority to manage user accounts."
+			"answer": "Decentralized Mail Transfer Protocol (DMTP) is an upcoming protocol that completely eliminates central servers and relies on decentralized transfer and decentralized data storage. DMTP is designed to be fully censorship-resistant and provide users with the maximum level of privacy and security. It allows users to communicate directly with each other without the need for intermediaries. This provides users with a significant degree of privacy. Users create their own identity (which is in the form of a public address, similar to that of cryptocurrencies, for example). The network is fully decentralised and there is no central authority to manage user accounts."
 		},
 		"item4": {
 			"question": "Why is the software named \"Yellow\"?",

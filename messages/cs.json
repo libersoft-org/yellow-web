@@ -157,7 +157,7 @@
 		},
 		"item3": {
 			"question": "Co je DMTP?",
-			"answer": "Decentralized Mail Transfer Protocol (DMTP) je připravovaný protokol, který plně eliminuje centrální servery a spoléhá na decentralizované ukládání dat. DMTP je navržen tak, aby byl plně odolný vůči cenzuře a poskytoval uživatelům maximální úroveň soukromí a bezpečnosti. Umožňuje uživatelům komunikovat přímo mezi sebou bez potřeby prostředníků. To poskytuje uživatelům značnou míru soukromí. Identitu si uživatelé vytvářejí sami (ta je ve formě veřejné adresy, podobně, jako je to například u kryptoměn). Síť je plně decentralizovaná a neexistuje na ní žádná centrální autorita, která by spravovala uživatelské účty."
+			"answer": "Decentralized Mail Transfer Protocol (DMTP) je připravovaný protokol, který plně eliminuje centrální servery a spoléhá na decentralizovaný přenos a decentralizované ukládání dat. DMTP je navržen tak, aby byl plně odolný vůči cenzuře a poskytoval uživatelům maximální úroveň soukromí a bezpečnosti. Umožňuje uživatelům komunikovat přímo mezi sebou bez potřeby prostředníků. To poskytuje uživatelům značnou míru soukromí. Identitu si uživatelé vytvářejí sami (ta je ve formě veřejné adresy, podobně, jako je to například u kryptoměn). Síť je plně decentralizovaná a neexistuje na ní žádná centrální autorita, která by spravovala uživatelské účty."
 		},
 		"item4": {
 			"question": "Proč se software jmenuje \"Yellow\"?",
