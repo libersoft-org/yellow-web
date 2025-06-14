@@ -20,9 +20,11 @@
 		<div class="card-header mb-2 flex items-center gap-4">
 			{#if icon}
 				<div
-					class="card-header__icon bg-themeGray-800 text-themeYellow-800 flex
-          h-10 w-10 items-center justify-center
-          rounded-full p-1 md:h-12 md:w-12"
+					class="card-header__icon
+							bg-themeGray-800 text-themeYellow-800
+							h-10 max-w-10 md:h-12 md:max-w-12 w-full
+							flex items-center justify-center
+							rounded-full p-1 md:p-2"
 				>
 					<Icon name={icon} size="md" lgSize="xl" />
 				</div>
