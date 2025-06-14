@@ -12,7 +12,7 @@
 <div>
 	<Header zIndex={100} />
 	<SimpleHero title={m['footer.links.contact']()} backgroundImage="assets/images/hero-bg.png" />
-	<div class="theme-container mx-auto py-12">
+	<div class="theme-container mx-auto py-10 md:py-20">
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 			<div>
 				<Text />

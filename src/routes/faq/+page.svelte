@@ -12,7 +12,7 @@
 <div>
 	<Header zIndex={100} />
 	<SimpleHero title={m['faq.heading']()} backgroundImage="assets/images/hero-bg.png" />
-	<div class="py-8 md:py-16">
+	<div class="py-10 md:py-20">
 		<FAQ />
 	</div>
 	<Footer />

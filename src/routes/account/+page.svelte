@@ -15,9 +15,11 @@
 <div>
 	<Header zIndex={100} />
 	<SimpleHero title={m['footer.links.signup']()} backgroundImage="assets/images/hero-bg.png" />
-	<div>{m['accounts.label']()}</div>
-	<Button label={m['footer.links.contact']()} iconSize="xl" icon="download" theme="secondary" class="w-full md:w-auto" onclick={() => goto(Routes.contact())} />
 
+	<div class="theme-container mx-auto py-10 md:py-20">
+		<p class="mb-4">{m['accounts.label']()}</p>
+		<Button label={m['footer.links.contact']()} iconSize="md" rightIcon="chevron" theme="secondary" class="w-full md:w-auto" onclick={() => goto(Routes.contact())} />
+	</div>
 	<!--
  <div class="theme-container mx-auto py-12">
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">

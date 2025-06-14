@@ -181,7 +181,7 @@
 
 <Header zIndex={100} />
 <SimpleHero title={m['footer.links.download']()} backgroundImage="assets/images/hero-bg.png" />
-<div class="relative mb-16 flex flex-col items-center justify-center md:mb-20 lg:mb-45">
+<div class="relative mb-16 flex flex-col items-center justify-center py-10 md:py-20">
 	<div class="mb-4 text-center md:mb-8">
 		<div class="m-2">
 			{m['hero.app_name']() + ' ' + m['download.disclaimer']()}
