@@ -34,9 +34,10 @@
 		class?: string;
 	}
 
-	let { children, rows = [], headers = [], formatHeaders = false, formatNewlines = false, rounded = true, showOverlay = true, overlayType = 'white', buttonLabel = 'See all', buttonLink = '#', buttonTheme = 'secondary', buttonRightIcon = 'chevron', class: className = '' }: Props = $props();
+	let { children, rows = [], headers = [], formatHeaders = false, formatNewlines = false, rounded = true, showOverlay = false, overlayType = 'white', buttonLabel = 'See all', buttonLink = '#', buttonTheme = 'secondary', buttonRightIcon = 'chevron', class: className = '' }: Props = $props();
 
 	const shouldShowButton = $derived(buttonLabel && buttonLink && buttonLink !== '#');
+	const shouldShowOverlay = $derived(shouldShowButton);
 
 	function formatText(text: string) {
 		if (!text) return '';
@@ -150,7 +151,7 @@
 	}
 </style>
 
-<div class="table-container relative flex flex-col rounded-3xl shadow-xl {className}" class:has-overlay={showOverlay} data-overlay-type={overlayType}>
+<div class="table-container relative flex flex-col rounded-3xl shadow-xl {className}" class:has-overlay={shouldShowOverlay} data-overlay-type={overlayType}>
 	<div class={['table overflow-hidden rounded-3xl', rounded ? 'table--rounded' : '']}>
 		<table class="w-full bg-white lg:h-[1px]">
 			{#if headers.length > 0}
