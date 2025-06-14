@@ -33,11 +33,11 @@
 	let {
 		contactEmail = 'info@libersoft.org',
 		socialLinks = [
-			{ icon: 'open-source', href: 'https://github.com/libersoft-org/yellow-documentation', label: m['footer.social.github']() },
-			{ icon: 'message', href: 'https://t.me/libersoft', label: m['footer.social.telegram_chat']() },
-			{ icon: 'message', href: 'https://t.me/libersoft_ann', label: m['footer.social.telegram_announcements']() },
-			{ icon: 'message', href: 'https://www.facebook.com/groups/libersoft', label: m['footer.social.facebook']() },
-			{ icon: 'open-source', href: 'https://www.linkedin.com/company/libersoft-org/', label: m['footer.social.linkedin']() },
+			{ icon: 'github', href: 'https://github.com/libersoft-org/yellow-documentation', label: m['footer.social.github']() },
+			{ icon: 'telegram', href: 'https://t.me/libersoft', label: m['footer.social.telegram_chat']() },
+			{ icon: 'telegram', href: 'https://t.me/libersoft_ann', label: m['footer.social.telegram_announcements']() },
+			{ icon: 'facebook', href: 'https://www.facebook.com/groups/libersoft', label: m['footer.social.facebook']() },
+			{ icon: 'linkedin', href: 'https://www.linkedin.com/company/libersoft-org/', label: m['footer.social.linkedin']() },
 		],
 		mainLinks = [
 			{ label: m['footer.links.about'](), href: Routes.home() },
