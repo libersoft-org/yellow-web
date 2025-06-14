@@ -168,6 +168,9 @@
 			"answer": "Yes, Yellow Client is fully backward compatible with classic email protocols including SMTP, IMAP, and POP3. This ensures you can continue to access all your existing email accounts while also enjoying the advanced features offered by AMTP for supported accounts."
 		}
 	},
+	"accounts": {
+		"label": "Currently there is no public server that provides AMTP accounts. If you would like to create an account on our development server for testing purposes, please contact us."
+	},
 	"form": {
 		"title": "Form",
 		"input": {

@@ -168,6 +168,9 @@
 			"answer": "Ano, Yellow klient je plně zpětně kompatibilní s klasickými e-mailovými protokoly včetně SMTP, IMAP a POP3. To zajišťuje, že můžete i nadále přistupovat ke všem svým stávajícím e-mailovým účtům a zároveň využívat pokročilé funkce nabízené AMTP pro podporované účty."
 		}
 	},
+	"accounts": {
+		"label": "Aktuálně neexistuje žádný veřejný server, který by poskytoval AMTP účty. Pokud chcete vytvořit účet na našem vývojovém serveru pro zkušební účely, kontaktujte nás prosím."
+	},
 	"form": {
 		"title": "Formulář",
 		"input": {
