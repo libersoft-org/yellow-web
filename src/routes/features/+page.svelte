@@ -748,7 +748,6 @@
 <div>
 	<Header zIndex={100} />
 	<SimpleHero title={m['footer.links.features']()} backgroundImage="assets/images/hero-bg.png" />
-
 	<div class="theme-container mx-auto py-12">
 		{#each allTables as table, index}
 			<div class={index > 0 ? 'mt-16' : ''}>
@@ -756,6 +755,5 @@
 			</div>
 		{/each}
 	</div>
-
 	<Footer />
 </div>
