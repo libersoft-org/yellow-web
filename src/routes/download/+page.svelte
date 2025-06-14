@@ -4,73 +4,173 @@
 	import Table from '@/theme/Table/Table.svelte';
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
+	import Links from '@/components/Links/Links.svelte';
 	import { m } from '@paraglide/messages';
 	let headers = [m['download.table_header.software'](), m['download.table_header.links']()];
 	let rows = [
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' (' + m['download.table_cells.web_version']() + ')', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-client/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-client" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-client/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-client' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' (' + m['download.table_cells.native_version']() + ')', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-client-native/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-client-native" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-client-native/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-client-native' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' Admin', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-admin/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-admin" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-admin/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-admin' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' Server', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-server/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-server" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-server/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-server' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' Sticker Server', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-sticker-server/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-sticker-server" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-sticker-server/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-sticker-server' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' GIF Server', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-gif-server/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-gif-server" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-gif-server/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-gif-server' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' Registration Server', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-registration-server/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-registration-server" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-registration-server/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-registration-server' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' Registration Client', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-registration-client/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-registration-client" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-registration-client/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-registration-client' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' Web', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-web/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-web" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-web/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-web' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: m['hero.app_name']() + ' Documentation', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/yellow-documentation/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/yellow-documentation" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-documentation/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-documentation' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 		{
 			cells: [
 				{ text: 'Realtime Console', alignment: 'left', isHeader: true },
-				{ text: '<a href="https://github.com/libersoft-org/realtime-console/archive/refs/heads/main.zip" target="_blank">' + m['download.download']() + '</a><br /><a href="https://github.com/libersoft-org/realtime-console" target="_blank">' + m['download.source']() + '</a>', alignment: 'center' },
+				{
+					component: Links,
+					props: {
+						links: [
+							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/realtime-console/archive/refs/heads/main.zip' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/realtime-console' },
+						],
+					},
+					alignment: 'center',
+				},
 			],
 		},
 	];

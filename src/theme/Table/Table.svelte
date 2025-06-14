@@ -4,7 +4,9 @@
 	import { goto } from '$app/navigation';
 
 	interface Cell {
-		text: string;
+		text?: string;
+		component?: any;
+		props?: any;
 		isHeader?: boolean;
 		className?: string;
 		icon?: string;
@@ -196,7 +198,11 @@
 									>
 										<div class="cell-wrapper flex h-full items-center py-3 text-sm lg:px-5.5 lg:py-4 lg:text-base">
 											<div class="lg:text-md max-w-2/3 text-xs md:text-base lg:max-w-full">
-												{@html formatText(cell.text)}
+												{#if cell.component}
+													<svelte:component this={cell.component} {...cell.props} />
+												{:else}
+													{@html formatText(cell.text || '')}
+												{/if}
 											</div>
 											{#if columnIndex === 0}
 												<span class="accordion-chevron ml-auto pr-1 lg:hidden">
@@ -227,9 +233,13 @@
 												<span class="status-check status-{cell.iconStatus} inline-flex h-6 w-6 items-center justify-center rounded-full text-sm lg:h-9 lg:w-9">
 													<Icon name={cell.icon} size="sm" lgSize="md" />
 												</span>
+											{:else if cell.component}
+												<span class="text-themeGray-400 text-right text-xs md:text-center lg:text-sm">
+													<svelte:component this={cell.component} {...cell.props} />
+												</span>
 											{:else}
 												<span class="text-themeGray-400 text-right text-xs md:text-center lg:text-sm">
-													{@html formatText(cell.text)}
+													{@html formatText(cell.text || '')}
 												</span>
 											{/if}
 										</div>
