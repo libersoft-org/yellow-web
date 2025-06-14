@@ -16,7 +16,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-client/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-client' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-client', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -31,7 +31,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-client-native/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-client-native' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-client-native', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -46,7 +46,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-admin/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-admin' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-admin', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -61,7 +61,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-server/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-server' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-server', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -76,7 +76,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-sticker-server/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-sticker-server' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-sticker-server', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -91,7 +91,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-gif-server/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-gif-server' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-gif-server', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -106,7 +106,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-registration-server/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-registration-server' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-registration-server', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -121,7 +121,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-registration-client/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-registration-client' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-registration-client', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -136,7 +136,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-web/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-web' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-web', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -151,7 +151,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/yellow-documentation/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-documentation' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/yellow-documentation', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
@@ -166,7 +166,7 @@
 					props: {
 						links: [
 							{ title: m['download.download'](), url: 'https://github.com/libersoft-org/realtime-console/archive/refs/heads/main.zip' },
-							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/realtime-console' },
+							{ title: m['download.source'](), url: 'https://github.com/libersoft-org/realtime-console', theme: 'secondary' },
 						],
 					},
 					alignment: 'center',
