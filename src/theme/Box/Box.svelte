@@ -38,7 +38,7 @@
 	</div>
 
 	{#if showFooter}
-		<div class="box__footer flex items-center justify-between">
+		<div class="box__footer flex items-center justify-between mt-auto">
 			{#if footerSlot}
 				{@render footerSlot()}
 			{:else if footerType === 'link'}
