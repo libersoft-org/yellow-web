@@ -4,6 +4,7 @@
 	import { createDropdownHandlers } from '@/utils/dropdown';
 	import type { Action } from 'svelte/action';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 
 	interface Props {
 		label: string;
@@ -20,6 +21,8 @@
 	let headerItemRef = $state<HTMLElement | null>(null);
 	let buttonRef = $state<HTMLElement | null>(null);
 	let show = $state(false);
+
+	const isActive = $derived($page.url.pathname === href || $page.url.pathname.startsWith(href + '/'));
 
 	// Check if mobile view on mount and on resize
 	const checkMobile = () => {
@@ -109,7 +112,8 @@
     text-base font-medium
     text-white lg:w-auto
     lg:px-4 lg:py-2 lg:font-bold lg:text-gray-700"
-		class:theme-button--primary={!isMobile && (active || show)}
+		class:theme-button--active={!isMobile && (active || isActive)}
+		class:theme-button--primary={!isMobile && !active && !isActive && show}
 		{href}
 		onclick={onClick}
 	>
@@ -120,6 +124,7 @@
 			</span>
 		{/if}
 	</a>
+
 	{#if hasChildren && subItems.length > 0}
 		<Dropdown {show} {isMobile} referenceElement={buttonRef}>
 			{#snippet children()}
