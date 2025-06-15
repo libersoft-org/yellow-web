@@ -199,31 +199,31 @@
 			name: m['featuresTable.profiles.title'],
 			features: [
 				{
-					name: 'User info',
+					name: m['featuresTable.profiles.items.user_info'],
 					implemented: 0,
 				},
 				{
-					name: 'Image gallery',
+					name: m['featuresTable.profiles.items.gallery'],
 					implemented: 0,
 				},
 				{
-					name: 'Following',
+					name: m['featuresTable.profiles.items.follow'],
 					implemented: 0,
 				},
 				{
-					name: 'Privacy settings',
+					name: m['featuresTable.profiles.items.privacy'],
 					implemented: 0,
 				},
 				{
-					name: 'Blocking',
+					name: m['featuresTable.profiles.items.blocking'],
 					implemented: 0,
 				},
 				{
-					name: 'Top public profiles',
+					name: m['featuresTable.profiles.items.top_profiles'],
 					implemented: 0,
 				},
 				{
-					name: 'Other modules content',
+					name: m['featuresTable.profiles.items.modules'],
 					implemented: 0,
 				},
 			],

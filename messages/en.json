@@ -49,7 +49,7 @@
 		"status2": "Fully implemented",
 		"status3": "Partially implemented",
 		"core": {
-			"title": "Core Features",
+			"title": "Core features",
 			"items": {
 				"amtp": "AMTP protocol",
 				"dmtp": "DMTP protocol",
@@ -88,7 +88,15 @@
 		},
 		"profiles": {
 			"title": "Profiles",
-			"items": {}
+			"items": {
+				"user_info": "User info",
+				"gallery": "Image gallery",
+				"follow": "Following",
+				"privacy": "Privacy settings",
+				"blocking": "Blocking",
+				"top_profiles": "Top public profiles",
+				"modules": "Other modules content"
+			}
 		},
 		"contacts": {
 			"title": "Contacts",
