@@ -60,8 +60,8 @@
 		buttonLink = Routes.comparison(),
 		isCollapsible = true,
 		showMaxHeight = true,
-		mobileColLeft: mobileColLeft = m['comparisonTable.table_headers.software'](),
-		mobileColRight: mobileColRight = m['comparisonTable.table_headers.features'](),
+		mobileColLeft: mobileColLeft = m['comparisonTable.table_headers.software'],
+		mobileColRight: mobileColRight = m['comparisonTable.table_headers.features'],
 	}: Props = $props();
 </script>
 
