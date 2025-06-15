@@ -149,23 +149,23 @@
 		"heading": "Frequently Asked Questions",
 		"item1": {
 			"question": "What is Yellow?",
-			"answer": "Yellow is a modern email client that utilizes the AMTP protocol to provide a more secure, reliable, and feature-rich email experience compared to traditional email clients. It's designed with a focus on user privacy, speed, and ease of use."
+			"answer": "Yellow is a multi-functional communication application that offers innovative features for secure and efficient instant messaging, social media services, e-commerce, business tools and entertainment. It is also a tool for building a parallel economy based on decentralized technologies such as cryptocurrencies and smart contracts. It communicates via secure AMTP and DMTP protocols."
 		},
 		"item2": {
 			"question": "What is AMTP?",
-			"answer": "Advanced Mail Transfer Protocol (AMTP) is ..."
+			"answer": "Advanced Mail Transfer Protocol (AMTP) is the new generation of e-mail protocol. It fully replaces the traditional e-mail protocols (SMTP, IMAP and POP3) and greatly expands their functionality. The protocol provides enhanced security in the form of secure login, encrypted data transfer, content signing and end-to-end encryption capabilities. Data is transmitted in real time, unlike traditional e-mail protocols, allowing not only instant messages but also files and data streams to be transmitted in real time. User identity is similar to traditional e-mail protocols, in the form of an e-mail address (user@domain.tld). Communication takes place within a distributed network."
 		},
 		"item3": {
 			"question": "What is DMTP?",
-			"answer": "Decentralized Mail Transfer Protocol (DMTP) is ..."
+			"answer": "Decentralized Mail Transfer Protocol (DMTP) is an upcoming protocol that completely eliminates central servers and relies on decentralized transfer and decentralized data storage. DMTP is designed to be fully censorship-resistant and provide users with the maximum level of privacy and security. It allows users to communicate directly with each other without the need for intermediaries. This provides users with a significant degree of privacy. Users create their own identity (which is in the form of a public address, similar to that of cryptocurrencies, for example). The network is fully decentralised and there is no central authority to manage user accounts."
 		},
 		"item4": {
-			"question": "Why is this software named \"Yellow\"?",
-			"answer": "The name Yellow was chosen to represent clarity, optimism, and visibility in email communications. Just as yellow is a vibrant and attention-grabbing color, our email client aims to make your important communications stand out and your email experience brighter."
+			"question": "Why is the software named \"Yellow\"?",
+			"answer": "As Yellow is, among other reasons, a project aimed at building a parallel economy based on decentralized technologies such as cryptocurrencies and smart contracts, the name was chosen because yellow is a symbol of the abundance and wealth that this economy brings. Plus, Yellow sounds a bit like Hello, which is a word that can start any conversation in the instant messages that the platform also delivers."
 		},
 		"item5": {
-			"question": "Is Yellow Client backward compatible with classic e-mail protocols (SMTP, IMAP, POP3)?",
-			"answer": "Yes, Yellow Client is fully backward compatible with classic email protocols including SMTP, IMAP, and POP3. This ensures you can continue to access all your existing email accounts while also enjoying the advanced features offered by AMTP for supported accounts."
+			"question": "Is Yellow client application backward compatible with classic e-mail protocols (SMTP, IMAP, POP3)?",
+			"answer": "No. Yellow is not compatible with traditional e-mail protocols such as SMTP, IMAP and POP3. Instead, the platform aims to replace these outdated protocols with the next generation of AMTP and DMTP. These protocols provide improved security, speed and greatly expand functionality that traditional e-mail protocols cannot offer."
 		}
 	},
 	"accounts": {
