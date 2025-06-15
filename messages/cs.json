@@ -88,7 +88,15 @@
 		},
 		"profiles": {
 			"title": "Profily",
-			"items": {}
+			"items": {
+				"user_info": "Informace o uživateli",
+				"gallery": "Galerie",
+				"follow": "Sledování",
+				"privacy": "Nastavení soukromí",
+				"blocking": "Blokování",
+				"top_profiles": "Nejlepší veřejné profily",
+				"modules": "Obsah z dalších modulů"
+			}
 		},
 		"contacts": {
 			"title": "Kontakty",
