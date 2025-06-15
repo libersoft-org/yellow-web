@@ -2,19 +2,20 @@
 	import Link from '@/theme/Link/Link.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
 	import { m } from '$lib/i18n/index.svelte.js';
-	export const blockTitle = m['text.block_title'];
-	const title = m['text.organization_title'];
-	const address = [m['text.address.line1'], m['text.address.line2'], m['text.address.line3']];
-	const organizationId = m['text.organization_id_value'];
-	const contactTitle = m['text.contact_title'];
-	const contactEmail = m['text.contact_email'];
-	const links = [
+	// Make all translations reactive
+	const blockTitle = $derived(m['text.block_title']);
+	const title = $derived(m['text.organization_title']);
+	const address = $derived([m['text.address.line1'], m['text.address.line2'], m['text.address.line3']]);
+	const organizationId = $derived(m['text.organization_id_value']);
+	const contactTitle = $derived(m['text.contact_title']);
+	const contactEmail = $derived(m['text.contact_email']);
+	const links = $derived([
 		{ label: m['text.links.github'], icon: 'github', href: 'https://github.com/libersoft-org/yellow-documentation' },
 		{ label: m['text.links.telegram_chat'], icon: 'telegram', href: 'https://t.me/libersoft' },
 		{ label: m['text.links.telegram_announcements'], icon: 'telegram', href: 'https://t.me/libersoft_ann' },
 		{ label: m['text.links.linkedin'], icon: 'linkedin', href: 'https://www.linkedin.com/company/libersoft-org/' },
 		{ label: m['text.links.facebook'], icon: 'facebook', href: 'https://www.facebook.com/groups/libersoft' },
-	];
+	]);
 </script>
 
 {#snippet cardHeaderSnippet()}
