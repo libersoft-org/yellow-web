@@ -40,7 +40,7 @@
 <style>
 </style>
 
-<div bind:this={dropdownRef} class={['dropdown pt-4 absolute top-[100%] left-1/2 z-50 -translate-x-1/2 transform', isMobile ? 'mobile-dropdown' : 'theme-floating-dropdown', show ? 'open opacity-100' : 'pointer-events-none opacity-0', className]}>
+<div bind:this={dropdownRef} class={['dropdown pt-4 absolute top-[100%] left-1/2 z-50 -translate-x-1/2 transform', isMobile ? 'mobile-dropdown' : 'theme-floating-dropdown', show ? 'open opacity-100' : isMobile ? 'hidden' : 'pointer-events-none opacity-0', className]}>
 	<div
 		class="dropdown-content-wrapper
 				transition-opacity duration-200 lg:rounded-lg lg:shadow-lg
