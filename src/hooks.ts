@@ -1,2 +1,2 @@
-import { deLocalizeUrl } from '$lib/paraglide/runtime';
-export const reroute = request => deLocalizeUrl(request.url).pathname;
+// No URL-based routing needed for our simple cookie-based locale system
+export const reroute = request => request.url.pathname;

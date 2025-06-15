@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { m } from '@paraglide/messages';
+	import { m } from '$lib/i18n/index.svelte.js';
 
 	interface Props {
 		textContent?: string;
@@ -9,7 +9,7 @@
 		imagePosition?: 'left' | 'right';
 	}
 
-	let { textContent = m['text_image_highlighted.content'](), imagePath = '/assets/images/ntb-image.png', imageAlt = m['text_image_highlighted.image_alt'](), title = m['text_image_highlighted.title'](), imagePosition = 'right' }: Props = $props();
+	let { textContent = m['text_image_highlighted.content'], imagePath = '/assets/images/ntb-image.png', imageAlt = m['text_image_highlighted.image_alt'], title = m['text_image_highlighted.title'], imagePosition = 'right' }: Props = $props();
 </script>
 
 <div class="theme-container m-auto mb-18 md:mb-30">

@@ -5,8 +5,8 @@
 	import SelectBox from '@/theme/SelectBox/SelectBox.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
 	import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
-	import { m } from '@paraglide/messages';
-	import { getLocale, setLocale } from '@paraglide/runtime';
+	import { m } from '$lib/i18n/index.svelte.js';
+	import { getLocale, setLocale } from '$lib/i18n/index.svelte.js';
 
 	// Define the props
 	let { openModal } = $props();
@@ -183,7 +183,7 @@
 <div class="bg-themeYellow-600 language-panel fixed right-0 left-0 z-50 rounded-t-2xl p-5" style="bottom: {isMobileMenuOpen ? '0' : '-100%'}">
 	<div onclick={e => e.stopPropagation()} role="none">
 		<div class="mb-4 flex items-center justify-between">
-			<h3 class="text-themeGray-800 text-xl font-bold">{m['language.choose_your_language']()}</h3>
+			<h3 class="text-themeGray-800 text-xl font-bold">{m['language.choose_your_language']}</h3>
 			<button aria-label="Close language selector" class="text-themeGray-800 hover:bg-opacity-20 rounded-full p-2 transition-colors hover:bg-white" onclick={closeMobileMenu}>
 				<Icon class="h-4 w-4 rotate-180" name="cross" size="sm" />
 			</button>

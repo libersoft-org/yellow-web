@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Routes } from '@/utils/routes';
-	import { m } from '@paraglide/messages';
+	import { m } from '$lib/i18n/index.svelte.js';
 	import svgBackground from './bg.svg?raw';
 	import Table from '@/theme/Table/Table.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
@@ -36,43 +36,43 @@
 	}
 
 	let {
-		title = m['featuresTable.title'](),
-		headers = [m['featuresTable.table_header.feature'](), m['featuresTable.table_header.implemented']()],
+		title = m['featuresTable.title'],
+		headers = [m['featuresTable.table_header.feature'], m['featuresTable.table_header.implemented']],
 		rows = [
 			{
 				cells: [
-					{ text: m['featuresTable.table_items.item1'](), alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item1'], alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
 				],
 			},
 			{
 				cells: [
-					{ text: m['featuresTable.table_items.item2'](), alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item2'], alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
 				],
 			},
 			{
 				cells: [
-					{ text: m['featuresTable.table_items.item3'](), alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item3'], alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
 				],
 			},
 			{
 				cells: [
-					{ text: m['featuresTable.table_items.item4'](), alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item4'], alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'warning', icon: 'check' },
 				],
 			},
 			{
 				cells: [
-					{ text: m['featuresTable.table_items.item5'](), alignment: 'left', isHeader: true },
+					{ text: m['featuresTable.table_items.item5'], alignment: 'left', isHeader: true },
 					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
 				],
 			},
 			{
 				cells: [
 					{
-						text: m['featuresTable.table_items.item6'](),
+						text: m['featuresTable.table_items.item6'],
 						alignment: 'left',
 						isHeader: true,
 					},
@@ -81,12 +81,12 @@
 			},
 		],
 		imagePath = 'assets/images/fluid.png',
-		buttonLabel = m['featuresTable.button'](),
+		buttonLabel = m['featuresTable.button'],
 		buttonLink = Routes.features(),
 		legendItems = [
-			{ icon: 'cross', text: m['featuresTable.status1'](), colorClass: 'text-red-400' },
-			{ icon: 'check', text: m['featuresTable.status2'](), colorClass: 'text-green-500' },
-			{ icon: 'check', text: m['featuresTable.status3'](), colorClass: 'text-yellow-500' },
+			{ icon: 'cross', text: m['featuresTable.status1'], colorClass: 'text-red-400' },
+			{ icon: 'check', text: m['featuresTable.status2'], colorClass: 'text-green-500' },
+			{ icon: 'check', text: m['featuresTable.status3'], colorClass: 'text-yellow-500' },
 		],
 	}: Props = $props();
 
@@ -109,7 +109,7 @@
 	<div class="relative flex flex-col items-center justify-center">
 		<div class="mb-4">
 			<h2 class="theme-text-h2 relative z-10 text-center">
-				<span class="theme-title-underline z-5">{m['featuresTable.title']()}</span>
+				<span class="theme-title-underline z-5">{m['featuresTable.title']}</span>
 			</h2>
 		</div>
 		<div class="table-container-wrapper relative mb-19 lg:mb-0">

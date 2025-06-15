@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Table from '@/theme/Table/Table.svelte';
 	import { Routes } from '@/utils/routes';
-	import { m } from '@paraglide/messages';
+	import { m } from '$lib/i18n/index.svelte.js';
 	interface Cell {
 		text?: string;
 		isHeader?: boolean;
@@ -30,21 +30,21 @@
 	const check: Cell = { iconStatus: 'success', icon: 'check' };
 	const cross: Cell = { iconStatus: 'error', icon: 'cross' };
 	let {
-		title = m['comparisonTable.title'](),
-		subtitle = m['comparisonTable.subtitle'](),
-		headers = [m['comparisonTable.table_headers.software'](), m['comparisonTable.table_headers.open_source'](), m['comparisonTable.table_headers.distributed'](), m['comparisonTable.table_headers.e2e'](), m['comparisonTable.table_headers.developed_by']()],
+		title = m['comparisonTable.title'],
+		subtitle = m['comparisonTable.subtitle'],
+		headers = [m['comparisonTable.table_headers.software'], m['comparisonTable.table_headers.open_source'], m['comparisonTable.table_headers.distributed'], m['comparisonTable.table_headers.e2e'], m['comparisonTable.table_headers.developed_by']],
 		rows = [
 			{
 				cells: [{ text: 'Yellow', isHeader: true }, check, check, check, { text: 'LiberSoft, Liberland' }],
 			},
 			{
-				cells: [{ text: 'E-mail', isHeader: true }, { text: m['comparisonTable.table_description.some_software']() }, check, { text: m['comparisonTable.table_description.some_software']() }, { text: 'Jon Postel, Suzanne Sluizer, USA' }],
+				cells: [{ text: 'E-mail', isHeader: true }, { text: m['comparisonTable.table_description.some_software'] }, check, { text: m['comparisonTable.table_description.some_software'] }, { text: 'Jon Postel, Suzanne Sluizer, USA' }],
 			},
 			{
 				cells: [{ text: 'WhatsApp', isHeader: true }, cross, cross, check, { text: 'Meta Platforms Inc., USA' }],
 			},
 			{
-				cells: [{ text: 'Messages (RCS)', isHeader: true }, cross, { text: m['comparisonTable.table_description.mobile_operators']() }, check, { text: 'Google LLC, USA / GSM Association, UK' }],
+				cells: [{ text: 'Messages (RCS)', isHeader: true }, cross, { text: m['comparisonTable.table_description.mobile_operators'] }, check, { text: 'Google LLC, USA / GSM Association, UK' }],
 			},
 			{
 				cells: [{ text: 'WeChat', isHeader: true }, cross, cross, cross, { text: 'Tencent Holdings Ltd., China' }],
@@ -53,7 +53,7 @@
 				cells: [{ text: 'Facebook Messenger', isHeader: true }, cross, cross, cross, { text: 'Meta Platforms Inc., USA' }],
 			},
 		],
-		buttonLabel = m['comparisonTable.button'](),
+		buttonLabel = m['comparisonTable.button'],
 		buttonLink = Routes.comparison(),
 		isCollapsible = true,
 	}: Props = $props();
