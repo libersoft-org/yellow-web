@@ -67,7 +67,24 @@
 		},
 		"messages": {
 			"title": "Instant messages",
-			"items": {}
+			"items": {
+				"one_on_one": "One-on-one chat",
+				"group_chat": "Group chat",
+				"news": "News groups",
+				"multipart": "Multipart messages",
+				"file_server": "File transfer - server stored",
+				"file_p2p": "File transfer - peer-to-peer",
+				"emojis": "Emojis",
+				"stickers": "Animated stickers",
+				"gifs": "Gifs",
+				"reactions": "Reactions",
+				"search": "Search",
+				"block": "Contact blocking",
+				"topics": "Chat topics",
+				"conversation_groups": "Conversation groups (family, work etc.)",
+				"translations": "Message translations",
+				"widgets": "Widgets"
+			}
 		},
 		"profiles": {
 			"title": "Profiles",

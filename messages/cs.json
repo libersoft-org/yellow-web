@@ -67,7 +67,24 @@
 		},
 		"messages": {
 			"title": "Rychlé zprávy",
-			"items": {}
+			"items": {
+				"one_on_one": "Zprávy mezi dvěma uživateli",
+				"group_chat": "Skupinové zprávy",
+				"news": "Novinkové skupiny",
+				"multipart": "Vícedílné zprávy",
+				"file_server": "Přenos souborů - uloženo na serveru",
+				"file_p2p": "Přenos souborů - peer-to-peer",
+				"emojis": "Emotikony",
+				"stickers": "Animované nálepky",
+				"gifs": "Gify",
+				"reactions": "Reakce",
+				"search": "Vyhledávání",
+				"block": "Blokace kontaktů",
+				"topics": "Temata zpráv",
+				"conversation_groups": "Skupiny konverzací (rodina, práce apod.)",
+				"translations": "Překlady zpráv",
+				"widgets": "Widgety"
+			}
 		},
 		"profiles": {
 			"title": "Profily",

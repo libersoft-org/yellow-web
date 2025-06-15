@@ -130,67 +130,67 @@
 			name: m['featuresTable.messages.title'],
 			features: [
 				{
-					name: 'One-on-one chat',
+					name: m['featuresTable.messages.items.one_on_one'],
 					implemented: 1,
 				},
 				{
-					name: 'Group chat',
+					name: m['featuresTable.messages.items.group_chat'],
 					implemented: 0,
 				},
 				{
-					name: 'News groups',
+					name: m['featuresTable.messages.items.news'],
 					implemented: 0,
 				},
 				{
-					name: 'Multipart messages',
+					name: m['featuresTable.messages.items.multipart'],
 					implemented: 1,
 				},
 				{
-					name: 'File transfer - server stored',
+					name: m['featuresTable.messages.items.file_server'],
 					implemented: 1,
 				},
 				{
-					name: 'File transfer - peer-to-peer',
+					name: m['featuresTable.messages.items.file_p2p'],
 					implemented: 1,
 				},
 				{
-					name: 'Emojis',
+					name: m['featuresTable.messages.items.emojis'],
 					implemented: 1,
 				},
 				{
-					name: 'Animated stickers',
+					name: m['featuresTable.messages.items.stickers'],
 					implemented: 1,
 				},
 				{
-					name: 'Gifs',
+					name: m['featuresTable.messages.items.gifs'],
 					implemented: 1,
 				},
 				{
-					name: 'Reactions',
+					name: m['featuresTable.messages.items.reactions'],
 					implemented: 0,
 				},
 				{
-					name: 'Search',
+					name: m['featuresTable.messages.items.search'],
 					implemented: 0,
 				},
 				{
-					name: 'Contact blocking',
+					name: m['featuresTable.messages.items.block'],
 					implemented: 0,
 				},
 				{
-					name: 'Chat topics',
+					name: m['featuresTable.messages.items.topics'],
 					implemented: 0,
 				},
 				{
-					name: 'Conversation groups (family, work etc.)',
+					name: m['featuresTable.messages.items.conversation_groups'],
 					implemented: 0,
 				},
 				{
-					name: 'Message translations',
+					name: m['featuresTable.messages.items.translations'],
 					implemented: 0,
 				},
 				{
-					name: 'Widgets',
+					name: m['featuresTable.messages.items.widgets'],
 					implemented: 0,
 				},
 			],
