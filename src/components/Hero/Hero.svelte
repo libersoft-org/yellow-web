@@ -20,7 +20,7 @@
 			{@html m['hero.welcome']()}
 			<span class="theme-title-underline">{m['hero.app_name']()}</span>
 		</h1>
-		<div class="theme-text-body1 text-themeGray-400 mb-4.5 text-center md:mb-10 lg:mb-13">
+		<div class="theme-text-body1 text-400 mb-4.5 text-center md:mb-10 lg:mb-13">
 			{m['hero.motto']()}<br />
 			{description}
 		</div>
