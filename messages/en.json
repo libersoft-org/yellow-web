@@ -64,6 +64,7 @@
 	"comparisonTable": {
 		"title": "Comparison",
 		"subtitle": "with other software",
+		"disclaimer": "Please note that some of the information in the tables below may not be up to date or may be inaccurate. If you encounter any incorrect information, please contact us. Thank you.",
 		"button": "See all comparisons",
 		"table_headers": {
 			"software": "Software",

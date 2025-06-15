@@ -64,6 +64,7 @@
 	"comparisonTable": {
 		"title": "Srovnání",
 		"subtitle": "s jiným software",
+		"disclaimer": "Upozorňujeme, že některé informace v níže uvedených tabulkách nemusí být aktuální nebo mohou být nepřesné. Pokud narazíte na nějakou chybnou informaci, prosíme, kontaktujte nás. Děkujeme.",
 		"button": "Všechna srovnání",
 		"table_headers": {
 			"software": "Software",
