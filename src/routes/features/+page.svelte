@@ -282,27 +282,27 @@
 			name: m['featuresTable.conference.title'],
 			features: [
 				{
-					name: 'Conference calls',
+					name: m['featuresTable.conference.items.calls'],
 					implemented: 0,
 				},
 				{
-					name: 'Moderation',
+					name: m['featuresTable.conference.items.moderation'],
 					implemented: 0,
 				},
 				{
-					name: 'Screen sharing and remote control',
+					name: m['featuresTable.conference.items.screen_sharing'],
 					implemented: 0,
 				},
 				{
-					name: 'Conference recording',
+					name: m['featuresTable.conference.items.recording'],
 					implemented: 0,
 				},
 				{
-					name: 'Chat and file sending',
+					name: m['featuresTable.conference.items.chat_file'],
 					implemented: 0,
 				},
 				{
-					name: 'Interconnection with callendar',
+					name: m['featuresTable.conference.items.calendar'],
 					implemented: 0,
 				},
 			],
@@ -311,39 +311,39 @@
 			name: m['featuresTable.wallet.title'],
 			features: [
 				{
-					name: 'Sending and receiving cryptocurrencies',
+					name: m['featuresTable.wallet.items.sending_receiving'],
 					implemented: 2,
 				},
 				{
-					name: 'Multiple blockchain support (EVM compatible)',
+					name: m['featuresTable.wallet.items.blockchains'],
 					implemented: 1,
 				},
 				{
-					name: 'Tokens',
+					name: m['featuresTable.wallet.items.tokens'],
 					implemented: 0,
 				},
 				{
-					name: 'NFTs',
+					name: m['featuresTable.wallet.items.nfts'],
 					implemented: 0,
 				},
 				{
-					name: 'Password protection',
+					name: m['featuresTable.wallet.items.password'],
 					implemented: 0,
 				},
 				{
-					name: 'Seed and key management',
+					name: m['featuresTable.wallet.items.seed'],
 					implemented: 1,
 				},
 				{
-					name: 'Import and export',
+					name: m['featuresTable.wallet.items.import_export'],
 					implemented: 0,
 				},
 				{
-					name: 'Trezor HW wallet support',
+					name: m['featuresTable.wallet.items.trezor'],
 					implemented: 0,
 				},
 				{
-					name: 'Ledger HW wallet support',
+					name: m['featuresTable.wallet.items.ledger'],
 					implemented: 0,
 				},
 			],

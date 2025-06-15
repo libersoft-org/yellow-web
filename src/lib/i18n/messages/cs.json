@@ -124,14 +124,31 @@
 		},
 		"conference": {
 			"title": "Konference",
-			"items": {}
+			"items": {
+				"calls": "Konferenční hovory",
+				"moderation": "Moderování",
+				"screen_sharing": "Sdílení obrazovky a vzdálená správa",
+				"recording": "Nahrávání konference",
+				"chat_file": "Odesílání zpráv a souborů",
+				"calendar": "Propojení s kalendářem"
+			}
 		},
 		"wallet": {
 			"title": "Peněženka",
-			"items": {}
+			"items": {
+				"sending_receiving": "Odesílání a přijímání kryptoměn",
+				"blockchains": "Podpora více blockchainů (kompatibilní s EVM)",
+				"tokens": "Tokeny",
+				"nfts": "NFT",
+				"password": "Ochrana heslem",
+				"seed": "Správa seedu a klíčů",
+				"import_export": "Import a export",
+				"trezor": "Podpora HW peněženky Trezor",
+				"ledger": "Podpora HW peněženky Ledger"
+			}
 		},
 		"newsfeed_stories": {
-			"title": "Zprávy a příběhy",
+			"title": "Newsfeed a příběhy",
 			"items": {}
 		},
 		"video": {

@@ -124,11 +124,28 @@
 		},
 		"conference": {
 			"title": "Conference",
-			"items": {}
+			"items": {
+				"calls": "Conference calls",
+				"moderation": "Moderation",
+				"screen_sharing": "Screen sharing and remote control",
+				"recording": "Conference recording",
+				"chat_file": "Chat and file sending",
+				"calendar": "Interconnection with calendar"
+			}
 		},
 		"wallet": {
 			"title": "Wallet",
-			"items": {}
+			"items": {
+				"sending_receiving": "Sending and receiving cryptocurrencies",
+				"blockchains": "Multiple blockchain support (EVM compatible)",
+				"tokens": "Tokens",
+				"nfts": "NFTs",
+				"password": "Password protection",
+				"seed": "Seed and key management",
+				"import_export": "Import and export",
+				"trezor": "Trezor HW wallet support",
+				"ledger": "Ledger HW wallet support"
+			}
 		},
 		"newsfeed_stories": {
 			"title": "News and stories",
