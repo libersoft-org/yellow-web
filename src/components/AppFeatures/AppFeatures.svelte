@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { Routes } from '@/utils/routes';
 	import { m } from '@paraglide/messages';
-	import svgBackground from './bg.svg?raw';
+	//import svgBackground from './bg.svg?raw';
 	import Card from '@/theme/Card/Card.svelte';
 	import Button from '@/theme/Button/Button.svelte';
 </script>
@@ -29,12 +29,21 @@
 		</h2>
 	</div>
 	<div class="theme-container relative flex w-full flex-col items-center px-4 sm:px-6 lg:px-0">
-		<div class="theme-gradient-radial-grey relative rounded-2xl px-3 pt-7.5 pb-16 md:pb-12 lg:bg-none lg:px-0 lg:py-0">
-			<div class="svg-bg margin-auto pointer-events-none absolute top-5 -z-10 hidden w-full lg:block">
+		<div class="theme-gradient-radial-grey relative rounded-2xl px-3 pt-7.5 pb-16 md:pb-12 lg:px-0 lg:pt-12 lg:pb-16">
+			<!-- 
+					<div class="svg-bg margin-auto pointer-events-none absolute top-5 -z-10 hidden w-full lg:block">
 				{@html svgBackground}
 			</div>
-			<div class="flex w-full flex-col justify-center gap-4 md:grid md:grid-cols-2 lg:flex lg:grid-cols-none lg:flex-row lg:gap-10 lg:px-[8rem]">
-				<div class="flex flex-1 flex-col gap-4 lg:max-w-[351px] lg:gap-6 lg:pt-19">
+			-->
+			<div class="flex w-full flex-col justify-center gap-4 md:flex md:flex-row md:gap-10 md:px-10 lg:px-[8rem]">
+				<!-- Image container - 1/3 width -->
+				<div class="-order-1 flex flex-1 flex-col items-center gap-5 md:order-none md:w-1/3">
+					<div class="flex w-full max-w-[240px] justify-center md:max-w-full">
+						<img alt={m['app_features.mobile_image_alt']()} class="md:max-w-full" src="/assets/images/app-features-mobile.png" />
+					</div>
+				</div>
+				<!-- Feature boxes container -->
+				<div class="flex w-full flex-col gap-4 md:w-2/3 md:gap-6">
 					{@render feature({
 						title: m['app_features.features.messages.title'](),
 						icon: 'message',
@@ -45,19 +54,11 @@
 						icon: 'calendar',
 						description: m['app_features.features.business.description'](),
 					})}
-				</div>
-				<div class="-order-1 flex flex-1 flex-col items-center gap-5 md:col-span-2 lg:order-none lg:max-w-[384px]">
-					<!-- Image -->
-					<div class="flex w-full max-w-[240px] justify-center md:max-w-[320px] lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:block lg:max-w-[380px] lg:justify-start">
-						<img alt={m['app_features.mobile_image_alt']()} class="lg:max-w-full" src="/assets/images/app-features-mobile.png" />
-					</div>
 					{@render feature({
 						title: m['app_features.features.ecommerce.title'](),
 						icon: 'cart',
 						description: m['app_features.features.ecommerce.description'](),
 					})}
-				</div>
-				<div class="flex flex-1 flex-col gap-4 lg:max-w-[351px] lg:gap-6 lg:pt-19">
 					{@render feature({
 						title: m['app_features.features.social.title'](),
 						icon: 'phone',
@@ -70,7 +71,7 @@
 					})}
 				</div>
 			</div>
-			<div class="absolute inset-x-0 -bottom-6 flex justify-center lg:-bottom-22">
+			<div class="absolute inset-x-0 -bottom-6 flex justify-center">
 				<Button
 					label={m['app_features.feature_button']()}
 					rightIcon="chevron"

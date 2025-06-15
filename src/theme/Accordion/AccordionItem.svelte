@@ -49,7 +49,7 @@
 	onclick={handleToggle}
 	class={`transition-background 
     mb-4 flex w-full 
-    cursor-pointer items-center 
+    cursor-pointer 
     justify-between 
     rounded-xl 
     px-5.5 py-5.5 
@@ -78,8 +78,7 @@
 		<div
 			class="bg-themeGray-800 transition-background-color flex
         h-9 w-9
-        items-center
-        justify-center
+        items-center justify-center
         rounded-full
         p-2
         text-white duration-300"

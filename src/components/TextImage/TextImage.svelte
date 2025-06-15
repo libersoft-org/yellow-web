@@ -67,12 +67,12 @@
 			</div>
 			{#if showBulletList}
 				<ul class="theme-bullet-list md:text-md text-themeGray-700 mt-6 mb-8 text-sm font-medium lg:text-lg">
-					{#each bulletItems as item}
+					{#each bulletItems as item, i}
 						<li>
 							{item.text}
 							{#if item.subItems.length > 0}
 								<ul class="md:text-md text-themeGray-400 text-xs font-normal">
-									{#each item.subItems as subItem}
+									{#each item.subItems as subItem, j}
 										<li>{subItem}</li>
 									{/each}
 								</ul>

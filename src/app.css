@@ -185,6 +185,13 @@
 	@apply border-b-3 border-[#E9B834];
 }
 
+@utility theme-button--active {
+	@apply rounded-xl rounded-tr-none px-4 py-2;
+	@apply theme-gradient-yellow bg-gradient-to-t;
+	@apply !border-b-3 !border-[#D4A52E];
+	@apply brightness-95;
+}
+
 @utility theme-floating {
 	position: absolute;
 	width: max-content;

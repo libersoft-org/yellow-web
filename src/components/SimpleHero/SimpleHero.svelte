@@ -7,7 +7,10 @@
 	let { title, backgroundImage = 'assets/images/hero-bg.png' }: Props = $props();
 </script>
 
-<div class="relative isolate bg-cover bg-center pt-34 pb-12" style="background-image: url('{backgroundImage}')">
+<style>
+</style>
+
+<div class="relative isolate bg-center pt-25 lg:pt-34 pb-12 md:bg-repeat-x bg-size-full lg:bg-size-[80%]" style="background-image: url('{backgroundImage}')">
 	<div class="theme-container relative mx-auto">
 		<div class="flex flex-wrap justify-center">
 			<div class="w-full">
@@ -17,4 +20,5 @@
 			</div>
 		</div>
 	</div>
+	<div class="h-8 bg-gradient-to-b from-transparent via-white/70 to-white absolute bottom-0 left-0 right-0"></div>
 </div>

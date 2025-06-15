@@ -106,14 +106,14 @@
 </style>
 
 {#snippet leftSide()}
-	<div class="table-container relative flex flex-col items-center justify-center">
+	<div class="relative flex flex-col items-center justify-center">
 		<div class="mb-4">
 			<h2 class="theme-text-h2 relative z-10 text-center">
 				<span class="theme-title-underline z-5">{m['featuresTable.title']()}</span>
 			</h2>
 		</div>
 		<div class="table-container-wrapper relative mb-19 lg:mb-0">
-			<Table {rows} {headers} showOverlay={shouldShowOverlay(rows)} overlayType="gray" class="max-w-[538px]" {buttonLabel} {buttonLink} />
+			<Table {rows} {headers} showOverlay={shouldShowOverlay(rows)} overlayType="gray" class="max-w-[538px]" {buttonLabel} {buttonLink} isCollapsible={false} />
 		</div>
 	</div>
 {/snippet}
@@ -122,7 +122,7 @@
 		<div class="relative order-2 w-full md:w-2/3 lg:order-1 lg:w-full">
 			<img src={imagePath} alt="Yellow app features" class="max-w-full" />
 		</div>
-		<div class="legend order-1 mt-6 mb-3 flex justify-center gap-4 pl-4.5 sm:flex-row lg:order-2 lg:mb-0 lg:justify-start">
+		<div class="legend order-1 mt-6 mb-3 flex flex-wrap justify-center gap-4 pl-4.5 sm:flex-row lg:order-2 lg:mb-0 lg:justify-start">
 			{#each legendItems as item}
 				<div class="flex items-start gap-1 md:items-center">
 					<span class={item.colorClass}>

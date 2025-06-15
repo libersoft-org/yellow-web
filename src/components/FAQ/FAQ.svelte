@@ -52,7 +52,7 @@
 
 <div class="theme-container mx-auto">
 	<Accordion defaultActive={defaultActiveId}>
-		{#each faqItems as item}
+		{#each faqItems as item, i (i)}
 			{@render questionContent(item)}
 		{/each}
 	</Accordion>

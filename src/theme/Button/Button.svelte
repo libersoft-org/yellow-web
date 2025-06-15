@@ -8,9 +8,10 @@
 		icon?: string | IconProps;
 		rightIcon?: string | IconProps;
 		iconSize?: IconProps['size'];
+		size?: 'sm' | 'lg';
 	}
 
-	let { label, theme = 'primary', icon, rightIcon, iconSize = 'sm', ...restProps }: Props = $props();
+	let { label, theme = 'primary', icon, rightIcon, iconSize = 'sm', size = 'lg', ...restProps }: Props = $props();
 </script>
 
 <style>
@@ -26,12 +27,12 @@
 	</div>
 {/snippet}
 
-<button {...restProps} class={['button', 'transition-background cursor-pointer rounded-2xl rounded-tr-none font-bold drop-shadow-md duration-300', 'px-4.5 py-4.5 md:px-7 md:py-3 lg:px-8.5 lg:py-3.5', theme === 'primary' ? 'text-secondary theme-button--primary from-themeYellow-600 to-themeYellow-800 hover:from-themeYellow-800 hover:to-themeYellow-600 bg-gradient-to-b' : '', theme === 'secondary' ? 'from-themeGray-600 to-themeGray-800 hover:from-themeGray-800 hover:to-themeGray-600 bg-gradient-to-b text-white' : '', restProps.class]}>
+<button {...restProps} class={['button', 'transition-background cursor-pointer rounded-2xl rounded-tr-none font-bold drop-shadow-md duration-300', size === 'sm' ? 'px-3 py-2.5 md:px-5 md:py-2 lg:px-6 lg:py-2.5' : 'px-4.5 py-4.5 md:px-7 md:py-3 lg:px-8.5 lg:py-3.5', theme === 'primary' ? 'text-secondary theme-button--primary from-themeYellow-600 to-themeYellow-800 hover:from-themeYellow-800 hover:to-themeYellow-600 bg-gradient-to-b' : '', theme === 'secondary' ? 'from-themeGray-600 to-themeGray-800 hover:from-themeGray-800 hover:to-themeGray-600 bg-gradient-to-b text-white' : '', restProps.class]}>
 	<div class="button__inner flex items-center justify-center {rightIcon ? 'gap-3.5' : 'gap-2'}">
 		{#if icon}
 			{@render makeIcon(icon)}
 		{/if}
-		<div class="button__label text-sm md:text-base lg:text-lg">
+		<div class="button__label {size === 'sm' ? 'text-xs md:text-sm lg:text-base' : 'text-sm md:text-base lg:text-lg'}">
 			{label}
 		</div>
 		{#if rightIcon}
