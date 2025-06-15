@@ -34,7 +34,7 @@
 		});
 
 		return {
-			title: 'Core Features',
+			title: m['featuresTable.titles.core_features'](),
 			headers,
 			rows,
 		};
@@ -118,7 +118,7 @@
 	];
 	const modules = [
 		{
-			name: 'Messages',
+			name: m['featuresTable.titles.messages'](),
 			features: [
 				{
 					name: 'One-on-one chat',
@@ -187,7 +187,7 @@
 			],
 		},
 		{
-			name: 'Profiles',
+			name: m['featuresTable.titles.profiles'](),
 			features: [
 				{
 					name: 'User info',
@@ -220,7 +220,7 @@
 			],
 		},
 		{
-			name: 'Contacts',
+			name: m['featuresTable.titles.contacts'](),
 			features: [
 				{
 					name: 'Contact management',
@@ -245,7 +245,7 @@
 			],
 		},
 		{
-			name: 'Calls',
+			name: m['featuresTable.titles.calls'](),
 			features: [
 				{
 					name: 'Audio calls',
@@ -270,7 +270,7 @@
 			],
 		},
 		{
-			name: 'Conference',
+			name: m['featuresTable.titles.conference'](),
 			features: [
 				{
 					name: 'Conference calls',
@@ -299,7 +299,7 @@
 			],
 		},
 		{
-			name: 'Wallet',
+			name: m['featuresTable.titles.wallet'](),
 			features: [
 				{
 					name: 'Sending and receiving cryptocurrencies',
@@ -340,7 +340,7 @@
 			],
 		},
 		{
-			name: 'Newsfeed and stories',
+			name: m['featuresTable.titles.newsfeed_stories'](),
 			features: [
 				{
 					name: 'Newsfeed posts management',
@@ -377,7 +377,7 @@
 			],
 		},
 		{
-			name: 'Video',
+			name: m['featuresTable.titles.video'](),
 			features: [
 				{
 					name: 'Video channels',
@@ -410,7 +410,7 @@
 			],
 		},
 		{
-			name: 'Events',
+			name: m['featuresTable.titles.events'](),
 			features: [
 				{
 					name: 'Event management',
@@ -443,7 +443,7 @@
 			],
 		},
 		{
-			name: 'Forum',
+			name: m['featuresTable.titles.forum'](),
 			features: [
 				{
 					name: 'Forums, threads and posts',
@@ -472,7 +472,7 @@
 			],
 		},
 		{
-			name: 'Map',
+			name: m['featuresTable.titles.map'](),
 			features: [
 				{
 					name: 'World map',
@@ -497,7 +497,7 @@
 			],
 		},
 		{
-			name: 'E-shops',
+			name: m['featuresTable.titles.eshops'](),
 			features: [
 				{
 					name: 'Buy stuff',
@@ -518,7 +518,7 @@
 			],
 		},
 		{
-			name: 'Marketplace',
+			name: m['featuresTable.titles.marketplace'](),
 			features: [
 				{
 					name: 'Buy and sell stuff',
@@ -543,7 +543,7 @@
 			],
 		},
 		{
-			name: 'Donations',
+			name: m['featuresTable.titles.donations'](),
 			features: [
 				{
 					name: 'Sending donation',
@@ -564,7 +564,7 @@
 			],
 		},
 		{
-			name: 'Crowdfunding',
+			name: m['featuresTable.titles.crowdfunding'](),
 			features: [
 				{
 					name: 'Contribution in crowdfunding campaigns',
@@ -585,7 +585,7 @@
 			],
 		},
 		{
-			name: 'Calendar',
+			name: m['featuresTable.titles.calendar'](),
 			features: [
 				{
 					name: 'Calendar management',
@@ -602,7 +602,7 @@
 			],
 		},
 		{
-			name: 'Tasks',
+			name: m['featuresTable.titles.tasks'](),
 			features: [
 				{
 					name: 'Dashboard and task management',
@@ -623,7 +623,7 @@
 			],
 		},
 		{
-			name: 'File sharing',
+			name: m['featuresTable.titles.file_sharing'](),
 			features: [
 				{
 					name: 'Download and upload to IPFS storage',
@@ -648,7 +648,7 @@
 			],
 		},
 		{
-			name: 'Virtual chat',
+			name: m['featuresTable.titles.virtual_chat'](),
 			features: [
 				{
 					name: 'Chat in virtual world',
@@ -673,7 +673,7 @@
 			],
 		},
 		{
-			name: 'Dating',
+			name: m['featuresTable.titles.dating'](),
 			features: [
 				{
 					name: 'Profile with gallery',
@@ -706,7 +706,7 @@
 			],
 		},
 		{
-			name: 'Games',
+			name: m['featuresTable.titles.games'](),
 			features: [
 				{
 					name: 'Games list',
@@ -727,7 +727,7 @@
 			],
 		},
 		{
-			name: 'Media feed',
+			name: m['featuresTable.titles.media'](),
 			features: [
 				{
 					name: 'News management',
