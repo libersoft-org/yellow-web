@@ -35,7 +35,7 @@
 				{@html svgBackground}
 			</div>
 			-->
-			<div class="flex w-full flex-col justify-center gap-4 md:flex md:flex-row md:gap-10 md:px-[3rem]">
+			<div class="flex w-full flex-col justify-center gap-4 md:flex md:flex-row md:gap-10 md:px-[1.2rem] lg:px-[3rem]">
 				<!-- Image container - 1/3 width -->
 				<div class="-order-1 flex flex-1 flex-col items-center gap-5 md:order-none md:w-1/3">
 					<div class="flex w-full max-w-[240px] justify-center md:max-w-full">
