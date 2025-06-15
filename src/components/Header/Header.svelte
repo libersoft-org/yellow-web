@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { Routes } from '@/utils/routes';
 	import { browser } from '$app/environment';
-	import { m } from '@paraglide/messages';
+	import { m } from '$lib/i18n/index.svelte.js';
 	import HeaderItem from '@/components/Header/HeaderItem.svelte';
 	import LanguageSwitcher from '@/components/Header/LanguageSwitcher.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
@@ -17,23 +17,23 @@
 	let menuToggleRef: HTMLElement;
 	let outsideClickHandler: ((e: MouseEvent) => void) | null = null;
 	// Navigation items array using Routes factory functions
-	const navItems = [
+	const navItems = $derived([
 		{
-			label: m['footer.links.about'](),
+			label: m['footer.links.about'],
 			href: Routes.home(),
 			hasChildren: true,
 			subItems: [
-				{ label: m['footer.links.about'](), href: Routes.home() },
-				{ label: m['footer.links.features'](), href: Routes.features() },
-				{ label: m['footer.links.comparison'](), href: Routes.comparison() },
+				{ label: m['footer.links.about'], href: Routes.home() },
+				{ label: m['footer.links.features'], href: Routes.features() },
+				{ label: m['footer.links.comparison'], href: Routes.comparison() },
 			],
 		},
-		{ label: m['footer.links.download'](), href: Routes.download() },
-		{ label: m['footer.links.documentation'](), href: Routes.template() },
-		{ label: m['footer.links.faq'](), href: Routes.faq() },
-		{ label: m['footer.links.contact'](), href: Routes.contact() },
-		{ label: m['footer.links.signup'](), href: Routes.account(), highlighted: true },
-	];
+		{ label: m['footer.links.download'], href: Routes.download() },
+		{ label: m['footer.links.documentation'], href: Routes.template() },
+		{ label: m['footer.links.faq'], href: Routes.faq() },
+		{ label: m['footer.links.contact'], href: Routes.contact() },
+		{ label: m['footer.links.signup'], href: Routes.account(), highlighted: true },
+	]);
 
 	function toggleMobileMenu(e: MouseEvent) {
 		e.stopPropagation(); // Prevent event from bubbling up

@@ -1,5 +1,5 @@
 <script>
-	import { m } from '@paraglide/messages';
+	import { m } from '$lib/i18n/index.svelte.js';
 	import Header from '@/components/Header/Header.svelte';
 	import Form from '@/components/Form/Form.svelte';
 	import Footer from '@/components/Footer/Footer.svelte';

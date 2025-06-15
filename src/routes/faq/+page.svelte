@@ -3,7 +3,7 @@
 	import Footer from '@/components/Footer/Footer.svelte';
 	import FAQ from '@/components/FAQ/FAQ.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
-	import { m } from '@paraglide/messages';
+	import { m } from '$lib/i18n/index.svelte.js';
 </script>
 
 <style>
@@ -11,7 +11,7 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title={m['faq.heading']()} backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title={m['faq.heading']} backgroundImage="assets/images/hero-bg.png" />
 	<div class="py-10 md:py-20">
 		<FAQ />
 	</div>

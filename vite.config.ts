@@ -1,4 +1,3 @@
-import { paraglideVitePlugin } from '@inlang/paraglide-js';
 import tailwindcss from '@tailwindcss/vite';
 import { svelteTesting } from '@testing-library/svelte/vite';
 import { sveltekit } from '@sveltejs/kit/vite';
@@ -11,15 +10,7 @@ const dirname = typeof __dirname !== 'undefined' ? __dirname : path.dirname(file
 
 // More info at: https://storybook.js.org/docs/writing-tests/test-addon
 export default defineConfig({
-	plugins: [
-		tailwindcss(),
-		sveltekit(),
-		paraglideVitePlugin({
-			project: './project.inlang',
-			outdir: './src/lib/paraglide',
-			strategy: ['cookie', 'preferredLanguage', 'globalVariable', 'baseLocale'],
-		}),
-	],
+	plugins: [tailwindcss(), sveltekit()],
 	preview: {
 		host: true,
 		port: 4173,

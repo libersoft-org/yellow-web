@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '@/theme/Button/Button.svelte';
-	import { m } from '@paraglide/messages';
+	import { m } from '$lib/i18n/index.svelte.js';
 	import svgBackground from './bg.svg?raw';
 	import { Routes } from '@/utils/routes';
 	import { goto } from '$app/navigation';
@@ -11,24 +11,24 @@
 	}
 	let { imageSrc = 'assets/images/desktop.png', backgroundImage = 'assets/images/hero-bg.png', heroText }: Props = $props();
 	// Use the translated description, but allow prop override
-	const description = $derived(heroText || m['hero.description']());
+	const description = $derived(heroText || m['hero.description']);
 </script>
 
 {#snippet leftSide()}
 	<div class="flex flex-col items-center justify-center">
 		<h1 class="md:text-10xl lg:text-11xl mb-5 text-9xl font-bold md:mb-8 text-center">
-			{@html m['hero.welcome']()}
-			<span class="theme-title-underline">{m['hero.app_name']()}</span>
+			{@html m['hero.welcome']}
+			<span class="theme-title-underline">{m['hero.app_name']}</span>
 		</h1>
 		<div class="theme-text-body1 text-400 mb-4.5 text-center md:mb-10 lg:mb-13">
-			{m['hero.motto']()}<br />
+			{m['hero.motto']}<br />
 			{description}
 		</div>
 		<div class="flex flex-col md:flex-row">
 			<Button
 				iconSize="xl"
 				icon="download"
-				label={m['hero.download_button']() + ' ' + m['hero.app_name']()}
+				label={m['hero.download_button'] + ' ' + m['hero.app_name']}
 				theme="secondary"
 				class="mr-5 mb-5 w-full md:mb-0 md:w-auto"
 				onclick={() => {
@@ -38,7 +38,7 @@
 			<Button
 				iconSize="xl"
 				icon="account"
-				label={m['hero.create_account_button']()}
+				label={m['hero.create_account_button']}
 				theme="primary"
 				class="w-full md:w-auto"
 				onclick={() => {
@@ -50,7 +50,7 @@
 {/snippet}
 {#snippet rightSide()}
 	<div class="mb-10 flex h-full items-center justify-center md:mb-0">
-		<img src={imageSrc} alt={m['hero.app_alt_text']()} class="h-auto max-w-100 lg:max-w-full" />
+		<img src={imageSrc} alt={m['hero.app_alt_text']} class="h-auto max-w-100 lg:max-w-full" />
 	</div>
 {/snippet}
 <div class="relative isolate mb-10 overflow-hidden bg-cover bg-center pt-20.5 pb-8.5 md:mb-15 md:pt-28 md:pb-8 lg:mb-20 lg:pt-46 lg:pb-13" style="background-image: url('{backgroundImage}'); background-size: 2351px 782px;">
