@@ -9,11 +9,11 @@
 
 	function convertModulesToTables(modulesData, stateData) {
 		return modulesData.map(module => {
-			const headers = ['Feature', 'Status'];
+			const headers = ['Feature', 'Status'].map(text => ({ text, isHeader: true }));
 			const rows = module.features.map(feature => {
 				const statusIcon = getStatusIcon(feature.implemented, stateData);
 				return {
-					cells: [{ text: feature.name }, statusIcon],
+					cells: [{ text: feature.name, isHeader: true }, statusIcon],
 				};
 			});
 
@@ -26,11 +26,11 @@
 	}
 
 	function convertCoreToTable(coreData, stateData) {
-		const headers = ['Feature', 'Status'];
+		const headers = ['Feature', 'Status'].map(text => ({ text, isHeader: true }));
 		const rows = coreData.map(feature => {
 			const statusIcon = getStatusIcon(feature.implemented, stateData);
 			return {
-				cells: [{ text: feature.name }, statusIcon],
+				cells: [{ text: feature.name, isHeader: true }, statusIcon],
 			};
 		});
 

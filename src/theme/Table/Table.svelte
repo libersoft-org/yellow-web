@@ -48,12 +48,13 @@
 		return text;
 	}
 
-	function formatHeaderText(text: string) {
+	function formatHeaderText(text: string | { text: string; isHeader?: boolean }) {
 		if (!text) return '';
+		const textToFormat = typeof text === 'string' ? text : text.text;
 		if (formatHeaders) {
-			text = text.replace(/\//g, '/<br>');
+			return textToFormat.replace(/\//g, '/<br>');
 		}
-		return text;
+		return textToFormat;
 	}
 
 	// State for accordion
