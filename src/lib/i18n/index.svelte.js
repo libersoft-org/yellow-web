@@ -83,7 +83,7 @@ function getNestedProperty(obj, path) {
 	return path.split('.').reduce((current, key) => current?.[key], obj);
 }
 
-// Template literal parser (simplified version inspired by paraglide)
+// Template literal parser for parameterized messages
 function parseTemplate(template, params = {}) {
 	if (!template || typeof template !== 'string') return template;
 
@@ -246,12 +246,3 @@ export function setLocale(locale) {
 		document.documentElement.lang = locale;
 	}
 }
-
-// Helper to check if a string is a valid locale
-export function isLocale(locale) {
-	return locales.includes(locale);
-}
-
-// Compatibility exports for paraglide migration
-export const available_languages = locales;
-export const base_locale = baseLocale;
