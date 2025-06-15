@@ -6,8 +6,9 @@
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import Links from '@/components/Links/Links.svelte';
 	import { m } from '$lib/i18n/index.svelte.js';
-	let headers = [m['download.table_header.software'], m['download.table_header.links']];
-	let rows = [
+	// Make headers and rows reactive
+	const headers = $derived([m['download.table_header.software'], m['download.table_header.links']]);
+	const rows = $derived([
 		{
 			cells: [
 				{ text: m['hero.app_name'] + ' (' + m['download.table_cells.web_version'] + ')', alignment: 'left', isHeader: true },
@@ -173,7 +174,7 @@
 				},
 			],
 		},
-	];
+	]);
 </script>
 
 <style>

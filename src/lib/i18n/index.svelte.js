@@ -31,13 +31,48 @@ function setLocaleCookie(locale) {
 	document.cookie = `${LOCALE_COOKIE_NAME}=${locale}; path=/; max-age=${COOKIE_MAX_AGE}`;
 }
 
-// Initialize locale from cookie if in browser
+// Function to detect browser language preference
+function getBrowserLocale() {
+	if (!browser) return null;
+
+	// Check navigator.language and navigator.languages
+	const browserLangs = [];
+	if (navigator.languages) {
+		browserLangs.push(...navigator.languages);
+	}
+	if (navigator.language) {
+		browserLangs.push(navigator.language);
+	}
+
+	// Extract base language codes and find a match
+	for (const lang of browserLangs) {
+		const baseLang = lang.split('-')[0].toLowerCase();
+		if (locales.includes(baseLang)) {
+			return baseLang;
+		}
+	}
+
+	return null;
+}
+
+// Initialize locale with proper fallback chain
 let initialLocale = baseLocale;
 if (browser) {
+	// 1. First check cookie
 	const cookieLocale = getCookieLocale();
 	if (cookieLocale && locales.includes(cookieLocale)) {
 		initialLocale = cookieLocale;
+	} else {
+		// 2. Check browser preference
+		const browserLocale = getBrowserLocale();
+		if (browserLocale) {
+			initialLocale = browserLocale;
+			// Set cookie for next time
+			setLocaleCookie(browserLocale);
+		}
 	}
+	// Update HTML lang attribute to match detected locale
+	document.documentElement.lang = initialLocale;
 }
 
 // Store the current locale as a reactive state
@@ -205,41 +240,16 @@ export function setLocale(locale) {
 
 	currentLocale = locale;
 	setLocaleCookie(locale);
+
+	// Update HTML lang attribute for better SEO and accessibility
+	if (browser) {
+		document.documentElement.lang = locale;
+	}
 }
 
 // Helper to check if a string is a valid locale
 export function isLocale(locale) {
 	return locales.includes(locale);
-}
-
-// Extract locale from request (for SSR)
-export function extractLocaleFromRequest(request) {
-	// Try cookie first
-	const cookieHeader = request.headers.get('cookie');
-	if (cookieHeader) {
-		const match = cookieHeader.match(new RegExp(`(^| )${LOCALE_COOKIE_NAME}=([^;]+)`));
-		const cookieLocale = match?.[2];
-		if (cookieLocale && locales.includes(cookieLocale)) {
-			return cookieLocale;
-		}
-	}
-
-	// Try Accept-Language header
-	const acceptLanguage = request.headers.get('accept-language');
-	if (acceptLanguage) {
-		const languages = acceptLanguage
-			.split(',')
-			.map(lang => lang.split(';')[0].trim().toLowerCase())
-			.map(lang => lang.split('-')[0]); // Get base language
-
-		for (const lang of languages) {
-			if (locales.includes(lang)) {
-				return lang;
-			}
-		}
-	}
-
-	return baseLocale;
 }
 
 // Compatibility exports for paraglide migration
