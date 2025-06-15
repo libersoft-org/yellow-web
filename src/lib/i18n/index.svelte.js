@@ -93,135 +93,44 @@ function parseTemplate(template, params = {}) {
 	});
 }
 
-// Create a proxy that returns values directly or functions for parameterized messages
-function createMessageProxy(locale) {
-	const cache = new Map();
+// Simple cache for messages
+const messageCache = new Map();
 
-	return new Proxy(
-		{},
-		{
-			get(target, prop) {
-				// Handle Symbol properties
-				if (typeof prop === 'symbol') {
-					return undefined;
-				}
-
-				// Handle toJSON to prevent issues with JSON.stringify
-				if (prop === 'toJSON') {
-					return undefined;
-				}
-
-				// Check cache first
-				const cacheKey = `${locale}.${prop}`;
-				if (cache.has(cacheKey)) {
-					return cache.get(cacheKey);
-				}
-
-				// Handle direct property access
-				const value = getNestedProperty(messages[locale], prop);
-
-				// If it's a string, check if it has template parameters
-				if (typeof value === 'string') {
-					// If the string contains template parameters, return a function
-					if (value.includes('{')) {
-						const fn = params => parseTemplate(value, params);
-						cache.set(cacheKey, fn);
-						return fn;
-					}
-					// Otherwise return the string directly
-					cache.set(cacheKey, value);
-					return value;
-				}
-
-				// If it's an object, create a nested proxy
-				if (value && typeof value === 'object') {
-					const nestedProxy = new Proxy(
-						{},
-						{
-							get(_, nestedProp) {
-								if (typeof nestedProp === 'symbol' || nestedProp === 'toJSON') {
-									return undefined;
-								}
-
-								const fullPath = `${prop}.${nestedProp}`;
-								const nestedCacheKey = `${locale}.${fullPath}`;
-
-								if (cache.has(nestedCacheKey)) {
-									return cache.get(nestedCacheKey);
-								}
-
-								const nestedValue = getNestedProperty(messages[locale], fullPath);
-
-								// Handle strings with or without templates
-								if (typeof nestedValue === 'string') {
-									if (nestedValue.includes('{')) {
-										const fn = params => parseTemplate(nestedValue, params);
-										cache.set(nestedCacheKey, fn);
-										return fn;
-									}
-									cache.set(nestedCacheKey, nestedValue);
-									return nestedValue;
-								}
-
-								// Create another level of nesting if needed
-								if (nestedValue && typeof nestedValue === 'object') {
-									return new Proxy(
-										{},
-										{
-											get(_, deepProp) {
-												if (typeof deepProp === 'symbol' || deepProp === 'toJSON') {
-													return undefined;
-												}
-
-												const deepPath = `${fullPath}.${deepProp}`;
-												const deepCacheKey = `${locale}.${deepPath}`;
-
-												if (cache.has(deepCacheKey)) {
-													return cache.get(deepCacheKey);
-												}
-
-												const deepValue = getNestedProperty(messages[locale], deepPath);
-
-												if (typeof deepValue === 'string') {
-													if (deepValue.includes('{')) {
-														const fn = params => parseTemplate(deepValue, params);
-														cache.set(deepCacheKey, fn);
-														return fn;
-													}
-													cache.set(deepCacheKey, deepValue);
-													return deepValue;
-												}
-
-												return deepValue;
-											},
-										}
-									);
-								}
-
-								return nestedValue;
-							},
-						}
-					);
-
-					cache.set(cacheKey, nestedProxy);
-					return nestedProxy;
-				}
-
-				return value;
-			},
-		}
-	);
-}
-
-// Create the message accessor that updates based on current locale
+// Create the message accessor that handles bracket notation
 export const m = new Proxy(
 	{},
 	{
-		get(target, prop) {
+		get(target, key) {
+			// Handle special properties
+			if (typeof key === 'symbol' || key === 'toJSON') {
+				return undefined;
+			}
+
 			// Access currentLocale reactively
 			const locale = currentLocale;
-			const proxy = createMessageProxy(locale);
-			return proxy[prop];
+			const cacheKey = `${locale}.${key}`;
+
+			// Check cache first
+			if (messageCache.has(cacheKey)) {
+				return messageCache.get(cacheKey);
+			}
+
+			// Get the value from messages
+			const value = getNestedProperty(messages[locale], key);
+
+			if (typeof value === 'string') {
+				// If it contains template parameters, return a function
+				if (value.includes('{')) {
+					const fn = params => parseTemplate(value, params);
+					messageCache.set(cacheKey, fn);
+					return fn;
+				}
+				// Otherwise return the string directly
+				messageCache.set(cacheKey, value);
+				return value;
+			}
+
+			return value;
 		},
 	}
 );
@@ -240,6 +149,9 @@ export function setLocale(locale) {
 
 	currentLocale = locale;
 	setLocaleCookie(locale);
+
+	// Clear message cache to force re-evaluation
+	messageCache.clear();
 
 	// Update HTML lang attribute for better SEO and accessibility
 	if (browser) {
