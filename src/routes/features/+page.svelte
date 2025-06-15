@@ -54,13 +54,13 @@
 		}
 	}
 
-	const legendItems = [
+	const legendItems = $derived([
 		{ icon: 'cross', text: m['featuresTable.status1'], colorClass: 'text-red-400' },
 		{ icon: 'check', text: m['featuresTable.status2'], colorClass: 'text-green-500' },
 		{ icon: 'check', text: m['featuresTable.status3'], colorClass: 'text-yellow-500' },
-	];
+	]);
 
-	const state = [
+	const state = $derived([
 		{
 			name: 'Not implemented',
 			icon: 'no.svg',
@@ -73,7 +73,7 @@
 			name: 'Partially implemented',
 			icon: 'part.svg',
 		},
-	];
+	]);
 	// Make data reactive by using $derived
 	const core = $derived([
 		{
