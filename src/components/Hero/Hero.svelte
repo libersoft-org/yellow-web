@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Button from '@/theme/Button/Button.svelte';
 	import { m } from '@paraglide/messages';
-	import svgBackground from '../../../static/assets/images/hero-bg.svg?raw';
+	import svgBackground from './bg.svg?raw';
 	import { Routes } from '@/utils/routes';
 	import { goto } from '$app/navigation';
 	interface Props {

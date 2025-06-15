@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Routes } from '@/utils/routes';
 	import { m } from '@paraglide/messages';
-	import svgBackground from '../../../static/assets/images/FeaturesTable-bg.svg?raw';
+	import svgBackground from './bg.svg?raw';
 	import Table from '@/theme/Table/Table.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
 
