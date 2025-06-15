@@ -33,7 +33,7 @@
 		<Box {...args}>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
 			{#snippet footerSlot()}
-				<a href="#">
+				<a href="https://example.com">
 					<Icon name="arrow" size="md" />
 				</a>
 			{/snippet}

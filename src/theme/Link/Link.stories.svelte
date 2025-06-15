@@ -24,7 +24,6 @@
 <Story
 	args={{
 		icon: 'download',
-		iconWrapper: true,
 		iconWrapperClass: 'bg-themeGray-700 rounded-full p-2',
 	}}
 	name="With Icon Wrapper"
@@ -34,7 +33,6 @@
 <Story
 	args={{
 		icon: 'download',
-		iconWrapper: true,
 		iconClass: 'text-themeYellow-500',
 	}}
 	name="With Custom Icon Class"
@@ -55,7 +53,7 @@
 		href: 'https://example.com',
 		label: 'External Link',
 		icon: 'open-source',
-		iconWrapper: true,
+		iconWrapperClass: 'bg-themeGray-700 rounded-full p-2',
 		target: '_blank',
 		rel: 'noopener noreferrer',
 	}}
@@ -67,7 +65,6 @@
 	args={{
 		class: 'text-themeYellow-500 hover:text-themeYellow-600 font-bold',
 		icon: 'download',
-		iconWrapper: true,
 		iconWrapperClass: 'bg-themeYellow-100 rounded-full p-2',
 		iconClass: 'text-themeYellow-600',
 	}}

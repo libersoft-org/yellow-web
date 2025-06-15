@@ -1,4 +1,4 @@
-<script module>
+<script lang="ts" module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Icon from '@/theme/Icon/Icon.svelte';
 
@@ -6,7 +6,17 @@
 	const icons = import.meta.glob('../../assets/icons/*.svg', { query: '?raw', import: 'default' });
 
 	// Extract icon names (without path and .svg)
-	const iconNames = Object.keys(icons).map(path => path.split('/').pop().replace('.svg', ''));
+	const iconNames = Object.keys(icons)
+		.map(path => {
+			const fileName = path.split('/').pop();
+			return fileName ? fileName.replace('.svg', '') : '';
+		})
+		.filter(Boolean);
+
+	interface IconProps {
+		class?: string;
+		size?: '2xl' | 'xl' | 'lg' | 'md' | 'sm' | 'xs';
+	}
 
 	const { Story } = defineMeta({
 		title: 'Theme/Icon',
@@ -18,7 +28,7 @@
 	});
 </script>
 
-{#snippet iconBox(iconName, title, props)}
+{#snippet iconBox(iconName: string, title: string, props: IconProps = {})}
 	<div style="display: flex; flex-direction: column; align-items: center;">
 		<Icon name={iconName} size="lg" {...props} />
 		<span style="margin-top: 0.5rem; font-size: 0.8rem;">{title}</span>

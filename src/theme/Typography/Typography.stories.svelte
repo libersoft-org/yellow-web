@@ -1,4 +1,4 @@
-<script module>
+<script lang="ts" module>
 	import { defineMeta } from '@storybook/addon-svelte-csf';
 	import Typography from '@/theme/Typography/Typography.svelte';
 
@@ -11,7 +11,7 @@
 	});
 </script>
 
-{#snippet badge(infos)}
+{#snippet badge(infos: string[])}
 	<div class="mb-2 flex gap-2">
 		{#each infos as info (info)}
 			<div class="rounded-md border-1 bg-gray-100 px-1.5 py-0.5 text-xs font-semibold first:text-blue-800">
