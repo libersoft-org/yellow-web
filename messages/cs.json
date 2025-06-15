@@ -149,23 +149,23 @@
 		"heading": "Často kladené otázky",
 		"item1": {
 			"question": "Co je Yellow?",
-			"answer": "Yellow je moderní e-mailový klient, který využívá protokol AMTP k poskytování bezpečnějšího, spolehlivějšího a funkčně bohatšího e-mailového zážitku ve srovnání s tradičními e-mailovými klienty. Je navržen s důrazem na soukromí uživatelů, rychlost a snadné použití."
+			"answer": "Yellow je multifunkční komunikační aplikace, která nabízí inovativní funkce pro bezpečnou a efektivní komunikaci v rámci rychlých zpráv, služby sociálních médií, e-commerce, obchodní nástroje a zábavu. Zároveň je to i nástroj na budování paralelní ekonomiky založené na decentralizovaných technologiích, jako jsou kryptoměny a smart kontrakty. Komunikuje prostřednictvím bezpečných protokolů AMTP a DMTP."
 		},
 		"item2": {
 			"question": "Co je AMTP?",
-			"answer": "Advanced Mail Transfer Protocol (AMTP) je ..."
+			"answer": "Advanced Mail Transfer Protocol (AMTP) je nová generace e-mailového protokolu. Plně nahrazuje tradiční e-mailové protokoly (SMTP, IMAP a POP3) a značně rozšiřuje jejich funkcionalitu. Protokol poskytuje vylepšenou bezpečnost ve formě zabezpečeného přihlášení, šifrovaného přenosu dat, podepisování obsahu a možnosti koncového šifrování. Data jsou přenášena v reálném čase narozdíl od tradičních e-mailových protokolů, což umožňuje přenos nejen rychlých zpráv, ale i souborů a proudů dat v reálném čase. Identita uživatele je podobná jako u tradičních e-mailových protokolů, tedy ve formě e-mailové adresy (uživatel@doména.tld). Komunikace probíhá v rámci distribuované sítě."
 		},
 		"item3": {
 			"question": "Co je DMTP?",
-			"answer": "Decentralized Mail Transfer Protocol (DMTP) je ..."
+			"answer": "Decentralized Mail Transfer Protocol (DMTP) je připravovaný protokol, který plně eliminuje centrální servery a spoléhá na decentralizovaný přenos a decentralizované ukládání dat. DMTP je navržen tak, aby byl plně odolný vůči cenzuře a poskytoval uživatelům maximální úroveň soukromí a bezpečnosti. Umožňuje uživatelům komunikovat přímo mezi sebou bez potřeby prostředníků. To poskytuje uživatelům značnou míru soukromí. Identitu si uživatelé vytvářejí sami (ta je ve formě veřejné adresy, podobně, jako je to například u kryptoměn). Síť je plně decentralizovaná a neexistuje na ní žádná centrální autorita, která by spravovala uživatelské účty."
 		},
 		"item4": {
-			"question": "Proč se tento software jmenuje \"Yellow\"?",
-			"answer": "Název Yellow byl zvolen, aby reprezentoval jasnost, optimismus a viditelnost v e-mailové komunikaci. Stejně jako je žlutá živá a pozornost poutající barva, náš e-mailový klient má za cíl zvýraznit vaši důležitou komunikaci a zpříjemnit váš e-mailový zážitek."
+			"question": "Proč se software jmenuje \"Yellow\"?",
+			"answer": "Jelikož je Yellow mimo jiné projektem zaměřeným na vybudování paralelní ekonomiky, která je založena na decentralizovaných technologiích, jako jsou kryptoměny a smart kontrakty, byl název zvolen proto, že žlutá je symbolem hojnosti a bohatství, které tato ekonomika přináší. Navíc Yellow zní trochu jako Hello, což je slovo, kterým může začínat každá konverzace v rychlých zprávách, které platforma taktéž přináší."
 		},
 		"item5": {
-			"question": "Je Yellow klient zpětně kompatibilní s klasickými e-mailovými protokoly (SMTP, IMAP, POP3)?",
-			"answer": "Ano, Yellow klient je plně zpětně kompatibilní s klasickými e-mailovými protokoly včetně SMTP, IMAP a POP3. To zajišťuje, že můžete i nadále přistupovat ke všem svým stávajícím e-mailovým účtům a zároveň využívat pokročilé funkce nabízené AMTP pro podporované účty."
+			"question": "Je klientská aplikace Yellow zpětně kompatibilní s klasickými e-mailovými protokoly (SMTP, IMAP, POP3)?",
+			"answer": "Ne. Yellow není kompatibilní s klasickými e-mailovými protokoly, jako je SMTP, IMAP a POP3. Platforma má naopak za cíl nahradit tyto zastaralé protokoly novou generací protokolů AMTP a DMTP. Tyto protokoly poskytují vylepšenou bezpečnost, rychlost a značně rozšiřují funkcionalitu, což tradiční e-mailové protokoly nedokážou nabídnout."
 		}
 	},
 	"accounts": {
