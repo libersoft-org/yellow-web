@@ -4,6 +4,7 @@
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
+	import Icon from '@/theme/Icon/Icon.svelte';
 	import { m } from '@paraglide/messages';
 
 	function convertModulesToTables(modulesData, stateData) {
@@ -52,6 +53,13 @@
 				return { text: 'Unknown' };
 		}
 	}
+
+	const legendItems = [
+		{ icon: 'cross', text: m['featuresTable.status1'](), colorClass: 'text-red-400' },
+		{ icon: 'check', text: m['featuresTable.status2'](), colorClass: 'text-green-500' },
+		{ icon: 'check', text: m['featuresTable.status3'](), colorClass: 'text-yellow-500' },
+	];
+
 	const state = [
 		{
 			name: 'Not implemented',
@@ -748,12 +756,29 @@
 <div>
 	<Header zIndex={100} />
 	<SimpleHero title={m['footer.links.features']()} backgroundImage="assets/images/hero-bg.png" />
-	<div class="theme-container mx-auto py-10 md:py-20">
-		{#each allTables as table, index}
-			<div class={index > 0 ? 'mt-16' : ''}>
-				<AppFeaturesComparisonTable title={table.title} subtitle="" headers={table.headers} rows={table.rows} buttonLabel="" buttonLink="" isCollapsible={false} showMaxHeight={false} />
+	<div class="theme-container relative mx-auto py-10 md:py-20">
+		<div class="text-center mb-10 max-w-[800px] mx-auto">{m['comparisonTable.disclaimer']()}</div>
+
+		{#if allTables.length > 0}
+			<div class="flex flex-col gap-8">
+				<div class="flex justify-center flex-wrap gap-4">
+					{#each legendItems as item}
+						<div class="flex items-center gap-2">
+							<div class="flex items-center justify-center">
+								<Icon name={item.icon} class={item.colorClass} size="sm" mdSize="xl" />
+							</div>
+							<span class="text-themeGray-600 text-xs">{item.text}</span>
+						</div>
+					{/each}
+				</div>
+				{#each allTables as table}
+					<div class={table.title !== m['featuresTable.titles.core_features']() ? 'mt-16' : ''}>
+						<AppFeaturesComparisonTable title={table.title} subtitle="" headers={table.headers} rows={table.rows} buttonLabel="" buttonLink="" isCollapsible={false} showMaxHeight={false} />
+					</div>
+				{/each}
 			</div>
-		{/each}
+		{/if}
 	</div>
+
 	<Footer />
 </div>
