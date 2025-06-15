@@ -48,30 +48,110 @@
 		"status1": "Neimplementováno",
 		"status2": "Plně implementováno",
 		"status3": "Částečně implementováno",
-		"titles": {
-			"core_features": "Funkce jádra",
-			"messages": "Rychlé zprávy",
-			"profiles": "Profily",
-			"contacts": "Kontakty",
-			"calls": "Volání",
-			"conference": "Konference",
-			"wallet": "Peněženka",
-			"newsfeed_stories": "Novinky a příběhy",
-			"video": "Video",
-			"events": "Události",
-			"forum": "Diskuze",
-			"map": "Mapa",
-			"eshops": "E-shopy",
-			"marketplace": "Tržiště",
-			"donations": "Dary",
-			"crowdfunding": "Skupinové financování",
-			"calendar": "Kalendář",
-			"tasks": "Úkoly",
-			"file_sharing": "Sdílení souborů",
-			"virtual_chat": "Virtuální pokec",
-			"dating": "Seznamka",
-			"games": "Hry",
-			"media": "Zprávy a média"
+		"core": {
+			"title": "Funkce jádra",
+			"items": {
+				"amtp": "AMTP protokol",
+				"dmtp": "DMTP protokol",
+				"server_modularity": "Server - modularita",
+				"client_modularity": "Klient - modularita",
+				"encrypted_connection": "Šifrované spojení",
+				"client_encryption": "Klient - šifrování, digitální podpis a správa klíčů pro přihlášení",
+				"client_e2e": "Klient - Koncové šifrování",
+				"client_multilanguage": "Klient - vícejazyčná podpora",
+				"web_admin": "Webová administrace",
+				"public_registration": "Veřejná registrace účtů",
+				"desktop_app": "Desktopová aplikace",
+				"mobile_app": "Mobilní aplikace"
+			}
+		},
+		"messages": {
+			"title": "Rychlé zprávy",
+			"items": {}
+		},
+		"profiles": {
+			"title": "Profily",
+			"items": {}
+		},
+		"contacts": {
+			"title": "Kontakty",
+			"items": {}
+		},
+		"calls": {
+			"title": "Volání",
+			"items": {}
+		},
+		"conference": {
+			"title": "Konference",
+			"items": {}
+		},
+		"wallet": {
+			"title": "Peněženka",
+			"items": {}
+		},
+		"newsfeed_stories": {
+			"title": "Kontakty",
+			"items": {}
+		},
+		"video": {
+			"title": "Video",
+			"items": {}
+		},
+		"events": {
+			"title": "Události",
+			"items": {}
+		},
+		"forum": {
+			"title": "Diskuze",
+			"items": {}
+		},
+		"map": {
+			"title": "Mapa",
+			"items": {}
+		},
+		"eshops": {
+			"title": "E-shopy",
+			"items": {}
+		},
+		"marketplace": {
+			"title": "Tržiště",
+			"items": {}
+		},
+		"donations": {
+			"title": "Dary",
+			"items": {}
+		},
+		"crowdfunding": {
+			"title": "Skupinové financování",
+			"items": {}
+		},
+		"calendar": {
+			"title": "Kalendář",
+			"items": {}
+		},
+		"tasks": {
+			"title": "Úkoly",
+			"items": {}
+		},
+		"file_sharing": {
+			"title": "Sdílení souborů",
+			"items": {}
+		},
+		"virtual_chat": {
+			"title": "Virtuální pokec",
+			"items": {}
+		},
+		"dating": {
+			"title": "Seznamka",
+			"items": {}
+		},
+		"games": {
+			"title": "Hry",
+			"items": {}
+		},
+		"media": {
+			"title": "Zprávy a média",
+			"items": {}
 		},
 		"table_header": {
 			"feature": "Funkce",

@@ -48,30 +48,110 @@
 		"status1": "Not implemented",
 		"status2": "Fully implemented",
 		"status3": "Partially implemented",
-		"titles": {
-			"core_features": "Core features",
-			"messages": "Instant messages",
-			"profiles": "Profiles",
-			"contacts": "Contacts",
-			"calls": "Calls",
-			"conference": "Conference",
-			"wallet": "Wallet",
-			"newsfeed_stories": "News and stories",
-			"video": "Video",
-			"events": "Events",
-			"forum": "Forum",
-			"map": "Map",
-			"eshops": "E-shops",
-			"marketplace": "Marketplace",
-			"donations": "Donations",
-			"crowdfunding": "Crowdfunding",
-			"calendar": "Calendar",
-			"tasks": "Tasks",
-			"file_sharing": "File sharing",
-			"virtual_chat": "Virtual chat",
-			"dating": "Dating",
-			"games": "Games",
-			"media": "News and media"
+		"core": {
+			"title": "Funkce jádra",
+			"items": {
+				"amtp": "AMTP protocol",
+				"dmtp": "DMTP protocol",
+				"server_modularity": "Server - modularity",
+				"client_modularity": "Client - modularity",
+				"encrypted_connection": "Encrypted connection",
+				"client_encryption": "Client - encryption, digital signature and key management for login",
+				"client_e2e": "Client - End-to-end encryption",
+				"client_multilanguage": "Client - multilingual support",
+				"web_admin": "Web administration",
+				"public_registration": "Public account registration",
+				"desktop_app": "Desktop application",
+				"mobile_app": "Mobile application"
+			}
+		},
+		"messages": {
+			"title": "Instant messages",
+			"items": {}
+		},
+		"profiles": {
+			"title": "Profiles",
+			"items": {}
+		},
+		"contacts": {
+			"title": "Contacts",
+			"items": {}
+		},
+		"calls": {
+			"title": "Calls",
+			"items": {}
+		},
+		"conference": {
+			"title": "Conference",
+			"items": {}
+		},
+		"wallet": {
+			"title": "Wallet",
+			"items": {}
+		},
+		"newsfeed_stories": {
+			"title": "News and stories",
+			"items": {}
+		},
+		"video": {
+			"title": "Video",
+			"items": {}
+		},
+		"events": {
+			"title": "Events",
+			"items": {}
+		},
+		"forum": {
+			"title": "Forum",
+			"items": {}
+		},
+		"map": {
+			"title": "Map",
+			"items": {}
+		},
+		"eshops": {
+			"title": "E-shops",
+			"items": {}
+		},
+		"marketplace": {
+			"title": "Marketplace",
+			"items": {}
+		},
+		"donations": {
+			"title": "Donations",
+			"items": {}
+		},
+		"crowdfunding": {
+			"title": "Crowdfunding",
+			"items": {}
+		},
+		"calendar": {
+			"title": "Calendar",
+			"items": {}
+		},
+		"tasks": {
+			"title": "Tasks",
+			"items": {}
+		},
+		"file_sharing": {
+			"title": "File sharing",
+			"items": {}
+		},
+		"virtual_chat": {
+			"title": "Virtual chat",
+			"items": {}
+		},
+		"dating": {
+			"title": "Dating",
+			"items": {}
+		},
+		"games": {
+			"title": "Games",
+			"items": {}
+		},
+		"media": {
+			"title": "News and media",
+			"items": {}
 		},
 		"table_header": {
 			"feature": "Feature",
