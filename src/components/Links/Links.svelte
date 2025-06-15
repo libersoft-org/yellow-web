@@ -24,6 +24,6 @@
 
 <div class="links-container">
 	{#each links as link, index}
-		<Button {...restProps} data-testid="link-{index}" label={link.title} iconSize="xl" icon="download" theme={link.theme ? link.theme : 'primary'} class="w-full md:w-auto" onclick={() => openLink(link.url)} />
+		<Button {...restProps} data-testid="link-{index}" label={link.title} iconSize="xl" size="sm" icon="download" theme={link.theme ? link.theme : 'primary'} class="w-full md:w-auto" onclick={() => openLink(link.url)} />
 	{/each}
 </div>
