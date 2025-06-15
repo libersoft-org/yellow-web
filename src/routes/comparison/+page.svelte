@@ -204,7 +204,7 @@
 	<div class="theme-container mx-auto py-10 md:py-20">
 		<div class="text-center mb-10">{m['comparisonTable.disclaimer']}</div>
 		{#each convertedSections as section}
-			<AppFeaturesComparisonTable title={section.title} subtitle="" headers={section.headers} rows={section.rows} buttonLabel="" buttonLink="" />
+			<AppFeaturesComparisonTable title={section.title} subtitle="" headers={section.headers} rows={section.rows} buttonLabel="" buttonLink="" showMaxHeight={false} />
 		{/each}
 	</div>
 

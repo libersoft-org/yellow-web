@@ -25,6 +25,9 @@
 		buttonLabel?: string;
 		buttonLink?: string;
 		isCollapsible?: boolean;
+		showMaxHeight?: boolean;
+		mobileColLeft?: string;
+		mobileColRight?: string;
 	}
 
 	const check: Cell = { iconStatus: 'success', icon: 'check' };
@@ -56,6 +59,9 @@
 		buttonLabel = m['comparisonTable.button'],
 		buttonLink = Routes.comparison(),
 		isCollapsible = true,
+		showMaxHeight = true,
+		mobileColLeft: mobileColLeft = m['comparisonTable.table_headers.software'](),
+		mobileColRight: mobileColRight = m['comparisonTable.table_headers.features'](),
 	}: Props = $props();
 </script>
 
@@ -64,14 +70,14 @@
 
 <div class="app-features-comparison-table mb-20 flex flex-col items-center justify-center md:mb-10 lg:mb-15">
 	<div class="theme-container relative">
-		<div class="px-4 pb-8 md:px-10 md:px-25 md:pb-21">
+		<div class="px-4 pb-8 md:px-10 md:px-25 md:pb-15">
 			<div class="mb-5 text-center">
 				<h2 class="theme-text-h2 text-center">
 					<span class="theme-title-underline">{title}</span><br />{subtitle}
 				</h2>
 			</div>
 			<div class="table-container-wrapper relative">
-				<Table {buttonLabel} {buttonLink} formatHeaders={true} formatNewlines={true} {headers} overlayType="white" {rows} showOverlay={rows.length > 5} class="max-h-[538px]" {isCollapsible} />
+				<Table {buttonLabel} {buttonLink} formatHeaders={true} formatNewlines={true} {headers} overlayType="white" {rows} showOverlay={rows.length > 5} class={showMaxHeight ? 'max-h-[538px]' : ''} {isCollapsible} {mobileColLeft} {mobileColRight} />
 			</div>
 		</div>
 	</div>

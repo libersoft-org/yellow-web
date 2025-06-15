@@ -176,7 +176,8 @@
 			"open_source": "Open source",
 			"distributed": "Distributed / decentralized network",
 			"e2e": "End-to-end encryption",
-			"developed_by": "Developed by"
+			"developed_by": "Developed by",
+			"features": "Features"
 		},
 		"table_description": {
 			"some_software": "some software",
