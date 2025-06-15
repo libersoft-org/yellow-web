@@ -106,14 +106,14 @@
 </style>
 
 {#snippet leftSide()}
-	<div class="table-container relative flex flex-col items-center justify-center">
+	<div class="relative flex flex-col items-center justify-center">
 		<div class="mb-4">
 			<h2 class="theme-text-h2 relative z-10 text-center">
 				<span class="theme-title-underline z-5">{m['featuresTable.title']()}</span>
 			</h2>
 		</div>
 		<div class="table-container-wrapper relative mb-19 lg:mb-0">
-			<Table {rows} {headers} showOverlay={shouldShowOverlay(rows)} overlayType="gray" class="max-w-[538px]" {buttonLabel} {buttonLink} />
+			<Table {rows} {headers} showOverlay={shouldShowOverlay(rows)} overlayType="gray" class="max-w-[538px]" {buttonLabel} {buttonLink} isCollapsible={false} />
 		</div>
 	</div>
 {/snippet}
