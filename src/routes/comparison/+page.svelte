@@ -23,13 +23,9 @@
 	}
 
 	function convertValueToCell(value) {
-		if (value === 1) {
-			return { iconStatus: 'success', icon: 'check' };
-		} else if (value === 0) {
-			return { iconStatus: 'error', icon: 'cross' };
-		} else {
-			return { text: String(value) };
-		}
+		if (value === 1) return { iconStatus: 'success', icon: 'check' };
+		else if (value === 0) return { iconStatus: 'error', icon: 'cross' };
+		else return { text: String(value) };
 	}
 	const comparison = [
 		{
@@ -39,7 +35,7 @@
 				Yellow: [1, 1, 1, 'LiberSoft, Liberland'],
 				'E-mail': ['some software', 1, 'some software', 'Jon Postel and Suzanne Sluizer, USA'],
 				WhatsApp: [0, 0, 1, 'Meta Platforms Inc., USA'],
-				'Messages (RCS protocol)': [0, 'mobile operators only', 'in development', 'Google LLC, USA / GSM Association, UK'],
+				'Messages (RCS protocol)': [0, 'mobile operators only', 1, 'Google LLC, USA / GSM Association, UK'],
 				WeChat: [0, 0, 0, 'Tencent Holdings Ltd., China'],
 				'Facebook Messenger': [0, 0, 0, 'Meta Platforms Inc., USA'],
 				Telegram: ['client apps only', 0, 'optional', 'Telegram Group, UK'],

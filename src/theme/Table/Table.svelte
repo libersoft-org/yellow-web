@@ -299,7 +299,8 @@
 										<div class="cell-wrapper flex h-full items-center py-3 text-sm lg:px-5.5 lg:py-4 lg:text-base">
 											<div class="lg:text-md max-w-2/3 text-xs md:text-base lg:max-w-full">
 												{#if cell.component}
-													<svelte:component this={cell.component} {...cell.props} />
+													<!--<svelte:component this={cell.component} {...cell.props} />-->
+													<cell.component {...cell.props} />
 												{:else}
 													{@html formatText(cell.text || '')}
 												{/if}
@@ -335,7 +336,8 @@
 												</span>
 											{:else if cell.component}
 												<span class="text-themeGray-400 text-right text-xs md:text-center lg:text-sm">
-													<svelte:component this={cell.component} {...cell.props} />
+													<!--<svelte:component this={cell.component} {...cell.props} />-->
+													<cell.component {...cell.props} />
 												</span>
 											{:else}
 												<span class="text-themeGray-400 text-right text-xs md:text-center lg:text-sm">

@@ -8,10 +8,10 @@
 </script>
 
 <style>
-	.svg-bg :global(svg) {
+	/*.svg-bg :global(svg) {
 		width: 100%;
 		height: auto;
-	}
+	}*/
 </style>
 
 {#snippet feature({ title, icon, description }: { title: string; icon: string; description: string })}
