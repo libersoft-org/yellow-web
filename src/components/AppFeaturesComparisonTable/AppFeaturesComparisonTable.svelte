@@ -24,6 +24,7 @@
 		rows?: Row[];
 		buttonLabel?: string;
 		buttonLink?: string;
+		isCollapsible?: boolean;
 	}
 
 	const check: Cell = { iconStatus: 'success', icon: 'check' };
@@ -54,6 +55,7 @@
 		],
 		buttonLabel = m['comparisonTable.button'](),
 		buttonLink = Routes.comparison(),
+		isCollapsible = true,
 	}: Props = $props();
 </script>
 
@@ -69,7 +71,7 @@
 				</h2>
 			</div>
 			<div class="table-container-wrapper relative">
-				<Table {buttonLabel} {buttonLink} formatHeaders={true} formatNewlines={true} {headers} overlayType="white" {rows} showOverlay={rows.length > 5} class="max-h-[538px]" />
+				<Table {buttonLabel} {buttonLink} formatHeaders={true} formatNewlines={true} {headers} overlayType="white" {rows} showOverlay={rows.length > 5} class="max-h-[538px]" {isCollapsible} />
 			</div>
 		</div>
 	</div>
