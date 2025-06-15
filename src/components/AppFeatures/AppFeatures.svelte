@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { Routes } from '@/utils/routes';
 	import { m } from '@paraglide/messages';
-	import svgBackground from './bg.svg?raw';
+	//import svgBackground from './bg.svg?raw';
 	import Card from '@/theme/Card/Card.svelte';
 	import Button from '@/theme/Button/Button.svelte';
 </script>
@@ -30,9 +30,11 @@
 	</div>
 	<div class="theme-container relative flex w-full flex-col items-center px-4 sm:px-6 lg:px-0">
 		<div class="theme-gradient-radial-grey relative rounded-2xl px-3 pt-7.5 pb-16 md:pb-12 lg:px-0 lg:pt-12 lg:pb-16">
-			<div class="svg-bg margin-auto pointer-events-none absolute top-5 -z-10 hidden w-full lg:block">
+			<!-- 
+					<div class="svg-bg margin-auto pointer-events-none absolute top-5 -z-10 hidden w-full lg:block">
 				{@html svgBackground}
 			</div>
+			-->
 			<div class="flex w-full flex-col justify-center gap-4 md:flex md:flex-row md:gap-10 md:px-10 lg:px-[8rem]">
 				<!-- Image container - 1/3 width -->
 				<div class="-order-1 flex flex-1 flex-col items-center gap-5 md:order-none md:w-1/3">
