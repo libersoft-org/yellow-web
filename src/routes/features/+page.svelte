@@ -751,7 +751,7 @@
 	<div class="theme-container mx-auto py-10 md:py-20">
 		{#each allTables as table, index}
 			<div class={index > 0 ? 'mt-16' : ''}>
-				<AppFeaturesComparisonTable title={table.title} subtitle="" headers={table.headers} rows={table.rows} buttonLabel="" buttonLink="" isCollapsible={false} />
+				<AppFeaturesComparisonTable title={table.title} subtitle="" headers={table.headers} rows={table.rows} buttonLabel="" buttonLink="" isCollapsible={false} showMaxHeight={false} />
 			</div>
 		{/each}
 	</div>
