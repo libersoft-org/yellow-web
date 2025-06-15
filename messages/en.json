@@ -100,11 +100,23 @@
 		},
 		"contacts": {
 			"title": "Contacts",
-			"items": {}
+			"items": {
+				"management": "Contact management",
+				"groups": "Contact groups",
+				"search": "Search",
+				"import_export": "Import and export",
+				"phone_numbers": "Identity connection with phone numbers"
+			}
 		},
 		"calls": {
 			"title": "Calls",
-			"items": {}
+			"items": {
+				"audio": "Audio calls",
+				"video": "Video calls",
+				"screen_sharing": "Screen sharing and remote control",
+				"history": "Call history",
+				"recording": "Call recording"
+			}
 		},
 		"conference": {
 			"title": "Conference",

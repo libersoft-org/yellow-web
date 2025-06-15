@@ -232,23 +232,23 @@
 			name: m['featuresTable.contacts.title'],
 			features: [
 				{
-					name: 'Contact management',
+					name: m['featuresTable.contacts.items.management'],
 					implemented: 0,
 				},
 				{
-					name: 'Contact groups',
+					name: m['featuresTable.contacts.items.groups'],
 					implemented: 0,
 				},
 				{
-					name: 'Search',
+					name: m['featuresTable.contacts.items.search'],
 					implemented: 0,
 				},
 				{
-					name: 'Import and export',
+					name: m['featuresTable.contacts.items.import_export'],
 					implemented: 0,
 				},
 				{
-					name: 'Identity connection with phone numbers',
+					name: m['featuresTable.contacts.items.phone_numbers'],
 					implemented: 0,
 				},
 			],
@@ -257,23 +257,23 @@
 			name: m['featuresTable.calls.title'],
 			features: [
 				{
-					name: 'Audio calls',
+					name: m['featuresTable.calls.items.audio'],
 					implemented: 0,
 				},
 				{
-					name: 'Video calls',
+					name: m['featuresTable.calls.items.video'],
 					implemented: 0,
 				},
 				{
-					name: 'Screen sharing and remote control',
+					name: m['featuresTable.calls.items.screen_sharing'],
 					implemented: 0,
 				},
 				{
-					name: 'Call history',
+					name: m['featuresTable.calls.items.history'],
 					implemented: 0,
 				},
 				{
-					name: 'Call recording',
+					name: m['featuresTable.calls.items.recording'],
 					implemented: 0,
 				},
 			],

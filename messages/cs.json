@@ -100,11 +100,23 @@
 		},
 		"contacts": {
 			"title": "Kontakty",
-			"items": {}
+			"items": {
+				"management": "Správa kontaktů",
+				"groups": "Skupiny kontaktů",
+				"search": "Vyhledávání",
+				"import_export": "Import a export",
+				"phone_numbers": "Identita propojená s telefonními čísly"
+			}
 		},
 		"calls": {
 			"title": "Volání",
-			"items": {}
+			"items": {
+				"audio": "Hlasové hovory",
+				"video": "Video hovory",
+				"screen_sharing": "Sdílení obrazovky a vzdálená správa",
+				"history": "Historie hovorů",
+				"recording": "Nahrávání hovorů"
+			}
 		},
 		"conference": {
 			"title": "Konference",
