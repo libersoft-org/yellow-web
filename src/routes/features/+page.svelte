@@ -55,9 +55,9 @@
 	}
 
 	const legendItems = [
-		{ icon: 'cross', text: m['featuresTable.status1'](), colorClass: 'text-red-400' },
-		{ icon: 'check', text: m['featuresTable.status2'](), colorClass: 'text-green-500' },
-		{ icon: 'check', text: m['featuresTable.status3'](), colorClass: 'text-yellow-500' },
+		{ icon: 'cross', text: m['featuresTable.status1'], colorClass: 'text-red-400' },
+		{ icon: 'check', text: m['featuresTable.status2'], colorClass: 'text-green-500' },
+		{ icon: 'check', text: m['featuresTable.status3'], colorClass: 'text-yellow-500' },
 	];
 
 	const state = [
