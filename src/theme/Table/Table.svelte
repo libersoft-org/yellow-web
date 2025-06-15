@@ -232,7 +232,7 @@
 											{/if}
 											{#if cell.icon}
 												<span class="status-check status-{cell.iconStatus} inline-flex h-6 w-6 items-center justify-center rounded-full text-sm lg:h-9 lg:w-9">
-													<Icon name={cell.icon} size="sm" lgSize="md" />
+													<Icon name={cell.iconStatus === 'warning' ? 'check' : cell.icon} size="sm" lgSize="md" />
 												</span>
 											{:else if cell.component}
 												<span class="text-themeGray-400 text-right text-xs md:text-center lg:text-sm">
