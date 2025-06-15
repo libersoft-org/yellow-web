@@ -17,8 +17,10 @@
 	<SimpleHero title={m['footer.links.signup']()} backgroundImage="assets/images/hero-bg.png" />
 
 	<div class="theme-container mx-auto py-10 md:py-20">
-		<p class="mb-4">{m['accounts.label']()}</p>
-		<Button label={m['footer.links.contact']()} iconSize="md" rightIcon="chevron" theme="secondary" class="w-full md:w-auto" onclick={() => goto(Routes.contact())} />
+		<div class="flex flex-col items-center justify-center">
+			<p class="mb-8 text-center max-w-[700px]">{m['accounts.label']()}</p>
+			<Button label={m['footer.links.contact']()} iconSize="md" rightIcon="chevron" theme="secondary" class="w-full md:w-auto" onclick={() => goto(Routes.contact())} />
+		</div>
 	</div>
 	<!--
  <div class="theme-container mx-auto py-12">
