@@ -5,7 +5,7 @@
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import Button from '@/theme/Button/Button.svelte';
-	import { m } from '@paraglide/messages';
+	import { m } from '$lib/i18n/index.svelte.js';
 	import { Routes } from '@/utils/routes';
 </script>
 
@@ -14,12 +14,12 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title={m['footer.links.signup']()} backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title={m['footer.links.signup']} backgroundImage="assets/images/hero-bg.png" />
 
 	<div class="theme-container mx-auto py-10 md:py-20">
 		<div class="flex flex-col items-center justify-center">
-			<p class="mb-8 text-center max-w-[700px]">{m['accounts.label']()}</p>
-			<Button label={m['footer.links.contact']()} iconSize="md" rightIcon="chevron" theme="secondary" class="w-full md:w-auto" onclick={() => goto(Routes.contact())} />
+			<p class="mb-8 text-center max-w-[700px]">{m['accounts.label']}</p>
+			<Button label={m['footer.links.contact']} iconSize="md" rightIcon="chevron" theme="secondary" class="w-full md:w-auto" onclick={() => goto(Routes.contact())} />
 		</div>
 	</div>
 	<!--

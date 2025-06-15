@@ -4,8 +4,8 @@
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
+	import { m } from '$lib/i18n/index.svelte.js';
 	import Icon from '@/theme/Icon/Icon.svelte';
-	import { m } from '@paraglide/messages';
 
 	function convertModulesToTables(modulesData, stateData) {
 		return modulesData.map(module => {
@@ -35,7 +35,7 @@
 		});
 
 		return {
-			title: m['featuresTable.titles.core_features'](),
+			title: m['featuresTable.core.title'],
 			headers,
 			rows,
 		};
@@ -74,59 +74,60 @@
 			icon: 'part.svg',
 		},
 	];
-	const core = [
+	// Make data reactive by using $derived
+	const core = $derived([
 		{
-			name: 'AMTP protocol',
+			name: m['featuresTable.core.items.amtp'],
 			implemented: 2,
 		},
 		{
-			name: 'DMTP protocol',
+			name: m['featuresTable.core.items.dmtp'],
 			implemented: 0,
 		},
 		{
-			name: 'Server - modularity',
+			name: m['featuresTable.core.items.server_modularity'],
 			implemented: 1,
 		},
 		{
-			name: 'Client - modularity',
+			name: m['featuresTable.core.items.client_modularity'],
 			implemented: 2,
 		},
 		{
-			name: 'Encrypted connection',
+			name: m['featuresTable.core.items.encrypted_connection'],
 			implemented: 1,
 		},
 		{
-			name: 'Client - encryption, signature and login keys management',
+			name: m['featuresTable.core.items.client_encryption'],
 			implemented: 0,
 		},
 		{
-			name: 'Client - end-to-end encryption',
+			name: m['featuresTable.core.items.client_e2e'],
 			implemented: 0,
 		},
 		{
-			name: 'Client - multilanguage support',
+			name: m['featuresTable.core.items.client_multilanguage'],
 			implemented: 0,
 		},
 		{
-			name: 'Web admin',
+			name: m['featuresTable.core.items.web_admin'],
 			implemented: 1,
 		},
 		{
-			name: 'Public account registration',
+			name: m['featuresTable.core.items.public_registration'],
 			implemented: 0,
 		},
 		{
-			name: 'Desktop app',
-			implemented: 0,
+			name: m['featuresTable.core.items.desktop_app'],
+			implemented: 2,
 		},
 		{
-			name: 'Mobile app',
-			implemented: 0,
+			name: m['featuresTable.core.items.mobile_app'],
+			implemented: 2,
 		},
-	];
-	const modules = [
+	]);
+	const modules = $derived([
 		{
-			name: m['featuresTable.titles.messages'](),
+			name: m['featuresTable.messages.title'],
 			features: [
 				{
 					name: 'One-on-one chat',
@@ -195,7 +196,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.profiles'](),
+			name: m['featuresTable.profiles.title'],
 			features: [
 				{
 					name: 'User info',
@@ -228,7 +229,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.contacts'](),
+			name: m['featuresTable.contacts.title'],
 			features: [
 				{
 					name: 'Contact management',
@@ -253,7 +254,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.calls'](),
+			name: m['featuresTable.calls.title'],
 			features: [
 				{
 					name: 'Audio calls',
@@ -278,7 +279,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.conference'](),
+			name: m['featuresTable.conference.title'],
 			features: [
 				{
 					name: 'Conference calls',
@@ -307,7 +308,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.wallet'](),
+			name: m['featuresTable.wallet.title'],
 			features: [
 				{
 					name: 'Sending and receiving cryptocurrencies',
@@ -348,7 +349,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.newsfeed_stories'](),
+			name: m['featuresTable.newsfeed_stories.title'],
 			features: [
 				{
 					name: 'Newsfeed posts management',
@@ -385,7 +386,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.video'](),
+			name: m['featuresTable.video.title'],
 			features: [
 				{
 					name: 'Video channels',
@@ -418,7 +419,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.events'](),
+			name: m['featuresTable.events.title'],
 			features: [
 				{
 					name: 'Event management',
@@ -451,7 +452,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.forum'](),
+			name: m['featuresTable.forum.title'],
 			features: [
 				{
 					name: 'Forums, threads and posts',
@@ -480,7 +481,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.map'](),
+			name: m['featuresTable.map.title'],
 			features: [
 				{
 					name: 'World map',
@@ -505,7 +506,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.eshops'](),
+			name: m['featuresTable.eshops.title'],
 			features: [
 				{
 					name: 'Buy stuff',
@@ -526,7 +527,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.marketplace'](),
+			name: m['featuresTable.marketplace.title'],
 			features: [
 				{
 					name: 'Buy and sell stuff',
@@ -551,7 +552,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.donations'](),
+			name: m['featuresTable.donations.title'],
 			features: [
 				{
 					name: 'Sending donation',
@@ -572,7 +573,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.crowdfunding'](),
+			name: m['featuresTable.crowdfunding.title'],
 			features: [
 				{
 					name: 'Contribution in crowdfunding campaigns',
@@ -593,7 +594,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.calendar'](),
+			name: m['featuresTable.calendar.title'],
 			features: [
 				{
 					name: 'Calendar management',
@@ -610,7 +611,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.tasks'](),
+			name: m['featuresTable.tasks.title'],
 			features: [
 				{
 					name: 'Dashboard and task management',
@@ -631,7 +632,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.file_sharing'](),
+			name: m['featuresTable.file_sharing.title'],
 			features: [
 				{
 					name: 'Download and upload to IPFS storage',
@@ -656,7 +657,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.virtual_chat'](),
+			name: m['featuresTable.virtual_chat.title'],
 			features: [
 				{
 					name: 'Chat in virtual world',
@@ -681,7 +682,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.dating'](),
+			name: m['featuresTable.dating.title'],
 			features: [
 				{
 					name: 'Profile with gallery',
@@ -714,7 +715,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.games'](),
+			name: m['featuresTable.games.title'],
 			features: [
 				{
 					name: 'Games list',
@@ -735,7 +736,7 @@
 			],
 		},
 		{
-			name: m['featuresTable.titles.media'](),
+			name: m['featuresTable.media.title'],
 			features: [
 				{
 					name: 'News management',
@@ -743,11 +744,12 @@
 				},
 			],
 		},
-	];
+	]);
 
-	const coreTable = convertCoreToTable(core, state);
-	const moduleTables = convertModulesToTables(modules, state);
-	const allTables = [coreTable, ...moduleTables];
+	// Use $derived to make these reactive
+	const coreTable = $derived(convertCoreToTable(core, state));
+	const moduleTables = $derived(convertModulesToTables(modules, state));
+	const allTables = $derived([coreTable, ...moduleTables]);
 </script>
 
 <style>
@@ -755,9 +757,9 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title={m['footer.links.features']()} backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title={m['footer.links.features']} backgroundImage="assets/images/hero-bg.png" />
 	<div class="theme-container relative mx-auto py-10 md:py-20">
-		<div class="text-center mb-10 max-w-[800px] mx-auto">{m['comparisonTable.disclaimer']()}</div>
+		<div class="text-center mb-10 max-w-[800px] mx-auto">{m['comparisonTable.disclaimer']}</div>
 		{#if allTables.length > 0}
 			<div class="flex flex-col gap-8">
 				<div class="flex justify-center flex-wrap gap-4">

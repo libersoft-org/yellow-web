@@ -1,20 +1,21 @@
 <script lang="ts">
 	import Link from '@/theme/Link/Link.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
-	import { m } from '@paraglide/messages';
-	export let blockTitle = m['text.block_title']();
-	const title = m['text.organization_title']();
-	const address = [m['text.address.line1'](), m['text.address.line2'](), m['text.address.line3']()];
-	const organizationId = m['text.organization_id_value']();
-	const contactTitle = m['text.contact_title']();
-	const contactEmail = m['text.contact_email']();
-	const links = [
-		{ label: m['text.links.github'](), icon: 'github', href: 'https://github.com/libersoft-org/yellow-documentation' },
-		{ label: m['text.links.telegram_chat'](), icon: 'telegram', href: 'https://t.me/libersoft' },
-		{ label: m['text.links.telegram_announcements'](), icon: 'telegram', href: 'https://t.me/libersoft_ann' },
-		{ label: m['text.links.linkedin'](), icon: 'linkedin', href: 'https://www.linkedin.com/company/libersoft-org/' },
-		{ label: m['text.links.facebook'](), icon: 'facebook', href: 'https://www.facebook.com/groups/libersoft' },
-	];
+	import { m } from '$lib/i18n/index.svelte.js';
+	// Make all translations reactive
+	const blockTitle = $derived(m['text.block_title']);
+	const title = $derived(m['text.organization_title']);
+	const address = $derived([m['text.address.line1'], m['text.address.line2'], m['text.address.line3']]);
+	const organizationId = $derived(m['text.organization_id_value']);
+	const contactTitle = $derived(m['text.contact_title']);
+	const contactEmail = $derived(m['text.contact_email']);
+	const links = $derived([
+		{ label: m['text.links.github'], icon: 'github', href: 'https://github.com/libersoft-org/yellow-documentation' },
+		{ label: m['text.links.telegram_chat'], icon: 'telegram', href: 'https://t.me/libersoft' },
+		{ label: m['text.links.telegram_announcements'], icon: 'telegram', href: 'https://t.me/libersoft_ann' },
+		{ label: m['text.links.linkedin'], icon: 'linkedin', href: 'https://www.linkedin.com/company/libersoft-org/' },
+		{ label: m['text.links.facebook'], icon: 'facebook', href: 'https://www.facebook.com/groups/libersoft' },
+	]);
 </script>
 
 {#snippet cardHeaderSnippet()}
@@ -24,14 +25,14 @@
 {/snippet}
 {#snippet leftColumnSnippet()}
 	<div class="w-full lg:flex-1">
-		<h4 class="mb-2 text-xl font-bold">{m['text.address.title']()}</h4>
+		<h4 class="mb-2 text-xl font-bold">{m['text.address.title']}</h4>
 		<div class="text-md mb-5">
 			{#each address as line, i (i)}
 				<div class="text-themeGray-400 text-base">{line}</div>
 			{/each}
 		</div>
 		<div class="text-md text-themeGray-400 mb-7">
-			<strong>{m['text.organization_id']()}</strong>
+			<strong>{m['text.organization_id']}</strong>
 			{organizationId}
 		</div>
 		<h3 class="text-6xl font-medium">{contactTitle}</h3>

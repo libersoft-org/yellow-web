@@ -4,7 +4,7 @@
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
-	import { m } from '@paraglide/messages';
+	import { m } from '$lib/i18n/index.svelte.js';
 
 	function convertComparisonData(comparisonSections) {
 		return comparisonSections.map(section => {
@@ -200,9 +200,9 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title={m['footer.links.comparison']()} backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title={m['footer.links.comparison']} backgroundImage="assets/images/hero-bg.png" />
 	<div class="theme-container mx-auto py-10 md:py-20">
-		<div class="text-center mb-10">{m['comparisonTable.disclaimer']()}</div>
+		<div class="text-center mb-10">{m['comparisonTable.disclaimer']}</div>
 		{#each convertedSections as section}
 			<AppFeaturesComparisonTable title={section.title} subtitle="" headers={section.headers} rows={section.rows} buttonLabel="" buttonLink="" showMaxHeight={false} />
 		{/each}
