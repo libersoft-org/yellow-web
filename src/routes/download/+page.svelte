@@ -182,10 +182,12 @@
 <Header zIndex={100} />
 <SimpleHero title={m['footer.links.download']()} backgroundImage="assets/images/hero-bg.png" />
 <div class="theme-container mx-auto py-10 md:py-20">
-	<div class="m-2">
-		{m['hero.app_name']() + ' ' + m['download.disclaimer']()}
+	<div class="flex flex-col items-center justify-center">
+		<p class="mb-5 max-w-[700px] text-center">
+			{m['hero.app_name']() + ' ' + m['download.disclaimer']()}
+		</p>
+		<Table {rows} {headers} class="max-w-[700px]" isCollapsible={false} />
 	</div>
-	<Table {rows} {headers} class="max-w-[700px]" isCollapsible={false} />
 	<!--
   <div class="theme-container mx-auto py-12">
    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
