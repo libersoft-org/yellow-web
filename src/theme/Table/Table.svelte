@@ -152,8 +152,18 @@
 		}
 
 		/* Mobile accordion content styling */
+		.accordion-content-cell {
+			@apply align-top h-full;
+		}
+
 		.accordion-content-cell .cell-wrapper {
-			@apply bg-themeGray-50 lg:bg-white;
+			@apply bg-themeGray-50 lg:bg-white grid grid-cols-[1fr_auto] items-center min-h-[43px] h-full gap-2;
+		}
+
+		@media (min-width: 1024px) {
+			.accordion-content-cell .cell-wrapper {
+				@apply grid-cols-1 justify-items-center;
+			}
 		}
 	}
 
@@ -173,17 +183,26 @@
 		}
 
 		/* Cell styling */
-		tbody tr :where(td) .cell-wrapper {
-			@apply justify-center h-full;
-		}
-
 		tbody tr :where(td) {
 			@apply h-full min-w-0;
 		}
 
+		tbody tr :where(td) .cell-wrapper {
+			@apply justify-center h-full grid grid-cols-[1fr_auto] items-center justify-items-center min-h-[43px] gap-2;
+		}
+
 		tbody tr th .cell-wrapper {
-			@apply justify-start h-full;
+			@apply justify-start h-full grid grid-cols-[1fr_auto] items-center min-h-[43px] gap-2;
 			text-align: left;
+		}
+
+		@media (min-width: 1024px) {
+			tbody tr :where(td) .cell-wrapper {
+				@apply grid-cols-1 justify-items-center;
+			}
+			tbody tr th .cell-wrapper {
+				@apply grid-cols-1 justify-items-start;
+			}
 		}
 
 		/* Ensure content doesn't overflow on small screens */
