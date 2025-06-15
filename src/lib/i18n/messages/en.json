@@ -48,6 +48,10 @@
 		"status1": "Not implemented",
 		"status2": "Fully implemented",
 		"status3": "Partially implemented",
+		"table_headers": {
+			"feature": "Feature",
+			"status": "Status"
+		},
 		"core": {
 			"title": "Core features",
 			"items": {
@@ -193,14 +197,6 @@
 		"table_header": {
 			"feature": "Feature",
 			"implemented": "Implemented"
-		},
-		"table_items": {
-			"item1": "AMTP protocol",
-			"item2": "DMTP protocol",
-			"item3": "Server - modularity",
-			"item4": "Client - modularity",
-			"item5": "Encrypted connection",
-			"item6": "Client - End-to-end encryption"
 		}
 	},
 	"comparisonTable": {

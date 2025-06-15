@@ -48,6 +48,10 @@
 		"status1": "Neimplementováno",
 		"status2": "Plně implementováno",
 		"status3": "Částečně implementováno",
+		"table_headers": {
+			"feature": "Funkce",
+			"status": "Stav"
+		},
 		"core": {
 			"title": "Funkce jádra",
 			"items": {
@@ -193,14 +197,6 @@
 		"table_header": {
 			"feature": "Funkce",
 			"implemented": "Implementováno"
-		},
-		"table_items": {
-			"item1": "AMTP protokol",
-			"item2": "DMTP protokol",
-			"item3": "Server - modularita",
-			"item4": "Klient - modularita",
-			"item5": "Šifrované spojení",
-			"item6": "Klient - Koncové šifrování"
 		}
 	},
 	"comparisonTable": {

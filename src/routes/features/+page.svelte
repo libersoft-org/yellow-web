@@ -9,7 +9,7 @@
 
 	function convertModulesToTables(modulesData, stateData) {
 		return modulesData.map(module => {
-			const headers = ['Feature', 'Status'].map(text => ({ text, isHeader: true }));
+			const headers = [m['featuresTable.table_headers.feature'], m['featuresTable.table_headers.status']].map(text => ({ text, isHeader: true }));
 			const rows = module.features.map(feature => {
 				const statusIcon = getStatusIcon(feature.implemented, stateData);
 				return {
@@ -26,7 +26,7 @@
 	}
 
 	function convertCoreToTable(coreData, stateData) {
-		const headers = ['Feature', 'Status'].map(text => ({ text, isHeader: true }));
+		const headers = [m['featuresTable.table_headers.feature'], m['featuresTable.table_headers.status']].map(text => ({ text, isHeader: true }));
 		const rows = coreData.map(feature => {
 			const statusIcon = getStatusIcon(feature.implemented, stateData);
 			return {
