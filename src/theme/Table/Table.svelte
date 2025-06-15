@@ -33,11 +33,11 @@
 		buttonRightIcon?: string;
 		class?: string;
 		isCollapsible?: boolean;
-		mobileColName?: string;
-		mobileColFeature?: string;
+		mobileColLeft?: string;
+		mobileColRight?: string;
 	}
 
-	let { children, rows = [], headers = [], formatHeaders = false, formatNewlines = false, rounded = true, showOverlay = false, overlayType = 'white', buttonLabel = 'See all', buttonLink = '#', buttonTheme = 'secondary', buttonRightIcon = 'chevron', class: className = '', isCollapsible = true, mobileColName = 'Name', mobileColFeature = 'Features' }: Props = $props();
+	let { children, rows = [], headers = [], formatHeaders = false, formatNewlines = false, rounded = true, showOverlay = false, overlayType = 'white', buttonLabel = 'See all', buttonLink = '#', buttonTheme = 'secondary', buttonRightIcon = 'chevron', class: className = '', isCollapsible = true, mobileColLeft: mobileColLeft = 'Name', mobileColRight: mobileColRight = 'Features' }: Props = $props();
 
 	const shouldShowButton = $derived(buttonLabel && buttonLink && buttonLink !== '#');
 	const shouldShowOverlay = $derived(shouldShowButton);
@@ -268,8 +268,8 @@
 					{#if isCollapsible}
 						<tr class="lg:hidden">
 							<td class="theme-gradient-yellow text-themeGray-800 flex justify-between bg-gradient-to-t py-4.5 text-base font-bold">
-								<div class="px-5.5">{mobileColName}</div>
-								<div class="px-5.5">{mobileColFeature}</div>
+								<div class="px-5.5">{mobileColLeft}</div>
+								<div class="px-5.5">{mobileColRight}</div>
 							</td>
 						</tr>
 					{/if}

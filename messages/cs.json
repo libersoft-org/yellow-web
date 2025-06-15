@@ -96,7 +96,8 @@
 			"open_source": "Otevřený zdrojový kód",
 			"distributed": "Distribuovaná / decentralizovaná síť",
 			"e2e": "Koncové šifrování",
-			"developed_by": "Vývojář"
+			"developed_by": "Vývojář",
+			"features": "Funkce"
 		},
 		"table_description": {
 			"some_software": "některý software",

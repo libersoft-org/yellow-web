@@ -26,8 +26,8 @@
 		buttonLink?: string;
 		isCollapsible?: boolean;
 		showMaxHeight?: boolean;
-		mobileColName?: string;
-		mobileColFeature?: string;
+		mobileColLeft?: string;
+		mobileColRight?: string;
 	}
 
 	const check: Cell = { iconStatus: 'success', icon: 'check' };
@@ -60,8 +60,8 @@
 		buttonLink = Routes.comparison(),
 		isCollapsible = true,
 		showMaxHeight = true,
-		mobileColName = 'Name',
-		mobileColFeature = 'Features',
+		mobileColLeft: mobileColLeft = m['comparisonTable.table_headers.software'](),
+		mobileColRight: mobileColRight = m['comparisonTable.table_headers.features'](),
 	}: Props = $props();
 </script>
 
@@ -77,7 +77,7 @@
 				</h2>
 			</div>
 			<div class="table-container-wrapper relative">
-				<Table {buttonLabel} {buttonLink} formatHeaders={true} formatNewlines={true} {headers} overlayType="white" {rows} showOverlay={rows.length > 5} class={showMaxHeight ? 'max-h-[538px]' : ''} {isCollapsible} {mobileColName} {mobileColFeature} />
+				<Table {buttonLabel} {buttonLink} formatHeaders={true} formatNewlines={true} {headers} overlayType="white" {rows} showOverlay={rows.length > 5} class={showMaxHeight ? 'max-h-[538px]' : ''} {isCollapsible} {mobileColLeft} {mobileColRight} />
 			</div>
 		</div>
 	</div>
