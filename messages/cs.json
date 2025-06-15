@@ -20,16 +20,16 @@
 		"feature_button": "Zobrazit všechny funkce",
 		"features": {
 			"messages": {
-				"title": "Zprávy",
+				"title": "Rychlé zprávy",
 				"description": "Vysoce inovativní zasílání rychlých zpráv zahrnuje jedinečné funkce, jako je zasílání souborů s neomezenou velikostí, widgety, vícedílné zprávy, více témat v rámci konverzace, šablony zpráv a mnoho dalšího."
-			},
-			"ecommerce": {
-				"title": "E-commerce",
-				"description": "Díky integraci kryptoměnové peněženky, která podporuje smart contracty, nabízí platforma pokročilé funkce e-commerce, které jsou s peněženkou propojeny. Patří mezi ně funkce jako: posílání plateb mezi uživateli, nákupy v e-shopech, na tržišti a ve virtuálním chatu, posílání darů na konkrétní účely, podpora crowdfundingových kampaní, prodej videoobsahu v rámci videokanálů, posílání plateb během živých přenosů, doplňování vlastního obsahu, nákup prémiových členství, platby ve hrách a mnoho dalšího."
 			},
 			"social": {
 				"title": "Sociální média",
 				"description": "Platforma nabízí pokročilé funkce sociálních médií, jako jsou videokanály, fórum, newsfeed, příběhy, události, virtuální svět, mapy a další."
+			},
+			"ecommerce": {
+				"title": "E-commerce",
+				"description": "Díky integraci kryptoměnové peněženky, která podporuje smart contracty, nabízí platforma pokročilé funkce e-commerce, které jsou s peněženkou propojeny. Patří mezi ně funkce jako: posílání plateb mezi uživateli, nákupy v e-shopech, na tržišti a ve virtuálním chatu, posílání darů na konkrétní účely, podpora crowdfundingových kampaní, prodej videoobsahu v rámci videokanálů, posílání plateb během živých přenosů, doplňování vlastního obsahu, nákup prémiových členství, platby ve hrách a mnoho dalšího."
 			},
 			"business": {
 				"title": "Obchodní nástroje",

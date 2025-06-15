@@ -50,9 +50,9 @@
 						description: m['app_features.features.messages.description'](),
 					})}
 					{@render feature({
-						title: m['app_features.features.business.title'](),
-						icon: 'calendar',
-						description: m['app_features.features.business.description'](),
+						title: m['app_features.features.social.title'](),
+						icon: 'phone',
+						description: m['app_features.features.social.description'](),
 					})}
 					{@render feature({
 						title: m['app_features.features.ecommerce.title'](),
@@ -60,9 +60,9 @@
 						description: m['app_features.features.ecommerce.description'](),
 					})}
 					{@render feature({
-						title: m['app_features.features.social.title'](),
-						icon: 'phone',
-						description: m['app_features.features.social.description'](),
+						title: m['app_features.features.business.title'](),
+						icon: 'calendar',
+						description: m['app_features.features.business.description'](),
 					})}
 					{@render feature({
 						title: m['app_features.features.entertainment.title'](),

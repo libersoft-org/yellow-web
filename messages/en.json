@@ -20,16 +20,16 @@
 		"feature_button": "See all features",
 		"features": {
 			"messages": {
-				"title": "Messages",
+				"title": "Instant messages",
 				"description": "Highly innovative instant messaging includes unique features such as sending files with unlimited size, widgets, multipart messages, multiple topics within a conversation, message templates and much more."
-			},
-			"ecommerce": {
-				"title": "E-commerce",
-				"description": "Thanks to the integration of a crypto wallet that supports smart contracts, the platform offers advanced e-commerce features that are linked with the wallet. These include features such as: sending payments between users, making purchases in e-shops, marketplace and virtual chat, sending donations to specific purposes, supporting crowdfunding campaigns, selling video content within video channels, sending payments during live streams, topping up your own content, buying premium memberships, in-game payments and much more."
 			},
 			"social": {
 				"title": "Social media",
 				"description": "The platform offers advanced social media features such as video channels, forum, newsfeed, stories, events, virtual world, maps and more."
+			},
+			"ecommerce": {
+				"title": "E-commerce",
+				"description": "Thanks to the integration of a crypto wallet that supports smart contracts, the platform offers advanced e-commerce features that are linked with the wallet. These include features such as: sending payments between users, making purchases in e-shops, marketplace and virtual chat, sending donations to specific purposes, supporting crowdfunding campaigns, selling video content within video channels, sending payments during live streams, topping up your own content, buying premium memberships, in-game payments and much more."
 			},
 			"business": {
 				"title": "Business tools",
