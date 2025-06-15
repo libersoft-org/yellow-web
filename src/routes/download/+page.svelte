@@ -185,7 +185,7 @@
 	<div class="m-2">
 		{m['hero.app_name']() + ' ' + m['download.disclaimer']()}
 	</div>
-	<Table {rows} {headers} class="max-w-[700px]" />
+	<Table {rows} {headers} class="max-w-[700px]" isCollapsible={false} />
 	<!--
   <div class="theme-container mx-auto py-12">
    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
