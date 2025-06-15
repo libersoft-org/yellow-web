@@ -2,7 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { Routes } from '@/utils/routes';
 	import { m } from '@paraglide/messages';
-	//import svgBackground from './bg.svg?raw';
+	import svgBackground from '../../../static/assets/images/AppCharacteristic-bg.svg?raw';
 	import Card from '@/theme/Card/Card.svelte';
 	import Button from '@/theme/Button/Button.svelte';
 </script>
