@@ -26,7 +26,7 @@
 	<div class="w-full lg:flex-1">
 		<h4 class="mb-2 text-xl font-bold">{m['text.address.title']()}</h4>
 		<div class="text-md mb-5">
-			{#each address as line}
+			{#each address as line, i (i)}
 				<div class="text-themeGray-400 text-base">{line}</div>
 			{/each}
 		</div>
@@ -45,7 +45,7 @@
 {/snippet}
 {#snippet rightColumnSnippet()}
 	<div class="flex w-full flex-col gap-3 lg:flex-1">
-		{#each links as link}
+		{#each links as link, i (i)}
 			<Link href={link.href} label={link.label} icon={link.icon} iconWrapperClass="flex items-center justify-center h-8.5 w-8.5 mr-2 p-2 rounded-full theme-gradient-yellow bg-gradient-to-bl text-black" class="text-md text-themeGray-400" target="_blank" rel="noopener noreferrer" />
 		{/each}
 	</div>

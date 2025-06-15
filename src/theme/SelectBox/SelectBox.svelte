@@ -54,7 +54,7 @@
 		<Select.Portal>
 			<Select.Content class="border-themeGray-300 z-50 max-h-60 min-w-[var(--bits-select-anchor-width)] rounded-lg border bg-white px-1 py-1 shadow-lg" sideOffset={4}>
 				<Select.Viewport class="p-1">
-					{#each options as option}
+					{#each options as option (option.value)}
 						<Select.Item class="hover:bg-themeGray-100 flex w-full cursor-pointer items-center px-4 py-2 text-left text-sm" value={option.value} label={option.label} disabled={option.disabled}>
 							{#snippet children({ selected })}
 								{#if showIcons && option.icon}

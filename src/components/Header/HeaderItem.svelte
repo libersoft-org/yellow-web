@@ -129,7 +129,7 @@
 		<Dropdown {show} {isMobile} referenceElement={buttonRef}>
 			{#snippet children()}
 				<ul class="dropdown-menu min-w-[100px] space-y-2">
-					{#each subItems as item}
+					{#each subItems as item (item.href)}
 						<li class="mb-0">
 							<a href={item.href} class="font-xs block px-1 py-1 hover:underline">
 								{item.label}
