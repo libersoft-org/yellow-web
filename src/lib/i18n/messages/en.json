@@ -148,8 +148,17 @@
 			}
 		},
 		"newsfeed_stories": {
-			"title": "News and stories",
-			"items": {}
+			"title": "Newsfeed and stories",
+			"items": {
+				"newsfeed": "Newsfeed posts management",
+				"comments": "Comments",
+				"reactions": "Reactions",
+				"follow": "Following",
+				"sharing": "Sharing",
+				"stories": "Stories",
+				"top": "Top newsfeeds",
+				"other_modules": "Other modules interconnectivity"
+			}
 		},
 		"video": {
 			"title": "Video",

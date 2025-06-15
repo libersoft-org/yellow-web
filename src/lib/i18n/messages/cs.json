@@ -141,7 +141,7 @@
 				"tokens": "Tokeny",
 				"nfts": "NFT",
 				"password": "Ochrana heslem",
-				"seed": "Správa seedu a klíčů",
+				"seed": "Správa seedů a klíčů",
 				"import_export": "Import a export",
 				"trezor": "Podpora HW peněženky Trezor",
 				"ledger": "Podpora HW peněženky Ledger"
@@ -149,7 +149,16 @@
 		},
 		"newsfeed_stories": {
 			"title": "Newsfeed a příběhy",
-			"items": {}
+			"items": {
+				"newsfeed": "Správa příspěvků v newsfeedu",
+				"comments": "Komentáře",
+				"reactions": "Reakce",
+				"follow": "Sledování",
+				"sharing": "Sdílení",
+				"stories": "Příběhy",
+				"top": "Nejlepší příspěvky",
+				"other_modules": "Propojení s dalšími moduly"
+			}
 		},
 		"video": {
 			"title": "Video",

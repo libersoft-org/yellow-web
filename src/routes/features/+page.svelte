@@ -352,35 +352,35 @@
 			name: m['featuresTable.newsfeed_stories.title'],
 			features: [
 				{
-					name: 'Newsfeed posts management',
+					name: m['featuresTable.newsfeed_stories.items.newsfeed'],
 					implemented: 0,
 				},
 				{
-					name: 'Comments',
+					name: m['featuresTable.newsfeed_stories.items.comments'],
 					implemented: 0,
 				},
 				{
-					name: 'Reactions',
+					name: m['featuresTable.newsfeed_stories.items.reactions'],
 					implemented: 0,
 				},
 				{
-					name: 'Following',
+					name: m['featuresTable.newsfeed_stories.items.follow'],
 					implemented: 0,
 				},
 				{
-					name: 'Sharing',
+					name: m['featuresTable.newsfeed_stories.items.sharing'],
 					implemented: 0,
 				},
 				{
-					name: 'Stories',
+					name: m['featuresTable.newsfeed_stories.items.stories'],
 					implemented: 0,
 				},
 				{
-					name: 'Top newsfeeds',
+					name: m['featuresTable.newsfeed_stories.items.top'],
 					implemented: 0,
 				},
 				{
-					name: 'Other modules interconnectivity',
+					name: m['featuresTable.newsfeed_stories.items.other_modules'],
 					implemented: 0,
 				},
 			],
