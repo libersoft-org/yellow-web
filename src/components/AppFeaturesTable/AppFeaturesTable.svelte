@@ -35,10 +35,14 @@
 		legendItems?: LegendItem[];
 	}
 
-	let {
-		title = m['featuresTable.title'],
-		headers = [m['featuresTable.table_header.feature'], m['featuresTable.table_header.implemented']],
-		rows = [
+	let { title, headers, rows, imagePath = 'assets/images/fluid.png', buttonLabel, buttonLink = Routes.features(), legendItems }: Props = $props();
+
+	// Use reactive derived values for translations
+	// We need to access m[key] inside $derived to ensure reactivity
+	const reactiveTitle = $derived(title || m['featuresTable.title']);
+	const reactiveHeaders = $derived(headers || [m['featuresTable.table_header.feature'], m['featuresTable.table_header.implemented']]);
+	const reactiveRows = $derived(
+		rows || [
 			{
 				cells: [
 					{ text: m['featuresTable.core.items.amtp'], alignment: 'left', isHeader: true },
@@ -75,16 +79,16 @@
 					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
 				],
 			},
-		],
-		imagePath = 'assets/images/fluid.png',
-		buttonLabel = m['featuresTable.button'],
-		buttonLink = Routes.features(),
-		legendItems = [
+		]
+	);
+	const reactiveButtonLabel = $derived(buttonLabel || m['featuresTable.button']);
+	const reactiveLegendItems = $derived(
+		legendItems || [
 			{ icon: 'cross', text: m['featuresTable.status1'], colorClass: 'text-red-400' },
 			{ icon: 'check', text: m['featuresTable.status2'], colorClass: 'text-green-500' },
 			{ icon: 'check', text: m['featuresTable.status3'], colorClass: 'text-yellow-500' },
-		],
-	}: Props = $props();
+		]
+	);
 
 	function shouldShowOverlay(rows: Row[]) {
 		return rows.length > 5;
@@ -105,11 +109,11 @@
 	<div class="relative flex flex-col items-center justify-center">
 		<div class="mb-4">
 			<h2 class="theme-text-h2 relative z-10 text-center">
-				<span class="theme-title-underline z-5">{m['featuresTable.title']}</span>
+				<span class="theme-title-underline z-5">{reactiveTitle}</span>
 			</h2>
 		</div>
 		<div class="table-container-wrapper relative mb-19 lg:mb-0">
-			<Table {rows} {headers} showOverlay={shouldShowOverlay(rows)} overlayType="gray" class="max-w-[538px]" {buttonLabel} {buttonLink} isCollapsible={false} />
+			<Table rows={reactiveRows} headers={reactiveHeaders} showOverlay={shouldShowOverlay(reactiveRows)} overlayType="gray" class="max-w-[538px]" buttonLabel={reactiveButtonLabel} {buttonLink} isCollapsible={false} />
 		</div>
 	</div>
 {/snippet}
@@ -119,7 +123,7 @@
 			<img src={imagePath} alt="Yellow app features" class="max-w-full" />
 		</div>
 		<div class="legend order-1 mt-6 mb-3 flex flex-wrap justify-center gap-4 pl-4.5 sm:flex-row lg:order-2 lg:mb-0 lg:justify-start">
-			{#each legendItems as item}
+			{#each reactiveLegendItems as item}
 				<div class="flex items-start gap-1 md:items-center">
 					<span class={item.colorClass}>
 						<Icon name={item.icon} size="sm" />
