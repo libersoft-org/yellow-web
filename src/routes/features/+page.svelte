@@ -757,7 +757,7 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title={m['footer.links.features']} backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title={m['footer.links.features']} />
 	<div class="theme-container relative mx-auto py-10 md:py-20">
 		<div class="text-center mb-10 max-w-[800px] mx-auto">{m['comparisonTable.disclaimer']}</div>
 		{#if allTables.length > 0}
