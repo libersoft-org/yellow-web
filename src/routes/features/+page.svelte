@@ -761,8 +761,8 @@
 	<div class="theme-container relative mx-auto py-10 md:py-20">
 		<div class="text-center mb-10 max-w-[800px] mx-auto">{m['comparisonTable.disclaimer']}</div>
 		{#if allTables.length > 0}
-			<div class="flex flex-col gap-8">
-				<div class="flex justify-center flex-wrap gap-4">
+			<div class="flex flex-col">
+				<div class="flex justify-center flex-wrap gap-4 mb-5">
 					{#each legendItems as item}
 						<div class="flex items-center gap-2">
 							<div class="flex items-center justify-center">

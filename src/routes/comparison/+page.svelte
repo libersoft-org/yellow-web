@@ -203,7 +203,7 @@
 	<SimpleHero title={m['footer.links.comparison']} backgroundImage="assets/images/hero-bg.png" />
 	<div class="theme-container mx-auto py-10 md:py-20">
 		<div class="text-center mb-10">{m['comparisonTable.disclaimer']}</div>
-		<div class="flex flex-col gap-8">
+		<div class="flex flex-col">
 			{#each convertedSections as section}
 				<AppFeaturesComparisonTable title={section.title} subtitle="" headers={section.headers} rows={section.rows} buttonLabel="" buttonLink="" showMaxHeight={false} showMargins={false} />
 			{/each}
