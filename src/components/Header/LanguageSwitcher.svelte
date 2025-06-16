@@ -157,8 +157,8 @@
 	}
 </style>
 
-<div bind:this={languageSwitcherRef} class="language-switcher relative" onpointerenter={onEnter} onpointerleave={onLeave}>
-	<button bind:this={buttonRef} class="flex cursor-pointer items-center" onclick={toggleDropdown}>
+<div bind:this={languageSwitcherRef} class="language-switcher relative">
+	<button bind:this={buttonRef} class="flex cursor-pointer items-center transition-all duration-300 hover:drop-shadow-lg hover:scale-105 {isOpen ? 'drop-shadow-lg scale-105' : ''}" onclick={toggleDropdown}>
 		<Icon class="rounded-full" name={'country/' + currentLanguage} size="4xl" />
 	</button>
 
