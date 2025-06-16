@@ -53,7 +53,7 @@
 {/snippet}
 {#snippet contentSnippet()}
 	<div class="card-block__body px-6 pt-1 pb-10 md:px-10 lg:px-14">
-		<div class="flex flex-col gap-8 lg:flex-row lg:gap-16">
+		<div class="flex flex-col gap-8 md:flex-row md:gap-16">
 			{@render leftColumnSnippet()}
 			{@render rightColumnSnippet()}
 		</div>
@@ -82,7 +82,7 @@
 		</svg>
 	</div>
 {/snippet}
-<div class="mx-auto mb-6 max-w-full px-0 md:mb-8 md:px-4 lg:mb-12">
+<div class="mx-auto mb-6 w-full max-w-[350px] md:w-auto md:max-w-full px-0 md:mb-8 md:px-4 lg:mb-12">
 	<div class="theme-shadow-soft rounded-3xl bg-white">
 		{@render cardHeaderSnippet()}
 		{@render shadowSvgSnippet()}
