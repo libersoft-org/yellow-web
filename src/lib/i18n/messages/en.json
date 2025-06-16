@@ -52,6 +52,10 @@
 			"feature": "Feature",
 			"status": "Status"
 		},
+		"table_header": {
+			"feature": "Feature",
+			"implemented": "Implemented"
+		},
 		"core": {
 			"title": "Core features",
 			"items": {
@@ -305,10 +309,6 @@
 				"list": "News list",
 				"management": "News management"
 			}
-		},
-		"table_header": {
-			"feature": "Feature",
-			"implemented": "Implemented"
 		}
 	},
 	"comparisonTable": {

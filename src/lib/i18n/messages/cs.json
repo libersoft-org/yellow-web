@@ -52,6 +52,10 @@
 			"feature": "Funkce",
 			"status": "Stav"
 		},
+		"table_header": {
+			"feature": "Funkce",
+			"implemented": "Implementováno"
+		},
 		"core": {
 			"title": "Funkce jádra",
 			"items": {
@@ -305,10 +309,6 @@
 				"list": "Seznam zpráv",
 				"management": "Správa zpravodajství"
 			}
-		},
-		"table_header": {
-			"feature": "Funkce",
-			"implemented": "Implementováno"
 		}
 	},
 	"comparisonTable": {
