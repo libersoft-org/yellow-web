@@ -162,63 +162,149 @@
 		},
 		"video": {
 			"title": "Video",
-			"items": {}
+			"items": {
+				"channels": "Video channels",
+				"reels": "Krátká videa",
+				"streams": "Živá vysílání",
+				"follow": "Sledování",
+				"top": "Nejlepší kanály",
+				"donations": "Dary",
+				"paid": "Placená videa"
+			}
 		},
 		"events": {
 			"title": "Události",
-			"items": {}
+			"items": {
+				"management": "Správa událostí",
+				"comments": "Komentáře",
+				"reactions": "Reakce",
+				"privacy": "Nastavení soukromí",
+				"map": "Mapa",
+				"search": "Vyhledávání",
+				"top": "Nejlepší veřejné události"
+			}
 		},
 		"forum": {
 			"title": "Diskuze",
-			"items": {}
+			"items": {
+				"forums": "Diskuze, příspěvky a odpovědi",
+				"management": "Správa fóra pro moderátory",
+				"privacy": "Nastavení soukromí",
+				"reactions": "Reakce",
+				"search": "Vyhledávání",
+				"top": "Nejlepší fóra"
+			}
 		},
 		"map": {
 			"title": "Mapa",
-			"items": {}
+			"items": {
+				"world": "Mapa světa",
+				"points": "Body zájmu",
+				"own_points": "Správa vlastních bodů zájmu",
+				"search": "Vyhledávání",
+				"top": "Nejlepší místa"
+			}
 		},
 		"eshops": {
 			"title": "E-shopy",
-			"items": {}
+			"items": {
+				"buy": "Nakupování zboží a služeb",
+				"management": "Správa e-shopu",
+				"top": "Nejlepší e-shopy",
+				"rating": "Hodnocení"
+			}
 		},
 		"marketplace": {
 			"title": "Tržiště",
-			"items": {}
+			"items": {
+				"buy_sell": "Koupě a prodej zboží a služeb",
+				"auctions": "Aukce",
+				"filters": "Filtry a vyhledávání",
+				"rating": "Hodnocení",
+				"escrow": "Úschovní zprostředkovatelé"
+			}
 		},
 		"donations": {
 			"title": "Dary",
-			"items": {}
+			"items": {
+				"send": "Zasílání darů",
+				"management": "Správa darovacích kampaní",
+				"search": "Vyhledávání",
+				"top": "Nejlepší dary"
+			}
 		},
 		"crowdfunding": {
 			"title": "Skupinové financování",
-			"items": {}
+			"items": {
+				"contribution": "Přispívání v rámci kampaní skupinového financování",
+				"management": "Správa kampaní",
+				"search": "Vyhledávání",
+				"top": "Nejlepší kampaně"
+			}
 		},
 		"calendar": {
 			"title": "Kalendář",
-			"items": {}
+			"items": {
+				"management": "Správa kalendáře",
+				"privacy": "Nastavení soukromí",
+				"sharing": "Sdílení kalendářů"
+			}
 		},
 		"tasks": {
 			"title": "Úkoly",
-			"items": {}
+			"items": {
+				"dashboard": "Nástěnka a správa úkolů",
+				"comments": "Komentáře",
+				"priorities": "Prioritizace",
+				"sharing": "Sdílení úkolů"
+			}
 		},
 		"file_sharing": {
 			"title": "Sdílení souborů",
-			"items": {}
+			"items": {
+				"download_upload": "Stahování a nahrávání na decentralizované úložiště",
+				"player": "Přehrávač audia a videa",
+				"categories": "Kategorie",
+				"rating": "Hodnocení",
+				"search": "Vyhledávání"
+			}
 		},
 		"virtual_chat": {
 			"title": "Virtuální pokec",
-			"items": {}
+			"items": {
+				"chat": "Pokec ve virtuálním světě",
+				"places": "Soukromá místa",
+				"character": "Úprava postavy",
+				"interaction": "Interakce s předměty",
+				"blocking": "Blokování"
+			}
 		},
 		"dating": {
 			"title": "Seznamka",
-			"items": {}
+			"items": {
+				"profile": "Profil s galerií",
+				"filters": "Filtry a vyhledávání uživatelů",
+				"people": "Lidé v okolí",
+				"match": "Shody",
+				"map": "Živá mapa",
+				"contacts": "Správa kontaktů"
+			}
 		},
 		"games": {
 			"title": "Hry",
-			"items": {}
+			"items": {
+				"list": "Seznam her",
+				"publishing": "Publikování her",
+				"paid": "Prodej placených her",
+				"search": "Vyhledávání"
+			}
 		},
 		"media": {
 			"title": "Zprávy a média",
-			"items": {}
+			"items": {
+				"list": "Seznam zpráv",
+				"management": "Správa zpravodajství"
+			}
 		},
 		"table_header": {
 			"feature": "Funkce",

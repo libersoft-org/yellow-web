@@ -389,31 +389,31 @@
 			name: m['featuresTable.video.title'],
 			features: [
 				{
-					name: 'Video channels',
+					name: m['featuresTable.video.items.channels'],
 					implemented: 0,
 				},
 				{
-					name: 'Reels',
+					name: m['featuresTable.video.items.reels'],
 					implemented: 0,
 				},
 				{
-					name: 'Live streams',
+					name: m['featuresTable.video.items.streams'],
 					implemented: 0,
 				},
 				{
-					name: 'Following',
+					name: m['featuresTable.video.items.follow'],
 					implemented: 0,
 				},
 				{
-					name: 'Top channels',
+					name: m['featuresTable.video.items.top'],
 					implemented: 0,
 				},
 				{
-					name: 'Donations',
+					name: m['featuresTable.video.items.donations'],
 					implemented: 0,
 				},
 				{
-					name: 'Paid videos',
+					name: m['featuresTable.video.items.paid'],
 					implemented: 0,
 				},
 			],
@@ -422,31 +422,31 @@
 			name: m['featuresTable.events.title'],
 			features: [
 				{
-					name: 'Event management',
+					name: m['featuresTable.events.items.management'],
 					implemented: 0,
 				},
 				{
-					name: 'Comments',
+					name: m['featuresTable.events.items.comments'],
 					implemented: 0,
 				},
 				{
-					name: 'Reactions',
+					name: m['featuresTable.events.items.reactions'],
 					implemented: 0,
 				},
 				{
-					name: 'Privacy settings',
+					name: m['featuresTable.events.items.privacy'],
 					implemented: 0,
 				},
 				{
-					name: 'Map',
+					name: m['featuresTable.events.items.map'],
 					implemented: 0,
 				},
 				{
-					name: 'Search',
+					name: m['featuresTable.events.items.search'],
 					implemented: 0,
 				},
 				{
-					name: 'Top public events',
+					name: m['featuresTable.events.items.top'],
 					implemented: 0,
 				},
 			],
@@ -455,27 +455,27 @@
 			name: m['featuresTable.forum.title'],
 			features: [
 				{
-					name: 'Forums, threads and posts',
+					name: m['featuresTable.forum.items.forums'],
 					implemented: 0,
 				},
 				{
-					name: 'Forum management for moderators',
+					name: m['featuresTable.forum.items.management'],
 					implemented: 0,
 				},
 				{
-					name: 'Privacy settings',
+					name: m['featuresTable.forum.items.privacy'],
 					implemented: 0,
 				},
 				{
-					name: 'Reactions',
+					name: m['featuresTable.forum.items.reactions'],
 					implemented: 0,
 				},
 				{
-					name: 'Search',
+					name: m['featuresTable.forum.items.search'],
 					implemented: 0,
 				},
 				{
-					name: 'Top forums',
+					name: m['featuresTable.forum.items.top'],
 					implemented: 0,
 				},
 			],
@@ -484,23 +484,23 @@
 			name: m['featuresTable.map.title'],
 			features: [
 				{
-					name: 'World map',
+					name: m['featuresTable.map.items.world'],
 					implemented: 0,
 				},
 				{
-					name: 'Points of interest',
+					name: m['featuresTable.map.items.points'],
 					implemented: 0,
 				},
 				{
-					name: 'Own points of interests management',
+					name: m['featuresTable.map.items.own_points'],
 					implemented: 0,
 				},
 				{
-					name: 'Search',
+					name: m['featuresTable.map.items.search'],
 					implemented: 0,
 				},
 				{
-					name: 'Top places',
+					name: m['featuresTable.map.items.top'],
 					implemented: 0,
 				},
 			],
@@ -509,19 +509,19 @@
 			name: m['featuresTable.eshops.title'],
 			features: [
 				{
-					name: 'Buy stuff',
+					name: m['featuresTable.eshops.items.buy'],
 					implemented: 0,
 				},
 				{
-					name: 'Own e-shops management',
+					name: m['featuresTable.eshops.items.management'],
 					implemented: 0,
 				},
 				{
-					name: 'Top e-shops',
+					name: m['featuresTable.eshops.items.top'],
 					implemented: 0,
 				},
 				{
-					name: 'Rating',
+					name: m['featuresTable.eshops.items.rating'],
 					implemented: 0,
 				},
 			],
@@ -530,23 +530,23 @@
 			name: m['featuresTable.marketplace.title'],
 			features: [
 				{
-					name: 'Buy and sell stuff',
+					name: m['featuresTable.marketplace.items.buy_sell'],
 					implemented: 0,
 				},
 				{
-					name: 'Auctions',
+					name: m['featuresTable.marketplace.items.auctions'],
 					implemented: 0,
 				},
 				{
-					name: 'Filters and search',
+					name: m['featuresTable.marketplace.items.filters'],
 					implemented: 0,
 				},
 				{
-					name: 'Rating',
+					name: m['featuresTable.marketplace.items.rating'],
 					implemented: 0,
 				},
 				{
-					name: 'Escrow agents',
+					name: m['featuresTable.marketplace.items.escrow'],
 					implemented: 0,
 				},
 			],
@@ -555,19 +555,19 @@
 			name: m['featuresTable.donations.title'],
 			features: [
 				{
-					name: 'Sending donation',
+					name: m['featuresTable.donations.items.send'],
 					implemented: 0,
 				},
 				{
-					name: 'Own donation campaigns management',
+					name: m['featuresTable.donations.items.management'],
 					implemented: 0,
 				},
 				{
-					name: 'Search',
+					name: m['featuresTable.donations.items.search'],
 					implemented: 0,
 				},
 				{
-					name: 'Top donations',
+					name: m['featuresTable.donations.items.top'],
 					implemented: 0,
 				},
 			],
@@ -576,19 +576,19 @@
 			name: m['featuresTable.crowdfunding.title'],
 			features: [
 				{
-					name: 'Contribution in crowdfunding campaigns',
+					name: m['featuresTable.crowdfunding.items.contribution'],
 					implemented: 0,
 				},
 				{
-					name: 'Own crowdfunding campaigns management',
+					name: m['featuresTable.crowdfunding.items.own_management'],
 					implemented: 0,
 				},
 				{
-					name: 'Search',
+					name: m['featuresTable.crowdfunding.items.search'],
 					implemented: 0,
 				},
 				{
-					name: 'Top crowdfunding campaigns',
+					name: m['featuresTable.crowdfunding.items.top'],
 					implemented: 0,
 				},
 			],
@@ -597,15 +597,15 @@
 			name: m['featuresTable.calendar.title'],
 			features: [
 				{
-					name: 'Calendar management',
+					name: m['featuresTable.calendar.items.management'],
 					implemented: 0,
 				},
 				{
-					name: 'Privacy settings',
+					name: m['featuresTable.calendar.items.privacy'],
 					implemented: 0,
 				},
 				{
-					name: 'Calendar sharing',
+					name: m['featuresTable.calendar.items.sharing'],
 					implemented: 0,
 				},
 			],
@@ -614,19 +614,19 @@
 			name: m['featuresTable.tasks.title'],
 			features: [
 				{
-					name: 'Dashboard and task management',
+					name: m['featuresTable.tasks.items.management'],
 					implemented: 0,
 				},
 				{
-					name: 'Comments',
+					name: m['featuresTable.tasks.items.comments'],
 					implemented: 0,
 				},
 				{
-					name: 'Priorities',
+					name: m['featuresTable.tasks.items.priorities'],
 					implemented: 0,
 				},
 				{
-					name: 'Task sharing',
+					name: m['featuresTable.tasks.items.sharing'],
 					implemented: 0,
 				},
 			],
@@ -635,23 +635,23 @@
 			name: m['featuresTable.file_sharing.title'],
 			features: [
 				{
-					name: 'Download and upload to IPFS storage',
+					name: m['featuresTable.file_sharing.items.download_upload'],
 					implemented: 0,
 				},
 				{
-					name: 'Audio and video player',
+					name: m['featuresTable.file_sharing.items.player'],
 					implemented: 0,
 				},
 				{
-					name: 'Categories',
+					name: m['featuresTable.file_sharing.items.categories'],
 					implemented: 0,
 				},
 				{
-					name: 'Rating',
+					name: m['featuresTable.file_sharing.items.rating'],
 					implemented: 0,
 				},
 				{
-					name: 'Search',
+					name: m['featuresTable.file_sharing.items.search'],
 					implemented: 0,
 				},
 			],
@@ -660,23 +660,23 @@
 			name: m['featuresTable.virtual_chat.title'],
 			features: [
 				{
-					name: 'Chat in virtual world',
+					name: m['featuresTable.virtual_chat.items.chat'],
 					implemented: 0,
 				},
 				{
-					name: 'Private places',
+					name: m['featuresTable.virtual_chat.items.places'],
 					implemented: 0,
 				},
 				{
-					name: 'Character adjustment',
+					name: m['featuresTable.virtual_chat.items.character'],
 					implemented: 0,
 				},
 				{
-					name: 'Interaction with items',
+					name: m['featuresTable.virtual_chat.items.interaction'],
 					implemented: 0,
 				},
 				{
-					name: 'Blocking',
+					name: m['featuresTable.virtual_chat.items.block'],
 					implemented: 0,
 				},
 			],
@@ -685,31 +685,27 @@
 			name: m['featuresTable.dating.title'],
 			features: [
 				{
-					name: 'Profile with gallery',
+					name: m['featuresTable.dating.items.profile'],
 					implemented: 0,
 				},
 				{
-					name: 'Filters & user search',
+					name: m['featuresTable.dating.items.filters'],
 					implemented: 0,
 				},
 				{
-					name: 'Messages',
+					name: m['featuresTable.dating.items.people'],
 					implemented: 0,
 				},
 				{
-					name: 'People nearby',
+					name: m['featuresTable.dating.items.match'],
 					implemented: 0,
 				},
 				{
-					name: 'Match game',
+					name: m['featuresTable.dating.items.map'],
 					implemented: 0,
 				},
 				{
-					name: 'Live map',
-					implemented: 0,
-				},
-				{
-					name: 'Contact management',
+					name: m['featuresTable.dating.items.contacts'],
 					implemented: 0,
 				},
 			],
@@ -718,19 +714,19 @@
 			name: m['featuresTable.games.title'],
 			features: [
 				{
-					name: 'Games list',
+					name: m['featuresTable.games.items.list'],
 					implemented: 0,
 				},
 				{
-					name: 'Games publishing',
+					name: m['featuresTable.games.items.publishing'],
 					implemented: 0,
 				},
 				{
-					name: 'Paid games sale',
+					name: m['featuresTable.games.items.paid'],
 					implemented: 0,
 				},
 				{
-					name: 'Search',
+					name: m['featuresTable.games.items.search'],
 					implemented: 0,
 				},
 			],
@@ -739,7 +735,11 @@
 			name: m['featuresTable.media.title'],
 			features: [
 				{
-					name: 'News management',
+					name: m['featuresTable.media.items.list'],
+					implemented: 0,
+				},
+				{
+					name: m['featuresTable.media.items.management'],
 					implemented: 0,
 				},
 			],

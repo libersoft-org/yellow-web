@@ -162,63 +162,149 @@
 		},
 		"video": {
 			"title": "Video",
-			"items": {}
+			"items": {
+				"channels": "Video channels",
+				"reels": "Short videos",
+				"streams": "Live streams",
+				"follow": "Following",
+				"top": "Top channels",
+				"donations": "Donations",
+				"paid": "Paid videos"
+			}
 		},
 		"events": {
 			"title": "Events",
-			"items": {}
+			"items": {
+				"management": "Event management",
+				"comments": "Comments",
+				"reactions": "Reactions",
+				"privacy": "Privacy settings",
+				"map": "Map",
+				"search": "Search",
+				"top": "Top public events"
+			}
 		},
 		"forum": {
 			"title": "Forum",
-			"items": {}
+			"items": {
+				"forums": "Forums, threads and posts",
+				"management": "Forum management for moderators",
+				"privacy": "Privacy settings",
+				"reactions": "Reactions",
+				"search": "Search",
+				"top": "Top forums"
+			}
 		},
 		"map": {
 			"title": "Map",
-			"items": {}
+			"items": {
+				"world": "World map",
+				"points": "Points of interest",
+				"own_points": "Own points of interests management",
+				"search": "Search",
+				"top": "Top places"
+			}
 		},
 		"eshops": {
 			"title": "E-shops",
-			"items": {}
+			"items": {
+				"buy": "Buy goods and services",
+				"management": "E-shop management",
+				"top": "Top e-shops",
+				"rating": "Rating"
+			}
 		},
 		"marketplace": {
 			"title": "Marketplace",
-			"items": {}
+			"items": {
+				"buy_sell": "Buy and sell goods and services",
+				"auctions": "Auctions",
+				"filters": "Filters and search",
+				"rating": "Rating",
+				"escrow": "Escrow agents"
+			}
 		},
 		"donations": {
 			"title": "Donations",
-			"items": {}
+			"items": {
+				"send": "Send donation",
+				"management": "Donation campaigns management",
+				"search": "Search",
+				"top": "Top donations"
+			}
 		},
 		"crowdfunding": {
 			"title": "Crowdfunding",
-			"items": {}
+			"items": {
+				"contribution": "Contribution in crowdfunding campaigns",
+				"management": "Campaigns management",
+				"search": "Search",
+				"top": "Top campaigns"
+			}
 		},
 		"calendar": {
 			"title": "Calendar",
-			"items": {}
+			"items": {
+				"management": "Calendar management",
+				"privacy": "Privacy settings",
+				"sharing": "Calendar sharing"
+			}
 		},
 		"tasks": {
 			"title": "Tasks",
-			"items": {}
+			"items": {
+				"dashboard": "Dashboard and task management",
+				"comments": "Comments",
+				"priorities": "Priorities",
+				"sharing": "Task sharing"
+			}
 		},
 		"file_sharing": {
 			"title": "File sharing",
-			"items": {}
+			"items": {
+				"download_upload": "Download and upload to decentralized storage",
+				"player": "Audio and video player",
+				"categories": "Categories",
+				"rating": "Rating",
+				"search": "Search"
+			}
 		},
 		"virtual_chat": {
 			"title": "Virtual chat",
-			"items": {}
+			"items": {
+				"chat": "Chat in virtual world",
+				"places": "Private places",
+				"character": "Character adjustment",
+				"interaction": "Interaction with items",
+				"blocking": "Blocking"
+			}
 		},
 		"dating": {
 			"title": "Dating",
-			"items": {}
+			"items": {
+				"profile": "Profile with gallery",
+				"filters": "Filters & user search",
+				"people": "People nearby",
+				"match": "Match game",
+				"map": "Live map",
+				"contacts": "Contact management"
+			}
 		},
 		"games": {
 			"title": "Games",
-			"items": {}
+			"items": {
+				"list": "Games list",
+				"publishing": "Publishing games",
+				"paid": "Paid games sale",
+				"search": "Search"
+			}
 		},
 		"media": {
 			"title": "News and media",
-			"items": {}
+			"items": {
+				"list": "News list",
+				"management": "News management"
+			}
 		},
 		"table_header": {
 			"feature": "Feature",
