@@ -44,8 +44,8 @@
 	const defaultMainLinks = $derived([
 		{ label: m['footer.links.about'], href: Routes.home() },
 		{ label: m['footer.links.features'], href: Routes.features() },
-		{ label: m['footer.links.download'], href: Routes.download() },
 		{ label: m['footer.links.comparison'], href: Routes.comparison() },
+		{ label: m['footer.links.download'], href: Routes.download() },
 		{ label: m['footer.links.faq'], href: Routes.faq() },
 		{ label: m['footer.links.contact'], href: Routes.contact() },
 		{ label: m['footer.links.signup'], href: Routes.account() },
