@@ -167,7 +167,7 @@
 				},
 				{
 					name: m['featuresTable.messages.items.reactions'],
-					implemented: 0,
+					implemented: 1,
 				},
 				{
 					name: m['featuresTable.messages.items.search'],

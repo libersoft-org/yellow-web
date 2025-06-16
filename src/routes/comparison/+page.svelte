@@ -29,19 +29,19 @@
 	}
 	const comparison = [
 		{
-			title: 'Transparency, network and security',
-			columns: ['Open source', 'Distributed / decentralized', 'End-to-end encryption', 'Developed by'],
+			title: m['comparisonTable.headers.transparency.title'],
+			columns: [m['comparisonTable.headers.transparency.columns.open'], m['comparisonTable.headers.transparency.columns.decentralization'], m['comparisonTable.headers.transparency.columns.e2e'], m['comparisonTable.headers.transparency.columns.developed_by']],
 			rows: {
 				Yellow: [1, 1, 1, 'LiberSoft, Liberland'],
-				'E-mail': ['some software', 1, 'some software', 'Jon Postel and Suzanne Sluizer, USA'],
+				'E-mail': ['some software', 1, 'some software', 'Jon Postel, Suzanne Sluizer, USA'],
 				WhatsApp: [0, 0, 1, 'Meta Platforms Inc., USA'],
-				'Messages (RCS protocol)': [0, 'mobile operators only', 1, 'Google LLC, USA / GSM Association, UK'],
+				'Messages (RCS)': [0, 1, 1, 'Google LLC, USA / GSM Association, UK'],
 				WeChat: [0, 0, 0, 'Tencent Holdings Ltd., China'],
 				'Facebook Messenger': [0, 0, 0, 'Meta Platforms Inc., USA'],
 				Telegram: ['client apps only', 0, 'optional', 'Telegram Group, UK'],
 				QQ: [0, 0, 0, 'Tencent Holdings Ltd., China'],
 				iMessage: [0, 0, 1, 'Apple Inc., USA'],
-				SnapChat: [0, 0, 'snaps only', 'Snap Inc., USA'],
+				SnapChat: [0, 0, 0, 'Snap Inc., USA'],
 				Kik: [0, 0, 0, 'MediaLab AI Inc., France'],
 				Discord: [0, 0, 0, 'Discord Inc., USA'],
 				Viber: [0, 0, 1, 'Rakuten, Japan'],
@@ -55,25 +55,25 @@
 			},
 		},
 		{
-			title: 'Instant messaging',
-			columns: ['Instant messages', 'Rich text', 'Multipart messages', 'Templates', 'Translations', 'Voice messages', 'Video messages'],
+			title: m['comparisonTable.headers.messaging.title'],
+			columns: [m['comparisonTable.headers.messaging.columns.im'], m['comparisonTable.headers.messaging.columns.rich'], m['comparisonTable.headers.messaging.columns.multipart'], m['comparisonTable.headers.messaging.columns.templates'], m['comparisonTable.headers.messaging.columns.translations'], m['comparisonTable.headers.messaging.columns.audio'], m['comparisonTable.headers.messaging.columns.video']],
 			rows: {
 				Yellow: [1, 1, 1, 1, 1, 1, 1],
-				'E-mail': [0, 1, 1, 'Thunderbird extension', 0, 0, 0],
+				'E-mail': [0, 1, 1, 'some software', 0, 0, 0],
 				WhatsApp: [1, 0, 0, 0, 0, 1, 1],
 				Telegram: [1, 0, 0, 0, 0, 1, 1],
-				SnapChat: [1, 0, 0, 0, 0, 1, 'Snaps'],
+				SnapChat: [1, 0, 0, 0, 0, 1, 1],
 				Signal: [1, 0, 0, 0, 0, 1, 0],
 				Element: [1, 0, 0, 0, 0, 1, 0],
-				Facebook: [1, 0, 0, 0, 'In newsfeed only', 1, 0],
+				Facebook: [1, 0, 0, 0, 1, 1, 0],
 				Instagram: [1, 0, 0, 0, 0, 1, 0],
 				YouTube: [0, 0, 0, 0, 0, 0, 0],
 				TikTok: [1, 0, 0, 0, 0, 0, 0],
 			},
 		},
 		{
-			title: 'Data storage and file transfer',
-			columns: ['Large files', 'Peer-to-peer transfer', 'File sharing'],
+			title: m['comparisonTable.headers.storage.title'],
+			columns: [m['comparisonTable.headers.storage.columns.large_files'], m['comparisonTable.headers.storage.columns.p2p'], m['comparisonTable.headers.storage.columns.sharing']],
 			rows: {
 				Yellow: [1, 1, 1],
 				'E-mail': [0, 0, 0],
@@ -89,8 +89,8 @@
 			},
 		},
 		{
-			title: 'Telephony',
-			columns: ['Audio calls', 'Video calls', 'Video conference'],
+			title: m['comparisonTable.headers.telephony.title'],
+			columns: [m['comparisonTable.headers.telephony.columns.audio'], m['comparisonTable.headers.telephony.columns.video_calls'], m['comparisonTable.headers.telephony.columns.video_conference']],
 			rows: {
 				Yellow: [1, 1, 1],
 				'E-mail': [0, 0, 0],
@@ -106,8 +106,8 @@
 			},
 		},
 		{
-			title: 'Social media',
-			columns: ['News feed', 'Stories', 'Forum', 'Events'],
+			title: m['comparisonTable.headers.social.title'],
+			columns: [m['comparisonTable.headers.social.columns.newsfeed'], m['comparisonTable.headers.social.columns.stories'], m['comparisonTable.headers.social.columns.forum'], m['comparisonTable.headers.social.columns.events']],
 			rows: {
 				Yellow: [1, 1, 1, 1],
 				'E-mail': [0, 0, 0, 0],
@@ -123,8 +123,8 @@
 			},
 		},
 		{
-			title: 'Video',
-			columns: ['Channels', 'Reels', 'Live streams', 'Paid video'],
+			title: m['comparisonTable.headers.video.title'],
+			columns: [m['comparisonTable.headers.video.columns.channels'], m['comparisonTable.headers.video.columns.reels'], m['comparisonTable.headers.video.columns.live'], m['comparisonTable.headers.video.columns.paid']],
 			rows: {
 				Yellow: [1, 1, 1, 1],
 				'E-mail': [0, 0, 0, 0],
@@ -135,18 +135,18 @@
 				Element: [0, 0, 0, 0],
 				Facebook: [1, 1, 1, 0],
 				Instagram: [0, 1, 1, 0],
-				YouTube: [1, 1, 'Big channels only', 1],
+				YouTube: [1, 1, 1, 1],
 				TikTok: [0, 1, 1, 0],
 			},
 		},
 		{
-			title: 'E-commerce',
-			columns: ['Marketplace', 'Auctions', 'E-shops', 'Food Delivery', 'Donations', 'Crowdfunding', 'Crypto payments'],
+			title: m['comparisonTable.headers.ecommerce.title'],
+			columns: [m['comparisonTable.headers.ecommerce.columns.marketplace'], m['comparisonTable.headers.ecommerce.columns.auctions'], m['comparisonTable.headers.ecommerce.columns.eshops'], m['comparisonTable.headers.ecommerce.columns.food'], m['comparisonTable.headers.ecommerce.columns.donations'], m['comparisonTable.headers.ecommerce.columns.crowdfunding'], m['comparisonTable.headers.ecommerce.columns.payments']],
 			rows: {
 				Yellow: [1, 1, 1, 1, 1, 1, 1],
 				'E-mail': [0, 0, 0, 0, 0, 0, 0],
 				WhatsApp: [0, 0, 0, 0, 0, 0, 0],
-				Telegram: [0, 0, 0, 'Durger King template', 0, 0, 0],
+				Telegram: [0, 0, 0, 0, 0, 0, 0],
 				SnapChat: [0, 0, 0, 0, 0, 0, 0],
 				Signal: [0, 0, 0, 0, 0, 0, 0],
 				Element: [0, 0, 0, 0, 0, 0, 0],
@@ -157,8 +157,8 @@
 			},
 		},
 		{
-			title: 'Business tools',
-			columns: ['Calendar', 'Tasks'],
+			title: m['comparisonTable.headers.business.title'],
+			columns: [m['comparisonTable.headers.business.columns.calendar'], m['comparisonTable.headers.business.columns.tasks']],
 			rows: {
 				Yellow: [1, 1],
 				'E-mail': ['Some software', 'Some software'],
@@ -174,14 +174,14 @@
 			},
 		},
 		{
-			title: 'Other',
-			columns: ['Media feed', 'Maps', 'Dating', 'Games'],
+			title: m['comparisonTable.headers.other.title'],
+			columns: [m['comparisonTable.headers.other.columns.media'], m['comparisonTable.headers.other.columns.maps'], m['comparisonTable.headers.other.columns.dating'], m['comparisonTable.headers.other.columns.games']],
 			rows: {
 				Yellow: [1, 1, 1, 1],
 				'E-mail': [0, 0, 0, 0],
 				WhatsApp: [0, 0, 0, 0],
 				Telegram: [0, 0, 0, 0],
-				SnapChat: [0, 1, 'Quick Add feature', 1],
+				SnapChat: [0, 1, 0, 1],
 				Signal: [0, 0, 0, 0],
 				Element: [0, 0, 0, 0],
 				Facebook: [0, 0, 1, 1],

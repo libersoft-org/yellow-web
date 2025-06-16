@@ -316,6 +316,91 @@
 		"subtitle": "with other software",
 		"disclaimer": "Please note that some of the information in the tables below may not be up to date or may be inaccurate. If you encounter any incorrect information, please contact us. Thank you.",
 		"button": "See all comparisons",
+		"headers": {
+			"transparency": {
+				"title": "Transparency, network and security",
+				"columns": {
+					"open": "Open source",
+					"decentralization": "Distributed / decentralized",
+					"e2e": "End-to-end encryption",
+					"developed_by": "Developed by"
+				}
+			},
+			"messaging": {
+				"title": "Instant messaging",
+				"columns": {
+					"im": "Instant messages",
+					"rich": "Rich text",
+					"multipart": "Multipart messages",
+					"templates": "Templates",
+					"translations": "Translations",
+					"audio": "Audio messages",
+					"video": "Video messages"
+				}
+			},
+			"storage": {
+				"title": "Data storage and file transfer",
+				"columns": {
+					"large_files": "Large files",
+					"p2p": "Peer-to-peer transfer",
+					"sharing": "File sharing"
+				}
+			},
+			"telephony": {
+				"title": "Telephony",
+				"columns": {
+					"audio": "Audio calls",
+					"video_calls": "Video calls",
+					"video_conference": "Video conference"
+				}
+			},
+			"social": {
+				"title": "Social media",
+				"columns": {
+					"newsfeed": "News feed",
+					"stories": "Stories",
+					"forum": "Forum",
+					"events": "Events"
+				}
+			},
+			"video": {
+				"title": "Video",
+				"columns": {
+					"channels": "Channels",
+					"reels": "Short videos",
+					"live": "Live streams",
+					"paid": "Paid video"
+				}
+			},
+			"ecommerce": {
+				"title": "E-commerce",
+				"columns": {
+					"marketplace": "Marketplace",
+					"auctions": "Auctions",
+					"eshops": "E-shops",
+					"food": "Food Delivery",
+					"donations": "Donations",
+					"crowdfunding": "Crowdfunding",
+					"payments": "Crypto payments"
+				}
+			},
+			"business": {
+				"title": "Business tools",
+				"columns": {
+					"calendar": "Calendar",
+					"tasks": "Tasks"
+				}
+			},
+			"other": {
+				"title": "Other",
+				"columns": {
+					"media": "Media feed",
+					"maps": "Maps",
+					"dating": "Dating",
+					"games": "Games"
+				}
+			}
+		},
 		"table_headers": {
 			"software": "Software",
 			"open_source": "Open source",

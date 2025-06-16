@@ -316,6 +316,91 @@
 		"subtitle": "s jiným software",
 		"disclaimer": "Upozorňujeme, že některé informace v níže uvedených tabulkách nemusí být aktuální nebo mohou být nepřesné. Pokud narazíte na nějakou chybnou informaci, prosíme, kontaktujte nás. Děkujeme.",
 		"button": "Všechna srovnání",
+		"headers": {
+			"transparency": {
+				"title": "Transparentnost, síť a bezpečnost",
+				"columns": {
+					"open": "Otevřený zdrojový kód",
+					"decentralization": "Distribuovaná / decentralizovaná síť",
+					"e2e": "Koncové šifrování",
+					"developed_by": "Vývojář"
+				}
+			},
+			"messaging": {
+				"title": "Rychlé zprávy",
+				"columns": {
+					"im": "Rychlé zprávy",
+					"rich": "Formátovaný text",
+					"multipart": "Vícedílné zprávy",
+					"templates": "Šablony",
+					"translations": "Překlady zpráv",
+					"audio": "Audio zprávy",
+					"video": "Video zprávy"
+				}
+			},
+			"storage": {
+				"title": "Datové úložiště a přenos souborů",
+				"columns": {
+					"large_files": "Velké soubory",
+					"p2p": "Peer-to-peer přenos",
+					"sharing": "Sdílení souborů"
+				}
+			},
+			"telephony": {
+				"title": "Telefonování",
+				"columns": {
+					"audio": "Audio hovory",
+					"video_calls": "Video hovory",
+					"video_conference": "Video konference"
+				}
+			},
+			"social": {
+				"title": "Sociální média",
+				"columns": {
+					"newsfeed": "Newsfeed",
+					"stories": "Příběhy",
+					"forum": "Diskuze",
+					"events": "Události"
+				}
+			},
+			"video": {
+				"title": "Video",
+				"columns": {
+					"channels": "Kanály",
+					"reels": "Krátká videa",
+					"live": "Živá vysílání",
+					"paid": "Placená videa"
+				}
+			},
+			"ecommerce": {
+				"title": "E-commerce",
+				"columns": {
+					"marketplace": "Tržiště",
+					"auctions": "Aukce",
+					"eshops": "E-shopy",
+					"food": "Donáška jídla",
+					"donations": "Dary",
+					"crowdfunding": "Skupinové financování",
+					"payments": "Platby v kryptoměnách"
+				}
+			},
+			"business": {
+				"title": "Obchodní nástroje",
+				"columns": {
+					"calendar": "Kalendář",
+					"tasks": "Úkoly"
+				}
+			},
+			"other": {
+				"title": "Ostatní",
+				"columns": {
+					"media": "Mediální kanály",
+					"maps": "Mapy",
+					"dating": "Seznamka",
+					"games": "Hry"
+				}
+			}
+		},
 		"table_headers": {
 			"software": "Software",
 			"open_source": "Otevřený zdrojový kód",
