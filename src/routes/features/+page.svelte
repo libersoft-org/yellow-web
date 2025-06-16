@@ -773,7 +773,7 @@
 					{/each}
 				</div>
 				{#each allTables as table}
-					<AppFeaturesComparisonTable title={table.title} subtitle="" headers={table.headers} rows={table.rows} buttonLabel="" buttonLink="" isCollapsible={false} showMaxHeight={false} />
+					<AppFeaturesComparisonTable title={table.title} subtitle="" headers={table.headers} rows={table.rows} buttonLabel="" buttonLink="" isCollapsible={false} showMaxHeight={false} showMargins={false} />
 				{/each}
 			</div>
 		{/if}
