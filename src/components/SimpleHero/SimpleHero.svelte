@@ -10,7 +10,7 @@
 <style>
 </style>
 
-<div class="relative isolate bg-center pt-25 lg:pt-34 pb-12 bg-[size:1024px_1024px]" style="background-image: url('{backgroundImage}?v=2');">
+<div class="relative isolate bg-center pt-25 lg:pt-34 pb-12 bg-[size:400px] bg-[position:0_0] bg-repeat md:bg-repeat-x" style="background-image: url('{backgroundImage}');">
 	<div class="theme-container relative mx-auto">
 		<div class="flex flex-wrap justify-center">
 			<div class="w-full">

@@ -53,7 +53,7 @@
 		<img src={imageSrc} alt={m['hero.app_alt_text']} class="h-auto max-w-100 w-full lg:w-auto lg:max-w-full" />
 	</div>
 {/snippet}
-<div class="relative isolate mb-10 overflow-hidden bg-center pt-20.5 pb-8.5 md:mb-15 md:pt-28 md:pb-8 lg:mb-20 lg:pt-46 lg:pb-13 bg-[size:1024px_1024px]" style="background-image: url('{backgroundImage}'); ;">
+<div class="relative isolate mb-10 overflow-hidden bg-center pt-20.5 pb-8.5 md:mb-15 md:pt-28 md:pb-8 lg:mb-20 lg:pt-46 lg:pb-13 bg-[size:400px] bg-[position:0_0] bg-repeat" style="background-image: url('{backgroundImage}'); ;">
 	<div class="svg-bg absolute -top-2 right-0 hidden max-h-[758px] lg:flex" style:z-index="-1">
 		{@html svgBackground}
 	</div>
