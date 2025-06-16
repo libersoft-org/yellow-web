@@ -82,7 +82,7 @@
 		</svg>
 	</div>
 {/snippet}
-<div class="mx-auto mb-6 max-w-7xl px-0 md:mb-8 md:px-4 lg:mb-12">
+<div class="mx-auto mb-6 max-w-full px-0 md:mb-8 md:px-4 lg:mb-12">
 	<div class="theme-shadow-soft rounded-3xl bg-white">
 		{@render cardHeaderSnippet()}
 		{@render shadowSvgSnippet()}
