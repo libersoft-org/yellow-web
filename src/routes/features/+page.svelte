@@ -336,7 +336,7 @@
 				},
 				{
 					name: m['featuresTable.wallet.items.import_export'],
-					implemented: 0,
+					implemented: 1,
 				},
 				{
 					name: m['featuresTable.wallet.items.trezor'],
@@ -580,7 +580,7 @@
 					implemented: 0,
 				},
 				{
-					name: m['featuresTable.crowdfunding.items.own_management'],
+					name: m['featuresTable.crowdfunding.items.management'],
 					implemented: 0,
 				},
 				{
@@ -614,7 +614,7 @@
 			name: m['featuresTable.tasks.title'],
 			features: [
 				{
-					name: m['featuresTable.tasks.items.management'],
+					name: m['featuresTable.tasks.items.dashboard'],
 					implemented: 0,
 				},
 				{
@@ -676,7 +676,7 @@
 					implemented: 0,
 				},
 				{
-					name: m['featuresTable.virtual_chat.items.block'],
+					name: m['featuresTable.virtual_chat.items.blocking'],
 					implemented: 0,
 				},
 			],
