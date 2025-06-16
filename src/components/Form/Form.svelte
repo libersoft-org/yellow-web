@@ -6,7 +6,7 @@
 	import RadioButton from '@/theme/RadioButton/RadioButton.svelte';
 	import Input from '@/theme/Input/Input.svelte';
 	import TextArea from '@/theme/TextArea/TextArea.svelte';
-	import { m } from '$lib/i18n/index.svelte.js';
+	import { m } from '$lib/i18n/index.svelte.ts';
 
 	let { title = m['form.title'] } = $props();
 

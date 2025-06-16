@@ -4,7 +4,7 @@
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
-	import { m } from '$lib/i18n/index.svelte.js';
+	import { m } from '$lib/i18n/index.svelte.ts';
 
 	function convertComparisonData(comparisonSections) {
 		return comparisonSections.map(section => {

@@ -4,7 +4,7 @@
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
-	import { m } from '$lib/i18n/index.svelte.js';
+	import { m } from '$lib/i18n/index.svelte.ts';
 	import Icon from '@/theme/Icon/Icon.svelte';
 
 	function convertModulesToTables(modulesData, stateData) {

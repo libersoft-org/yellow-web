@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Table from '@/theme/Table/Table.svelte';
 	import { Routes } from '@/utils/routes';
-	import { m } from '$lib/i18n/index.svelte.js';
+	import { m } from '$lib/i18n/index.svelte.ts';
 	interface Cell {
 		text?: string;
 		isHeader?: boolean;
@@ -65,7 +65,7 @@
 
 	// Use the provided props or fall back to defaults
 	const finalTitle = $derived(title || defaultTitle);
-	const finalSubtitle = $derived(subtitle || defaultSubtitle);
+	const finalSubtitle = $derived(subtitle !== undefined ? subtitle : defaultSubtitle);
 	const finalHeaders = $derived(headers || defaultHeaders);
 	const finalRows = $derived(rows || defaultRows);
 	const finalButtonLabel = $derived(buttonLabel || defaultButtonLabel);

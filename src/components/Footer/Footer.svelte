@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon, { type IconSizeMapType } from '@/theme/Icon/Icon.svelte';
 	import Link from '@/theme/Link/Link.svelte';
-	import { m } from '$lib/i18n/index.svelte.js';
+	import { m, t } from '$lib/i18n/index.svelte.ts';
 	import { Routes } from '@/utils/routes';
 	type PositionType = 'static' | 'sticky' | 'fixed';
 	interface LinkItem {
@@ -51,7 +51,7 @@
 		{ label: m['footer.links.signup'], href: Routes.account() },
 	]);
 
-	const defaultCopyright = $derived(m['footer.copyright']({ year: currentYear }));
+	const defaultCopyright = $derived(t('footer.copyright', { year: currentYear }));
 
 	// Use the provided props or fall back to defaults
 	const finalSocialLinks = $derived(socialLinks || defaultSocialLinks);

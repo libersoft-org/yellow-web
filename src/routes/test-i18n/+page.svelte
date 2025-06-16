@@ -1,5 +1,5 @@
 <script>
-	import { m, getLocale, setLocale, locales } from '$lib/i18n/index.svelte.js';
+	import { m, t, getLocale, setLocale, locales } from '$lib/i18n/index.svelte.ts';
 
 	let currentLocale = $state(getLocale());
 
@@ -21,7 +21,7 @@
 		<p>Hero title: {m.hero.title}</p>
 		<p>Hero subtitle: {m.hero.subtitle}</p>
 		<p>About link: {m['footer.links.about']}</p>
-		<p>Copyright: {m['footer.copyright']({ year: 2024 })}</p>
+		<p>Copyright: {t('footer.copyright', { year: 2024 })}</p>
 	</div>
 
 	<div class="mt-4">

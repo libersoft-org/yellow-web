@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Button from '@/theme/Button/Button.svelte';
-	import { m } from '$lib/i18n/index.svelte.js';
+	import { m } from '$lib/i18n/index.svelte.ts';
 	import svgBackground from './bg.svg?raw';
 	import { Routes } from '@/utils/routes';
 	import { goto } from '$app/navigation';

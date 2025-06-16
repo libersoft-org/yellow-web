@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Routes } from '@/utils/routes';
-	import { m } from '$lib/i18n/index.svelte.js';
+	import { m } from '$lib/i18n/index.svelte.ts';
 	import svgBackground from './bg.svg?raw';
 	import Table from '@/theme/Table/Table.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';

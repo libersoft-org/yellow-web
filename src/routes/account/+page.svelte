@@ -5,7 +5,7 @@
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import Button from '@/theme/Button/Button.svelte';
-	import { m } from '$lib/i18n/index.svelte.js';
+	import { m } from '$lib/i18n/index.svelte.ts';
 	import { Routes } from '@/utils/routes';
 </script>
 

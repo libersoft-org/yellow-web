@@ -1,5 +1,5 @@
 <script>
-	import { m } from '$lib/i18n/index.svelte.js';
+	import { m } from '$lib/i18n/index.svelte.ts';
 	import Header from '@/components/Header/Header.svelte';
 	import Form from '@/components/Form/Form.svelte';
 	import Footer from '@/components/Footer/Footer.svelte';
