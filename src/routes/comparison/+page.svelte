@@ -200,12 +200,14 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title={m['footer.links.comparison']} backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title={m['footer.links.comparison']} />
 	<div class="theme-container mx-auto py-10 md:py-20">
 		<div class="text-center mb-10">{m['comparisonTable.disclaimer']}</div>
-		{#each convertedSections as section}
-			<AppFeaturesComparisonTable title={section.title} subtitle="" headers={section.headers} rows={section.rows} buttonLabel="" buttonLink="" showMaxHeight={false} />
-		{/each}
+		<div class="flex flex-col">
+			{#each convertedSections as section}
+				<AppFeaturesComparisonTable title={section.title} subtitle="" headers={section.headers} rows={section.rows} buttonLabel="" buttonLink="" showMaxHeight={false} showMargins={false} />
+			{/each}
+		</div>
 	</div>
 
 	<Footer />

@@ -11,12 +11,10 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title={m['footer.links.contact']} backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title={m['footer.links.contact']} />
 	<div class="theme-container mx-auto py-10 md:py-20">
-		<div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-			<div>
-				<Text />
-			</div>
+		<div class="flex flex-col justify-items-center">
+			<Text />
 		</div>
 	</div>
 	<Footer />

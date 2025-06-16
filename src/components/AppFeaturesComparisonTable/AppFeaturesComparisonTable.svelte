@@ -28,6 +28,7 @@
 		showMaxHeight?: boolean;
 		mobileColLeft?: string;
 		mobileColRight?: string;
+		showMargins?: boolean;
 	}
 
 	const check: Cell = { iconStatus: 'success', icon: 'check' };
@@ -62,13 +63,14 @@
 		showMaxHeight = true,
 		mobileColLeft: mobileColLeft = m['comparisonTable.table_headers.software'],
 		mobileColRight: mobileColRight = m['comparisonTable.table_headers.features'],
+		showMargins = true,
 	}: Props = $props();
 </script>
 
 <style>
 </style>
 
-<div class="app-features-comparison-table mb-20 flex flex-col items-center justify-center md:mb-10 lg:mb-15">
+<div class="app-features-comparison-table flex flex-col items-center justify-center {showMargins ? 'mb-20 md:mb-10 lg:mb-15' : ''}">
 	<div class="theme-container relative">
 		<div class="px-4 pb-8 md:px-10 md:px-25 md:pb-15">
 			<div class="mb-5 text-center">

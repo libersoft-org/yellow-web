@@ -14,7 +14,7 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title={m['footer.links.signup']} backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title={m['footer.links.signup']} />
 
 	<div class="theme-container mx-auto py-10 md:py-20">
 		<div class="flex flex-col items-center justify-center">

@@ -13,7 +13,7 @@
 
 <div>
 	<Header zIndex={100} />
-	<SimpleHero title="TEMPLATE PAGE" backgroundImage="assets/images/hero-bg.png" />
+	<SimpleHero title="TEMPLATE PAGE" />
 	<div class="theme-container mx-auto py-10 md:py-20">
 		<TextImage />
 		<Form />
