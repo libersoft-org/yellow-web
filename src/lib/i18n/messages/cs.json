@@ -411,7 +411,14 @@
 		},
 		"table_description": {
 			"some_software": "některý software",
-			"mobile_operators": "mobilní operátoři"
+			"mobile_operators": "pouze mobilní operátoři",
+			"optional": "volitelně",
+			"client_apps_only": "pouze klientské aplikace",
+			"2gb": "2 GB zdarma / 4 GB premium",
+			"group_calls": "skupinové hovory",
+			"images_only": "pouze obrázky",
+			"video_only": "pouze video",
+			"charities": "pouze vybrané charity"
 		}
 	},
 	"app_characteristics": {

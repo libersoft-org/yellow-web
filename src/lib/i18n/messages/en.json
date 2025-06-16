@@ -411,7 +411,14 @@
 		},
 		"table_description": {
 			"some_software": "some software",
-			"mobile_operators": "mobile operators"
+			"mobile_operators": "mobile operators only",
+			"optional": "optional",
+			"client_apps_only": "client apps only",
+			"2gb": "2 GB free / 4 GB premium",
+			"group_calls": "group calls",
+			"images_only": "images only",
+			"video_only": "video only",
+			"charities": "selected charities only"
 		}
 	},
 	"app_characteristics": {
