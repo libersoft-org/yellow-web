@@ -1,2 +1,4 @@
+import type { Reroute } from '@sveltejs/kit';
+
 // No URL-based routing needed for our simple cookie-based locale system
-export const reroute = request => request.url.pathname;
+export const reroute: Reroute = ({ url }) => url.pathname;

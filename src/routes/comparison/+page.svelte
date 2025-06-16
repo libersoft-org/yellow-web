@@ -27,7 +27,7 @@
 		else if (value === 0) return { iconStatus: 'error', icon: 'cross' };
 		else return { text: String(value) };
 	}
-	const comparison = [
+	let comparison = $derived([
 		{
 			title: m['comparisonTable.headers.transparency.title'],
 			columns: [m['comparisonTable.headers.transparency.columns.open'], m['comparisonTable.headers.transparency.columns.decentralization'], m['comparisonTable.headers.transparency.columns.e2e'], m['comparisonTable.headers.transparency.columns.developed_by']],
@@ -190,9 +190,11 @@
 				TikTok: [0, 0, 0, 0],
 			},
 		},
-	];
+	]);
 
-	const convertedSections = convertComparisonData(comparison);
+	const convertedSections = $derived.by(() => {
+		return convertComparisonData(comparison);
+	});
 </script>
 
 <style>
