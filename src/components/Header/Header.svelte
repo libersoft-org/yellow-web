@@ -31,8 +31,8 @@
 		{ label: m['footer.links.download'], href: Routes.download() },
 		/*{ label: m['footer.links.documentation'], href: Routes.template() },*/
 		{ label: m['footer.links.faq'], href: Routes.faq() },
-		{ label: m['footer.links.contact'], href: Routes.contact() },
 		{ label: m['footer.links.signup'], href: Routes.account(), highlighted: true },
+		{ label: m['footer.links.contact'], href: Routes.contact() },
 	]);
 
 	function toggleMobileMenu(e: MouseEvent) {
