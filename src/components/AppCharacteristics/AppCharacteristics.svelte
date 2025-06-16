@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Box from '@/theme/Box/Box.svelte';
-	import { Routes } from '@/utils/routes.ts';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { Routes } from '@/utils/routes';
+	import { m } from '$lib/i18n/index.svelte';
 
 	// Structure for storing component data
 	const features = [

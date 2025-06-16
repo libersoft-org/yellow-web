@@ -3,7 +3,7 @@
 	import Footer from '@/components/Footer/Footer.svelte';
 	import FAQ from '@/components/FAQ/FAQ.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 </script>
 
 <style>

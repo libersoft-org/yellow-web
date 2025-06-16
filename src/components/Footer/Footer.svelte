@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Icon, { type IconSizeMapType } from '@/theme/Icon/Icon.svelte';
 	import Link from '@/theme/Link/Link.svelte';
-	import { m, t } from '$lib/i18n/index.svelte.ts';
+	import { m, t } from '$lib/i18n/index.svelte';
 	import { Routes } from '@/utils/routes';
 	type PositionType = 'static' | 'sticky' | 'fixed';
 	interface LinkItem {

@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { Routes } from '@/utils/routes';
 	import { browser } from '$app/environment';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 	import HeaderItem from '@/components/Header/HeaderItem.svelte';
 	import LanguageSwitcher from '@/components/Header/LanguageSwitcher.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';

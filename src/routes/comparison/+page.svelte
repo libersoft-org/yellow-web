@@ -1,12 +1,35 @@
-<script>
+<script lang="ts">
 	import Header from '@/components/Header/Header.svelte';
 	import Footer from '@/components/Footer/Footer.svelte';
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 
-	function convertComparisonData(comparisonSections) {
+	interface ComparisonSection {
+		title: string;
+		columns: string[];
+		rows: Record<string, (number | string)[]>;
+	}
+
+	interface Cell {
+		text?: string;
+		iconStatus?: 'success' | 'error' | 'warning';
+		icon?: string;
+		isHeader?: boolean;
+	}
+
+	interface Row {
+		cells: Cell[];
+	}
+
+	interface ConvertedSection {
+		title: string;
+		headers: string[];
+		rows: Row[];
+	}
+
+	function convertComparisonData(comparisonSections: ComparisonSection[]): ConvertedSection[] {
 		return comparisonSections.map(section => {
 			const headers = ['Software', ...section.columns];
 			const rows = Object.entries(section.rows).map(([software, values]) => {
@@ -22,7 +45,7 @@
 		});
 	}
 
-	function convertValueToCell(value) {
+	function convertValueToCell(value: number | string): Cell {
 		if (value === 1) return { iconStatus: 'success', icon: 'check' };
 		else if (value === 0) return { iconStatus: 'error', icon: 'cross' };
 		else return { text: String(value) };
@@ -193,7 +216,7 @@
 	]);
 
 	const convertedSections = $derived.by(() => {
-		return convertComparisonData(comparison);
+		return convertComparisonData(comparison as unknown as ComparisonSection[]);
 	});
 </script>
 

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Accordion from '@/theme/Accordion/Accordion.svelte';
 	import AccordionItem from '@/theme/Accordion/AccordionItem.svelte';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 
 	interface FAQItem {
 		id: string;

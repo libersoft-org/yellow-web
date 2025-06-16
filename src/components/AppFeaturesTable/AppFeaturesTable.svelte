@@ -1,17 +1,20 @@
 <script lang="ts">
 	import { Routes } from '@/utils/routes';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 	import svgBackground from './bg.svg?raw';
 	import Table from '@/theme/Table/Table.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
 
+	// Use Table component's Cell interface
 	interface Cell {
-		text: string;
-		alignment?: 'left' | 'center' | 'right';
+		text?: string;
+		component?: any;
+		props?: any;
 		isHeader?: boolean;
 		className?: string;
 		icon?: string;
 		iconStatus?: 'success' | 'error' | 'warning';
+		alignment?: 'left' | 'center' | 'right'; // Our specific addition
 	}
 
 	interface Row {
@@ -42,44 +45,45 @@
 	const reactiveTitle = $derived(title || m['featuresTable.title']);
 	const reactiveHeaders = $derived(headers || [m['featuresTable.table_header.feature'], m['featuresTable.table_header.implemented']]);
 	const reactiveRows = $derived(
-		rows || [
-			{
-				cells: [
-					{ text: m['featuresTable.core.items.amtp'], alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-				],
-			},
-			{
-				cells: [
-					{ text: m['featuresTable.core.items.dmtp'], alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-				],
-			},
-			{
-				cells: [
-					{ text: m['featuresTable.core.items.server_modularity'], alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-				],
-			},
-			{
-				cells: [
-					{ text: m['featuresTable.core.items.client_modularity'], alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'warning', icon: 'check' },
-				],
-			},
-			{
-				cells: [
-					{ text: m['featuresTable.core.items.client_encryption'], alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
-				],
-			},
-			{
-				cells: [
-					{ text: m['featuresTable.core.items.client_e2e'], alignment: 'left', isHeader: true },
-					{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
-				],
-			},
-		]
+		rows ||
+			([
+				{
+					cells: [
+						{ text: m['featuresTable.core.items.amtp'], alignment: 'left', isHeader: true },
+						{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
+					],
+				},
+				{
+					cells: [
+						{ text: m['featuresTable.core.items.dmtp'], alignment: 'left', isHeader: true },
+						{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+					],
+				},
+				{
+					cells: [
+						{ text: m['featuresTable.core.items.server_modularity'], alignment: 'left', isHeader: true },
+						{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
+					],
+				},
+				{
+					cells: [
+						{ text: m['featuresTable.core.items.client_modularity'], alignment: 'left', isHeader: true },
+						{ text: '', alignment: 'center', iconStatus: 'warning', icon: 'check' },
+					],
+				},
+				{
+					cells: [
+						{ text: m['featuresTable.core.items.client_encryption'], alignment: 'left', isHeader: true },
+						{ text: '', alignment: 'center', iconStatus: 'success', icon: 'check' },
+					],
+				},
+				{
+					cells: [
+						{ text: m['featuresTable.core.items.client_e2e'], alignment: 'left', isHeader: true },
+						{ text: '', alignment: 'center', iconStatus: 'error', icon: 'cross' },
+					],
+				},
+			] as Row[])
 	);
 	const reactiveButtonLabel = $derived(buttonLabel || m['featuresTable.button']);
 	const reactiveLegendItems = $derived(

@@ -5,7 +5,7 @@
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import Links from '@/components/Links/Links.svelte';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 	// Make headers and rows reactive
 	const headers = $derived([m['download.table_header.software'], m['download.table_header.links']]);
 	const rows = $derived([

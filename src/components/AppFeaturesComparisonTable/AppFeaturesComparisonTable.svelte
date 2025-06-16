@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Table from '@/theme/Table/Table.svelte';
 	import { Routes } from '@/utils/routes';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 	interface Cell {
 		text?: string;
 		isHeader?: boolean;

@@ -5,8 +5,8 @@
 	import SelectBox from '@/theme/SelectBox/SelectBox.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
 	import Dropdown from '@/theme/Dropdown/Dropdown.svelte';
-	import { m } from '$lib/i18n/index.svelte.ts';
-	import { getLocale, setLocale } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
+	import { getLocale, setLocale } from '$lib/i18n/index.svelte';
 
 	// Define the props
 	let { openModal } = $props();

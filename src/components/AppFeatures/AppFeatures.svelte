@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { Routes } from '@/utils/routes';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 	//import svgBackground from './bg.svg?raw';
 	import Card from '@/theme/Card/Card.svelte';
 	import Button from '@/theme/Button/Button.svelte';

@@ -1,17 +1,51 @@
-<script>
+<script lang="ts">
 	import Header from '@/components/Header/Header.svelte';
 	import Footer from '@/components/Footer/Footer.svelte';
 	//import Text from '@/components/Text/Text.svelte';
 	import SimpleHero from '@/components/SimpleHero/SimpleHero.svelte';
 	import AppFeaturesComparisonTable from '@/components/AppFeaturesComparisonTable/AppFeaturesComparisonTable.svelte';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
 
-	function convertModulesToTables(modulesData, stateData) {
+	interface Feature {
+		name: string;
+		implemented: number;
+	}
+
+	interface Module {
+		name: string;
+		features: Feature[];
+	}
+
+	interface StateItem {
+		name: string;
+		icon: string;
+	}
+
+	type StateData = StateItem[];
+
+	interface Cell {
+		text?: string;
+		isHeader?: boolean;
+		iconStatus?: 'success' | 'error' | 'warning';
+		icon?: string;
+	}
+
+	interface Row {
+		cells: Cell[];
+	}
+
+	interface TableData {
+		title: string;
+		headers: Cell[];
+		rows: Row[];
+	}
+
+	function convertModulesToTables(modulesData: Module[]): TableData[] {
 		return modulesData.map(module => {
 			const headers = [m['featuresTable.table_headers.feature'], m['featuresTable.table_headers.status']].map(text => ({ text, isHeader: true }));
 			const rows = module.features.map(feature => {
-				const statusIcon = getStatusIcon(feature.implemented, stateData);
+				const statusIcon = getStatusIcon(feature.implemented);
 				return {
 					cells: [{ text: feature.name, isHeader: true }, statusIcon],
 				};
@@ -25,10 +59,10 @@
 		});
 	}
 
-	function convertCoreToTable(coreData, stateData) {
+	function convertCoreToTable(coreData: Feature[]): TableData {
 		const headers = [m['featuresTable.table_headers.feature'], m['featuresTable.table_headers.status']].map(text => ({ text, isHeader: true }));
 		const rows = coreData.map(feature => {
-			const statusIcon = getStatusIcon(feature.implemented, stateData);
+			const statusIcon = getStatusIcon(feature.implemented);
 			return {
 				cells: [{ text: feature.name, isHeader: true }, statusIcon],
 			};
@@ -41,7 +75,7 @@
 		};
 	}
 
-	function getStatusIcon(implemented, stateData) {
+	function getStatusIcon(implemented: number): Cell {
 		switch (implemented) {
 			case 0:
 				return { iconStatus: 'error', icon: 'cross' };
@@ -747,8 +781,8 @@
 	]);
 
 	// Use $derived to make these reactive
-	const coreTable = $derived(convertCoreToTable(core, state));
-	const moduleTables = $derived(convertModulesToTables(modules, state));
+	const coreTable = $derived(convertCoreToTable(core));
+	const moduleTables = $derived(convertModulesToTables(modules));
 	const allTables = $derived([coreTable, ...moduleTables]);
 </script>
 
@@ -773,7 +807,7 @@
 					{/each}
 				</div>
 				{#each allTables as table}
-					<AppFeaturesComparisonTable title={table.title} subtitle="" headers={table.headers} rows={table.rows} buttonLabel="" buttonLink="" isCollapsible={false} showMaxHeight={false} showMargins={false} />
+					<AppFeaturesComparisonTable title={table.title} subtitle="" headers={table.headers.map(h => h.text || '')} rows={table.rows} buttonLabel="" buttonLink="" isCollapsible={false} showMaxHeight={false} showMargins={false} />
 				{/each}
 			</div>
 		{/if}

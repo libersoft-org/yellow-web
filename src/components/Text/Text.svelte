@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Link from '@/theme/Link/Link.svelte';
 	import Icon from '@/theme/Icon/Icon.svelte';
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 	// Make all translations reactive
 	const blockTitle = $derived(m['text.block_title']);
 	const title = $derived(m['text.organization_title']);

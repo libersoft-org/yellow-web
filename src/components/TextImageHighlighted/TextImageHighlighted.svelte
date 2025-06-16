@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { m } from '$lib/i18n/index.svelte.ts';
+	import { m } from '$lib/i18n/index.svelte';
 
 	interface Props {
 		textContent?: string;
