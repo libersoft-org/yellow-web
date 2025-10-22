@@ -346,7 +346,7 @@
 			features: [
 				{
 					name: m['featuresTable.wallet.items.sending_receiving'],
-					implemented: 2,
+					implemented: 1,
 				},
 				{
 					name: m['featuresTable.wallet.items.blockchains'],
@@ -354,11 +354,11 @@
 				},
 				{
 					name: m['featuresTable.wallet.items.tokens'],
-					implemented: 0,
+					implemented: 1,
 				},
 				{
 					name: m['featuresTable.wallet.items.nfts'],
-					implemented: 0,
+					implemented: 1,
 				},
 				{
 					name: m['featuresTable.wallet.items.password'],
@@ -374,11 +374,11 @@
 				},
 				{
 					name: m['featuresTable.wallet.items.trezor'],
-					implemented: 0,
+					implemented: 1,
 				},
 				{
 					name: m['featuresTable.wallet.items.ledger'],
-					implemented: 0,
+					implemented: 1,
 				},
 			],
 		},
